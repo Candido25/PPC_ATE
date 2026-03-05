@@ -2,10 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. José Luis Hurtado Apaico · Alcalde de Ate 2027–2030 · PPC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#0d4a24">
+  <title>Dr. José Luis Hurtado Apaico · Alcalde Ate 2027–2030 · PPC</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
+    /* ══════════════════════════════════════
+       VARIABLES Y RESET
+    ══════════════════════════════════════ */
     :root {
       --verde:      #1a7a3c;
       --verde-osc:  #0d4a24;
@@ -13,295 +17,517 @@
       --verde-suave:#e8f5ee;
       --dorado:     #c8a84b;
       --dorado-cla: #f5edd8;
-      --rojo-seg:   #b03020;
+      --rojo:       #b03020;
       --rojo-suave: #fdecea;
-      --azul-auto:  #1a5276;
+      --azul:       #1a5276;
       --azul-suave: #eaf0f8;
-      --doct-bg:    #1a1408;
+      --doct-bg:    #121008;
       --blanco:     #f7f9f5;
       --gris-cla:   #edf2ea;
       --gris:       #5e6b60;
       --negro:      #0e1a10;
+      --radio:      12px;
+      --sombra:     0 4px 20px rgba(0,0,0,.10);
+      --sombra-md:  0 8px 32px rgba(0,0,0,.14);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Source Sans 3', sans-serif; background: var(--blanco); color: var(--negro); overflow-x: hidden; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--blanco); color: var(--negro); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-    /* ── TOPBAR ── */
-    .topbar { background: var(--verde-osc); color: #fff; font-size: .8rem; padding: .4rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .topbar a { color: #a8dbbe; text-decoration: none; transition: color .2s; }
-    .topbar a:hover { color: var(--dorado); }
-    .socials { display: flex; gap: .8rem; font-size: .95rem; }
+    /* ══════════════════════════════════════
+       TOPBAR
+    ══════════════════════════════════════ */
+    .topbar {
+      background: var(--verde-osc); color: #fff;
+      font-size: .78rem; padding: .45rem 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: .5rem; flex-wrap: wrap;
+    }
+    .topbar-text { font-size: .72rem; color: #a8dbbe; }
+    .topbar-text strong { color: var(--dorado); }
+    .socials { display: flex; gap: .7rem; }
+    .socials a { color: #a8dbbe; text-decoration: none; font-size: 1rem; padding: .2rem; transition: color .2s; }
+    .socials a:hover { color: var(--dorado); }
 
-    /* ── HEADER ── */
-    header { background: var(--verde); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,.28); transition: background .3s; }
+    /* ══════════════════════════════════════
+       HEADER — MOBILE FIRST
+    ══════════════════════════════════════ */
+    header {
+      background: var(--verde); position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 16px rgba(0,0,0,.25); transition: background .3s;
+    }
     header.scrolled { background: var(--verde-osc); }
-    .header-inner { max-width: 1280px; margin: 0 auto; padding: .8rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .logo { display: flex; align-items: center; gap: .9rem; text-decoration: none; }
-    .logo-escudo { width: 48px; height: 48px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 900; color: var(--verde); box-shadow: 0 2px 10px rgba(0,0,0,.2); flex-shrink: 0; transition: transform .3s; }
-    .logo:hover .logo-escudo { transform: rotate(10deg) scale(1.08); }
-    .logo-text .ppc { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 900; color: #fff; line-height: 1.1; }
-    .logo-text .sub { font-size: .68rem; color: #a8dbbe; letter-spacing: .05em; }
-    nav { display: flex; gap: .1rem; }
-    nav a { color: #cce8d8; text-decoration: none; font-size: .82rem; font-weight: 600; padding: .4rem .75rem; border-radius: 5px; transition: background .2s, color .2s; }
-    nav a:hover, nav a.active { background: rgba(255,255,255,.15); color: #fff; }
-    .menu-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: .3rem; }
-    .menu-btn span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s; }
+    .header-inner {
+      padding: .75rem 1rem;
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+    }
+    .logo { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+    .logo-escudo {
+      width: 44px; height: 44px; background: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900;
+      color: var(--verde); flex-shrink: 0; transition: transform .3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .logo:active .logo-escudo { transform: scale(.93); }
+    .logo-text .ppc { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900; color: #fff; line-height: 1.1; }
+    .logo-text .sub { font-size: .65rem; color: #a8dbbe; }
 
-    /* ── HERO ── */
-    .hero { background: linear-gradient(150deg, var(--verde-osc) 0%, #1a6e36 55%, #2aab57 100%); position: relative; overflow: hidden; padding: 5.5rem 2rem 4.5rem; min-height: 90vh; display: flex; align-items: center; }
-    .hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .hero-particles span { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: rgba(200,168,75,.4); animation: float-up linear infinite; }
-    @keyframes float-up { 0% { transform: translateY(100vh) scale(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: .5; } 100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } }
-    .hero-inner { max-width: 1280px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 380px; gap: 3rem; align-items: center; position: relative; z-index: 1; }
-    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; background: var(--dorado); color: var(--negro); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem 1rem; border-radius: 20px; margin-bottom: 1.2rem; animation: pulse-badge 3s ease-in-out infinite; }
-    @keyframes pulse-badge { 0%,100% { box-shadow: 0 0 0 0 rgba(200,168,75,.4); } 50% { box-shadow: 0 0 0 8px rgba(200,168,75,0); } }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: .6rem; }
-    .hero h1 em { color: var(--dorado); font-style: normal; display: block; }
-    .hero-lema { font-size: 1rem; color: var(--dorado-cla); font-weight: 600; margin-bottom: .8rem; font-style: italic; border-left: 3px solid var(--dorado); padding-left: .8rem; opacity: .9; }
-    .hero-desc { font-size: 1rem; color: #c0e4cf; line-height: 1.72; margin-bottom: 2rem; max-width: 520px; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-gold { background: var(--dorado); color: var(--negro); border: none; padding: .85rem 1.8rem; font-size: .92rem; font-weight: 700; border-radius: 7px; cursor: pointer; text-decoration: none; transition: transform .2s, box-shadow .2s; display: inline-block; }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,168,75,.4); }
-    .btn-verde { background: var(--verde); color: #fff; border: 2px solid var(--verde-cla); padding: .85rem 1.8rem; font-size: .92rem; font-weight: 700; border-radius: 7px; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s, transform .2s; }
-    .btn-verde:hover { background: var(--verde-cla); transform: translateY(-2px); }
-    .btn-white-out { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.45); padding: .85rem 1.8rem; font-size: .92rem; font-weight: 600; border-radius: 7px; cursor: pointer; text-decoration: none; display: inline-block; transition: border-color .2s, background .2s; }
-    .btn-white-out:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    /* Hamburger */
+    .menu-btn {
+      background: none; border: none; cursor: pointer; padding: .4rem;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .menu-btn span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; }
+    .menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .candidate-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(12px); border-radius: 18px; padding: 2.2rem 1.8rem; text-align: center; color: #fff; animation: card-float 4s ease-in-out infinite; }
-    @keyframes card-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    .candidate-photo { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--dorado), #7a5c1a); margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; border: 4px solid rgba(255,255,255,.25); box-shadow: 0 8px 28px rgba(0,0,0,.3); }
-    .candidate-card .titulo { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dorado); margin-bottom: .4rem; }
-    .candidate-card .nombre { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; line-height: 1.2; margin-bottom: .3rem; }
-    .candidate-card .cargo-c { font-size: .83rem; color: #a8dbbe; margin-bottom: 1.4rem; }
-    .candidate-pill { display: inline-block; background: var(--dorado); color: var(--negro); font-size: .75rem; font-weight: 700; padding: .4rem 1.1rem; border-radius: 20px; }
+    /* Nav drawer — mobile */
+    nav {
+      display: none; flex-direction: column;
+      background: var(--verde-osc);
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    nav.open { display: flex; }
+    nav a {
+      color: #cce8d8; text-decoration: none; font-size: .95rem; font-weight: 600;
+      padding: .85rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: background .2s, color .2s; display: flex; align-items: center; gap: .5rem;
+    }
+    nav a:hover, nav a.active { background: rgba(255,255,255,.1); color: #fff; }
 
-    .hero-pilares { max-width: 1280px; margin: 3rem auto 0; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.12); display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; position: relative; z-index: 1; }
-    .pilar { display: flex; align-items: center; gap: .8rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: .85rem 1.3rem; transition: background .25s, transform .2s; cursor: default; }
-    .pilar:hover { background: rgba(255,255,255,.13); transform: translateY(-2px); }
-    .pilar .ico { font-size: 1.7rem; }
-    .pilar .txt .p-titulo { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); }
-    .pilar .txt .p-desc { font-size: .85rem; color: #c0e4cf; }
+    /* Desktop nav */
+    @media (min-width: 900px) {
+      .header-inner { max-width: 1280px; margin: 0 auto; padding: .8rem 2rem; }
+      .menu-btn { display: none; }
+      nav {
+        display: flex !important; flex-direction: row;
+        background: transparent; border: none; gap: .1rem;
+      }
+      nav a { padding: .4rem .75rem; border: none; font-size: .82rem; border-radius: 5px; }
+    }
 
-    /* ── SECTIONS BASE ── */
-    section { padding: 5.5rem 2rem; }
+    /* ══════════════════════════════════════
+       LAYOUT HELPERS
+    ══════════════════════════════════════ */
+    section { padding: 3.5rem 1rem; }
     .container { max-width: 1280px; margin: 0 auto; }
-    .section-title { text-align: center; margin-bottom: 3.5rem; }
-    .section-title .tag { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: .4rem; }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.7rem); font-weight: 900; color: var(--negro); line-height: 1.15; }
-    .section-title p { color: var(--gris); font-size: .95rem; margin-top: .6rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+    .section-title { text-align: center; margin-bottom: 2.5rem; padding: 0 .5rem; }
+    .section-title .tag { font-size: .68rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: .4rem; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 5vw, 2.6rem); font-weight: 900; line-height: 1.15; }
+    .section-title p { color: var(--gris); font-size: .93rem; margin-top: .5rem; line-height: 1.65; }
 
-    /* ── DOCTRINA ── */
+    @media (min-width: 900px) {
+      section { padding: 5rem 2rem; }
+      .section-title { margin-bottom: 3.5rem; }
+    }
+
+    /* ══════════════════════════════════════
+       BUTTONS
+    ══════════════════════════════════════ */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; padding: .8rem 1.5rem; font-size: .9rem; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; transition: transform .18s, box-shadow .18s, background .18s; min-height: 48px; }
+    .btn:active { transform: scale(.96); }
+    .btn-gold { background: var(--dorado); color: var(--negro); }
+    .btn-gold:hover { box-shadow: 0 5px 18px rgba(200,168,75,.4); }
+    .btn-verde { background: var(--verde); color: #fff; }
+    .btn-verde:hover { background: var(--verde-osc); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.45); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .btn-block { display: flex; width: 100%; }
+
+    /* ══════════════════════════════════════
+       HERO — MOBILE FIRST
+    ══════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(160deg, var(--verde-osc) 0%, #1a6e36 60%, var(--verde-cla) 100%);
+      position: relative; overflow: hidden;
+      padding: 3rem 1rem 2.5rem;
+      min-height: 100svh; display: flex; align-items: center;
+    }
+    .hero-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hero-particles span { position: absolute; border-radius: 50%; background: rgba(200,168,75,.35); animation: float-up linear infinite; }
+    @keyframes float-up { 0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:.4}100%{transform:translateY(-10vh) scale(1.4);opacity:0} }
+
+    .hero-inner { position: relative; z-index: 1; width: 100%; }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: var(--dorado); color: var(--negro);
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: .32rem .9rem; border-radius: 20px; margin-bottom: 1rem;
+      animation: pulse-badge 3s ease-in-out infinite;
+    }
+    @keyframes pulse-badge { 0%,100%{box-shadow:0 0 0 0 rgba(200,168,75,.4)}50%{box-shadow:0 0 0 8px rgba(200,168,75,0)} }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 8vw, 4rem);
+      font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: .5rem;
+    }
+    .hero h1 em { color: var(--dorado); font-style: normal; display: block; }
+    .hero-lema { font-size: .95rem; color: var(--dorado-cla); font-weight: 600; font-style: italic; border-left: 3px solid var(--dorado); padding-left: .8rem; margin-bottom: .8rem; }
+    .hero-desc { font-size: .95rem; color: #c0e4cf; line-height: 1.7; margin-bottom: 1.8rem; }
+
+    .hero-btns { display: flex; flex-direction: column; gap: .7rem; }
+    .hero-btns .btn { width: 100%; justify-content: center; }
+
+    /* Candidate card — mobile */
+    .candidate-card {
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px; padding: 1.8rem 1.4rem; text-align: center; color: #fff;
+      margin-top: 2rem; animation: card-float 4s ease-in-out infinite;
+    }
+    @keyframes card-float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)} }
+    .candidate-photo {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: linear-gradient(160deg, var(--verde-osc), var(--verde-cla));
+      margin: 0 auto 1rem; overflow: hidden;
+      border: 3px solid rgba(255,255,255,.3); box-shadow: 0 6px 24px rgba(0,0,0,.35);
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .candidate-photo img { width: 120%; object-fit: contain; object-position: bottom; margin-bottom: -4px; }
+    .candidate-card .c-tag { font-size: .63rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dorado); margin-bottom: .3rem; }
+    .candidate-card .c-nombre { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; line-height: 1.2; margin-bottom: .2rem; }
+    .candidate-card .c-cargo { font-size: .8rem; color: #a8dbbe; margin-bottom: .5rem; }
+    .c-specs { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1.1rem; }
+    .c-spec { background: rgba(255,255,255,.08); border-radius: 6px; padding: .4rem .7rem; font-size: .75rem; color: #c0e4cf; text-align: left; display: flex; align-items: center; gap: .4rem; }
+    .candidate-pill { display: inline-block; background: var(--dorado); color: var(--negro); font-size: .75rem; font-weight: 700; padding: .4rem 1rem; border-radius: 20px; }
+
+    .hero-pilares { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 2rem; position: relative; z-index: 1; }
+    .pilar { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: .75rem; display: flex; align-items: center; gap: .6rem; transition: background .2s; }
+    .pilar:active { background: rgba(255,255,255,.14); }
+    .pilar .ico { font-size: 1.4rem; flex-shrink: 0; }
+    .pilar .txt .p-titulo { font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--dorado); }
+    .pilar .txt .p-desc { font-size: .78rem; color: #c0e4cf; line-height: 1.2; }
+
+    /* Desktop hero grid */
+    @media (min-width: 900px) {
+      .hero { min-height: 90vh; padding: 5rem 2rem 4rem; }
+      .hero-inner { display: grid; grid-template-columns: 1fr 370px; gap: 3rem; align-items: center; max-width: 1280px; margin: 0 auto; }
+      .hero-btns { flex-direction: row; flex-wrap: wrap; }
+      .hero-btns .btn { width: auto; }
+      .candidate-card { margin-top: 0; }
+      .hero-pilares { grid-template-columns: repeat(5, 1fr); max-width: 1280px; margin: 3rem auto 0; border-top: 1px solid rgba(255,255,255,.12); padding-top: 2.5rem; }
+    }
+
+    /* ══════════════════════════════════════
+       DOCTRINA
+    ══════════════════════════════════════ */
     #doctrina { background: var(--doct-bg); position: relative; overflow: hidden; }
-    #doctrina::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpath d='M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z' stroke='%23c8a84b' stroke-opacity='0.04' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E"); }
+    #doctrina::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(200,168,75,.06) 0%, transparent 60%);
+    }
     #doctrina .section-title .tag { color: var(--dorado); }
     #doctrina .section-title h2 { color: #fff; }
     #doctrina .section-title p { color: #a89060; }
 
-    .doctrina-intro { background: rgba(200,168,75,.08); border: 1px solid rgba(200,168,75,.2); border-radius: 14px; padding: 2.5rem 3rem; margin-bottom: 3rem; text-align: center; position: relative; }
-    .doctrina-intro .cruz { font-size: 3rem; margin-bottom: .8rem; }
-    .doctrina-intro h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--dorado); margin-bottom: .8rem; }
-    .doctrina-intro p { color: #c0a870; line-height: 1.75; font-size: .97rem; max-width: 720px; margin: 0 auto; }
+    .doctrina-intro {
+      background: rgba(200,168,75,.07); border: 1px solid rgba(200,168,75,.18);
+      border-radius: var(--radio); padding: 1.5rem; margin-bottom: 2rem; text-align: center;
+    }
+    .doctrina-intro .cruz { font-size: 2.5rem; margin-bottom: .6rem; }
+    .doctrina-intro h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 900; color: var(--dorado); margin-bottom: .6rem; }
+    .doctrina-intro p { color: #c0a870; line-height: 1.72; font-size: .9rem; }
 
-    /* Contador animado */
-    .doctrina-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 3rem; }
-    .d-stat { text-align: center; }
-    .d-stat .num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--dorado); line-height: 1; }
-    .d-stat .lbl { font-size: .75rem; color: #a89060; letter-spacing: .08em; text-transform: uppercase; margin-top: .3rem; }
+    .doctrina-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .d-stat { background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.12); border-radius: var(--radio); padding: 1.2rem; text-align: center; }
+    .d-stat .num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--dorado); line-height: 1; }
+    .d-stat .lbl { font-size: .7rem; color: #a89060; letter-spacing: .06em; text-transform: uppercase; margin-top: .3rem; }
+
+    @media (min-width: 600px) { .doctrina-stats { grid-template-columns: repeat(4, 1fr); } }
 
     /* Pensadores */
-    .pensadores-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-    .pensador-card { background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.15); border-radius: 12px; padding: 2rem; position: relative; overflow: hidden; transition: border-color .3s, background .3s; }
+    .pensadores-grid { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 2.5rem; }
+    @media (min-width: 700px) { .pensadores-grid { display: grid; grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .pensadores-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .pensador-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(200,168,75,.14);
+      border-radius: var(--radio); padding: 1.4rem; position: relative; overflow: hidden;
+      transition: border-color .3s, background .3s;
+    }
     .pensador-card:hover { border-color: rgba(200,168,75,.4); background: rgba(255,255,255,.07); }
-    .pensador-card::before { content: '"'; position: absolute; top: -.5rem; left: 1.2rem; font-family: 'Playfair Display', serif; font-size: 6rem; color: rgba(200,168,75,.1); line-height: 1; pointer-events: none; }
-    .pensador-epoca { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); margin-bottom: .5rem; }
-    .pensador-nombre { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 900; color: #fff; margin-bottom: .3rem; }
-    .pensador-titulo { font-size: .78rem; color: #a89060; margin-bottom: 1rem; font-style: italic; }
-    .pensador-cita { font-size: .9rem; color: #d4b87a; line-height: 1.7; font-style: italic; margin-bottom: 1rem; border-left: 2px solid rgba(200,168,75,.3); padding-left: 1rem; }
-    .pensador-aporte { font-size: .84rem; color: #8a9060; line-height: 1.65; }
+    .pensador-card::before { content: '"'; position: absolute; top: -.3rem; left: 1rem; font-family: 'Playfair Display', serif; font-size: 5rem; color: rgba(200,168,75,.08); line-height: 1; pointer-events: none; }
+    .pensador-epoca { font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); margin-bottom: .4rem; }
+    .pensador-nombre { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 900; color: #fff; margin-bottom: .2rem; }
+    .pensador-titulo { font-size: .75rem; color: #a89060; margin-bottom: .8rem; font-style: italic; }
+    .pensador-cita { font-size: .87rem; color: #d4b87a; line-height: 1.65; font-style: italic; margin-bottom: .8rem; border-left: 2px solid rgba(200,168,75,.3); padding-left: .85rem; }
+    .pensador-aporte { font-size: .82rem; color: #8a9068; line-height: 1.65; }
+    .pensador-aporte strong { color: var(--dorado); }
 
-    /* Principios doctrinales */
-    .principios-doc { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
-    .prin-card { background: rgba(255,255,255,.03); border: 1px solid rgba(200,168,75,.12); border-radius: 10px; padding: 1.5rem; transition: transform .25s, background .25s; }
+    /* Principios */
+    .principios-doc { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (min-width: 900px) { .principios-doc { grid-template-columns: repeat(5, 1fr); } }
+    .prin-card { background: rgba(255,255,255,.03); border: 1px solid rgba(200,168,75,.11); border-radius: var(--radio); padding: 1.2rem; transition: transform .25s, background .25s; }
     .prin-card:hover { transform: translateY(-3px); background: rgba(255,255,255,.06); }
-    .prin-card .p-ico { font-size: 2rem; margin-bottom: .6rem; }
-    .prin-card h4 { font-size: .97rem; font-weight: 700; color: var(--dorado); margin-bottom: .5rem; }
-    .prin-card p { font-size: .84rem; color: #a89060; line-height: 1.65; }
-    .prin-card .fuente { font-size: .72rem; color: rgba(200,168,75,.5); margin-top: .5rem; font-style: italic; }
+    .prin-card .p-ico { font-size: 1.8rem; margin-bottom: .5rem; }
+    .prin-card h4 { font-size: .9rem; font-weight: 700; color: var(--dorado); margin-bottom: .4rem; }
+    .prin-card p { font-size: .8rem; color: #a89060; line-height: 1.6; }
+    .prin-card .fuente { font-size: .68rem; color: rgba(200,168,75,.45); margin-top: .4rem; font-style: italic; }
 
-    /* ── IDEARIO ── */
+    /* ══════════════════════════════════════
+       CITA ROTANTE
+    ══════════════════════════════════════ */
+    .cita-bloque { text-align: center; padding: 2.5rem 1.2rem; }
+    .cita-bloque .inner { max-width: 760px; margin: 0 auto; }
+    .cita-bloque blockquote { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 3.5vw, 1.6rem); font-style: italic; color: var(--dorado-cla); line-height: 1.6; margin-bottom: .7rem; transition: opacity .5s; }
+    .cita-bloque cite { font-size: .82rem; color: #a8dbbe; }
+
+    /* ══════════════════════════════════════
+       IDEARIO
+    ══════════════════════════════════════ */
     #ideario { background: var(--gris-cla); }
-    .ideario-tabs { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
-    .id-tab { background: #fff; border: 1.5px solid #d4e6d9; border-radius: 30px; padding: .6rem 1.4rem; font-size: .85rem; font-weight: 600; color: var(--gris); cursor: pointer; transition: all .25s; }
+    .ideario-tabs { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: center; margin-bottom: 1.5rem; }
+    .id-tab {
+      background: #fff; border: 1.5px solid #d4e6d9; border-radius: 30px;
+      padding: .55rem 1.1rem; font-size: .82rem; font-weight: 600; color: var(--gris);
+      cursor: pointer; transition: all .22s; min-height: 40px;
+    }
     .id-tab.active, .id-tab:hover { background: var(--verde); border-color: var(--verde); color: #fff; }
-    .id-panel { display: none; animation: fadeIn .4s ease; }
+    .id-panel { display: none; animation: fadeSlide .4s ease; }
     .id-panel.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-    .ideario-content { background: #fff; border-radius: 14px; padding: 2.5rem 3rem; border: 1px solid #d4e6d9; }
-    .ideario-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--verde-osc); margin-bottom: 1rem; }
-    .ideario-content .subtitulo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde); margin-bottom: .4rem; display: block; }
-    .ideario-content p { color: var(--gris); line-height: 1.78; font-size: .95rem; margin-bottom: 1rem; }
+    @keyframes fadeSlide { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:none } }
+    .ideario-content { background: #fff; border-radius: var(--radio); padding: 1.5rem; border: 1px solid #d4e6d9; }
+    .ideario-content h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--verde-osc); margin-bottom: .8rem; }
+    .ideario-content .subtitulo { font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde); display: block; margin-bottom: .3rem; }
+    .ideario-content p { color: var(--gris); line-height: 1.75; font-size: .92rem; margin-bottom: .9rem; }
     .ideario-content ul { list-style: none; padding: 0; }
-    .ideario-content ul li { font-size: .93rem; color: var(--gris); padding: .4rem 0 .4rem 1.4rem; position: relative; border-bottom: 1px solid #f0f5ee; line-height: 1.55; }
-    .ideario-content ul li::before { content: '✦'; position: absolute; left: 0; color: var(--verde-cla); font-size: .7rem; top: .55rem; }
-    .ideario-content blockquote { border-left: 4px solid var(--dorado); padding: 1rem 1.5rem; background: var(--dorado-cla); border-radius: 0 8px 8px 0; margin: 1.2rem 0; font-style: italic; color: #5a4010; font-size: .95rem; line-height: 1.7; }
+    .ideario-content ul li { font-size: .9rem; color: var(--gris); padding: .45rem 0 .45rem 1.4rem; position: relative; border-bottom: 1px solid #f0f5ee; line-height: 1.5; }
+    .ideario-content ul li::before { content: '✦'; position: absolute; left: 0; color: var(--verde-cla); font-size: .65rem; top: .6rem; }
+    .ideario-content blockquote { border-left: 4px solid var(--dorado); padding: .9rem 1.2rem; background: var(--dorado-cla); border-radius: 0 8px 8px 0; margin: 1rem 0; font-style: italic; color: #5a4010; font-size: .9rem; line-height: 1.7; }
+    @media (min-width: 900px) { .ideario-content { padding: 2.2rem 2.5rem; } }
 
-    /* ── SEGURIDAD ── */
-    #seguridad { background: #fff; }
-    .seg-header { background: linear-gradient(135deg, #6b1010, var(--rojo-seg)); border-radius: 14px; padding: 2.5rem 3rem; color: #fff; display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; position: relative; overflow: hidden; }
-    .seg-header::after { content: '🛡️'; position: absolute; right: 2rem; font-size: 7rem; opacity: .1; animation: shield-pulse 3s ease-in-out infinite; }
-    @keyframes shield-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    .seg-header .ico { font-size: 3.5rem; flex-shrink: 0; }
-    .seg-header h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: .4rem; }
-    .seg-header p { color: #f5c6c6; font-size: .95rem; line-height: 1.65; max-width: 620px; }
-    .seg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
-    .seg-card { border: 1.5px solid #f5c6c6; border-radius: 10px; padding: 1.5rem; background: var(--rojo-suave); transition: box-shadow .25s, transform .25s; }
-    .seg-card:hover { box-shadow: 0 6px 20px rgba(176,48,32,.12); transform: translateY(-3px); }
-    .seg-card .sc-icon { font-size: 1.6rem; margin-bottom: .6rem; }
-    .seg-card h4 { font-size: .97rem; font-weight: 700; color: #6b1010; margin-bottom: .5rem; }
-    .seg-card ul { list-style: none; padding: 0; }
-    .seg-card ul li { font-size: .85rem; color: #6b3030; padding: .22rem 0 .22rem 1.2rem; position: relative; line-height: 1.5; }
-    .seg-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--rojo-seg); }
-    .seg-meta { background: #6b1010; color: #f5c6c6; border-radius: 10px; padding: 1.3rem 1.8rem; margin-top: 1.5rem; font-size: .9rem; line-height: 1.65; }
-    .seg-meta strong { color: #fff; font-style: italic; }
-
-    /* ── AUTOGESTIÓN ── */
-    #autogestion { background: var(--gris-cla); }
-    .auto-filosofia { background: linear-gradient(135deg, #0d2d44, var(--azul-auto)); border-radius: 14px; padding: 2.5rem 3rem; color: #fff; margin-bottom: 2.5rem; position: relative; overflow: hidden; }
-    .auto-filosofia::after { content: '🐟'; position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: .1; }
-    .auto-filosofia h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; margin-bottom: .6rem; }
-    .auto-filosofia .frase { font-size: 1.1rem; font-style: italic; color: #a8d4f0; border-left: 4px solid var(--dorado); padding-left: 1rem; margin-bottom: 1rem; font-weight: 600; }
-    .auto-filosofia p { color: #a8c8e0; font-size: .95rem; line-height: 1.7; max-width: 680px; }
-    .auto-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.4rem; }
-    .auto-card { background: #fff; border: 1.5px solid #c5daf0; border-radius: 12px; padding: 1.8rem; transition: box-shadow .25s, transform .25s; }
-    .auto-card:hover { box-shadow: 0 8px 24px rgba(26,82,118,.12); transform: translateY(-3px); }
-    .auto-card-header { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
-    .auto-card .ac-icon { font-size: 2rem; }
-    .auto-card h4 { font-size: 1rem; font-weight: 700; color: var(--azul-auto); line-height: 1.2; }
-    .auto-card .ac-tag { font-size: .67rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--azul-auto); background: var(--azul-suave); padding: .2rem .6rem; border-radius: 10px; display: inline-block; margin-bottom: .6rem; }
-    .auto-card p { font-size: .87rem; color: var(--gris); line-height: 1.65; margin-bottom: .8rem; }
-    .auto-card .resultado { background: var(--azul-suave); border-radius: 6px; padding: .7rem 1rem; font-size: .83rem; color: var(--azul-auto); font-weight: 600; }
-    .auto-card .resultado span { color: var(--negro); font-weight: 400; }
-    .auto-principios { margin-top: 2.5rem; background: linear-gradient(135deg, #0d2d44, var(--azul-auto)); border-radius: 12px; padding: 2rem 2.5rem; color: #fff; }
-    .auto-principios h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: 1.2rem; color: var(--dorado); }
-    .principios-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-    .principio { display: flex; align-items: flex-start; gap: .7rem; }
-    .principio .p-ico { font-size: 1.4rem; flex-shrink: 0; margin-top: .1rem; }
-    .principio .p-txt strong { display: block; font-size: .87rem; color: #fff; margin-bottom: .15rem; }
-    .principio .p-txt span { font-size: .8rem; color: #a8c8e0; line-height: 1.4; }
-
-    /* ── CANDIDATO ── */
+    /* ══════════════════════════════════════
+       CANDIDATO — MOBILE FIRST
+    ══════════════════════════════════════ */
     #candidato { background: #fff; }
-    .candidato-inner { display: grid; grid-template-columns: 340px 1fr; gap: 4rem; align-items: center; }
-    .candidato-foto { width: 100%; aspect-ratio: 3/4; background: linear-gradient(145deg, var(--verde-osc), var(--verde)); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; box-shadow: 0 16px 48px rgba(13,74,36,.3); position: relative; overflow: hidden; }
-    .candidato-foto .initials { font-family: 'Playfair Display', serif; font-size: 7rem; font-weight: 900; color: rgba(255,255,255,.12); letter-spacing: -6px; }
-    .foto-badge { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%); background: var(--dorado); color: var(--negro); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .4rem 1.2rem; border-radius: 20px; white-space: nowrap; }
-    .partido-tag { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 4px; }
-    .candidato-info h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--negro); margin-bottom: .3rem; line-height: 1.2; }
-    .candidato-info .titulo-c { font-size: 1rem; color: var(--verde); font-weight: 700; margin-bottom: 1.2rem; }
-    .candidato-info p { color: var(--gris); line-height: 1.75; font-size: .97rem; margin-bottom: 1rem; }
-    .valores-lista { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.2rem 0 1.8rem; }
-    .valor-chip { background: var(--verde-suave); color: var(--verde); font-size: .77rem; font-weight: 700; padding: .35rem .9rem; border-radius: 20px; border: 1px solid #b8ddc5; transition: background .2s; }
+
+    .candidato-foto-wrap { position: relative; max-width: 280px; margin: 0 auto 2rem; }
+    .candidato-foto {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(160deg, var(--verde-osc) 0%, #1a6e36 55%, var(--verde-cla) 100%);
+      border-radius: 16px;
+      display: flex; align-items: flex-end; justify-content: center;
+      box-shadow: var(--sombra-md); position: relative; overflow: hidden;
+    }
+    .candidato-foto img {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; object-fit: contain; object-position: bottom center;
+      filter: drop-shadow(0 6px 20px rgba(0,0,0,.4));
+    }
+    .foto-badge { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); background: var(--dorado); color: var(--negro); font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: .38rem 1.1rem; border-radius: 20px; white-space: nowrap; }
+    .partido-tag { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); color: #fff; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .28rem .65rem; border-radius: 4px; }
+
+    .candidato-info h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 5vw, 2.2rem); font-weight: 900; line-height: 1.15; margin-bottom: .25rem; }
+    .candidato-info .titulo-c { font-size: .9rem; color: var(--verde); font-weight: 700; margin-bottom: 1rem; }
+    .candidato-info p { color: var(--gris); line-height: 1.72; font-size: .92rem; margin-bottom: .85rem; }
+
+    /* Formación académica — tarjetas */
+    .formacion-grid { display: flex; flex-direction: column; gap: .7rem; margin: 1.2rem 0; }
+    .formacion-card {
+      display: flex; align-items: flex-start; gap: .8rem;
+      background: var(--gris-cla); border-radius: 10px; padding: .9rem 1rem;
+      border-left: 3px solid var(--verde);
+    }
+    .formacion-card.crim { border-left-color: var(--rojo); }
+    .formacion-card .fc-ico { font-size: 1.5rem; flex-shrink: 0; }
+    .formacion-card .fc-txt .fc-titulo { font-size: .78rem; font-weight: 700; color: var(--negro); line-height: 1.25; }
+    .formacion-card .fc-txt .fc-sub { font-size: .73rem; color: var(--gris); margin-top: .15rem; }
+    .formacion-card.crim .fc-txt .fc-titulo { color: var(--rojo); }
+
+    /* Criminología badge especial */
+    .crim-destaque {
+      background: linear-gradient(135deg, #6b1010, var(--rojo));
+      border-radius: var(--radio); padding: 1.2rem; margin: 1rem 0;
+      color: #fff; display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .crim-destaque .ico { font-size: 2rem; flex-shrink: 0; }
+    .crim-destaque h4 { font-size: .95rem; font-weight: 700; margin-bottom: .3rem; }
+    .crim-destaque p { font-size: .82rem; color: #f5c6c6; line-height: 1.6; }
+
+    .valores-lista { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; }
+    .valor-chip { background: var(--verde-suave); color: var(--verde); font-size: .75rem; font-weight: 700; padding: .32rem .85rem; border-radius: 20px; border: 1px solid #b8ddc5; transition: all .2s; }
     .valor-chip:hover { background: var(--verde); color: #fff; }
-    .mandate-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); color: #fff; border-radius: 10px; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.2rem; }
-    .mandate-year { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--dorado); line-height: 1; flex-shrink: 0; }
-    .mandate-text { font-size: .87rem; color: #a8dbbe; line-height: 1.55; }
+
+    .mandate-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); color: #fff; border-radius: 10px; padding: 1.1rem 1.3rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .mandate-year { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: var(--dorado); line-height: 1; flex-shrink: 0; }
+    .mandate-text { font-size: .83rem; color: #a8dbbe; line-height: 1.5; }
     .mandate-text strong { color: #fff; }
 
-    /* ── NOSOTROS ── */
-    #nosotros { background: var(--gris-cla); }
-    .nosotros-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .nosotros-visual { background: linear-gradient(145deg, var(--verde-osc), var(--verde)); border-radius: 16px; padding: 3rem 2.5rem; color: #fff; position: relative; overflow: hidden; }
-    .nosotros-visual::after { content: 'PPC'; position: absolute; right: -1rem; bottom: -2rem; font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 900; color: rgba(255,255,255,.05); line-height: 1; }
-    .nosotros-visual h3 { font-family: 'Playfair Display', serif; font-size: 1.65rem; margin-bottom: 1rem; line-height: 1.2; }
-    .nosotros-visual p { color: #b8ddc5; line-height: 1.75; font-size: .95rem; margin-bottom: .8rem; }
-    .nosotros-visual .hl { color: var(--dorado); font-weight: 700; }
+    @media (min-width: 900px) {
+      .candidato-inner { display: grid; grid-template-columns: 340px 1fr; gap: 4rem; align-items: start; }
+      .candidato-foto-wrap { max-width: 100%; margin: 0; }
+    }
 
-    /* ── DIRECTIVOS ── */
+    /* ══════════════════════════════════════
+       SEGURIDAD
+    ══════════════════════════════════════ */
+    #seguridad { background: var(--blanco); }
+    .seg-header {
+      background: linear-gradient(135deg, #6b1010, var(--rojo));
+      border-radius: var(--radio); padding: 1.4rem; color: #fff;
+      margin-bottom: 1.5rem; position: relative; overflow: hidden;
+    }
+    .seg-header::after { content: '🛡️'; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); font-size: 5rem; opacity: .1; }
+    .seg-header .sh-icon { font-size: 2.5rem; margin-bottom: .5rem; }
+    .seg-header h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: .4rem; }
+    .seg-header p { color: #f5c6c6; font-size: .88rem; line-height: 1.65; }
+    /* Criminología conexión */
+    .crim-banner {
+      background: rgba(176,48,32,.1); border: 1.5px solid rgba(176,48,32,.3);
+      border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem;
+      display: flex; align-items: flex-start; gap: .8rem;
+    }
+    .crim-banner .ico { font-size: 1.6rem; flex-shrink: 0; }
+    .crim-banner p { font-size: .85rem; color: var(--rojo); line-height: 1.6; }
+    .crim-banner strong { color: #6b1010; }
+
+    .seg-grid { display: flex; flex-direction: column; gap: 1rem; }
+    @media (min-width: 600px) { .seg-grid { display: grid; grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .seg-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .seg-card { border: 1.5px solid #f5c6c6; border-radius: var(--radio); padding: 1.2rem; background: var(--rojo-suave); transition: box-shadow .25s, transform .25s; }
+    .seg-card:hover { box-shadow: 0 6px 20px rgba(176,48,32,.12); transform: translateY(-2px); }
+    .seg-card .sc-icon { font-size: 1.5rem; margin-bottom: .5rem; }
+    .seg-card h4 { font-size: .93rem; font-weight: 700; color: #6b1010; margin-bottom: .5rem; }
+    .seg-card ul { list-style: none; padding: 0; }
+    .seg-card ul li { font-size: .83rem; color: #6b3030; padding: .2rem 0 .2rem 1.1rem; position: relative; line-height: 1.5; }
+    .seg-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--rojo); }
+    .seg-meta { background: #6b1010; color: #f5c6c6; border-radius: 10px; padding: 1.1rem 1.3rem; margin-top: 1.3rem; font-size: .87rem; line-height: 1.65; font-style: italic; }
+    .seg-meta strong { color: #fff; font-style: normal; }
+
+    /* ══════════════════════════════════════
+       AUTOGESTIÓN
+    ══════════════════════════════════════ */
+    #autogestion { background: var(--gris-cla); }
+    .auto-filosofia {
+      background: linear-gradient(135deg, #0d2d44, var(--azul));
+      border-radius: var(--radio); padding: 1.5rem; color: #fff; margin-bottom: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .auto-filosofia::after { content: '🐟'; position: absolute; right: 1rem; bottom: .5rem; font-size: 4rem; opacity: .1; }
+    .auto-filosofia h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: .5rem; }
+    .auto-filosofia .frase { font-size: .95rem; font-style: italic; color: #a8d4f0; border-left: 3px solid var(--dorado); padding-left: .8rem; margin-bottom: .8rem; font-weight: 600; }
+    .auto-filosofia p { color: #a8c8e0; font-size: .88rem; line-height: 1.7; }
+
+    .auto-grid { display: flex; flex-direction: column; gap: 1rem; }
+    @media (min-width: 600px) { .auto-grid { display: grid; grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1000px) { .auto-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .auto-card { background: #fff; border: 1.5px solid #c5daf0; border-radius: var(--radio); padding: 1.3rem; transition: box-shadow .25s, transform .25s; }
+    .auto-card:hover { box-shadow: 0 8px 24px rgba(26,82,118,.12); transform: translateY(-2px); }
+    .auto-card .ac-header { display: flex; align-items: center; gap: .6rem; margin-bottom: .8rem; }
+    .auto-card .ac-icon { font-size: 1.7rem; }
+    .auto-card h4 { font-size: .92rem; font-weight: 700; color: var(--azul); line-height: 1.2; }
+    .auto-card .ac-tag { font-size: .65rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--azul); background: var(--azul-suave); padding: .18rem .55rem; border-radius: 10px; display: inline-block; margin-bottom: .5rem; }
+    .auto-card p { font-size: .84rem; color: var(--gris); line-height: 1.62; margin-bottom: .7rem; }
+    .auto-card .resultado { background: var(--azul-suave); border-radius: 6px; padding: .6rem .85rem; font-size: .8rem; color: var(--azul); font-weight: 600; }
+    .auto-card .resultado span { color: var(--negro); font-weight: 400; }
+
+    .auto-principios { margin-top: 1.8rem; background: linear-gradient(135deg, #0d2d44, var(--azul)); border-radius: var(--radio); padding: 1.5rem; color: #fff; }
+    .auto-principios h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 900; color: var(--dorado); margin-bottom: 1rem; }
+    .principios-grid { display: flex; flex-direction: column; gap: .85rem; }
+    @media (min-width: 700px) { .principios-grid { display: grid; grid-template-columns: repeat(5, 1fr); } }
+    .principio { display: flex; align-items: flex-start; gap: .6rem; }
+    .principio .p-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .principio .p-txt strong { display: block; font-size: .85rem; color: #fff; margin-bottom: .12rem; }
+    .principio .p-txt span { font-size: .78rem; color: #a8c8e0; line-height: 1.4; }
+
+    /* ══════════════════════════════════════
+       NOSOTROS
+    ══════════════════════════════════════ */
+    #nosotros { background: #fff; }
+    .nosotros-visual { background: linear-gradient(145deg, var(--verde-osc), var(--verde)); border-radius: 16px; padding: 2rem 1.5rem; color: #fff; position: relative; overflow: hidden; margin-bottom: 1.5rem; }
+    .nosotros-visual::after { content: 'PPC'; position: absolute; right: -1rem; bottom: -2rem; font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 900; color: rgba(255,255,255,.05); line-height: 1; }
+    .nosotros-visual h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: .8rem; line-height: 1.2; }
+    .nosotros-visual p { color: #b8ddc5; line-height: 1.72; font-size: .9rem; margin-bottom: .7rem; }
+    .nosotros-visual .hl { color: var(--dorado); font-weight: 700; }
+    .nos-cards { display: flex; flex-direction: column; gap: .8rem; }
+    .nos-card { background: var(--gris-cla); border-radius: 10px; padding: 1.1rem 1.2rem; border-left: 3px solid var(--verde); }
+    .nos-card .nc-label { font-size: .67rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde); margin-bottom: .3rem; }
+    .nos-card p { color: var(--gris); font-size: .88rem; line-height: 1.7; }
+    @media (min-width: 900px) {
+      .nosotros-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+      .nosotros-visual { margin-bottom: 0; }
+    }
+
+    /* ══════════════════════════════════════
+       DIRECTIVOS
+    ══════════════════════════════════════ */
     #directivos { background: var(--verde-osc); }
     #directivos .section-title h2 { color: #fff; }
     #directivos .section-title p { color: #a8dbbe; }
     #directivos .section-title .tag { color: var(--dorado); }
-    .directivos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 1.2rem; }
-    .directivo-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 1.6rem 1.2rem; text-align: center; transition: background .25s, transform .25s; }
-    .directivo-card:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
-    .directivo-avatar { width: 62px; height: 62px; background: linear-gradient(135deg, var(--dorado), #7a5c1a); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; }
-    .directivo-card .cargo { font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); display: block; margin-bottom: .3rem; }
-    .directivo-card .nombre { font-size: .9rem; font-weight: 700; color: #fff; }
+    .directivos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    @media (min-width: 700px) { .directivos-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1000px) { .directivos-grid { grid-template-columns: repeat(6, 1fr); } }
+    .directivo-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radio); padding: 1.3rem .9rem; text-align: center; transition: background .25s, transform .2s; }
+    .directivo-card:hover { background: rgba(255,255,255,.12); transform: translateY(-2px); }
+    .directivo-avatar { width: 56px; height: 56px; background: linear-gradient(135deg, var(--dorado), #7a5c1a); border-radius: 50%; margin: 0 auto .8rem; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; color: #fff; }
+    .directivo-card .cargo { font-size: .63rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--dorado); display: block; margin-bottom: .25rem; }
+    .directivo-card .nombre { font-size: .85rem; font-weight: 700; color: #fff; }
 
-    /* ── CONTACTO ── */
+    /* ══════════════════════════════════════
+       CONTACTO
+    ══════════════════════════════════════ */
     #contacto { background: var(--blanco); }
-    .contacto-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .info-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
-    .info-icon { width: 44px; height: 44px; border-radius: 8px; background: var(--verde-suave); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
-    .info-item h4 { font-size: .73rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin-bottom: .2rem; }
-    .info-item p { font-size: .92rem; color: var(--gris); line-height: 1.6; }
-    .info-item a { color: var(--verde); }
-    .contacto-form { display: flex; flex-direction: column; gap: 1rem; }
-    .contacto-form input, .contacto-form textarea, .contacto-form select { background: #fff; border: 1.5px solid #d4e6d9; border-radius: 7px; padding: .82rem 1rem; color: var(--negro); font-size: .93rem; font-family: inherit; transition: border-color .2s; outline: none; }
+    .contacto-inner { display: flex; flex-direction: column; gap: 2rem; }
+    @media (min-width: 900px) { .contacto-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; } }
+    .info-item { display: flex; gap: .9rem; align-items: flex-start; margin-bottom: 1.3rem; }
+    .info-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--verde-suave); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .info-item h4 { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin-bottom: .15rem; }
+    .info-item p { font-size: .9rem; color: var(--gris); line-height: 1.55; }
+    .info-item a { color: var(--verde); text-decoration: none; }
+    .contacto-form { display: flex; flex-direction: column; gap: .85rem; }
+    .contacto-form input, .contacto-form textarea, .contacto-form select {
+      background: #fff; border: 1.5px solid #d4e6d9; border-radius: 8px;
+      padding: .82rem 1rem; color: var(--negro); font-size: .93rem; font-family: inherit;
+      transition: border-color .2s, box-shadow .2s; outline: none; width: 100%;
+      min-height: 48px; /* accesibilidad táctil */
+    }
     .contacto-form input:focus, .contacto-form textarea:focus, .contacto-form select:focus { border-color: var(--verde-cla); box-shadow: 0 0 0 3px rgba(42,171,87,.1); }
-    .contacto-form textarea { resize: vertical; min-height: 120px; }
-    .contacto-form button { background: var(--verde); color: #fff; border: none; padding: .9rem; font-size: 1rem; font-weight: 700; border-radius: 7px; cursor: pointer; transition: background .2s, transform .2s; }
-    .contacto-form button:hover { background: var(--verde-osc); transform: translateY(-1px); }
+    .contacto-form textarea { min-height: 110px; resize: vertical; }
+    .contacto-form button { background: var(--verde); color: #fff; border: none; padding: .9rem; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background .2s, transform .15s; min-height: 52px; }
+    .contacto-form button:hover { background: var(--verde-osc); }
+    .contacto-form button:active { transform: scale(.97); }
 
-    /* ── FOOTER ── */
-    footer { background: var(--negro); color: #4a5c4c; padding: 2.5rem 2rem; text-align: center; }
-    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--verde-cla); margin-bottom: .4rem; }
-    .footer-sub { font-size: .82rem; margin-bottom: .8rem; }
-    .footer-copy { font-size: .78rem; border-top: 1px solid #1e2e20; padding-top: .8rem; margin-top: .8rem; }
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer { background: var(--negro); color: #4a5c4c; padding: 2rem 1.2rem; text-align: center; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900; color: var(--verde-cla); margin-bottom: .4rem; }
+    .footer-sub { font-size: .78rem; margin-bottom: .8rem; line-height: 1.55; }
+    .footer-copy { font-size: .73rem; border-top: 1px solid #1e2e20; padding-top: .8rem; margin-top: .8rem; line-height: 1.6; }
     .footer-copy a { color: var(--verde-cla); text-decoration: none; }
 
-    /* ── SCROLL TOP ── */
-    #scroll-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--verde); color: #fff; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s; z-index: 999; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
-    #scroll-top.visible { opacity: 1; transform: none; }
+    /* ══════════════════════════════════════
+       SCROLL TOP BTN
+    ══════════════════════════════════════ */
+    #scroll-top { position: fixed; bottom: 1.2rem; right: 1.2rem; width: 46px; height: 46px; background: var(--verde); color: #fff; border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .3s, transform .3s; z-index: 999; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+    #scroll-top.visible { opacity: 1; pointer-events: auto; transform: none; }
     #scroll-top:hover { background: var(--verde-osc); }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .candidate-card { max-width: 320px; margin: 0 auto; }
-      .candidato-inner, .nosotros-inner, .contacto-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .candidato-foto { aspect-ratio: 1/1; max-width: 280px; margin: 0 auto; }
-      .seg-header, .auto-filosofia { flex-direction: column; text-align: center; padding: 2rem; }
-      .ideario-content { padding: 1.8rem; }
-    }
-    @media (max-width: 768px) {
-      nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--verde-osc); padding: 1rem 1.5rem; gap: .3rem; box-shadow: 0 8px 20px rgba(0,0,0,.3); }
-      nav.open { display: flex; }
-      .menu-btn { display: flex; }
-      section { padding: 4rem 1.5rem; }
-      .doctrina-intro { padding: 1.8rem; }
-    }
-
-    /* ── ANIMACIONES ── */
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    /* ══════════════════════════════════════
+       ANIMACIONES
+    ══════════════════════════════════════ */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
     .fade-up.visible { opacity: 1; transform: none; }
-    .fade-left { opacity: 0; transform: translateX(-28px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-left.visible { opacity: 1; transform: none; }
-    .fade-right { opacity: 0; transform: translateX(28px); transition: opacity .6s ease, transform .6s ease; }
-    .fade-right.visible { opacity: 1; transform: none; }
-
-    /* Cita flotante animada */
-    .cita-animada { text-align: center; padding: 3rem 2rem; background: var(--verde-osc); overflow: hidden; }
-    .cita-animada .inner { max-width: 800px; margin: 0 auto; }
-    .cita-animada blockquote { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 3vw, 1.8rem); font-style: italic; color: var(--dorado-cla); line-height: 1.6; margin-bottom: .8rem; }
-    .cita-animada cite { font-size: .85rem; color: #a8dbbe; letter-spacing: .05em; }
-
-    /* Progress bar animada */
-    .prog-bar-wrap { margin-top: .5rem; }
-    .prog-bar-bg { background: rgba(255,255,255,.1); border-radius: 4px; height: 5px; overflow: hidden; }
-    .prog-bar { height: 100%; border-radius: 4px; background: var(--dorado); width: 0; transition: width 1.2s ease; }
   </style>
 </head>
 <body>
 
   <!-- TOPBAR -->
   <div class="topbar">
-    <span>🗳️ Elecciones Municipales 2026 · Ate &nbsp;·&nbsp; <strong style="color:var(--dorado)">Dr. José Luis Hurtado Apaico — Alcalde 2027–2030</strong></span>
+    <span class="topbar-text">🗳️ Elecciones 2026 · Ate &nbsp;·&nbsp; <strong>Dr. Hurtado Apaico — Alcalde 2027–2030</strong></span>
     <div class="socials">
-      <a href="https://x.com/ppc_peru" target="_blank" title="X / Twitter">𝕏</a>
-      <a href="https://www.facebook.com/ppcperu/" target="_blank" title="Facebook">f</a>
-      <a href="https://www.instagram.com/ppc.peru/" target="_blank" title="Instagram">▣</a>
+      <a href="https://x.com/ppc_peru" target="_blank" aria-label="Twitter">𝕏</a>
+      <a href="https://www.facebook.com/ppcperu/" target="_blank" aria-label="Facebook">f</a>
+      <a href="https://www.instagram.com/ppc.peru/" target="_blank" aria-label="Instagram">▣</a>
     </div>
   </div>
 
@@ -315,49 +541,131 @@
           <div class="sub">Base Ate · Macro Zonal 4</div>
         </div>
       </a>
-      <nav id="nav">
-        <a href="#inicio">Inicio</a>
-        <a href="#doctrina">Doctrina</a>
-        <a href="#ideario">Ideario</a>
-        <a href="#seguridad">Seguridad</a>
-        <a href="#autogestion">Autogestión</a>
-        <a href="#candidato">Candidato</a>
-        <a href="#directivos">Directiva</a>
-        <a href="#contacto">Contacto</a>
+      <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" role="navigation">
+        <a href="#inicio">🏠 Inicio</a>
+        <a href="#candidato">👤 Candidato</a>
+        <a href="#doctrina">✝ Doctrina</a>
+        <a href="#ideario">📜 Ideario</a>
+        <a href="#seguridad">🛡️ Seguridad</a>
+        <a href="#autogestion">🌱 Autogestión</a>
+        <a href="#directivos">🤝 Directiva</a>
+        <a href="#contacto">✉️ Contacto</a>
       </nav>
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="hero-particles" id="particles"></div>
-    <div class="hero-inner">
+    <div class="hero-inner container">
       <div>
         <div class="hero-badge">🌿 PPC · Base Ate · Macro Zonal 4</div>
-        <h1>Ate segura.<br><em>Ate que se desarrolla.</em></h1>
+        <h1>Ate segura.<br><em>Ate que crece.</em></h1>
         <p class="hero-lema">"No solo darles el pescado, sino enseñarles a pescar."</p>
-        <p class="hero-desc">El Dr. José Luis Hurtado Apaico propone una gestión basada en la <strong style="color:#fff">Doctrina Social Cristiana</strong>: seguridad ciudadana real, proyectos que empoderen a la comunidad y una gestión ética al servicio del bien común.</p>
+        <p class="hero-desc">El Dr. José Luis Hurtado Apaico — <strong style="color:#fff">abogado, doctor y criminólogo</strong> — propone una gestión basada en la Doctrina Social Cristiana: seguridad real, empoderamiento comunitario y gestión ética.</p>
         <div class="hero-btns">
-          <a href="#doctrina" class="btn-gold">✝ Nuestra Doctrina</a>
-          <a href="#seguridad" class="btn-white-out">🛡️ Plan de Seguridad</a>
-          <a href="#autogestion" class="btn-white-out">🌱 Autogestión</a>
+          <a href="#candidato" class="btn btn-gold">👤 Nuestro candidato</a>
+          <a href="#seguridad" class="btn btn-outline">🛡️ Plan de Seguridad</a>
+          <a href="#autogestion" class="btn btn-outline">🌱 Autogestión</a>
         </div>
       </div>
       <div class="candidate-card">
-        <div class="candidate-photo">JH</div>
-        <div class="titulo">Candidato a Alcalde · Ate</div>
-        <div class="nombre">Dr. José Luis<br>Hurtado Apaico</div>
-        <div class="cargo-c">Partido Popular Cristiano</div>
+        <div class="candidate-photo"><img src="candidato.png" alt="Dr. José Luis Hurtado Apaico"></div>
+        <div class="c-tag">Candidato a Alcalde · Ate</div>
+        <div class="c-nombre">Dr. José Luis<br>Hurtado Apaico</div>
+        <div class="c-cargo">Partido Popular Cristiano</div>
+        <div class="c-specs">
+          <div class="c-spec">⚖️ Abogado &amp; Doctor en Derecho</div>
+          <div class="c-spec">🔍 Especialista en Criminología</div>
+          <div class="c-spec">🏛️ Base Ate · Macro Zonal 4</div>
+        </div>
         <div class="candidate-pill">🗳️ Alcalde 2027 – 2030</div>
       </div>
+      <div class="hero-pilares">
+        <div class="pilar"><div class="ico">✝</div><div class="txt"><div class="p-titulo">Base</div><div class="p-desc">Doctrina Social Cristiana</div></div></div>
+        <div class="pilar"><div class="ico">🛡️</div><div class="txt"><div class="p-titulo">Pilar 1</div><div class="p-desc">Seguridad Ciudadana</div></div></div>
+        <div class="pilar"><div class="ico">🌱</div><div class="txt"><div class="p-titulo">Pilar 2</div><div class="p-desc">Autogestión Comunitaria</div></div></div>
+        <div class="pilar"><div class="ico">⚖️</div><div class="txt"><div class="p-titulo">Pilar 3</div><div class="p-desc">Justicia y Bien Común</div></div></div>
+        <div class="pilar"><div class="ico">🤝</div><div class="txt"><div class="p-titulo">Pilar 4</div><div class="p-desc">Participación Ciudadana</div></div></div>
+      </div>
     </div>
-    <div class="hero-pilares">
-      <div class="pilar"><div class="ico">✝</div><div class="txt"><div class="p-titulo">Base</div><div class="p-desc">Doctrina Social Cristiana</div></div></div>
-      <div class="pilar"><div class="ico">🛡️</div><div class="txt"><div class="p-titulo">Pilar 1</div><div class="p-desc">Seguridad Ciudadana</div></div></div>
-      <div class="pilar"><div class="ico">🌱</div><div class="txt"><div class="p-titulo">Pilar 2</div><div class="p-desc">Proyectos Autogestionarios</div></div></div>
-      <div class="pilar"><div class="ico">⚖️</div><div class="txt"><div class="p-titulo">Pilar 3</div><div class="p-desc">Justicia y Bien Común</div></div></div>
-      <div class="pilar"><div class="ico">🤝</div><div class="txt"><div class="p-titulo">Pilar 4</div><div class="p-desc">Participación Ciudadana</div></div></div>
+  </section>
+
+  <!-- CANDIDATO -->
+  <section id="candidato">
+    <div class="container">
+      <div class="section-title fade-up">
+        <span class="tag">Nuestro candidato</span>
+        <h2>Dr. José Luis Hurtado Apaico</h2>
+        <p>Alcaldía del Distrito de Ate · Partido Popular Cristiano · 2027–2030</p>
+      </div>
+      <div class="candidato-inner">
+        <div class="candidato-foto-wrap fade-up">
+          <div class="candidato-foto">
+            <img src="candidato.png" alt="Dr. José Luis Hurtado Apaico · Candidato a Alcalde de Ate">
+            <div class="partido-tag">PPC</div>
+            <div class="foto-badge">Alcalde 2027–2030</div>
+          </div>
+        </div>
+        <div class="candidato-info fade-up">
+          <h2>Dr. José Luis<br>Hurtado Apaico</h2>
+          <p class="titulo-c">Candidato a la Alcaldía del Distrito de Ate</p>
+          <p>El Dr. José Luis Hurtado Apaico es un profesional con sólida formación académica y genuina vocación de servicio público. Su perfil único combina el rigor del derecho con la mirada científica de la criminología, lo que le permite abordar los problemas de <strong>seguridad ciudadana</strong> no solo con voluntad política sino con <strong>conocimiento técnico real</strong>.</p>
+
+          <!-- Formación -->
+          <div class="formacion-grid">
+            <div class="formacion-card">
+              <div class="fc-ico">⚖️</div>
+              <div class="fc-txt">
+                <div class="fc-titulo">Doctor en Derecho</div>
+                <div class="fc-sub">Formación jurídica de alto nivel · Gestión pública y municipal</div>
+              </div>
+            </div>
+            <div class="formacion-card crim">
+              <div class="fc-ico">🔍</div>
+              <div class="fc-txt">
+                <div class="fc-titulo">Especialista en Criminología</div>
+                <div class="fc-sub">Estudio científico del crimen · Prevención y política criminal</div>
+              </div>
+            </div>
+            <div class="formacion-card">
+              <div class="fc-ico">📋</div>
+              <div class="fc-txt">
+                <div class="fc-titulo">Gestión Pública</div>
+                <div class="fc-sub">Administración municipal · Políticas de desarrollo local</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Por qué la criminología importa -->
+          <div class="crim-destaque">
+            <div class="ico">🔍</div>
+            <div>
+              <h4>¿Por qué importa su formación en Criminología?</h4>
+              <p>La criminología es la ciencia que estudia el crimen, sus causas, sus patrones y su prevención. Un alcalde con esta formación no solo instala cámaras: <strong style="color:#fff">diseña políticas de prevención basadas en evidencia, identifica las causas raíz de la inseguridad</strong> y propone soluciones sostenibles que van más allá del patrullaje. Ate merece un alcalde que entiende el problema desde adentro.</p>
+            </div>
+          </div>
+
+          <p>Su visión integra la <strong>Doctrina Social Cristiana</strong> con el conocimiento técnico: cree, con Pío XI, que el Estado debe apoyar sin sustituir; con Juan Pablo II, que el trabajo dignifica; y con Tomás de Aquino, que el <em>bien común</em> es el fin de toda autoridad legítima.</p>
+
+          <div class="valores-lista">
+            <span class="valor-chip">✔ Criminología aplicada</span>
+            <span class="valor-chip">✔ Ética y Honestidad</span>
+            <span class="valor-chip">✔ Doctrina Social Cristiana</span>
+            <span class="valor-chip">✔ Bien Común</span>
+            <span class="valor-chip">✔ Subsidiariedad</span>
+            <span class="valor-chip">✔ Empoderamiento Vecinal</span>
+          </div>
+          <div class="mandate-box">
+            <div class="mandate-year">2027<br>2030</div>
+            <div class="mandate-text"><strong>Período de gestión municipal</strong><br>Elecciones Municipales 2026 · Distrito de Ate<br>PPC · Base Ate · Macro Zonal 4</div>
+          </div>
+          <a href="#contacto" class="btn btn-verde btn-block">Apoya la campaña</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -365,25 +673,25 @@
   <section id="doctrina">
     <div class="container">
       <div class="section-title fade-up">
-        <span class="tag">Fundamento espiritual e intelectual</span>
+        <span class="tag" style="color:var(--dorado)">Fundamento espiritual e intelectual</span>
         <h2 style="color:#fff">Doctrina Social Cristiana</h2>
-        <p>El PPC se funda en los principios que la Iglesia Católica y sus grandes pensadores han desarrollado a lo largo de siglos para orientar la vida política y social en justicia.</p>
+        <p>El PPC funda su propuesta en los principios que grandes pensadores de la Iglesia desarrollaron para orientar la vida política en justicia y dignidad.</p>
       </div>
 
       <div class="doctrina-intro fade-up">
         <div class="cruz">✝</div>
         <h3>¿Qué es la Doctrina Social Cristiana?</h3>
-        <p>Es el conjunto de principios y criterios que la Iglesia Católica ofrece a la humanidad para organizar la vida en sociedad con justicia, libertad y dignidad. No es una ideología política, sino una fuente de valores que ilumina la acción de quienes gobiernan. El Partido Popular Cristiano hace suya esta tradición como fundamento de su propuesta para Ate y el Perú.</p>
+        <p>Es el conjunto de principios que la Iglesia Católica ofrece para organizar la vida social con justicia, libertad y dignidad. No es una ideología partidaria, sino una fuente de valores que ilumina a quienes gobiernan. El PPC la hace suya como fundamento de toda su propuesta para Ate.</p>
       </div>
 
       <div class="doctrina-stats fade-up">
         <div class="d-stat"><div class="num" data-target="59">0</div><div class="lbl">Años del PPC</div></div>
         <div class="d-stat"><div class="num" data-target="13">0</div><div class="lbl">Encíclicas sociales</div></div>
-        <div class="d-stat"><div class="num" data-target="5">0</div><div class="lbl">Principios fundamentales</div></div>
-        <div class="d-stat"><div class="num" data-target="1966">0</div><div class="lbl">Año de fundación</div></div>
+        <div class="d-stat"><div class="num" data-target="5">0</div><div class="lbl">Principios clave</div></div>
+        <div class="d-stat"><div class="num" data-target="1966">0</div><div class="lbl">Año fundación</div></div>
       </div>
 
-      <h3 style="color:var(--dorado); font-family:'Playfair Display',serif; font-size:1.4rem; text-align:center; margin-bottom:1.8rem; font-weight:900;" class="fade-up">Los Grandes Pensadores de la Doctrina Social</h3>
+      <h3 class="fade-up" style="color:var(--dorado);font-family:'Playfair Display',serif;font-size:1.3rem;text-align:center;margin-bottom:1.5rem;font-weight:900;">Los Grandes Pensadores</h3>
 
       <div class="pensadores-grid">
         <div class="pensador-card fade-up">
@@ -391,87 +699,61 @@
           <div class="pensador-nombre">Santo Tomás de Aquino</div>
           <div class="pensador-titulo">Doctor Angélico · Patrón de las Universidades</div>
           <div class="pensador-cita">"La ley injusta no es ley en absoluto. El gobernante que actúa contra el bien común pierde su autoridad moral."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Tomás de Aquino sistematizó los fundamentos filosóficos del bien común, la justicia distributiva y la ley natural. Enseñó que toda autoridad política está subordinada a la ley moral y que el Estado existe para servir al hombre, no al revés. Su concepto de <em>bien común</em> es central en la propuesta del PPC para Ate.</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Sistematizó el bien común, la justicia distributiva y la ley natural. Enseñó que toda autoridad política está subordinada a la ley moral. Su concepto de <em>bien común</em> es central en la propuesta del PPC.</div>
         </div>
         <div class="pensador-card fade-up">
-          <div class="pensador-epoca">Siglo XIII · Teología Franciscana</div>
+          <div class="pensador-epoca">Siglo XIII · Franciscana</div>
           <div class="pensador-nombre">San Buenaventura</div>
           <div class="pensador-titulo">Doctor Seráfico · Ministro General Franciscano</div>
-          <div class="pensador-cita">"El amor a Dios y al prójimo son inseparables. No puede haber auténtica piedad sin compromiso con los pobres."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Junto a Tomás, San Buenaventura enfatizó la dimensión caritativa del pensamiento cristiano: el servicio al prójimo como expresión concreta de la fe. Su influencia se siente en los programas sociales que el PPC propone para las familias vulnerables de Ate.</div>
+          <div class="pensador-cita">"El amor a Dios y al prójimo son inseparables. No puede haber piedad sin compromiso con los pobres."</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Subrayó la dimensión caritativa del pensamiento cristiano: el servicio al prójimo como expresión concreta de la fe. Inspira los programas sociales del PPC para familias vulnerables de Ate.</div>
         </div>
         <div class="pensador-card fade-up">
           <div class="pensador-epoca">1891 · Encíclica Fundacional</div>
           <div class="pensador-nombre">Papa León XIII</div>
           <div class="pensador-titulo">Rerum Novarum — "De las cosas nuevas"</div>
           <div class="pensador-cita">"Los ricos y los pobres son, por naturaleza, iguales; solo por injusticia los unos oprimen y los otros son oprimidos."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Con la <em>Rerum Novarum</em> (1891) nació oficialmente la Doctrina Social Cristiana. León XIII defendió el derecho de los trabajadores a organizarse, la función social de la propiedad y el deber del Estado de proteger a los débiles sin caer en el socialismo ni en el liberalismo extremo.</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Con la <em>Rerum Novarum</em> (1891) nació la Doctrina Social Cristiana. Defendió el derecho de los trabajadores a organizarse y la función social de la propiedad.</div>
         </div>
         <div class="pensador-card fade-up">
-          <div class="pensador-epoca">1931 · Cuadragésimo Aniversario</div>
+          <div class="pensador-epoca">1931 · Subsidiariedad</div>
           <div class="pensador-nombre">Papa Pío XI</div>
-          <div class="pensador-titulo">Quadragesimo Anno — Principio de Subsidiariedad</div>
+          <div class="pensador-titulo">Quadragesimo Anno</div>
           <div class="pensador-cita">"Injusto es quitar a los individuos lo que ellos pueden realizar con sus propias fuerzas para confiárselo a la comunidad."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Pío XI formuló el <em>principio de subsidiariedad</em>: el Estado no debe hacer lo que los ciudadanos o comunidades menores pueden hacer por sí mismos. Este principio es el alma de los proyectos autogestionarios que el Dr. Hurtado Apaico propone para Ate.</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Formuló el <em>principio de subsidiariedad</em>: el Estado no debe hacer lo que los ciudadanos pueden hacer por sí mismos. Este principio es el alma de los proyectos autogestionarios del PPC.</div>
         </div>
         <div class="pensador-card fade-up">
-          <div class="pensador-epoca">1963 · Paz en la Tierra</div>
+          <div class="pensador-epoca">1963 · Derechos Humanos</div>
           <div class="pensador-nombre">Papa Juan XXIII</div>
           <div class="pensador-titulo">Pacem in Terris · Mater et Magistra</div>
-          <div class="pensador-cita">"Todo ser humano tiene derecho a vivir. Tiene derecho a la integridad corporal y a los medios necesarios para un decoroso nivel de vida."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Juan XXIII desarrolló una lista de derechos humanos fundamentales —trabajo, salud, vivienda, educación— que deben ser garantizados por toda autoridad legítima. Su visión inspira la agenda social del PPC en Ate: que cada vecino tenga acceso real a una vida digna.</div>
+          <div class="pensador-cita">"Todo ser humano tiene derecho a vivir y a los medios necesarios para un decoroso nivel de vida."</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Desarrolló la lista de derechos fundamentales —trabajo, salud, vivienda, educación— que toda autoridad legítima debe garantizar a los vecinos de Ate.</div>
         </div>
         <div class="pensador-card fade-up">
           <div class="pensador-epoca">1967–1991 · Evangelio Social</div>
           <div class="pensador-nombre">Papa Juan Pablo II</div>
-          <div class="pensador-titulo">Laborem Exercens · Centesimus Annus · Sollicitudo</div>
-          <div class="pensador-cita">"El trabajo es un bien del hombre, porque mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo."</div>
-          <div class="pensador-aporte"><strong style="color:#c8a84b">Aportes clave:</strong> Juan Pablo II reafirmó la centralidad de la persona humana en la economía y la política. Denunció tanto el comunismo como el capitalismo salvaje. Su encíclica <em>Centesimus Annus</em> es hoja de ruta para una economía al servicio de la persona — base del modelo de desarrollo autogestionario del PPC.</div>
+          <div class="pensador-titulo">Laborem Exercens · Centesimus Annus</div>
+          <div class="pensador-cita">"Mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo como ser humano."</div>
+          <div class="pensador-aporte"><strong>Aporte:</strong> Reafirmó la centralidad de la persona en la economía. Su <em>Centesimus Annus</em> es hoja de ruta para una economía al servicio del ser humano — base del modelo autogestionario del PPC.</div>
         </div>
       </div>
 
-      <h3 style="color:var(--dorado); font-family:'Playfair Display',serif; font-size:1.4rem; text-align:center; margin:3rem 0 1.8rem; font-weight:900;" class="fade-up">Los 5 Principios Fundamentales</h3>
-
+      <h3 class="fade-up" style="color:var(--dorado);font-family:'Playfair Display',serif;font-size:1.3rem;text-align:center;margin:2.5rem 0 1.5rem;font-weight:900;">Los 5 Principios Fundamentales</h3>
       <div class="principios-doc">
-        <div class="prin-card fade-up">
-          <div class="p-ico">👤</div>
-          <h4>Dignidad de la Persona Humana</h4>
-          <p>Cada ser humano tiene un valor intrínseco e inalienable por el solo hecho de ser persona. Todo programa político debe respetar y promover esta dignidad.</p>
-          <div class="fuente">— Base de toda la Doctrina Social Cristiana</div>
-        </div>
-        <div class="prin-card fade-up">
-          <div class="p-ico">🌍</div>
-          <h4>Bien Común</h4>
-          <p>El conjunto de condiciones sociales que permiten a todos los ciudadanos alcanzar su pleno desarrollo. El gobierno existe para servir al bien de todos, no de unos pocos.</p>
-          <div class="fuente">— Santo Tomás de Aquino · Summa Theologiae</div>
-        </div>
-        <div class="prin-card fade-up">
-          <div class="p-ico">🏘️</div>
-          <h4>Subsidiariedad</h4>
-          <p>Las decisiones deben tomarse en el nivel más cercano posible al ciudadano. El Estado no debe hacer lo que la comunidad puede hacer por sí misma.</p>
-          <div class="fuente">— Pío XI · Quadragesimo Anno (1931)</div>
-        </div>
-        <div class="prin-card fade-up">
-          <div class="p-ico">⚖️</div>
-          <h4>Solidaridad</h4>
-          <p>Todos somos responsables de todos. Las estructuras sociales deben asegurar que nadie quede excluido. Los más fuertes tienen obligación especial con los más débiles.</p>
-          <div class="fuente">— Juan Pablo II · Sollicitudo Rei Socialis (1987)</div>
-        </div>
-        <div class="prin-card fade-up">
-          <div class="p-ico">🌱</div>
-          <h4>Destino Universal de los Bienes</h4>
-          <p>Los bienes de la tierra están destinados a todos los hombres. La propiedad privada es un derecho, pero tiene una función social que obliga a su titular.</p>
-          <div class="fuente">— León XIII · Rerum Novarum (1891)</div>
-        </div>
+        <div class="prin-card fade-up"><div class="p-ico">👤</div><h4>Dignidad de la Persona</h4><p>Cada ser humano tiene valor inalienable. Todo programa político debe respetarla y promoverla.</p><div class="fuente">— Base de toda la DSC</div></div>
+        <div class="prin-card fade-up"><div class="p-ico">🌍</div><h4>Bien Común</h4><p>Condiciones que permiten a todos alcanzar su pleno desarrollo. El gobierno sirve al bien de todos.</p><div class="fuente">— Tomás de Aquino</div></div>
+        <div class="prin-card fade-up"><div class="p-ico">🏘️</div><h4>Subsidiariedad</h4><p>El Estado no debe hacer lo que la comunidad puede hacer por sí misma.</p><div class="fuente">— Pío XI, 1931</div></div>
+        <div class="prin-card fade-up"><div class="p-ico">⚖️</div><h4>Solidaridad</h4><p>Todos somos responsables de todos. Los más fuertes tienen obligación con los más débiles.</p><div class="fuente">— Juan Pablo II, 1987</div></div>
+        <div class="prin-card fade-up"><div class="p-ico">🌱</div><h4>Destino Universal</h4><p>Los bienes de la tierra están destinados a todos. La propiedad tiene una función social.</p><div class="fuente">— León XIII, 1891</div></div>
       </div>
     </div>
   </section>
 
-  <!-- CITA ANIMADA 1 -->
-  <div class="cita-animada fade-up">
+  <!-- CITA ROTANTE -->
+  <div class="cita-bloque fade-up" style="background:var(--verde-osc);">
     <div class="inner">
       <blockquote id="cita-rotante">"El hombre es por naturaleza un animal político, y vivir en sociedad no es para él una opción sino una necesidad."</blockquote>
-      <cite id="cita-autor">— Santo Tomás de Aquino, Comentario a la Política de Aristóteles</cite>
+      <cite id="cita-autor">— Santo Tomás de Aquino</cite>
     </div>
   </div>
 
@@ -481,101 +763,87 @@
       <div class="section-title fade-up">
         <span class="tag">Fundamentos del partido</span>
         <h2>Ideario y Principios del PPC</h2>
-        <p>El Partido Popular Cristiano fue fundado en 1966 con una identidad clara: democracia cristiana, humanismo político y compromiso con los más necesitados.</p>
+        <p>Fundado en 1966 con una identidad clara: democracia cristiana, humanismo político y compromiso con los más necesitados.</p>
       </div>
-
       <div class="ideario-tabs fade-up">
-        <button class="id-tab active" onclick="showIdPanel('fundacion')">Fundación e Historia</button>
-        <button class="id-tab" onclick="showIdPanel('democracia')">Democracia Cristiana</button>
-        <button class="id-tab" onclick="showIdPanel('economia')">Economía y Trabajo</button>
-        <button class="id-tab" onclick="showIdPanel('estatutos')">Estatutos y Estructura</button>
-        <button class="id-tab" onclick="showIdPanel('familia')">Familia y Sociedad</button>
+        <button class="id-tab active" onclick="showIdPanel('fundacion')">Historia</button>
+        <button class="id-tab" onclick="showIdPanel('democracia')">Democracia</button>
+        <button class="id-tab" onclick="showIdPanel('economia')">Economía</button>
+        <button class="id-tab" onclick="showIdPanel('estatutos')">Estatutos</button>
+        <button class="id-tab" onclick="showIdPanel('familia')">Familia</button>
       </div>
-
       <div id="idp-fundacion" class="id-panel active">
         <div class="ideario-content fade-up">
           <span class="subtitulo">Historia e Identidad</span>
-          <h3>El PPC: 59 años de democracia cristiana en el Perú</h3>
-          <p>El Partido Popular Cristiano fue fundado el <strong>18 de diciembre de 1966</strong> por Luis Bedoya Reyes y un grupo de dirigentes comprometidos con la democracia y la doctrina social cristiana. Nació como alternativa entre el marxismo y el liberalismo extremo, apostando por un humanismo político que pone a la persona en el centro.</p>
-          <blockquote>"El PPC se compromete a conducir una política honesta, transformadora, concreta, realista y eficaz, auténticamente democrática, que enfrente los agudos problemas del país y promueva el desarrollo integral del hombre peruano."</blockquote>
-          <p>A lo largo de su historia, el PPC ha defendido la democracia representativa, el estado de derecho, los derechos humanos y el desarrollo con justicia social. Hoy, con su lema <strong>"PPC Renace"</strong>, el partido llega a Ate con renovada fuerza para las elecciones de 2026.</p>
+          <h3>El PPC: 59 años de democracia cristiana</h3>
+          <p>El Partido Popular Cristiano fue fundado el <strong>18 de diciembre de 1966</strong> por Luis Bedoya Reyes. Nació como alternativa entre el marxismo y el liberalismo extremo, apostando por un humanismo político que pone a la persona en el centro.</p>
+          <blockquote>"El PPC se compromete a conducir una política honesta, transformadora, concreta, realista y eficaz, auténticamente democrática."</blockquote>
           <ul>
             <li>Fundado el 18 de diciembre de 1966 en Lima, Perú</li>
-            <li>Partido con inscripción vigente ante el Jurado Nacional de Elecciones (JNE)</li>
+            <li>Inscripción vigente ante el Jurado Nacional de Elecciones (JNE)</li>
             <li>Miembro de la Organización Demócrata Cristiana de América (ODCA)</li>
-            <li>Trayectoria ininterrumpida de defensa de la democracia y los derechos humanos</li>
-            <li>Presente en todas las regiones del Perú a través de su red de comités de base</li>
+            <li>59 años de defensa de la democracia y los derechos humanos</li>
+            <li>Presente en todas las regiones del Perú con comités de base</li>
           </ul>
         </div>
       </div>
-
       <div id="idp-democracia" class="id-panel">
-        <div class="ideario-content fade-up">
+        <div class="ideario-content">
           <span class="subtitulo">Principios Políticos</span>
           <h3>Democracia Cristiana: el humanismo político</h3>
-          <p>La democracia cristiana no es una religión en política: es una forma de hacer política inspirada en los valores del humanismo cristiano. Cree que la democracia es el mejor sistema para garantizar la dignidad de la persona y el bien común.</p>
-          <blockquote>"Nuestra acción política aspira a representar a los peruanos creyentes en la importancia de la dignidad humana y la libertad como valores fundamentales para la construcción del bien común."</blockquote>
+          <blockquote>"Aspiramos a representar a los peruanos que creen en la dignidad humana y la libertad como valores fundamentales para el bien común."</blockquote>
           <ul>
             <li>Respeto irrestricto a los derechos humanos y al estado de derecho</li>
             <li>Separación de poderes y control democrático del gobierno</li>
-            <li>Libertad de conciencia, de expresión y de asociación</li>
+            <li>Libertad de conciencia, expresión y asociación</li>
             <li>Rechazo al populismo, la demagogia y la corrupción</li>
             <li>Descentralización y fortalecimiento de los gobiernos locales</li>
             <li>Participación ciudadana como derecho y deber</li>
-            <li>Igualdad ante la ley sin distinción de clase, raza o religión</li>
           </ul>
         </div>
       </div>
-
       <div id="idp-economia" class="id-panel">
-        <div class="ideario-content fade-up">
+        <div class="ideario-content">
           <span class="subtitulo">Doctrina Económica</span>
           <h3>Una economía al servicio de la persona</h3>
-          <p>El PPC rechaza tanto el marxismo colectivista como el capitalismo salvaje. Propone una <strong>economía social de mercado</strong>: libre empresa con responsabilidad social, donde el mercado es un instrumento al servicio del hombre y no al revés.</p>
-          <blockquote>"El trabajo es el fundamento del proceso económico. Mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo como ser humano." — Juan Pablo II, Laborem Exercens</blockquote>
+          <p>El PPC rechaza tanto el marxismo colectivista como el capitalismo salvaje. Propone una <strong>economía social de mercado</strong>: libre empresa con responsabilidad social.</p>
+          <blockquote>"Mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo." — Juan Pablo II</blockquote>
           <ul>
-            <li>Defensa de la propiedad privada con función social</li>
+            <li>Propiedad privada con función social</li>
             <li>Apoyo a la micro y pequeña empresa como motor de empleo</li>
-            <li>Inversión pública en educación, salud e infraestructura básica</li>
-            <li>Rechazo a los monopolios y a la concentración abusiva de riqueza</li>
+            <li>Inversión pública en educación, salud e infraestructura</li>
+            <li>Rechazo a los monopolios y concentración abusiva de riqueza</li>
             <li>Formalización del trabajo informal con derechos plenos</li>
-            <li>Comercio justo y economía circular como apuestas de desarrollo</li>
-            <li>Presupuesto participativo: los vecinos deciden en qué se gasta</li>
+            <li>Presupuesto participativo: los vecinos deciden el gasto</li>
           </ul>
         </div>
       </div>
-
       <div id="idp-estatutos" class="id-panel">
-        <div class="ideario-content fade-up">
+        <div class="ideario-content">
           <span class="subtitulo">Organización Interna</span>
           <h3>Estructura y Estatutos del PPC</h3>
-          <p>El PPC es un partido democrático hacia adentro y hacia afuera. Sus estatutos garantizan la participación de todos los afiliados en las decisiones del partido, con elecciones internas, transparencia en el manejo de recursos y rendición de cuentas permanente.</p>
+          <p>Un partido que exige democracia al Estado debe practicarla primero en su propia casa. Sus estatutos garantizan elecciones internas, transparencia y rendición de cuentas.</p>
           <ul>
-            <li><strong>Congreso Nacional:</strong> máximo órgano deliberativo del partido, con representación de todas las regiones</li>
-            <li><strong>Comité Ejecutivo Nacional (CEN):</strong> dirección ejecutiva del partido a nivel nacional</li>
-            <li><strong>Directivas Regionales y Provinciales:</strong> coordinan la acción política en cada territorio</li>
-            <li><strong>Macro Zonales:</strong> unidad de organización distrital — la Base Ate pertenece a la Macro Zonal 4</li>
-            <li><strong>Comités de Base:</strong> célula básica del partido, en cada barrio y comunidad</li>
-            <li><strong>Elecciones internas:</strong> toda candidatura se decide por voto de afiliados</li>
-            <li><strong>Personero Técnico Nacional:</strong> responsable de la organización técnica y digital del partido</li>
+            <li><strong>Congreso Nacional:</strong> máximo órgano deliberativo del partido</li>
+            <li><strong>Comité Ejecutivo Nacional (CEN):</strong> dirección ejecutiva nacional</li>
+            <li><strong>Directivas Regionales y Provinciales:</strong> coordinan cada territorio</li>
+            <li><strong>Macro Zonales:</strong> organización distrital — Base Ate es la Macro Zonal 4</li>
+            <li><strong>Comités de Base:</strong> célula básica en cada barrio</li>
+            <li><strong>Elecciones internas:</strong> toda candidatura se decide por voto afiliados</li>
           </ul>
-          <blockquote>"Un partido que exige democracia al Estado debe practicarla primero en su propia casa."</blockquote>
         </div>
       </div>
-
       <div id="idp-familia" class="id-panel">
-        <div class="ideario-content fade-up">
+        <div class="ideario-content">
           <span class="subtitulo">Tejido Social</span>
           <h3>La familia: primera célula de la sociedad</h3>
-          <p>Para la Doctrina Social Cristiana, la familia es la unidad fundamental de la sociedad. Toda política pública debe fortalecer a la familia, que es la primera escuela de valores, solidaridad y ciudadanía.</p>
-          <blockquote>"La familia es la célula primera y vital de la sociedad. Ella tiene una originalidad y una primacía que le pertenece por su naturaleza." — Catecismo de la Iglesia Católica</blockquote>
+          <blockquote>"La familia es la célula primera y vital de la sociedad." — Catecismo de la Iglesia Católica</blockquote>
           <ul>
             <li>Políticas de conciliación entre trabajo y vida familiar</li>
-            <li>Protección especial a la mujer, al niño y al adulto mayor</li>
-            <li>Lucha frontal contra la violencia familiar y el abandono</li>
+            <li>Protección especial a la mujer, el niño y el adulto mayor</li>
+            <li>Lucha frontal contra la violencia familiar</li>
             <li>Acceso de todos los hijos a educación de calidad</li>
-            <li>Atención prioritaria a familias en situación de vulnerabilidad</li>
-            <li>Programas de salud preventiva para toda la familia</li>
+            <li>Salud preventiva para toda la familia</li>
             <li>Fomento de la cultura, el deporte y el arte en el barrio</li>
           </ul>
         </div>
@@ -587,89 +855,35 @@
   <section id="seguridad">
     <div class="container">
       <div class="section-title fade-up">
-        <span class="tag" style="color:var(--rojo-seg)">Prioridad #1 de Gestión</span>
-        <h2>Plan de Seguridad Ciudadana para Ate</h2>
-        <p>Un distrito que no es seguro no puede desarrollarse. La seguridad es la base de todo. Sin paz, no hay progreso posible.</p>
+        <span class="tag" style="color:var(--rojo)">Prioridad #1 de Gestión</span>
+        <h2>Plan de Seguridad Ciudadana</h2>
+        <p>Un alcalde criminólogo y abogado no improvisa en seguridad. Diseña políticas basadas en evidencia.</p>
       </div>
       <div class="seg-header fade-up">
-        <div class="ico">🛡️</div>
-        <div>
-          <h3>Ate Segura — Tolerancia Cero con la Delincuencia</h3>
-          <p>Implementaremos un sistema integral de seguridad que combine tecnología, presencia policial, participación vecinal y justicia efectiva. Siguiendo el principio tomista de que <em>"el bien común requiere paz y orden para florecer"</em>, la seguridad no es un lujo: es un derecho fundamental de cada vecino de Ate.</p>
-        </div>
+        <div class="sh-icon">🛡️</div>
+        <h3>Ate Segura — Tolerancia Cero con la Delincuencia</h3>
+        <p>Implementaremos un sistema integral de seguridad que combine tecnología, presencia policial, participación vecinal y justicia efectiva. Siguiendo el principio tomista de que <em>"el bien común requiere paz y orden para florecer"</em>, la seguridad no es un lujo: es un derecho fundamental.</p>
+      </div>
+      <div class="crim-banner fade-up">
+        <div class="ico">🔍</div>
+        <p><strong>La ventaja criminológica del Dr. Hurtado Apaico:</strong> Su formación en criminología le permite ir más allá del patrullaje. Identifica los factores de riesgo, diseña programas de prevención basados en evidencia y entiende las redes criminales que operan en el distrito. Ate tendrá un alcalde que conoce al delincuente desde la ciencia, no solo desde la política.</p>
       </div>
       <div class="seg-grid">
-        <div class="seg-card fade-up">
-          <div class="sc-icon">📹</div>
-          <h4>Tecnología y Vigilancia</h4>
-          <ul>
-            <li>Red de cámaras de vigilancia en zonas críticas</li>
-            <li>Central de monitoreo 24/7 conectada con PNP</li>
-            <li>Sistema de alerta temprana para vecinos vía app</li>
-            <li>Iluminación LED en calles oscuras y parques</li>
-          </ul>
-        </div>
-        <div class="seg-card fade-up">
-          <div class="sc-icon">🚔</div>
-          <h4>Serenazgo Modernizado</h4>
-          <ul>
-            <li>Aumento de serenos con capacitación permanente</li>
-            <li>Equipamiento adecuado: motos, comunicación en tiempo real</li>
-            <li>Coordinación directa y permanente con la PNP</li>
-            <li>Supervisión y rendición de cuentas mensual</li>
-          </ul>
-        </div>
-        <div class="seg-card fade-up">
-          <div class="sc-icon">🏘️</div>
-          <h4>Juntas Vecinales Fortalecidas</h4>
-          <ul>
-            <li>Redes de alerta vecinal por WhatsApp y radios</li>
-            <li>Capacitación a líderes comunitarios en seguridad</li>
-            <li>Espacios de diálogo mensual: vecinos y autoridades</li>
-            <li>Reconocimiento formal y apoyo a las juntas activas</li>
-          </ul>
-        </div>
-        <div class="seg-card fade-up">
-          <div class="sc-icon">⚖️</div>
-          <h4>Justicia Cercana</h4>
-          <ul>
-            <li>Juzgados de paz accesibles en el distrito</li>
-            <li>Defensa legal gratuita para víctimas de delitos</li>
-            <li>Recuperación de espacios tomados por pandillas</li>
-            <li>Cero tolerancia a extorsión y crimen organizado</li>
-          </ul>
-        </div>
-        <div class="seg-card fade-up">
-          <div class="sc-icon">🧒</div>
-          <h4>Prevención en Jóvenes</h4>
-          <ul>
-            <li>Centros juveniles con deporte, arte y cultura</li>
-            <li>Programa "Ate Joven Libre de Drogas"</li>
-            <li>Becas de formación técnica para jóvenes en riesgo</li>
-            <li>Mentores comunitarios en colegios del distrito</li>
-          </ul>
-        </div>
-        <div class="seg-card fade-up">
-          <div class="sc-icon">👩</div>
-          <h4>Protección a la Familia</h4>
-          <ul>
-            <li>Casas de acogida para víctimas de violencia familiar</li>
-            <li>Línea de denuncia anónima las 24 horas</li>
-            <li>Ruta rápida de atención para mujeres en riesgo</li>
-            <li>Fiscalización de locales nocturnos y puntos de venta ilegal</li>
-          </ul>
-        </div>
+        <div class="seg-card fade-up"><div class="sc-icon">📹</div><h4>Tecnología y Vigilancia</h4><ul><li>Red de cámaras en zonas críticas de Ate</li><li>Central de monitoreo 24/7 con PNP</li><li>App de alerta temprana vecinal</li><li>Iluminación LED en calles y parques</li></ul></div>
+        <div class="seg-card fade-up"><div class="sc-icon">🚔</div><h4>Serenazgo Modernizado</h4><ul><li>Más serenos con capacitación permanente</li><li>Motos y comunicación en tiempo real</li><li>Coordinación directa con la PNP</li><li>Rendición de cuentas mensual</li></ul></div>
+        <div class="seg-card fade-up"><div class="sc-icon">🏘️</div><h4>Juntas Vecinales</h4><ul><li>Redes de alerta por WhatsApp y radios</li><li>Líderes comunitarios capacitados</li><li>Diálogo mensual vecinos–autoridades</li><li>Reconocimiento oficial a juntas activas</li></ul></div>
+        <div class="seg-card fade-up"><div class="sc-icon">⚖️</div><h4>Justicia Cercana</h4><ul><li>Juzgados de paz en el distrito</li><li>Defensa legal gratuita a víctimas</li><li>Recuperación de espacios tomados</li><li>Cero tolerancia a extorsión</li></ul></div>
+        <div class="seg-card fade-up"><div class="sc-icon">🧒</div><h4>Prevención en Jóvenes</h4><ul><li>Centros juveniles de deporte y arte</li><li>"Ate Joven Libre de Drogas"</li><li>Becas para jóvenes en riesgo</li><li>Mentores en colegios del distrito</li></ul></div>
+        <div class="seg-card fade-up"><div class="sc-icon">👩</div><h4>Protección a la Familia</h4><ul><li>Casas de acogida para víctimas</li><li>Línea de denuncia anónima 24h</li><li>Ruta rápida para mujeres en riesgo</li><li>Fiscalización de locales nocturnos</li></ul></div>
       </div>
-      <div class="seg-meta fade-up">
-        <strong>"En los primeros 100 días de gestión presentaremos el Plan Integral de Seguridad de Ate, con metas medibles, presupuesto asignado y rendición de cuentas pública cada trimestre. El vecino tendrá derecho a saber si estamos cumpliendo."</strong><br>— Dr. José Luis Hurtado Apaico
-      </div>
+      <div class="seg-meta fade-up"><strong>"En los primeros 100 días presentaremos el Plan Integral de Seguridad de Ate, con metas medibles, presupuesto asignado y rendición de cuentas pública cada trimestre."</strong><br>— Dr. José Luis Hurtado Apaico</div>
     </div>
   </section>
 
-  <!-- CITA ANIMADA 2 -->
-  <div class="cita-animada fade-up" style="background: linear-gradient(135deg, #0d2d44, #1a5276);">
+  <!-- CITA 2 -->
+  <div class="cita-bloque fade-up" style="background:linear-gradient(135deg,#0d2d44,#1a5276);">
     <div class="inner">
-      <blockquote>"Injusto es quitar a los individuos lo que ellos pueden realizar con sus propias fuerzas para confiárselo a la comunidad. Así también es injusto e ilícito lo que puede hacerse en menor comunidad asignarlo a otra mayor."</blockquote>
+      <blockquote>"Injusto es quitar a los individuos lo que ellos pueden realizar con sus propias fuerzas para confiárselo a la comunidad."</blockquote>
       <cite>— Papa Pío XI · Quadragesimo Anno (1931) · Principio de Subsidiariedad</cite>
     </div>
   </div>
@@ -678,113 +892,33 @@
   <section id="autogestion">
     <div class="container">
       <div class="section-title fade-up">
-        <span class="tag" style="color:var(--azul-auto)">Desarrollo desde la base</span>
-        <h2>Proyectos Autogestionarios para Ate</h2>
-        <p>Inspirados en el principio de subsidiariedad de Pío XI y en la centralidad del trabajo de Juan Pablo II: no queremos comunidades dependientes, queremos vecinos capaces y protagonistas de su propio desarrollo.</p>
+        <span class="tag" style="color:var(--azul)">Desarrollo desde la base</span>
+        <h2>Proyectos Autogestionarios</h2>
+        <p>Inspirados en el principio de subsidiariedad de Pío XI: no queremos comunidades dependientes, sino vecinos empoderados y protagonistas de su propio desarrollo.</p>
       </div>
       <div class="auto-filosofia fade-up">
         <h3>Nuestra Filosofía: Enseñar a Pescar</h3>
-        <div class="frase">"No basta con dar ayuda. Lo que transforma una comunidad es darle herramientas, conocimiento y organización para que ella misma construya su futuro."</div>
-        <p>La asistencia social sin capacitación crea dependencia. Los proyectos autogestionarios del Dr. Hurtado Apaico se inspiran en el <em>principio de subsidiariedad</em> (Pío XI) y en la <em>centralidad del trabajo</em> (Juan Pablo II): cada vecino de Ate debe poder desarrollarse con sus propias manos y capacidades, con el apoyo —no la sustitución— del Estado.</p>
+        <div class="frase">"No basta con dar ayuda. Lo que transforma una comunidad es darle herramientas, conocimiento y organización para que construya su propio futuro."</div>
+        <p>Los proyectos autogestionarios del Dr. Hurtado Apaico se inspiran en la <em>subsidiariedad</em> (Pío XI) y en la <em>centralidad del trabajo</em> (Juan Pablo II): cada vecino de Ate debe poder desarrollarse con sus propias manos, con el apoyo —nunca la sustitución— del Estado.</p>
       </div>
       <div class="auto-grid">
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">🌾</div><h4>Huertos Urbanos Comunitarios</h4></div>
-          <div class="ac-tag">Alimentación · Empleo</div>
-          <p>Habilitaremos terrenos municipales para que familias cultiven sus propios alimentos. Capacitación en agricultura urbana, compostaje y gestión del huerto comunitario.</p>
-          <div class="resultado">✅ <span>Familias que producen su alimento y generan excedentes para vender en ferias locales.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">🧵</div><h4>Talleres Productivos Vecinales</h4></div>
-          <div class="ac-tag">Emprendimiento · Oficios</div>
-          <p>Talleres de costura, carpintería, electricidad, panadería, serigrafía y más. Enseñamos un oficio y acompañamos hasta formalizar el negocio propio.</p>
-          <div class="resultado">✅ <span>Microempresarios formalizados que generan ingresos propios y empleo en su comunidad.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">💻</div><h4>Centros de Formación Digital</h4></div>
-          <div class="ac-tag">Tecnología · Futuro</div>
-          <p>Computadoras e internet gratuitos en cada zona del distrito. Cursos de computación básica, diseño, redes sociales para negocios y trámites digitales.</p>
-          <div class="resultado">✅ <span>Vecinos que acceden a oportunidades laborales y de negocio en la economía digital.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">🏗️</div><h4>Mejoramiento de Vivienda con Mano de Obra Local</h4></div>
-          <div class="ac-tag">Infraestructura · Comunidad</div>
-          <p>Los proyectos de mejoramiento se ejecutan capacitando y contratando a los propios vecinos del barrio como mano de obra calificada.</p>
-          <div class="resultado">✅ <span>Mejores viviendas y vecinos con oficio calificado en construcción que pueden seguir trabajando.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">♻️</div><h4>Reciclaje y Economía Verde</h4></div>
-          <div class="ac-tag">Ambiente · Ingreso</div>
-          <p>Formalización de recicladores de Ate. Capacitación, equipamiento y articulación con empresas recicladoras para ingresos estables y dignos.</p>
-          <div class="resultado">✅ <span>Recicladores formalizados con ingreso estable y Ate más limpia gracias a su trabajo.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">👩‍⚕️</div><h4>Promotores de Salud Comunitaria</h4></div>
-          <div class="ac-tag">Salud · Liderazgo</div>
-          <p>Capacitamos vecinos como promotores: primeros auxilios, nutrición, prevención de enfermedades. La salud empieza en el propio barrio.</p>
-          <div class="resultado">✅ <span>Red de promotores vecinales que reducen emergencias y mejoran la salud comunitaria.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">🏪</div><h4>Ferias Distritales y Mercados Formales</h4></div>
-          <div class="ac-tag">Comercio · Formalización</div>
-          <p>Espacios ordenados y formales donde los emprendedores de Ate vendan sus productos. Acompañamiento en formalización, marketing y acceso a créditos.</p>
-          <div class="resultado">✅ <span>Emprendedores formalizados con punto de venta propio y acceso a nuevos mercados.</span></div>
-        </div>
-        <div class="auto-card fade-up">
-          <div class="auto-card-header"><div class="ac-icon">📚</div><h4>Escuelas de Liderazgo Vecinal</h4></div>
-          <div class="ac-tag">Ciudadanía · Organización</div>
-          <p>Formamos dirigentes con herramientas reales: gestión de proyectos, fiscalización al gobierno local, presupuesto participativo y organización comunitaria.</p>
-          <div class="resultado">✅ <span>Comunidades organizadas que participan activamente en las decisiones del distrito.</span></div>
-        </div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">🌾</div><h4>Huertos Urbanos Comunitarios</h4></div><div class="ac-tag">Alimentación · Empleo</div><p>Familias cultivan sus propios alimentos en terrenos municipales. Capacitación en agricultura urbana y compostaje.</p><div class="resultado">✅ <span>Producen su alimento y generan excedentes para ferias locales.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">🧵</div><h4>Talleres Productivos</h4></div><div class="ac-tag">Emprendimiento · Oficios</div><p>Costura, carpintería, electricidad, panadería. Enseñamos el oficio y acompañamos hasta formalizar el negocio.</p><div class="resultado">✅ <span>Microempresarios formalizados que generan empleo propio.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">💻</div><h4>Centros de Formación Digital</h4></div><div class="ac-tag">Tecnología · Futuro</div><p>Computadoras e internet gratuito en cada zona. Cursos de computación, diseño y redes sociales para negocios.</p><div class="resultado">✅ <span>Vecinos que acceden a oportunidades en la economía digital.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">🏗️</div><h4>Mejoramiento de Vivienda</h4></div><div class="ac-tag">Infraestructura · Comunidad</div><p>Mejoramiento de viviendas ejecutado capacitando y contratando a los propios vecinos del barrio.</p><div class="resultado">✅ <span>Mejores viviendas y vecinos con oficio calificado en construcción.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">♻️</div><h4>Reciclaje y Economía Verde</h4></div><div class="ac-tag">Ambiente · Ingreso</div><p>Formalización de recicladores de Ate con equipamiento y articulación con empresas compradoras.</p><div class="resultado">✅ <span>Recicladores formalizados con ingreso estable y Ate más limpia.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">👩‍⚕️</div><h4>Promotores de Salud</h4></div><div class="ac-tag">Salud · Liderazgo</div><p>Vecinos capacitados como promotores: primeros auxilios, nutrición y prevención. La salud empieza en el barrio.</p><div class="resultado">✅ <span>Red vecinal que reduce emergencias y mejora la salud comunitaria.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">🏪</div><h4>Ferias y Mercados Formales</h4></div><div class="ac-tag">Comercio · Formalización</div><p>Espacios ordenados donde los emprendedores de Ate venden sus productos con apoyo en formalización.</p><div class="resultado">✅ <span>Emprendedores formalizados con punto de venta y acceso a mercados.</span></div></div>
+        <div class="auto-card fade-up"><div class="ac-header"><div class="ac-icon">📚</div><h4>Escuelas de Liderazgo</h4></div><div class="ac-tag">Ciudadanía · Organización</div><p>Formamos dirigentes con herramientas reales: proyectos, fiscalización y presupuesto participativo.</p><div class="resultado">✅ <span>Comunidades organizadas que participan en las decisiones del distrito.</span></div></div>
       </div>
       <div class="auto-principios fade-up">
-        <h3>Los 5 Principios de Nuestros Proyectos Autogestionarios</h3>
+        <h3>Los 5 Principios Autogestionarios</h3>
         <div class="principios-grid">
-          <div class="principio"><div class="p-ico">🎯</div><div class="p-txt"><strong>Capacitación primero</strong><span>Toda ayuda va acompañada de formación que queda en la persona.</span></div></div>
-          <div class="principio"><div class="p-ico">🤝</div><div class="p-txt"><strong>Participación comunitaria</strong><span>Los vecinos deciden, diseñan y ejecutan sus propios proyectos.</span></div></div>
-          <div class="principio"><div class="p-ico">📈</div><div class="p-txt"><strong>Resultados medibles</strong><span>Cada proyecto tiene metas claras y rendición de cuentas pública.</span></div></div>
-          <div class="principio"><div class="p-ico">🔗</div><div class="p-txt"><strong>Articulación con empleo</strong><span>Lo que se aprende debe convertirse en fuente de ingreso real.</span></div></div>
+          <div class="principio"><div class="p-ico">🎯</div><div class="p-txt"><strong>Capacitación primero</strong><span>Toda ayuda va con formación que queda en la persona.</span></div></div>
+          <div class="principio"><div class="p-ico">🤝</div><div class="p-txt"><strong>Participación vecinal</strong><span>Los vecinos deciden, diseñan y ejecutan sus proyectos.</span></div></div>
+          <div class="principio"><div class="p-ico">📈</div><div class="p-txt"><strong>Resultados medibles</strong><span>Metas claras con rendición de cuentas pública.</span></div></div>
+          <div class="principio"><div class="p-ico">🔗</div><div class="p-txt"><strong>Articulación laboral</strong><span>Lo que se aprende se convierte en ingreso real.</span></div></div>
           <div class="principio"><div class="p-ico">♾️</div><div class="p-txt"><strong>Sostenibilidad</strong><span>Los proyectos continúan solos, sin depender del municipio.</span></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CANDIDATO -->
-  <section id="candidato">
-    <div class="container">
-      <div class="section-title fade-up">
-        <span class="tag">Nuestro candidato</span>
-        <h2>Dr. José Luis Hurtado Apaico</h2>
-        <p>Candidato a la Alcaldía del Distrito de Ate · Partido Popular Cristiano · 2027–2030</p>
-      </div>
-      <div class="candidato-inner">
-        <div class="fade-left">
-          <div class="candidato-foto">
-            <div class="initials">JH</div>
-            <div class="partido-tag">PPC</div>
-            <div class="foto-badge">Alcalde 2027 – 2030</div>
-          </div>
-        </div>
-        <div class="candidato-info fade-right">
-          <h2>Dr. José Luis<br>Hurtado Apaico</h2>
-          <p class="titulo-c">Candidato a la Alcaldía del Distrito de Ate</p>
-          <p>El Dr. José Luis Hurtado Apaico es un profesional comprometido con el desarrollo integral del distrito de Ate. Con formación académica sólida y genuina vocación de servicio público, propone una gestión enraizada en la <strong>Doctrina Social Cristiana</strong>: ética en la gestión, seguridad ciudadana efectiva y empoderamiento comunitario como motor de desarrollo.</p>
-          <p>Su visión va más allá del asistencialismo: cree, con Pío XI, que el Estado debe apoyar sin sustituir; con Juan Pablo II, que el trabajo dignifica; y con Tomás de Aquino, que el <em>bien común</em> es el fin de toda autoridad legítima. Desde la <strong>Macro Zonal 4</strong>, respaldamos esta candidatura con plena convicción.</p>
-          <div class="valores-lista">
-            <span class="valor-chip">✔ Ética y Honestidad</span>
-            <span class="valor-chip">✔ Doctrina Social Cristiana</span>
-            <span class="valor-chip">✔ Bien Común</span>
-            <span class="valor-chip">✔ Subsidiariedad</span>
-            <span class="valor-chip">✔ Seguridad Real</span>
-            <span class="valor-chip">✔ Empoderamiento Vecinal</span>
-          </div>
-          <div class="mandate-box">
-            <div class="mandate-year">2027<br>2030</div>
-            <div class="mandate-text"><strong>Período de gestión municipal</strong><br>Elecciones Municipales 2026 · Distrito de Ate<br>Partido Popular Cristiano · Base Ate · Macro Zonal 4</div>
-          </div>
-          <br>
-          <a href="#contacto" class="btn-verde">Apoya la campaña</a>
         </div>
       </div>
     </div>
@@ -798,27 +932,16 @@
         <h2>PPC Base Ate · Macro Zonal 4</h2>
       </div>
       <div class="nosotros-inner">
-        <div class="nosotros-visual fade-left">
-          <h3>Partido Popular Cristiano<br>en el Distrito de Ate</h3>
-          <p>Somos la organización del PPC en Ate, agrupados en la <span class="hl">Macro Zonal 4</span>. Trabajamos con la convicción de que el desarrollo real nace cuando una comunidad se organiza, se capacita y toma las riendas de su propio destino.</p>
-          <p>Respaldamos la candidatura del <span class="hl">Dr. José Luis Hurtado Apaico</span> para la Alcaldía de Ate 2027–2030, con un programa que pone la seguridad y la autogestión al centro, siempre inspirados en la <span class="hl">Doctrina Social Cristiana</span>.</p>
-          <p>Fundado en <span class="hl">1966</span>, el PPC llega a Ate renovado: <span class="hl">"PPC Renace"</span>.</p>
+        <div class="nosotros-visual fade-up">
+          <h3>Partido Popular Cristiano en Ate</h3>
+          <p>Somos la organización del PPC en el distrito de Ate, agrupados en la <span class="hl">Macro Zonal 4</span>. Creemos que el desarrollo real nace cuando una comunidad se organiza, se capacita y toma las riendas de su propio destino.</p>
+          <p>Respaldamos la candidatura del <span class="hl">Dr. José Luis Hurtado Apaico</span> para la Alcaldía de Ate 2027–2030, con un programa anclado en la <span class="hl">Doctrina Social Cristiana</span>: seguridad real y autogestión comunitaria.</p>
+          <p>Fundado en <span class="hl">1966</span>, el PPC llega a Ate con fuerza renovada: <span class="hl">"PPC Renace"</span>.</p>
         </div>
-        <div class="fade-right">
-          <div style="display:flex;flex-direction:column;gap:1rem;">
-            <div style="background:#fff;border-radius:10px;padding:1.5rem;border:1px solid #d4e6d9;">
-              <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:.4rem;">Visión</div>
-              <p style="color:var(--gris);font-size:.93rem;line-height:1.7;">Un Ate seguro, organizado y autosuficiente, donde cada familia tenga las herramientas para generar su propio desarrollo con dignidad, sin depender de dádivas políticas.</p>
-            </div>
-            <div style="background:#fff;border-radius:10px;padding:1.5rem;border:1px solid #d4e6d9;">
-              <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:.4rem;">Misión</div>
-              <p style="color:var(--gris);font-size:.93rem;line-height:1.7;">Llevar al Dr. Hurtado Apaico a la Alcaldía de Ate con un programa real: seguridad ciudadana efectiva y proyectos que empoderen a la comunidad para construir su propio futuro.</p>
-            </div>
-            <div style="background:#fff;border-radius:10px;padding:1.5rem;border:1px solid #d4e6d9;">
-              <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);margin-bottom:.4rem;">Valores</div>
-              <p style="color:var(--gris);font-size:.93rem;line-height:1.7;">Ética, honestidad, subsidiariedad y solidaridad. El Estado debe apoyar a la persona sin sustituirla: el ciudadano es protagonista de su propio desarrollo.</p>
-            </div>
-          </div>
+        <div class="nos-cards fade-up">
+          <div class="nos-card"><div class="nc-label">Visión</div><p>Un Ate seguro y autosuficiente, donde cada familia tenga las herramientas para generar su propio desarrollo con dignidad.</p></div>
+          <div class="nos-card"><div class="nc-label">Misión</div><p>Ganar la Alcaldía de Ate 2026 con un programa real: seguridad ciudadana efectiva y proyectos que empoderen a la comunidad.</p></div>
+          <div class="nos-card"><div class="nc-label">Valores</div><p>Ética, honestidad, subsidiariedad y solidaridad. El ciudadano es protagonista de su propio desarrollo.</p></div>
         </div>
       </div>
     </div>
@@ -849,30 +972,30 @@
       <div class="section-title fade-up">
         <span class="tag">Súmate a la campaña</span>
         <h2>Contáctanos</h2>
-        <p>¿Quieres apoyar la candidatura o participar en algún proyecto? Escríbenos.</p>
+        <p>¿Quieres apoyar la candidatura o participar en un proyecto? Escríbenos.</p>
       </div>
       <div class="contacto-inner">
-        <div class="fade-left">
-          <div class="info-item"><div class="info-icon">📍</div><div><h4>Ubicación</h4><p>Distrito de Ate · Lima, Perú<br><em>Sede Central PPC: Av. Alfonso Ugarte 1484, Breña</em></p></div></div>
+        <div class="fade-up">
+          <div class="info-item"><div class="info-icon">📍</div><div><h4>Ubicación</h4><p>Distrito de Ate · Lima, Perú<br><em>Sede Nacional: Av. Alfonso Ugarte 1484, Breña</em></p></div></div>
           <div class="info-item"><div class="info-icon">📞</div><div><h4>Teléfono</h4><p><a href="tel:+51988528949">+51 988 528 949</a></p></div></div>
-          <div class="info-item"><div class="info-icon">⏰</div><div><h4>Atención</h4><p>Lunes — Viernes · 9:00 a.m. – 6:00 p.m.</p></div></div>
-          <div class="info-item"><div class="info-icon">🌐</div><div><h4>Sede Nacional PPC</h4><p><a href="https://www.ppcperu.pe" target="_blank">www.ppcperu.pe</a></p></div></div>
+          <div class="info-item"><div class="info-icon">⏰</div><div><h4>Atención</h4><p>Lunes – Viernes · 9:00 a.m. – 6:00 p.m.</p></div></div>
+          <div class="info-item"><div class="info-icon">🌐</div><div><h4>Web Nacional PPC</h4><p><a href="https://www.ppcperu.pe" target="_blank">www.ppcperu.pe</a></p></div></div>
         </div>
-        <div class="fade-right">
+        <div class="fade-up">
           <div class="contacto-form">
-            <input type="text" placeholder="Tu nombre completo">
-            <input type="email" placeholder="Correo electrónico">
-            <input type="tel" placeholder="Teléfono / WhatsApp">
+            <input type="text" placeholder="Tu nombre completo" autocomplete="name">
+            <input type="email" placeholder="Correo electrónico" autocomplete="email">
+            <input type="tel" placeholder="Teléfono / WhatsApp" autocomplete="tel">
             <select>
               <option value="" disabled selected>¿Cómo quieres participar?</option>
               <option>Quiero afiliarme al PPC</option>
               <option>Quiero apoyar la campaña en Ate</option>
-              <option>Me interesa participar en un proyecto autogestionario</option>
-              <option>Quiero reportar un problema de seguridad en mi zona</option>
+              <option>Me interesa un proyecto autogestionario</option>
+              <option>Quiero reportar un problema de seguridad</option>
               <option>Tengo una propuesta para el distrito</option>
               <option>Solicitar información general</option>
             </select>
-            <textarea placeholder="Cuéntanos cómo quieres participar o qué necesita tu comunidad..."></textarea>
+            <textarea placeholder="Cuéntanos cómo quieres participar o qué necesita tu comunidad..." autocomplete="off"></textarea>
             <button type="button">✉️ Enviar mensaje</button>
           </div>
         </div>
@@ -883,105 +1006,115 @@
   <footer>
     <div class="footer-logo">Partido Popular Cristiano</div>
     <div class="footer-sub">Base Ate · Macro Zonal 4 · Candidato: Dr. José Luis Hurtado Apaico · Alcalde 2027–2030</div>
-    <div class="footer-copy">© 2025 PPC Base Ate · Todos los derechos reservados · <a href="https://www.ppcperu.pe" target="_blank">www.ppcperu.pe</a> · Partido con inscripción vigente ante el JNE · Lima, Perú</div>
+    <div class="footer-copy">© 2025 PPC Base Ate · Todos los derechos reservados · <a href="https://www.ppcperu.pe" target="_blank">www.ppcperu.pe</a> · Partido inscrito ante el JNE · Lima, Perú</div>
   </footer>
 
   <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Volver arriba">↑</button>
 
   <script>
-    /* NAV TOGGLE */
-    function toggleMenu() { document.getElementById('nav').classList.toggle('open'); }
-
-    /* HEADER SCROLL */
-    window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 80);
-      document.getElementById('scroll-top').classList.toggle('visible', window.scrollY > 400);
+    /* ── MENU MÓVIL ── */
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      const btn = document.getElementById('menuBtn');
+      const open = nav.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    }
+    // Cerrar al tocar un link
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('nav').classList.remove('open');
+        document.getElementById('menuBtn').classList.remove('open');
+      });
     });
 
-    /* ACTIVE NAV */
-    const sections = document.querySelectorAll('section[id]');
+    /* ── HEADER SCROLL ── */
+    const header = document.getElementById('header');
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    /* ── ACTIVE NAV ── */
     const navLinks = document.querySelectorAll('nav a');
     const navObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           navLinks.forEach(a => a.classList.remove('active'));
-          const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
-          if (link) link.classList.add('active');
+          const lnk = document.querySelector(`nav a[href="#${e.target.id}"]`);
+          if (lnk) lnk.classList.add('active');
         }
       });
-    }, { threshold: 0.4 });
-    sections.forEach(s => navObs.observe(s));
+    }, { threshold: 0.35 });
+    document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
 
-    /* FADE ANIMATIONS */
+    /* ── FADE ANIMATIONS ── */
     const fadeObs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => fadeObs.observe(el));
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 
-    /* COUNTER ANIMATION */
-    const counterObs = new IntersectionObserver(entries => {
+    /* ── COUNTER ── */
+    const ctrObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.querySelectorAll('[data-target]').forEach(el => {
           const target = +el.dataset.target;
-          const step = target > 100 ? 20 : 1;
-          let current = 0;
-          const timer = setInterval(() => {
-            current = Math.min(current + step, target);
-            el.textContent = current.toLocaleString('es-PE');
-            if (current >= target) clearInterval(timer);
-          }, target > 100 ? 8 : 40);
+          const step = target > 100 ? 22 : 1;
+          let cur = 0;
+          const t = setInterval(() => {
+            cur = Math.min(cur + step, target);
+            el.textContent = cur.toLocaleString('es-PE');
+            if (cur >= target) clearInterval(t);
+          }, target > 100 ? 7 : 45);
         });
-        counterObs.unobserve(e.target);
+        ctrObs.unobserve(e.target);
       });
     }, { threshold: 0.5 });
-    const statsSection = document.querySelector('.doctrina-stats');
-    if (statsSection) counterObs.observe(statsSection);
+    const ds = document.querySelector('.doctrina-stats');
+    if (ds) ctrObs.observe(ds);
 
-    /* IDEARIO TABS */
+    /* ── IDEARIO TABS ── */
     function showIdPanel(id) {
       document.querySelectorAll('.id-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.id-tab').forEach(b => b.classList.remove('active'));
       document.getElementById('idp-' + id).classList.add('active');
-      event.target.classList.add('active');
+      event.currentTarget.classList.add('active');
     }
 
-    /* ROTATING QUOTES */
+    /* ── ROTATING CITAS ── */
     const citas = [
-      { texto: "El hombre es por naturaleza un animal político, y vivir en sociedad no es para él una opción sino una necesidad.", autor: "— Santo Tomás de Aquino, Comentario a la Política de Aristóteles" },
-      { texto: "La ley injusta no es ley en absoluto. Toda autoridad política está subordinada a la ley moral y al bien común.", autor: "— Santo Tomás de Aquino, Summa Theologiae" },
-      { texto: "Los ricos y los pobres son, por naturaleza, iguales; solo por injusticia los unos oprimen y los otros son oprimidos.", autor: "— Papa León XIII, Rerum Novarum (1891)" },
-      { texto: "El trabajo es un bien del hombre, porque mediante el trabajo no solo transforma la naturaleza sino que se realiza a sí mismo.", autor: "— San Juan Pablo II, Laborem Exercens (1981)" },
-      { texto: "Todo ser humano tiene derecho a vivir. Tiene derecho a la integridad corporal y a los medios necesarios para un decoroso nivel de vida.", autor: "— Papa Juan XXIII, Pacem in Terris (1963)" },
+      { t: "El hombre es por naturaleza un animal político, y vivir en sociedad no es para él una opción sino una necesidad.", a: "— Santo Tomás de Aquino" },
+      { t: "La ley injusta no es ley en absoluto. Toda autoridad está subordinada a la ley moral y al bien común.", a: "— Santo Tomás de Aquino, Summa Theologiae" },
+      { t: "Los ricos y los pobres son, por naturaleza, iguales; solo por injusticia los unos oprimen a los otros.", a: "— Papa León XIII, Rerum Novarum (1891)" },
+      { t: "Mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo como ser humano.", a: "— San Juan Pablo II, Laborem Exercens (1981)" },
+      { t: "Todo ser humano tiene derecho a vivir y a los medios necesarios para un decoroso nivel de vida.", a: "— Papa Juan XXIII, Pacem in Terris (1963)" },
     ];
-    let citaIndex = 0;
-    function rotateCita() {
-      const el = document.getElementById('cita-rotante');
-      const au = document.getElementById('cita-autor');
-      if (!el) return;
-      el.style.opacity = '0';
-      au.style.opacity = '0';
-      setTimeout(() => {
-        citaIndex = (citaIndex + 1) % citas.length;
-        el.textContent = '"' + citas[citaIndex].texto + '"';
-        au.textContent = citas[citaIndex].autor;
-        el.style.opacity = '1';
-        au.style.opacity = '1';
-      }, 500);
+    let ci = 0;
+    const cbq = document.getElementById('cita-rotante');
+    const cba = document.getElementById('cita-autor');
+    if (cbq) {
+      cbq.style.transition = cba.style.transition = 'opacity .5s';
+      setInterval(() => {
+        cbq.style.opacity = cba.style.opacity = '0';
+        setTimeout(() => {
+          ci = (ci + 1) % citas.length;
+          cbq.textContent = '"' + citas[ci].t + '"';
+          cba.textContent = citas[ci].a;
+          cbq.style.opacity = cba.style.opacity = '1';
+        }, 500);
+      }, 6000);
     }
-    document.getElementById('cita-rotante').style.transition = 'opacity .5s';
-    document.getElementById('cita-autor').style.transition = 'opacity .5s';
-    setInterval(rotateCita, 6000);
 
-    /* HERO PARTICLES */
+    /* ── HERO PARTICLES ── */
     const pc = document.getElementById('particles');
-    for (let i = 0; i < 18; i++) {
-      const s = document.createElement('span');
-      s.style.left = Math.random() * 100 + '%';
-      s.style.animationDuration = (8 + Math.random() * 12) + 's';
-      s.style.animationDelay = (Math.random() * 10) + 's';
-      s.style.width = s.style.height = (3 + Math.random() * 4) + 'px';
-      pc.appendChild(s);
+    if (pc) {
+      for (let i = 0; i < 14; i++) {
+        const s = document.createElement('span');
+        s.style.cssText = `left:${Math.random()*100}%;width:${2+Math.random()*4}px;height:${2+Math.random()*4}px;animation-duration:${9+Math.random()*12}s;animation-delay:${Math.random()*10}s`;
+        pc.appendChild(s);
+      }
     }
   </script>
 </body>
