@@ -42,6 +42,28 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
 .whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:40}
 @media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}h1{font-size:40px}}
 @media (max-width:680px){.hero-grid,.grid-3,.grid-2,.form-grid{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}}
+  /* Animación moderna para botones */
+.btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.btn:hover {
+    background-color: #b03020 !important; /* Rojo PPC */
+    color: white !important;
+    transform: scale(1.08) translateY(-3px); /* Crece y sube un poco */
+    box-shadow: 0 10px 20px rgba(176, 48, 32, 0.3); /* Sombra roja difuminada */
+    letter-spacing: 0.5px;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--verde);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
   /* Efecto para los botones al pasar el mouse */
 .btn:hover {
     background-color: #b03020 !important; /* Rojo intenso */
@@ -55,6 +77,20 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
 .btn:active {
     background-color: #8e2418 !important; /* Rojo más oscuro */
     transform: translateY(0);            /* Regresa a su posición */
+}
+  .frase-fuerza {
+    margin: 20px 0;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--claro);
+    border-left: 4px solid var(--dorado);
+    padding-left: 15px;
+}
+.frase-fuerza .resaltado {
+    color: var(--dorado);
+    font-weight: bold;
+    text-transform: uppercase;
 }
 </style>
 </head>
@@ -70,7 +106,11 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
   <a href="#voluntarios">Voluntarios</a>
   <a href="#fiscalizacion">Fiscalización</a>
 </nav></div></header>
-<section class="hero" id="inicio"><div class="container hero-grid"><div><span class="badge">Candidato PPC · Ate</span><h1>Un nuevo liderazgo para Ate</h1><p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p><div class="cta-row"><a class="btn gold" href="#propuestas">Conoce las propuestas</a><a class="btn outline" href="#voluntarios">Únete al equipo</a><a class="btn outline" href="#fiscalizacion">Reporta un problema</a></div></div><div class="hero-card"><img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico"><div class="name">José Luis Hurtado Apaico</div><div class="role">Partido Popular Cristiano · Ate</div></div></div></section>
+<section class="hero" id="inicio"><div class="container hero-grid"><div><span class="badge">Candidato PPC · Ate</span>
+  <div class="frase-fuerza">
+    <p>"Sigan <span class="resaltado">ideas</span>, no personas"</p>
+</div>
+  <h1><span id="typed-text"></span></h1><p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p><div class="cta-row"><a class="btn gold" href="#propuestas">Conoce las propuestas</a><a class="btn outline" href="#voluntarios">Únete al equipo</a><a class="btn outline" href="#fiscalizacion">Reporta un problema</a></div></div><div class="hero-card"><img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico"><div class="name">José Luis Hurtado Apaico</div><div class="role">Partido Popular Cristiano · Ate</div></div></div></section>
 <section class="section" id="problemas"><div class="container"><div class="sec-head"><div class="tag">Diagnóstico ciudadano</div><h2>Los problemas de Ate que exigen respuesta</h2><p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben ser atendidos con seriedad, presencia territorial y soluciones concretas.</p></div><div class="grid-3"><div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito.</p></div><div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público.</p></div><div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes.</p></div></div></div></section>
 <section class="section" id="propuestas"><div class="container"><div class="sec-head"><div class="tag">Propuesta de gestión</div><h2>Nuestras prioridades para Ate</h2><p class="muted">Una agenda clara para recuperar el orden, fortalecer la seguridad y devolverle al vecino un municipio más cercano.</p></div><div class="grid-2"><div class="card proposal"><h3>Seguridad ciudadana</h3><ul class="clean"><li>Mejor coordinación vecinal y respuesta rápida.</li><li>Recuperación de puntos críticos.</li><li>Más orden y vigilancia en zonas sensibles.</li></ul></div><div class="card proposal"><h3>Orden y limpieza</h3><ul class="clean"><li>Acción sostenida frente a basura y abandono.</li><li>Recuperación de espacios públicos.</li><li>Intervenciones por sectores priorizados.</li></ul></div><div class="card proposal"><h3>Participación vecinal</h3><ul class="clean"><li>Canales directos de comunicación con los vecinos.</li><li>Escucha activa de reportes y prioridades barriales.</li><li>Más presencia territorial y trabajo de campo.</li></ul></div><div class="card proposal"><h3>Fiscalización ciudadana</h3><ul class="clean"><li>Un buzón para reportar problemas del distrito.</li><li>Seguimiento ciudadano a las urgencias barriales.</li><li>Compromiso con la transparencia y la mejora local.</li></ul></div></div></div></section>
   <section class="section" id="actividades">
@@ -92,6 +132,10 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
           Conjunto de valores, principios y visión que orientan nuestra acción política y social en favor de los vecinos de Ate.
         </p>
         <a href="#" class="btn">Ver documento</a>
+        <div class="card idea-card" style="margin-top:20px; background: var(--verde2); color: white;">
+    <h4 style="margin:0;">💡 La propuesta es el camino</h4>
+    <p class="small" style="color: #d1ead9;">Más allá de los nombres, lo que transforma Ate es la ejecución técnica y la honestidad de las propuestas.</p>
+</div>
       </div>
 
       <div class="card">
@@ -191,6 +235,37 @@ const APP = window.APP_CONFIG || {};
 const API_URL = APP.apiUrl || "";
 const PHONE = APP.whatsapp || "51968481482";
 document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
+  <script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  const sr = ScrollReveal({
+    distance: '40px',
+    duration: 1000,
+    delay: 200,
+    reset: false // Para que la animación solo ocurra una vez
+  });
+
+  // Animación para las tarjetas (aparecen desde abajo)
+  sr.reveal('.card', { origin: 'bottom', interval: 150 });
+  // Animación para los títulos (aparecen desde la izquierda)
+  sr.reveal('h2', { origin: 'left', distance: '30px' });
+  // Animación para la foto de José Luis (escala suave)
+  sr.reveal('.hero-card', { scale: 0.9, duration: 1200 });
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed('#typed-text', {
+    strings: [
+      'Sigan ideas, no personas', 
+      'Seguridad para tu familia', 
+      'Orden para nuestro distrito',
+      'Tu voz en la municipalidad'
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
+</script>
+</script>
 async function postToApi(payload){
   if (!API_URL) {
     throw new Error("Falta configurar la URL del Apps Script en config.js");
