@@ -327,6 +327,7 @@ document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
     loop: true
   });
 </script>
+  <script>
 async function postToApi(payload){
   if (!API_URL) {
     throw new Error("Falta configurar la URL del Apps Script en config.js");
