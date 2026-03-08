@@ -1,261 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>José Luis Hurtado Apaico | PPC Ate</title>
-  <meta name="description" content="Portal ciudadano de José Luis Hurtado Apaico y PPC Ate. Seguridad, orden, desarrollo vecinal y participación ciudadana para el distrito.">
-  <link rel="icon" href="assets/favicon-ppc.png">
-  <style>
-    :root{
-      --verde:#117a3b; --verde2:#0d5b2d; --dorado:#c9a23a; --claro:#f6f8f6; --texto:#1f2b22;
-      --gris:#6b756e; --borde:#dce7df; --rojo:#b03020; --shadow:0 10px 28px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);color:var(--texto)}
-    a{text-decoration:none}
-    .container{max-width:1180px;margin:auto;padding:0 20px}
-    .topbar{background:#083f1f;color:#fff;font-size:14px}
-    .topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}
-    .topbar a{color:#c6e7d1}
-    header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.08)}
-    .navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
-    .brand{display:flex;align-items:center;gap:14px;color:#fff}
-    .brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:999px;padding:5px}
-    .brand .title{font-weight:700;font-size:19px}
-    .brand .sub{font-size:12px;color:#d1ead9}
-    nav{display:flex;gap:12px;flex-wrap:wrap}
-    nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}
-    nav a:hover{background:rgba(255,255,255,.12)}
-    .hero{background:linear-gradient(135deg,var(--verde2),var(--verde));color:#fff;padding:56px 0}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
-    .badge{display:inline-block;background:var(--dorado);color:#111;padding:8px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-    h1{font-size:52px;line-height:1.05;margin:14px 0 12px}
-    .hero p{font-size:18px;line-height:1.7;color:#d8eee0;max-width:700px}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-    .btn{display:inline-block;padding:14px 20px;border-radius:10px;font-weight:700;border:none;cursor:pointer}
-    .btn.gold{background:var(--dorado);color:#111}
-    .btn.outline{border:2px solid rgba(255,255,255,.45);color:#fff;background:transparent}
-    .btn.green{background:var(--verde);color:#fff}
-    .hero-card{background:rgba(255,255,255,.1);padding:22px;border-radius:22px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}
-    .hero-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}
-    .hero-card .name{font-size:26px;font-weight:700;margin-top:14px}
-    .hero-card .role{color:#d9ecdf}
-    .section{padding:58px 0}
-    .sec-head{margin-bottom:28px}
-    .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);font-weight:700}
-    h2{font-size:36px;line-height:1.15;margin:8px 0 10px}
-    h3{margin:8px 0 10px;font-size:22px}
-    .muted{color:var(--gris);line-height:1.7}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-    .card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-    .problem{border-top:4px solid var(--rojo)}
-    .proposal{border-top:4px solid var(--verde)}
-    .icon{font-size:28px}
-    ul.clean{padding-left:18px;line-height:1.8;color:#3d4941}
-    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfdccf;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}
-    textarea{min-height:120px;resize:vertical}
-    .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .small{font-size:13px;color:var(--gris)}
-    .notice{background:#f6faf7;border:1px solid #dce7df;border-radius:16px;padding:18px}
-    .quote{font-style:italic;border-left:4px solid var(--dorado);padding-left:16px;color:#5d4a12}
-    footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}
-    .footer-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-    .whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:40}
-    @media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}h1{font-size:40px}}
-    @media (max-width:680px){.hero-grid,.grid-3,.grid-2,.form-grid{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José Luis Hurtado Apaico | PPC Ate</title>
+<meta name="description" content="Portal ciudadano de José Luis Hurtado Apaico y PPC Ate. Seguridad, orden, desarrollo vecinal y participación ciudadana para el distrito.">
+<link rel="icon" href="assets/favicon-ppc.png">
+<script src="config.js"></script>
+<style>
+:root{--verde:#117a3b;--verde2:#0d5b2d;--dorado:#c9a23a;--claro:#f6f8f6;--texto:#1f2b22;--gris:#6b756e;--borde:#dce7df;--rojo:#b03020;--shadow:0 10px 28px rgba(0,0,0,.08)}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);color:var(--texto)}
+a{text-decoration:none}.container{max-width:1180px;margin:auto;padding:0 20px}
+.topbar{background:#083f1f;color:#fff;font-size:14px}.topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}.topbar a{color:#c6e7d1}
+header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
+.brand{display:flex;align-items:center;gap:14px;color:#fff}.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:999px;padding:5px}.brand .title{font-weight:700;font-size:19px}.brand .sub{font-size:12px;color:#d1ead9}
+nav{display:flex;gap:12px;flex-wrap:wrap}nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}nav a:hover{background:rgba(255,255,255,.12)}
+.hero{background:linear-gradient(135deg,var(--verde2),var(--verde));color:#fff;padding:56px 0}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
+.badge{display:inline-block;background:var(--dorado);color:#111;padding:8px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+h1{font-size:52px;line-height:1.05;margin:14px 0 12px}.hero p{font-size:18px;line-height:1.7;color:#d8eee0;max-width:700px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-block;padding:14px 20px;border-radius:10px;font-weight:700;border:none;cursor:pointer}.btn.gold{background:var(--dorado);color:#111}.btn.outline{border:2px solid rgba(255,255,255,.45);color:#fff;background:transparent}.btn.green{background:var(--verde);color:#fff}.btn.gray{background:#e8efe9;color:#17351f}
+.hero-card{background:rgba(255,255,255,.1);padding:22px;border-radius:22px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}.hero-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}.hero-card .name{font-size:26px;font-weight:700;margin-top:14px}.hero-card .role{color:#d9ecdf}
+.section{padding:58px 0}.sec-head{margin-bottom:28px}.tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);font-weight:700}
+h2{font-size:36px;line-height:1.15;margin:8px 0 10px}h3{margin:8px 0 10px;font-size:22px}.muted{color:var(--gris);line-height:1.7}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.problem{border-top:4px solid var(--rojo)}.proposal{border-top:4px solid var(--verde)}.icon{font-size:28px}
+ul.clean{padding-left:18px;line-height:1.8;color:#3d4941}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfdccf;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}textarea{min-height:120px;resize:vertical}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.small{font-size:13px;color:var(--gris)}.notice{background:#f6faf7;border:1px solid #dce7df;border-radius:16px;padding:18px}.quote{font-style:italic;border-left:4px solid var(--dorado);padding-left:16px;color:#5d4a12}
+.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}.status.ok{display:block;background:#e8f4ec;color:#155b2f}.status.err{display:block;background:#fdecea;color:#8e2418}
+footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:40}
+@media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}h1{font-size:40px}}
+@media (max-width:680px){.hero-grid,.grid-3,.grid-2,.form-grid{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}}
+</style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="container">
-      <div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</div>
-      <div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div>
-    </div>
-  </div>
-
-  <header>
-    <div class="container navwrap">
-      <a class="brand" href="#inicio">
-        <img src="assets/logo-ppc.png" alt="Logo PPC">
-        <div>
-          <div class="title">PPC Ate</div>
-          <div class="sub">José Luis Hurtado Apaico</div>
-        </div>
-      </a>
-      <nav>
-        <a href="#propuestas">Propuestas</a>
-        <a href="#problemas">Problemas</a>
-        <a href="#voluntarios">Voluntarios</a>
-        <a href="#fiscalizacion">Fiscalización</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge">Candidato PPC · Ate</span>
-        <h1>Un nuevo liderazgo para Ate</h1>
-        <p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p>
-        <div class="cta-row">
-          <a class="btn gold" href="#propuestas">Conoce las propuestas</a>
-          <a class="btn outline" href="#voluntarios">Únete al equipo</a>
-          <a class="btn outline" href="#fiscalizacion">Reporta un problema</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico">
-        <div class="name">José Luis Hurtado Apaico</div>
-        <div class="role">Partido Popular Cristiano · Ate</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="problemas">
-    <div class="container">
-      <div class="sec-head">
-        <div class="tag">Diagnóstico ciudadano</div>
-        <h2>Los problemas de Ate que exigen respuesta</h2>
-        <p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben ser atendidos con seriedad, presencia territorial y soluciones concretas.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito.</p></div>
-        <div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público.</p></div>
-        <div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="propuestas">
-    <div class="container">
-      <div class="sec-head">
-        <div class="tag">Propuesta de gestión</div>
-        <h2>Nuestras prioridades para Ate</h2>
-        <p class="muted">Una agenda clara para recuperar el orden, fortalecer la seguridad y devolverle al vecino un municipio más cercano.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card proposal">
-          <h3>Seguridad ciudadana</h3>
-          <ul class="clean">
-            <li>Mejor coordinación vecinal y respuesta rápida.</li>
-            <li>Recuperación de puntos críticos.</li>
-            <li>Más orden y vigilancia en zonas sensibles.</li>
-          </ul>
-        </div>
-        <div class="card proposal">
-          <h3>Orden y limpieza</h3>
-          <ul class="clean">
-            <li>Acción sostenida frente a basura y abandono.</li>
-            <li>Recuperación de espacios públicos.</li>
-            <li>Intervenciones por sectores priorizados.</li>
-          </ul>
-        </div>
-        <div class="card proposal">
-          <h3>Participación vecinal</h3>
-          <ul class="clean">
-            <li>Canales directos de comunicación con los vecinos.</li>
-            <li>Escucha activa de reportes y prioridades barriales.</li>
-            <li>Más presencia territorial y trabajo de campo.</li>
-          </ul>
-        </div>
-        <div class="card proposal">
-          <h3>Fiscalización ciudadana</h3>
-          <ul class="clean">
-            <li>Un buzón para reportar problemas del distrito.</li>
-            <li>Seguimiento ciudadano a las urgencias barriales.</li>
-            <li>Compromiso con la transparencia y la mejora local.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="voluntarios">
-    <div class="container">
-      <div class="sec-head">
-        <div class="tag">Súmate</div>
-        <h2>Registro de voluntarios y simpatizantes</h2>
-        <p class="muted">Si quieres apoyar esta propuesta para Ate, déjanos tus datos y nos pondremos en contacto contigo.</p>
-      </div>
-      <div class="card">
-        <form>
-          <div class="form-grid">
-            <input name="nombre" placeholder="Nombre completo">
-            <input name="telefono" placeholder="Teléfono / WhatsApp">
-            <input name="zona" placeholder="Zona o sector de Ate">
-            <select name="interes">
-              <option>Voluntariado territorial</option>
-              <option>Difusión digital</option>
-              <option>Fiscalización ciudadana</option>
-              <option>Juventudes</option>
-            </select>
-          </div>
-          <textarea name="mensaje" placeholder="Cuéntanos cómo te gustaría apoyar"></textarea>
-          <div class="form-actions">
-            <button class="btn green" type="button">Enviar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="fiscalizacion">
-    <div class="container">
-      <div class="sec-head">
-        <div class="tag">Herramienta ciudadana</div>
-        <h2>Buzón de Fiscalización Ciudadana</h2>
-        <p class="muted">Un canal directo para que los vecinos de Ate reporten problemas en su barrio y ayuden a mejorar nuestro distrito.</p>
-        <p class="small">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <form>
-            <div class="form-grid">
-              <input name="nombre" placeholder="Tu nombre">
-              <input name="telefono" placeholder="Tu teléfono">
-              <select name="categoria">
-                <option>Selecciona una categoría</option>
-                <option>Delincuencia</option>
-                <option>Corrupción municipal</option>
-                <option>Basura</option>
-                <option>Pistas y veredas</option>
-                <option>Parques / espacios públicos</option>
-                <option>Transporte y caos vial</option>
-                <option>Otro</option>
-              </select>
-              <input name="zona" placeholder="Zona, calle o referencia">
-            </div>
-            <textarea name="detalle" placeholder="Describe el problema con el mayor detalle posible"></textarea>
-            <div class="form-actions">
-              <button class="btn green" type="button">Enviar</button>
-            </div>
-          </form>
-        </div>
-        <div class="notice">
-          <h3>¿Para qué sirve este buzón?</h3>
-          <ul class="clean">
-            <li>Reportar problemas de inseguridad en tu zona.</li>
-            <li>Informar sobre basura, desorden o abandono de espacios públicos.</li>
-            <li>Comunicar fallas en pistas, veredas o transporte.</li>
-            <li>Ayudar a priorizar las necesidades reales del distrito.</li>
-          </ul>
-          <p class="quote">Tu voz es importante. Fiscalizar también es participar.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-flex">
-      <div>Partido Popular Cristiano · Ate · José Luis Hurtado Apaico</div>
-      <div>Compromiso con seguridad, orden y participación ciudadana</div>
-    </div>
-  </footer>
-
-  <a class="whatsapp" href="https://wa.me/51968481482" target="_blank" rel="noopener">WhatsApp</a>
+<div class="topbar"><div class="container"><div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</div><div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div></div></div>
+<header><div class="container navwrap"><a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a><nav><a href="#propuestas">Propuestas</a><a href="#problemas">Problemas</a><a href="#voluntarios">Voluntarios</a><a href="#fiscalizacion">Fiscalización</a></nav></div></header>
+<section class="hero" id="inicio"><div class="container hero-grid"><div><span class="badge">Candidato PPC · Ate</span><h1>Un nuevo liderazgo para Ate</h1><p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p><div class="cta-row"><a class="btn gold" href="#propuestas">Conoce las propuestas</a><a class="btn outline" href="#voluntarios">Únete al equipo</a><a class="btn outline" href="#fiscalizacion">Reporta un problema</a></div></div><div class="hero-card"><img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico"><div class="name">José Luis Hurtado Apaico</div><div class="role">Partido Popular Cristiano · Ate</div></div></div></section>
+<section class="section" id="problemas"><div class="container"><div class="sec-head"><div class="tag">Diagnóstico ciudadano</div><h2>Los problemas de Ate que exigen respuesta</h2><p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben ser atendidos con seriedad, presencia territorial y soluciones concretas.</p></div><div class="grid-3"><div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito.</p></div><div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público.</p></div><div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes.</p></div></div></div></section>
+<section class="section" id="propuestas"><div class="container"><div class="sec-head"><div class="tag">Propuesta de gestión</div><h2>Nuestras prioridades para Ate</h2><p class="muted">Una agenda clara para recuperar el orden, fortalecer la seguridad y devolverle al vecino un municipio más cercano.</p></div><div class="grid-2"><div class="card proposal"><h3>Seguridad ciudadana</h3><ul class="clean"><li>Mejor coordinación vecinal y respuesta rápida.</li><li>Recuperación de puntos críticos.</li><li>Más orden y vigilancia en zonas sensibles.</li></ul></div><div class="card proposal"><h3>Orden y limpieza</h3><ul class="clean"><li>Acción sostenida frente a basura y abandono.</li><li>Recuperación de espacios públicos.</li><li>Intervenciones por sectores priorizados.</li></ul></div><div class="card proposal"><h3>Participación vecinal</h3><ul class="clean"><li>Canales directos de comunicación con los vecinos.</li><li>Escucha activa de reportes y prioridades barriales.</li><li>Más presencia territorial y trabajo de campo.</li></ul></div><div class="card proposal"><h3>Fiscalización ciudadana</h3><ul class="clean"><li>Un buzón para reportar problemas del distrito.</li><li>Seguimiento ciudadano a las urgencias barriales.</li><li>Compromiso con la transparencia y la mejora local.</li></ul></div></div></div></section>
+<section class="section" id="voluntarios"><div class="container"><div class="sec-head"><div class="tag">Súmate</div><h2>Registro de voluntarios y simpatizantes</h2><p class="muted">Si quieres apoyar esta propuesta para Ate, déjanos tus datos y nos pondremos en contacto contigo.</p></div><div class="card"><form id="volunteerForm"><div class="form-grid"><input name="nombre" placeholder="Nombre completo" required><input name="telefono" placeholder="Teléfono / WhatsApp" required><input name="zona" placeholder="Zona o sector de Ate"><select name="interes"><option value="Voluntariado territorial">Voluntariado territorial</option><option value="Difusión digital">Difusión digital</option><option value="Fiscalización ciudadana">Fiscalización ciudadana</option><option value="Juventudes">Juventudes</option></select></div><textarea name="mensaje" placeholder="Cuéntanos cómo te gustaría apoyar"></textarea><div class="form-actions"><button class="btn green" type="submit">Enviar</button><a class="btn gray" href="panel.html">Ver panel</a></div><div id="volunteerStatus" class="status"></div></form></div></div></section>
+<section class="section" id="fiscalizacion"><div class="container"><div class="sec-head"><div class="tag">Herramienta ciudadana</div><h2>Buzón de Fiscalización Ciudadana</h2><p class="muted">Un canal directo para que los vecinos de Ate reporten problemas en su barrio y ayuden a mejorar nuestro distrito.</p><p class="small">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p></div><div class="grid-2"><div class="card"><form id="reportForm"><div class="form-grid"><input name="nombre" placeholder="Tu nombre" required><input name="telefono" placeholder="Tu teléfono"><select name="categoria" required><option value="">Selecciona una categoría</option><option value="Delincuencia">Delincuencia</option><option value="Corrupción municipal">Corrupción municipal</option><option value="Basura">Basura</option><option value="Pistas y veredas">Pistas y veredas</option><option value="Parques / espacios públicos">Parques / espacios públicos</option><option value="Transporte y caos vial">Transporte y caos vial</option><option value="Otro">Otro</option></select><input name="zona" placeholder="Zona, calle o referencia" required></div><textarea name="detalle" placeholder="Describe el problema con el mayor detalle posible" required></textarea><div class="form-actions"><button class="btn green" type="submit">Enviar</button><a class="btn gray" href="panel.html">Ver panel</a></div><div id="reportStatus" class="status"></div></form></div><div class="notice"><h3>¿Para qué sirve este buzón?</h3><ul class="clean"><li>Reportar problemas de inseguridad en tu zona.</li><li>Informar sobre basura, desorden o abandono de espacios públicos.</li><li>Comunicar fallas en pistas, veredas o transporte.</li><li>Ayudar a priorizar las necesidades reales del distrito.</li></ul><p class="quote">Tu voz es importante. Fiscalizar también es participar.</p></div></div></div></section>
+<footer><div class="container footer-flex"><div>Partido Popular Cristiano · Ate · José Luis Hurtado Apaico</div><div>Compromiso con seguridad, orden y participación ciudadana</div></div></footer>
+<a class="whatsapp" id="waFloat" href="#" target="_blank" rel="noopener">WhatsApp</a>
+<script>
+const APP = window.APP_CONFIG || {};
+const API_URL = APP.apiUrl || "";
+const PHONE = APP.whatsapp || "51968481482";
+document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
+async function postToApi(payload){
+  if(!API_URL) throw new Error("Falta configurar la URL del Apps Script en config.js");
+  const res = await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const data = await res.json().catch(() => ({ok:false,error:"Respuesta inválida del servidor"}));
+  if(!res.ok || data.ok === false || data.status === "error") throw new Error(data.error || "No se pudo enviar");
+  return data;
+}
+function openWhatsApp(message){ window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(message), "_blank"); }
+function setStatus(id, ok, msg){ const el = document.getElementById(id); el.className = "status " + (ok ? "ok" : "err"); el.textContent = msg; }
+document.getElementById("volunteerForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(this).entries());
+  const waMsg = `Registro de voluntario PPC Ate\n\nNombre: ${data.nombre}\nTeléfono: ${data.telefono}\nZona: ${data.zona || ""}\nInterés: ${data.interes || ""}\nMensaje: ${data.mensaje || ""}`;
+  try{ await postToApi({type:"voluntario", ...data}); setStatus("volunteerStatus", true, "Tu registro fue enviado correctamente."); this.reset(); }
+  catch(err){ setStatus("volunteerStatus", false, err.message + ". Se abrirá WhatsApp como respaldo."); openWhatsApp(waMsg); }
+});
+document.getElementById("reportForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(this).entries());
+  const waMsg = `Buzón de Fiscalización Ciudadana\n\nNombre: ${data.nombre}\nTeléfono: ${data.telefono || ""}\nCategoría: ${data.categoria}\nZona: ${data.zona}\nDetalle: ${data.detalle}`;
+  try{ await postToApi({type:"reporte", ...data}); setStatus("reportStatus", true, "Tu reporte fue enviado correctamente."); this.reset(); }
+  catch(err){ setStatus("reportStatus", false, err.message + ". Se abrirá WhatsApp como respaldo."); openWhatsApp(waMsg); }
+});
+</script>
 </body>
 </html>
