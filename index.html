@@ -42,6 +42,20 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
 .whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:40}
 @media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}h1{font-size:40px}}
 @media (max-width:680px){.hero-grid,.grid-3,.grid-2,.form-grid{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}}
+  /* Efecto para los botones al pasar el mouse */
+.btn:hover {
+    background-color: #b03020 !important; /* Rojo intenso */
+    color: #ffffff !important;           /* Texto blanco */
+    transform: translateY(-2px);         /* Pequeño salto hacia arriba */
+    transition: all 0.3s ease;           /* Movimiento suave */
+    box-shadow: 0 5px 15px rgba(176, 48, 32, 0.4); /* Sombra roja */
+}
+
+/* Efecto cuando el botón es presionado (seleccionado) */
+.btn:active {
+    background-color: #8e2418 !important; /* Rojo más oscuro */
+    transform: translateY(0);            /* Regresa a su posición */
+}
 </style>
 </head>
 <body>
