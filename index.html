@@ -92,10 +92,49 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
     font-weight: bold;
     text-transform: uppercase;
 }
+  .social-grid {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Iconos blancos inicialmente */
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    background: var(--dorado);
+    color: #111;
+    border-color: var(--dorado);
+}
+
+.social-btn:hover img {
+    filter: none; /* Recuperan color original (TikTok/FB/IG) al pasar el mouse */
+}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</div><div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div></div></div>
+<div class="topbar"><div class="container"><div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo<div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div></div>
 <header><div class="container navwrap"><a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a>
   <nav>
   <a href="#propuestas">Propuestas</a>
@@ -109,6 +148,20 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
 <section class="hero" id="inicio"><div class="container hero-grid"><div><span class="badge">Candidato PPC · Ate</span>
   <div class="frase-fuerza">
     <p>"Sigan <span class="resaltado">ideas</span>, no personas"</p>
+</div>
+  <div class="social-grid">
+    <a href="https://www.tiktok.com/@tu_usuario" target="_blank" class="social-btn tiktok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="Icono TikTok">
+        <span>TikTok</span>
+    </a>
+    <a href="https://www.facebook.com/tu_pagina" target="_blank" class="social-btn facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Icono Facebook">
+        <span>Facebook</span>
+    </a>
+    <a href="https://www.instagram.com/tu_perfil" target="_blank" class="social-btn instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Icono Instagram">
+        <span>Instagram</span>
+    </a>
 </div>
   <h1><span id="typed-text"></span></h1><p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p><div class="cta-row"><a class="btn gold" href="#propuestas">Conoce las propuestas</a><a class="btn outline" href="#voluntarios">Únete al equipo</a><a class="btn outline" href="#fiscalizacion">Reporta un problema</a></div></div><div class="hero-card"><img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico"><div class="name">José Luis Hurtado Apaico</div><div class="role">Partido Popular Cristiano · Ate</div></div></div></section>
 <section class="section" id="problemas"><div class="container"><div class="sec-head"><div class="tag">Diagnóstico ciudadano</div><h2>Los problemas de Ate que exigen respuesta</h2><p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben ser atendidos con seriedad, presencia territorial y soluciones concretas.</p></div><div class="grid-3"><div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito.</p></div><div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público.</p></div><div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes.</p></div></div></div></section>
