@@ -52,10 +52,31 @@ const API_URL = APP.apiUrl || "";
 const PHONE = APP.whatsapp || "51968481482";
 document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
 async function postToApi(payload){
-  if(!API_URL) throw new Error("Falta configurar la URL del Apps Script en config.js");
-  const res = await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-  const data = await res.json().catch(() => ({ok:false,error:"Respuesta inválida del servidor"}));
-  if(!res.ok || data.ok === false || data.status === "error") throw new Error(data.error || "No se pudo enviar");
+  if (!API_URL) {
+    throw new Error("Falta configurar la URL del Apps Script en config.js");
+  }
+
+  const formData = new FormData();
+  formData.append("data", JSON.stringify(payload));
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    body: formData
+  });
+
+  const text = await res.text();
+
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch (e) {
+    throw new Error("Respuesta inválida del servidor");
+  }
+
+  if (data.ok === false || data.status === "error") {
+    throw new Error(data.error || "No se pudo enviar");
+  }
+
   return data;
 }
 function openWhatsApp(message){ window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(message), "_blank"); }
