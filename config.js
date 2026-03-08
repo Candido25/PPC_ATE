@@ -1,4 +1,4 @@
 window.APP_CONFIG = {
-  apiUrl: "https://script.google.com/macros/s/AKfycbwVuCGN2d7zL7sQVI7jM9ZfmW2zsxrVJ5g9p9r0U-ReFuKJfSEIeR-NbR_CSVpmFXpw/exec",
+  apiUrl: "https://script.google.com/macros/s/AKfycbynSkUFbCq3ZCRGE1rUHDz0EQ18JRKN6bJwmrwyzOG0DZXg-Jld2615W6s3IReOVtZ5/exec",
   whatsapp: "51922377845"
 };
