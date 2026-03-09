@@ -65,26 +65,39 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
     border-radius: 25px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
-  /* Centrado del nombre y cargo bajo la foto */
+/* Tarjeta del candidato con marco y espaciado */
 .hero-card {
     text-align: center; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.hero-card img {
+    width: 65% !important; 
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    /* Añadimos el marco rojo grueso */
+    border: 8px solid #b03020; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
 .hero-card .name {
     font-size: 24px; 
     font-weight: 700;
-    margin-top: 15px;
+    /* Aumentamos el espacio de separación */
+    margin-top: 25px; 
     color: #fff;
 }
+
 .hero-card .role {
     color: var(--dorado); 
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: bold;
 }
-.hero p{font-size:18px;line-height:1.7;color:#d8eee0;max-width:700px}
 
 /* Frase de Fuerza */
 .frase-fuerza {margin: 20px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 24px; color: var(--claro); border-left: 4px solid var(--dorado); padding-left: 15px;}
