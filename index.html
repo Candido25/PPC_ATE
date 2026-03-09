@@ -19,160 +19,85 @@
 :root{--verde:#117a3b;--verde2:#0d5b2d;--dorado:#c9a23a;--claro:#f6f8f6;--texto:#1f2b22;--gris:#6b756e;--borde:#dce7df;--rojo:#b03020;--shadow:0 10px 28px rgba(0,0,0,.08)}
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);color:var(--texto)}
-a{text-decoration:none}.container{max-width:1180px;margin:auto;padding:0 20px}
-  /* Ajuste para eliminar el desfase del header */
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+a{text-decoration:none}
 
-.navwrap {
-    padding: 10px 0; /* Reduce el espacio vertical si se ve muy ancho */
-}
+/* Contenedor unificado para evitar desfases */
+.container{max-width:1180px;margin:auto;padding:0 20px}
 
-/* Asegura que el Hero (parte verde) empiece exactamente donde termina el logo */
-.hero .container {
-    padding-top: 40px;
-}
-.topbar{background:#083f1f;color:#fff;font-size:14px}.topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}.topbar a{color:#c6e7d1}
+/* Ajuste de Topbar y Header */
+.topbar{background:#083f1f;color:#fff;font-size:14px}
+.topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}
+.topbar a{color:#c6e7d1}
+
 header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);box-shadow:0 4px 14px rgba(0,0,0,.08)}
 .navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
-.brand{display:flex;align-items:center;gap:14px;color:#fff}.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:999px;padding:5px}.brand .title{font-weight:700;font-size:19px}.brand .sub{font-size:12px;color:#d1ead9}
-nav{display:flex;gap:12px;flex-wrap:wrap}nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}nav a:hover{background:rgba(255,255,255,.12)}
-.hero{background:linear-gradient(135deg,var(--verde2),var(--verde));color:#fff;padding:56px 0}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
+
+.brand{display:flex;align-items:center;gap:14px;color:#fff}
+.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:999px;padding:5px}
+.brand .title{font-weight:700;font-size:19px}
+.brand .sub{font-size:12px;color:#d1ead9}
+
+nav{display:flex;gap:12px;flex-wrap:wrap}
+nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}
+nav a:hover{background:rgba(255,255,255,.12)}
+
+/* Hero Section */
+.hero{background:linear-gradient(135deg,var(--verde2),var(--verde));color:#fff;padding:56px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
 .badge{display:inline-block;background:var(--dorado);color:#111;padding:8px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-h1{font-size:52px;line-height:1.05;margin:14px 0 12px}.hero p{font-size:18px;line-height:1.7;color:#d8eee0;max-width:700px}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-block;padding:14px 20px;border-radius:10px;font-weight:700;border:none;cursor:pointer}.btn.gold{background:var(--dorado);color:#111}.btn.outline{border:2px solid rgba(255,255,255,.45);color:#fff;background:transparent}.btn.green{background:var(--verde);color:#fff}.btn.gray{background:#e8efe9;color:#17351f}
-.hero-card{background:rgba(255,255,255,.1);padding:22px;border-radius:22px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}.hero-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}.hero-card .name{font-size:26px;font-weight:700;margin-top:14px}.hero-card .role{color:#d9ecdf}
-.section{padding:58px 0}.sec-head{margin-bottom:28px}.tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);font-weight:700}
-h2{font-size:36px;line-height:1.15;margin:8px 0 10px}h3{margin:8px 0 10px;font-size:22px}.muted{color:var(--gris);line-height:1.7}
-  /* Asegura que los títulos de las tarjetas sean visibles */
-.card h3 {
-    color: var(--verde) !important; /* Color verde institucional para resaltar sobre el blanco de la tarjeta */
-    margin-top: 10px;
-    font-weight: bold;
-}
+h1{font-size:52px;line-height:1.05;margin:14px 0 12px}
+.hero p{font-size:18px;line-height:1.7;color:#d8eee0;max-width:700px}
 
-/* Si la tarjeta tiene fondo oscuro (como la de 'La propuesta es el camino') */
-.idea-card h4 {
-    color: white !important;
-}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.problem{border-top:4px solid var(--rojo)}.proposal{border-top:4px solid var(--verde)}.icon{font-size:28px}
-ul.clean{padding-left:18px;line-height:1.8;color:#3d4941}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfdccf;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}textarea{min-height:120px;resize:vertical}
-.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.small{font-size:13px;color:var(--gris)}.notice{background:#f6faf7;border:1px solid #dce7df;border-radius:16px;padding:18px}.quote{font-style:italic;border-left:4px solid var(--dorado);padding-left:16px;color:#5d4a12}
-.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}.status.ok{display:block;background:#e8f4ec;color:#155b2f}.status.err{display:block;background:#fdecea;color:#8e2418}
-footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-.whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.2);z-index:40}
-@media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}h1{font-size:40px}}
-@media (max-width:680px){.hero-grid,.grid-3,.grid-2,.form-grid{grid-template-columns:1fr}h1{font-size:34px}h2{font-size:28px}}
-  /* Animación moderna para botones */
-.btn {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
+/* Frase de Fuerza */
+.frase-fuerza {margin: 20px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 24px; color: var(--claro); border-left: 4px solid var(--dorado); padding-left: 15px;}
+.frase-fuerza .resaltado {color: var(--dorado); font-weight: bold; text-transform: uppercase;}
 
-.btn:hover {
-    background-color: #b03020 !important; /* Rojo PPC */
-    color: white !important;
-    transform: scale(1.08) translateY(-3px); /* Crece y sube un poco */
-    box-shadow: 0 10px 20px rgba(176, 48, 32, 0.3); /* Sombra roja difuminada */
-    letter-spacing: 0.5px;
-}
+/* Botones y Redes Sociales */
+.social-grid {display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;}
+.social-btn {display: flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 50px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-weight: bold; font-size: 13px; transition: all 0.3s ease; backdrop-filter: blur(8px);}
+.social-btn img {width: 20px; height: 20px; object-fit: contain; filter: brightness(0) invert(1);}
 
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--verde);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-  /* Efecto para los botones al pasar el mouse */
-.btn:hover {
-    background-color: #b03020 !important; /* Rojo intenso */
-    color: #ffffff !important;           /* Texto blanco */
-    transform: translateY(-2px);         /* Pequeño salto hacia arriba */
-    transition: all 0.3s ease;           /* Movimiento suave */
-    box-shadow: 0 5px 15px rgba(176, 48, 32, 0.4); /* Sombra roja */
-}
-
-/* Efecto cuando el botón es presionado (seleccionado) */
-.btn:active {
-    background-color: #8e2418 !important; /* Rojo más oscuro */
-    transform: translateY(0);            /* Regresa a su posición */
-}
-  .frase-fuerza {
-    margin: 20px 0;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 24px;
-    color: var(--claro);
-    border-left: 4px solid var(--dorado);
-    padding-left: 15px;
-}
-.frase-fuerza .resaltado {
-    color: var(--dorado);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-  /* Colores originales al pasar el mouse */
-.social-btn.tiktok:hover { background-color: #000000 !important; color: #fff !important; border-color: #000; }
-.social-btn.facebook:hover { background-color: #1877F2 !important; color: #fff !important; border-color: #1877F2; }
+/* Colores originales al pasar el mouse (Hovers) */
+.social-btn.tiktok:hover { background-color: #000000 !important; color: #fff !important; }
+.social-btn.facebook:hover { background-color: #1877F2 !important; color: #fff !important; }
 .social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; color: #fff !important; }
-.social-btn.youtube:hover { background-color: #FF0000 !important; color: #fff !important; border-color: #FF0000; }
-.social-btn.x-twitter:hover { background-color: #000000 !important; color: #fff !important; border-color: #000; }
+.social-btn.youtube:hover { background-color: #FF0000 !important; color: #fff !important; }
+.social-btn.x-twitter:hover { background-color: #000000 !important; color: #fff !important; }
+.social-btn:hover img { filter: none !important; }
 
-/* Asegura que el icono recupere su color real */
-.social-btn:hover img {
-    filter: none !important; 
-}
-  .social-grid {
-    display: flex;
-    gap: 12px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-}
+/* Tarjetas y Títulos con Contraste */
+.section{padding:58px 0}
+.card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow); transition: transform 0.3s ease;}
+.card:hover {transform: translateY(-8px); border-color: var(--verde);}
+.card h3 {color: var(--verde) !important; font-size: 22px; font-weight: bold; margin: 10px 0; display: block;}
+.muted{color:var(--gris);line-height:1.7}
 
-.social-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    font-weight: bold;
-    font-size: 13px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(8px);
-}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.problem{border-top:4px solid var(--rojo)}
+.proposal{border-top:4px solid var(--verde)}
+.icon{font-size:28px}
 
-.social-btn img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    filter: brightness(0) invert(1); /* Iconos blancos inicialmente */
-}
+/* Formularios y Otros */
+input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfdccf;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}
+.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}
+.status.ok{display:block;background:#e8f4ec;color:#155b2f}
+.status.err{display:block;background:#fdecea;color:#8e2418}
 
-.social-btn:hover {
-    transform: translateY(-3px);
-    background: var(--dorado);
-    color: #111;
-    border-color: var(--dorado);
-}
+footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}
+.whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;z-index:40}
 
-.social-btn:hover img {
-    filter: none; /* Recuperan color original (TikTok/FB/IG) al pasar el mouse */
-}
+@media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}}
+@media (max-width:680px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="container"><div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo<div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div></div>
+<div class="topbar">
+  <div class="container">
+    <div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</div>
+    <div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div>
+  </div>
+</div>
 <header><div class="container navwrap">
   <a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a>
   <nav>
@@ -335,13 +260,13 @@ const APP = window.APP_CONFIG || {};
 const API_URL = APP.apiUrl || "";
 const PHONE = APP.whatsapp || "51968481482";
 document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
-  // Cerramos el bloque anterior y cargamos las librerías externas
 </script>
+
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
 <script>
-  // 1. Animaciones de ScrollReveal (Aparición de tarjetas)
+  // Aquí van tus animaciones de ScrollReveal y Typed que ya tienes
   const sr = ScrollReveal({
     distance: '40px',
     duration: 1000,
