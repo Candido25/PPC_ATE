@@ -32,6 +32,17 @@ h1{font-size:52px;line-height:1.05;margin:14px 0 12px}.hero p{font-size:18px;lin
 .hero-card{background:rgba(255,255,255,.1);padding:22px;border-radius:22px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}.hero-card img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}.hero-card .name{font-size:26px;font-weight:700;margin-top:14px}.hero-card .role{color:#d9ecdf}
 .section{padding:58px 0}.sec-head{margin-bottom:28px}.tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--verde);font-weight:700}
 h2{font-size:36px;line-height:1.15;margin:8px 0 10px}h3{margin:8px 0 10px;font-size:22px}.muted{color:var(--gris);line-height:1.7}
+  /* Asegura que los títulos de las tarjetas sean visibles */
+.card h3 {
+    color: var(--verde) !important; /* Color verde institucional para resaltar sobre el blanco de la tarjeta */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Si la tarjeta tiene fondo oscuro (como la de 'La propuesta es el camino') */
+.idea-card h4 {
+    color: white !important;
+}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow)}.problem{border-top:4px solid var(--rojo)}.proposal{border-top:4px solid var(--verde)}.icon{font-size:28px}
 ul.clean{padding-left:18px;line-height:1.8;color:#3d4941}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
