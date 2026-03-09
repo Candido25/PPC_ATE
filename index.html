@@ -98,6 +98,46 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
     margin-top: 10px;
     font-weight: bold;
 }
+  /* Botones de Acción (CTAs) Modernizados */
+.cta-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 22px; /* Aquí aumentamos el tamaño para los jóvenes */
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: none;
+    text-decoration: none !important;
+}
+
+/* Botón Rojo Llamativo (Propuestas) */
+.btn.gold {
+    background-color: #b03020; 
+    color: white !important;
+}
+
+/* Botones con Borde (Únete y Reporta) */
+.btn.outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: white !important;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
 
 /* Frase de Fuerza */
 .frase-fuerza {margin: 20px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 24px; color: var(--claro); border-left: 4px solid var(--dorado); padding-left: 15px;}
