@@ -33,9 +33,33 @@ header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);box-shado
 .navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
 
 .brand{display:flex;align-items:center;gap:14px;color:#fff}
-.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:999px;padding:5px}
-.brand .title{font-weight:700;font-size:19px}
-.brand .sub{font-size:12px;color:#d1ead9}
+/* Logo y Textos de Cabecera ampliados 50% */
+.brand img {
+    width: 85px; /* Aumentado de 58px para mayor impacto */
+    height: 85px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 999px;
+    padding: 7px;
+    transition: transform 0.3s ease;
+}
+
+.brand .title {
+    font-weight: 800;
+    font-size: 28px; /* Aumentado de 19px */
+    line-height: 1.2;
+}
+
+.brand .sub {
+    font-size: 18px; /* Aumentado de 12px para legibilidad en celular */
+    color: #d1ead9;
+    font-weight: 600;
+}
+
+/* Ajuste de altura del header para el nuevo tamaño */
+.navwrap {
+    padding: 20px 0; 
+}
 
 nav{display:flex;gap:12px;flex-wrap:wrap}
 nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}
