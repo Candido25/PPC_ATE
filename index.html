@@ -291,50 +291,35 @@ document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
     loop: true
   });
 </script>
-  <script>
-async function postToApi(payload){
-  if (!API_URL) {
-    throw new Error("Falta configurar la URL del Apps Script en config.js");
-  }
 
+<script>
+// Lógica de formularios y API (Esto ya no se verá en la pantalla)
+async function postToApi(payload){
+  if (!API_URL) { throw new Error("Falta configurar la URL"); }
   const formData = new FormData();
   formData.append("data", JSON.stringify(payload));
-
-  const res = await fetch(API_URL, {
-    method: "POST",
-    body: formData
-  });
-
+  const res = await fetch(API_URL, { method: "POST", body: formData });
   const text = await res.text();
-
-  let data;
-  try {
-    data = JSON.parse(text);
-  } catch (e) {
-    throw new Error("Respuesta inválida del servidor");
-  }
-
-  if (data.ok === false || data.status === "error") {
-    throw new Error(data.error || "No se pudo enviar");
-  }
-
+  let data = JSON.parse(text);
+  if (data.ok === false) { throw new Error(data.error); }
   return data;
 }
+
 function openWhatsApp(message){ window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(message), "_blank"); }
 function setStatus(id, ok, msg){ const el = document.getElementById(id); el.className = "status " + (ok ? "ok" : "err"); el.textContent = msg; }
+
 document.getElementById("volunteerForm").addEventListener("submit", async function(e){
   e.preventDefault();
   const data = Object.fromEntries(new FormData(this).entries());
-  const waMsg = `Registro de voluntario PPC Ate\n\nNombre: ${data.nombre}\nTeléfono: ${data.telefono}\nZona: ${data.zona || ""}\nInterés: ${data.interes || ""}\nMensaje: ${data.mensaje || ""}`;
-  try{ await postToApi({type:"voluntario", ...data}); setStatus("volunteerStatus", true, "Tu registro fue enviado correctamente."); this.reset(); }
-  catch(err){ setStatus("volunteerStatus", false, err.message + ". Se abrirá WhatsApp como respaldo."); openWhatsApp(waMsg); }
+  try{ await postToApi({type:"voluntario", ...data}); setStatus("volunteerStatus", true, "Enviado con éxito."); this.reset(); }
+  catch(err){ openWhatsApp("Registro: " + data.nombre); }
 });
+
 document.getElementById("reportForm").addEventListener("submit", async function(e){
   e.preventDefault();
   const data = Object.fromEntries(new FormData(this).entries());
-  const waMsg = `Buzón de Fiscalización Ciudadana\n\nNombre: ${data.nombre}\nTeléfono: ${data.telefono || ""}\nCategoría: ${data.categoria}\nZona: ${data.zona}\nDetalle: ${data.detalle}`;
-  try{ await postToApi({type:"reporte", ...data}); setStatus("reportStatus", true, "Tu reporte fue enviado correctamente."); this.reset(); }
-  catch(err){ setStatus("reportStatus", false, err.message + ". Se abrirá WhatsApp como respaldo."); openWhatsApp(waMsg); }
+  try{ await postToApi({type:"reporte", ...data}); setStatus("reportStatus", true, "Reporte enviado."); this.reset(); }
+  catch(err){ openWhatsApp("Reporte: " + data.detalle); }
 });
 </script>
 </body>
