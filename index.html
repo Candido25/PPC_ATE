@@ -92,6 +92,17 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
     font-weight: bold;
     text-transform: uppercase;
 }
+  /* Colores originales al pasar el mouse */
+.social-btn.tiktok:hover { background-color: #000000 !important; color: #fff !important; border-color: #000; }
+.social-btn.facebook:hover { background-color: #1877F2 !important; color: #fff !important; border-color: #1877F2; }
+.social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; color: #fff !important; }
+.social-btn.youtube:hover { background-color: #FF0000 !important; color: #fff !important; border-color: #FF0000; }
+.social-btn.x-twitter:hover { background-color: #000000 !important; color: #fff !important; border-color: #000; }
+
+/* Asegura que el icono recupere su color real */
+.social-btn:hover img {
+    filter: none !important; 
+}
   .social-grid {
     display: flex;
     gap: 12px;
