@@ -20,6 +20,22 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);color:var(--texto)}
 a{text-decoration:none}.container{max-width:1180px;margin:auto;padding:0 20px}
+  /* Ajuste para eliminar el desfase del header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navwrap {
+    padding: 10px 0; /* Reduce el espacio vertical si se ve muy ancho */
+}
+
+/* Asegura que el Hero (parte verde) empiece exactamente donde termina el logo */
+.hero .container {
+    padding-top: 40px;
+}
 .topbar{background:#083f1f;color:#fff;font-size:14px}.topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}.topbar a{color:#c6e7d1}
 header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);box-shadow:0 4px 14px rgba(0,0,0,.08)}
 .navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
@@ -157,7 +173,8 @@ footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}.footer-flex{display:flex
 </head>
 <body>
 <div class="topbar"><div class="container"><div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo<div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div></div>
-<header><div class="container navwrap"><a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a>
+<header><div class="container navwrap">
+  <a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a>
   <nav>
   <a href="#propuestas">Propuestas</a>
   <a href="#problemas">Problemas</a>
