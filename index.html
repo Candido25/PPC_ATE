@@ -222,31 +222,18 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
   gap: 8px;
   padding: 10px 18px;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-  animation: latidoSuave 1.8s infinite;
+  animation: latidoSocial 2.2s infinite;
+  border: none;
+  opacity: 1;
 }
-  @keyframes latidoSuave {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.05);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
+@keyframes latidoSocial {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 .social-btn img {
   width: 20px;
@@ -254,13 +241,56 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
   object-fit: contain;
   filter: none;
 }
+  .social-btn.tiktok {
+  background: #000000;
+}
+
+.social-btn.facebook {
+  background: #1877F2;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.social-btn.youtube {
+  background: #FF0000;
+}
+
+.social-btn.x-twitter {
+  background: #000000;
+}
 
 /* Colores originales al pasar el mouse (Hovers) */
-.social-btn.tiktok:hover { background-color: #000000 !important; color: #fff !important; transform: translateY(-4px) scale(1.08); }
-.social-btn.facebook:hover { background-color: #1877F2 !important; color: #fff !important; transform: translateY(-4px) scale(1.08); }
-.social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; color: #fff !important; transform: translateY(-4px) scale(1.08); }
-.social-btn.youtube:hover { background-color: #FF0000 !important; color: #fff !important; transform: translateY(-4px) scale(1.08); }
-.social-btn.x-twitter:hover { background-color: #000000 !important; color: #fff !important; transform: translateY(-4px) scale(1.08); }
+.social-btn.tiktok:hover {
+  background: #000000;
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.social-btn.facebook:hover {
+  background: #1877F2;
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(24,119,242,0.35);
+}
+
+.social-btn.instagram:hover {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(221,42,123,0.35);
+}
+
+.social-btn.youtube:hover {
+  background: #FF0000;
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(255,0,0,0.35);
+}
+
+.social-btn.x-twitter:hover {
+  background: #000000;
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
   
   .social-btn.tiktok { background-color: #000000; }
 .social-btn.facebook { background-color: #1877F2; }
