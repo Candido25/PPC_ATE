@@ -69,7 +69,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);col
 a{text-decoration:none}
 
 /* Contenedor unificado para evitar desfases */
-.container{max-width:1180px;margin:auto;padding:0 20px}
+.container{max-width:1600px;margin:auto;padding:0 24px}
 
 /* Ajuste de Topbar y Header */
 .topbar{background:#083f1f;color:#fff;font-size:14px}
@@ -153,6 +153,17 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
     /* Añadimos el marco rojo grueso */
     border: 8px solid #b03020; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+  @media (min-width:1200px){
+
+.hero-card img{
+width:85% !important;
+}
+
+.hero-grid{
+grid-template-columns:1.2fr 0.8fr;
+}
+
 }
 
 .hero-card .name {
@@ -305,7 +316,7 @@ h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
 .card h3 {color: var(--verde) !important; font-size: 22px; font-weight: bold; margin: 10px 0; display: block;}
 .muted{color:var(--gris);line-height:1.7}
 
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .problem{border-top:4px solid var(--rojo)}
 .proposal{border-top:4px solid var(--verde)}
