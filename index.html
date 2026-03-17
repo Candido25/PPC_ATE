@@ -1,576 +1,584 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PPC Ate | José Luis Hurtado Apaico | Propuestas, actividades y fiscalización ciudadana</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <title>PPC Ate · José Luis Hurtado Apaico · Alcalde 2027–2030</title>
+  <meta name="description" content="Portal oficial del PPC Ate y de José Luis Hurtado Apaico. Conoce propuestas, actividades y el buzón de fiscalización ciudadana para el distrito de Ate.">
+  <link rel="canonical" href="https://ppcate.org.pe/">
+  <meta name="robots" content="index, follow">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-85CF41CBTD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-85CF41CBTD');
-</script>
-<meta name="description" content="Portal oficial del PPC Ate y de José Luis Hurtado Apaico. Conoce propuestas, actividades, documentos institucionales y el buzón de fiscalización ciudadana para el distrito de Ate.">
-<link rel="icon" href="assets/favicon-ppc.png">
-<link rel="canonical" href="https://ppcate.org.pe/">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ppcate.org.pe/">
-<meta property="og:title" content="PPC Ate | José Luis Hurtado Apaico">
-<meta property="og:description" content="Conoce propuestas, actividades, documentos institucionales y participa en el buzón de fiscalización ciudadana de Ate.">
-<meta property="og:image" content="https://ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ppcate.org.pe/">
+  <meta property="og:title" content="PPC Ate · José Luis Hurtado Apaico · Alcalde 2027–2030">
+  <meta property="og:description" content="Propuestas, actividades y fiscalización ciudadana para el distrito de Ate.">
+  <meta property="og:image" content="https://ppcate.org.pe/assets/jose-luis-hurtado.jpg">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PPC Ate | José Luis Hurtado Apaico">
-<meta name="twitter:description" content="Portal oficial con propuestas, actividades y fiscalización ciudadana para Ate.">
-<meta name="twitter:image" content="https://ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PPC Ate · José Luis Hurtado Apaico">
+  <meta name="twitter:description" content="Portal oficial con propuestas y fiscalización ciudadana para Ate.">
+  <meta name="twitter:image" content="https://ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-85CF41CBTD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-85CF41CBTD');
+  </script>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "PPC Ate",
-  "url": "https://ppcate.org.pe/",
-  "description": "Portal oficial del PPC Ate y de José Luis Hurtado Apaico.",
-  "inLanguage": "es-PE"
-}
-</script>
+  {"@context":"https://schema.org","@type":"WebSite","name":"PPC Ate","url":"https://ppcate.org.pe/","description":"Portal oficial del PPC Ate y de José Luis Hurtado Apaico.","inLanguage":"es-PE"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"José Luis Hurtado Apaico","url":"https://ppcate.org.pe/","image":"https://ppcate.org.pe/assets/jose-luis-hurtado.jpg","jobTitle":"Candidato a Alcalde de Ate","worksFor":{"@type":"Organization","name":"Partido Popular Cristiano"}}
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "José Luis Hurtado Apaico",
-  "url": "https://ppcate.org.pe/",
-  "image": "https://ppcate.org.pe/assets/jose-luis-hurtado.jpg",
-  "jobTitle": "Representante político local",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "PPC Ate"
-  }
-}
-</script>
+  <!-- Typed.js & ScrollReveal — sin defer para garantizar carga -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PPC Ate",
-  "url": "https://ppcate.org.pe/",
-  "logo": "https://ppcate.org.pe/assets/logo-ppc.png"
-}
-</script>
-<script src="config.js"></script>
-<style>
-:root{--verde:#117a3b;--verde2:#0d5b2d;--dorado:#c9a23a;--claro:#f6f8f6;--texto:#1f2b22;--gris:#6b756e;--borde:#dce7df;--rojo:#b03020;--shadow:0 10px 28px rgba(0,0,0,.08)}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--claro);color:var(--texto)}
-a{text-decoration:none}
+  <style>
+    /* ══ VARIABLES ══ */
+    :root {
+      --verde:     #117a3b;
+      --verde-osc: #0d5b2d;
+      --dorado:    #c9a23a;
+      --claro:     #f6f8f6;
+      --texto:     #1f2b22;
+      --gris:      #6b756e;
+      --borde:     #dce7df;
+      --rojo:      #b03020;
+      --shadow:    0 8px 24px rgba(0,0,0,.08);
+    }
 
-/* Contenedor unificado para evitar desfases */
-.container{max-width:1600px;margin:auto;padding:0 24px}
+    /* ══ RESET ══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
 
-/* Ajuste de Topbar y Header */
-.topbar{background:#083f1f;color:#fff;font-size:14px}
-.topbar .container{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:10px 20px;flex-wrap:wrap}
-.topbar a{color:#c6e7d1}
+    /* ══ LAYOUT ══ */
+    .container { width: 100%; padding: 0 4vw; }
+    .section { padding: 56px 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    /* Pantallas muy grandes: más respiro */
+    @media (min-width: 1800px) { .container { padding: 0 8vw; } }
 
-header{position:sticky;top:0;z-index:30;background:rgba(17,122,59,.97);box-shadow:0 4px 14px rgba(0,0,0,.08)}
-.navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:15px}
+    /* ══ TOPBAR ══ */
+    .topbar { background: #083f1f; color: #c6e7d1; font-size: .82rem; padding: .45rem 0; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .topbar a { color: #c6e7d1; }
+    .topbar a:hover { color: var(--dorado); }
 
-.brand{display:flex;align-items:center;gap:14px;color:#fff}
-/* Logo y Textos de Cabecera ampliados 50% */
-.brand img {
-    width: 85px; /* Aumentado de 58px para mayor impacto */
-    height: 85px;
-    object-fit: contain;
-    background: #fff;
-    border-radius: 999px;
-    padding: 7px;
-    transition: transform 0.3s ease;
-}
+    /* ══ HEADER ══ */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(17,122,59,.97); box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+    .navwrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
+    .brand img { width: 58px; height: 58px; object-fit: contain; background: #fff; border-radius: 50%; padding: 6px; transition: transform .3s; }
+    .brand:hover img { transform: rotate(8deg) scale(1.05); }
+    .brand .title { font-weight: 800; font-size: 1.15rem; line-height: 1.2; }
+    .brand .sub { font-size: .75rem; color: #d1ead9; }
+    nav { display: flex; gap: 4px; flex-wrap: wrap; }
+    nav a { color: #eef7f1; font-size: .82rem; font-weight: 700; padding: 8px 11px; border-radius: 8px; transition: background .2s; min-height: 40px; display: flex; align-items: center; }
+    nav a:hover { background: rgba(255,255,255,.14); }
 
-.brand .title {
-    font-weight: 800;
-    font-size: 28px; /* Aumentado de 19px */
-    line-height: 1.2;
-}
+    /* ══ HERO ══ */
+    .hero { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); color: #fff; padding: 60px 0; }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 5vw; align-items: center; }
+    .badge { display: inline-block; background: var(--dorado); color: #111; padding: 7px 14px; border-radius: 30px; font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 14px; }
+    h1 { font-size: clamp(1.8rem, 3.5vw, 4rem); line-height: 1.1; margin: 12px 0 16px; min-height: 2.5em; }
+    .hero p { font-size: 1rem; line-height: 1.72; color: #d4edd9; margin-bottom: 20px; }
 
-.brand .sub {
-    font-size: 18px; /* Aumentado de 12px para legibilidad en celular */
-    color: #d1ead9;
-    font-weight: 600;
-}
+    .frase-fuerza { margin: 14px 0; font-family: Georgia, serif; font-style: italic; font-size: 1.15rem; color: var(--claro); border-left: 4px solid var(--dorado); padding-left: 14px; }
+    .frase-fuerza .resaltado { color: var(--dorado); font-weight: bold; text-transform: uppercase; }
 
-/* Ajuste de altura del header para el nuevo tamaño */
-.navwrap {
-    padding: 20px 0; 
-}
+    /* Redes sociales */
+    .social-grid { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+    .social-btn { display: flex; align-items: center; gap: 7px; padding: 9px 16px; border-radius: 50px; color: #fff; font-weight: 700; font-size: .82rem; transition: transform .2s, box-shadow .2s; min-height: 42px; }
+    .social-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+    .social-btn img { width: 18px; height: 18px; object-fit: contain; }
+    .social-btn.tiktok    { background: #000; }
+    .social-btn.facebook  { background: #1877F2; }
+    .social-btn.instagram { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+    .social-btn.youtube   { background: #FF0000; }
+    .social-btn.x-twitter { background: #111; }
 
-nav{display:flex;gap:12px;flex-wrap:wrap}
-nav a{color:#eef7f1;font-size:14px;font-weight:700;padding:10px 12px;border-radius:10px}
-nav a:hover{background:rgba(255,255,255,.12)}
+    /* CTAs */
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border-radius: 50px; font-size: .95rem; font-weight: 700; transition: transform .2s, filter .2s; cursor: pointer; border: none; min-height: 48px; }
+    .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+    .btn.gold    { background: var(--rojo); color: #fff; }
+    .btn.outline { background: rgba(255,255,255,.1); color: #fff; border: 2px solid rgba(255,255,255,.6); }
+    .btn.green   { background: var(--verde); color: #fff; }
+    .btn.gray    { background: #e0e7e2; color: var(--texto); }
 
-/* Hero Section */
-.hero{background:linear-gradient(135deg,var(--verde2),var(--verde));color:#fff;padding:56px 0}
-/* 1. Grid equilibrado 50/50 */
-.hero-grid {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px; 
-    align-items: center;
-}
+    /* Hero foto */
+    .hero-card { text-align: center; }
+    .hero-card img { width: 78%; margin: 0 auto; border-radius: 20px; border: 6px solid var(--rojo); box-shadow: 0 20px 50px rgba(0,0,0,.35); filter: drop-shadow(0 4px 12px rgba(0,0,0,.25)); }
+    .hero-card .name { font-size: 1.15rem; font-weight: 700; margin-top: 18px; color: #fff; }
+    .hero-card .role { color: var(--dorado); font-size: .85rem; margin-top: 6px; font-weight: 700; }
 
-/* 2. Mantenemos tu etiqueta dorada intacta */
-.badge{display:inline-block;background:var(--dorado);color:#111;padding:8px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    /* ══ SECCIONES ══ */
+    .sec-head { text-align: center; margin-bottom: 2.5rem; }
+    .tag { display: inline-block; background: var(--verde-osc); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 10px; }
+    h2 { font-size: clamp(1.5rem, 2.5vw, 2.4rem); font-weight: 800; margin-bottom: 8px; }
+    .muted { color: var(--gris); line-height: 1.72; font-size: .95rem; }
 
-/* 3. Título más robusto y foto reducida */
-h1 { font-size: 58px; line-height: 1.1; margin: 15px 0; }
+    /* ══ CARDS ══ */
+    .card { background: #fff; border: 1px solid var(--borde); border-radius: 16px; padding: 26px; box-shadow: var(--shadow); transition: transform .25s, border-color .25s; height: 100%; }
+    .card:hover { transform: translateY(-6px); border-color: var(--verde); }
+    .card h3 { color: var(--verde); font-size: 1.08rem; font-weight: 700; margin: 8px 0 10px; }
+    .problem { border-top: 4px solid var(--rojo); }
+    .proposal { border-top: 4px solid var(--verde); }
+    .icon { font-size: 2rem; margin-bottom: 8px; }
 
-.hero-card img {
-    width: 65% !important; 
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-/* Tarjeta del candidato con marco y espaciado */
-.hero-card {
-    text-align: center; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    /* ══ IDEARIO ══ */
+    #ideario { background: #0d2a16; color: #fff; }
+    #ideario h2 { color: #fff; }
+    #ideario .muted { color: #8ab89a; }
+    #ideario .tag { background: var(--dorado); color: #111; }
+    .ideario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .ideario-card { background: rgba(255,255,255,.05); border: 1px solid rgba(200,168,75,.18); border-radius: 14px; padding: 22px; transition: background .25s; }
+    .ideario-card:hover { background: rgba(255,255,255,.09); }
+    .ideario-card .pensador { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); margin-bottom: 6px; }
+    .ideario-card h4 { font-size: .97rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .ideario-card blockquote { font-style: italic; font-size: .85rem; color: #c8b060; border-left: 2px solid rgba(200,168,75,.3); padding-left: 10px; margin-bottom: 8px; line-height: 1.65; }
+    .ideario-card p { font-size: .83rem; color: #8ab89a; line-height: 1.62; }
 
-.hero-card img {
-    width: 65% !important; 
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    border-radius: 25px;
-    /* Añadimos el marco rojo grueso */
-    border: 8px solid #b03020; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-}
-  @media (min-width:1200px){
+    /* ══ FORMULARIOS ══ */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    input, select, textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #cfdccf; border-radius: 10px; font-size: .92rem; font-family: inherit; background: #fff; transition: border-color .2s; outline: none; min-height: 48px; }
+    input:focus, select:focus, textarea:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(17,122,59,.1); }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-actions { display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+    .status { display: none; margin-top: 10px; padding: 11px 14px; border-radius: 8px; font-size: .88rem; }
+    .status.ok  { display: block; background: #e8f4ec; color: #155b2f; }
+    .status.err { display: block; background: #fdecea; color: #8e2418; }
 
-.hero-card img{
-width:85% !important;
-}
+    .notice { background: var(--claro); border: 1px solid var(--borde); border-radius: 14px; padding: 24px; }
+    .notice h3 { color: var(--verde); font-size: 1rem; margin-bottom: 12px; }
+    .clean { list-style: none; padding: 0; }
+    .clean li { padding: .35rem 0 .35rem 1.3rem; position: relative; font-size: .9rem; color: var(--gris); border-bottom: 1px solid var(--borde); }
+    .clean li::before { content: '✦'; position: absolute; left: 0; color: var(--verde); font-size: .7rem; top: .55rem; }
+    .quote { margin-top: 14px; font-style: italic; color: var(--verde); font-size: .9rem; font-weight: 600; }
+    .small { font-size: .8rem; color: var(--gris); margin-top: 4px; }
 
-.hero-grid{
-grid-template-columns:1.2fr 0.8fr;
-}
+    /* ══ FOOTER ══ */
+    footer { background: #0f1c13; color: #8ab89a; padding: 32px 0; font-size: .85rem; }
+    .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 
-}
+    /* ══ WHATSAPP FLOTANTE ══ */
+    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: #fff; padding: 13px 22px; border-radius: 50px; font-weight: 700; font-size: .9rem; z-index: 200; box-shadow: 0 4px 18px rgba(37,211,102,.4); transition: transform .2s; }
+    .whatsapp:hover { transform: translateY(-3px); }
 
-.hero-card .name {
-    font-size: 24px; 
-    font-weight: 700;
-    /* Aumentamos el espacio de separación */
-    margin-top: 25px; 
-    color: #fff;
-}
+    /* ══ RESPONSIVE TABLET ══ */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 3vw; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .ideario-grid { grid-template-columns: repeat(2, 1fr); }
+    }
 
-.hero-card .role {
-    color: var(--dorado); 
-    font-size: 14px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-  /* Botones de Acción (CTAs) Modernizados */
-.cta-row {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 22px; /* Aquí aumentamos el tamaño para los jóvenes */
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border: none;
-    text-decoration: none !important;
-}
-
-/* Botón Rojo Llamativo (Propuestas) */
-.btn.gold {
-    background-color: #b03020; 
-    color: white !important;
-}
-
-/* Botones con Borde (Únete y Reporta) */
-.btn.outline {
-    background: rgba(255, 255, 255, 0.1);
-    color: white !important;
-    border: 2px solid white;
-    backdrop-filter: blur(5px);
-}
-
-.btn:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
-}
-
-/* Frase de Fuerza */
-.frase-fuerza {margin: 20px 0; font-family: 'Georgia', serif; font-style: italic; font-size: 24px; color: var(--claro); border-left: 4px solid var(--dorado); padding-left: 15px;}
-.frase-fuerza .resaltado {color: var(--dorado); font-weight: bold; text-transform: uppercase;}
-
-/* Botones y Redes Sociales */
-.social-grid {display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap;}
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  animation: latidoSocial 2.2s infinite;
-  border: none;
-  opacity: 1;
-}
-@keyframes latidoSocial {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-.social-btn img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  filter: none;
-}
-  .social-btn.tiktok {
-  background: #000000;
-}
-
-.social-btn.facebook {
-  background: #1877F2;
-}
-
-.social-btn.instagram {
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-}
-
-.social-btn.youtube {
-  background: #FF0000;
-}
-
-.social-btn.x-twitter {
-  background: #000000;
-}
-
-/* Colores originales al pasar el mouse (Hovers) */
-.social-btn.tiktok:hover {
-  background: #000000;
-  transform: scale(1.12);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-.social-btn.facebook:hover {
-  background: #1877F2;
-  transform: scale(1.12);
-  box-shadow: 0 8px 20px rgba(24,119,242,0.35);
-}
-
-.social-btn.instagram:hover {
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-  transform: scale(1.12);
-  box-shadow: 0 8px 20px rgba(221,42,123,0.35);
-}
-
-.social-btn.youtube:hover {
-  background: #FF0000;
-  transform: scale(1.12);
-  box-shadow: 0 8px 20px rgba(255,0,0,0.35);
-}
-
-.social-btn.x-twitter:hover {
-  background: #000000;
-  transform: scale(1.12);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-  
-  .social-btn.tiktok { background-color: #000000; }
-.social-btn.facebook { background-color: #1877F2; }
-.social-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.social-btn.youtube { background-color: #FF0000; }
-.social-btn.x-twitter { background-color: #111111; }
-
-/* Tarjetas y Títulos con Contraste */
-.section{padding:58px 0}
-.card{background:#fff;border:1px solid var(--borde);border-radius:18px;padding:22px;box-shadow:var(--shadow); transition: transform 0.3s ease;}
-.card:hover {transform: translateY(-8px); border-color: var(--verde);}
-.card h3 {color: var(--verde) !important; font-size: 22px; font-weight: bold; margin: 10px 0; display: block;}
-.muted{color:var(--gris);line-height:1.7}
-
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.problem{border-top:4px solid var(--rojo)}
-.proposal{border-top:4px solid var(--verde)}
-.icon{font-size:28px}
-
-/* Formularios y Otros */
-input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfdccf;border-radius:10px;font-size:15px;font-family:inherit;background:#fff}
-.status{display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:14px}
-.status.ok{display:block;background:#e8f4ec;color:#155b2f}
-.status.err{display:block;background:#fdecea;color:#8e2418}
-
-footer{padding:32px 0;color:#c8d6cc;background:#0f1c13}
-.whatsapp{position:fixed;bottom:18px;right:18px;background:#25D366;color:white;padding:13px 18px;border-radius:999px;font-weight:700;z-index:40}
-
-@media (max-width:980px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr 1fr}nav{display:none}}
-@media (max-width:680px){.hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}}
-</style>
+    /* ══ RESPONSIVE MÓVIL (Android) ══ */
+    @media (max-width: 680px) {
+      .container { padding: 0 16px; }
+      .section { padding: 40px 0; }
+      .hero { padding: 36px 0 28px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-card { order: -1; }
+      .hero-card img { width: 60%; }
+      .hero p { max-width: 100%; }
+      h1 { font-size: 1.75rem; min-height: unset; }
+      h2 { font-size: 1.4rem; }
+      .grid-3, .grid-2, .ideario-grid, .form-grid { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; }
+      .cta-row .btn { width: 100%; justify-content: center; }
+      .social-grid { gap: 8px; }
+      .social-btn span { display: none; }
+      .social-btn { padding: 10px 13px; }
+      nav { display: none; }
+      .footer-flex { flex-direction: column; text-align: center; gap: 6px; }
+      .whatsapp { bottom: 14px; right: 14px; padding: 11px 18px; font-size: .85rem; }
+    }
+  </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="container">
-    <div>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</div>
-    <div><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></div>
-  </div>
-</div>
-<header><div class="container navwrap">
-  <a class="brand" href="#inicio"><img src="assets/logo-ppc.png" alt="Logo PPC"><div><div class="title">PPC Ate</div><div class="sub">José Luis Hurtado Apaico</div></div></a>
-  <nav>
-  <a href="#propuestas">Propuestas</a>
-  <a href="#problemas">Problemas</a>
-  <a href="#actividades">Trabajo territorial</a>
-  <a href="#ideario">Ideario</a>
-  <a href="#noticias">Actividades</a>
-  <a href="#documentos">Documentos</a>
-  <a href="#voluntarios">Voluntarios</a>
-  <a href="#fiscalizacion">Fiscalización</a>
-</nav></div></header>
-<section class="hero" id="inicio"><div class="container hero-grid"><div><span class="badge">Candidato PPC · Ate</span>
-  <div class="frase-fuerza">
-    <p>"Sigan <span class="resaltado">ideas</span>, no personas"</p>
-</div>
-  <div class="social-grid">
-    <a href="https://www.tiktok.com/@joseluishurtado.oficial" target="_blank" class="social-btn tiktok">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="Icono TikTok">
-        <span>TikTok</span>
-    </a>
-    <a href="https://www.facebook.com/Ateconjoseluishurtado/about" target="_blank" class="social-btn facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Icono Facebook">
-        <span>Facebook</span>
-    </a>
-    <a href="https://www.instagram.com/joseluishurtado.ate#" target="_blank" class="social-btn instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Icono Instagram">
-        <span>Instagram</span>
-    </a>
-    <a href="http://www.youtube.com/@JoseLuisHurtado.oficial" target="_blank" class="social-btn youtube">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Icono YouTube">
-        <span>YouTube</span>
-    </a>
-    <a href="#" target="_blank" class="social-btn x-twitter">
-        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="Icono X">
-        <span>X</span>
-    </a>
-</div>
-  <h1><span id="typed-text"></span></h1><p>José Luis Hurtado Apaico propone una gestión enfocada en seguridad ciudadana, orden urbano, desarrollo vecinal y participación activa de los vecinos para construir un distrito más seguro, limpio y organizado.</p><div class="cta-row"><a class="btn gold" href="#propuestas">Conoce las propuestas</a><a class="btn outline" href="#voluntarios">Únete al equipo</a><a class="btn outline" href="#fiscalizacion">Reporta un problema</a></div></div><div class="hero-card"><img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico"><div class="name">José Luis Hurtado Apaico</div><div class="role">Partido Popular Cristiano · Ate</div></div></div></section>
-<section class="section" id="problemas"><div class="container"><div class="sec-head"><div class="tag">Diagnóstico ciudadano</div><h2>Los problemas de Ate que exigen respuesta</h2><p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben ser atendidos con seriedad, presencia territorial y soluciones concretas.</p></div><div class="grid-3"><div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito.</p></div><div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público.</p></div><div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes.</p></div></div></div></section>
-<section class="section" id="propuestas">
-  <a href="propuestas.html" class="btn green">Ver propuestas completas</a>
-  <div class="container"><div class="sec-head"><div class="tag">Propuesta de gestión</div><h2>Nuestras prioridades para Ate</h2><p class="muted">Una agenda clara para recuperar el orden, fortalecer la seguridad y devolverle al vecino un municipio más cercano.</p></div><div class="grid-2"><div class="card proposal"><h3>Seguridad ciudadana</h3><ul class="clean"><li>Mejor coordinación vecinal y respuesta rápida.</li><li>Recuperación de puntos críticos.</li><li>Más orden y vigilancia en zonas sensibles.</li></ul></div><div class="card proposal"><h3>Orden y limpieza</h3><ul class="clean"><li>Acción sostenida frente a basura y abandono.</li><li>Recuperación de espacios públicos.</li><li>Intervenciones por sectores priorizados.</li></ul></div><div class="card proposal"><h3>Participación vecinal</h3><ul class="clean"><li>Canales directos de comunicación con los vecinos.</li><li>Escucha activa de reportes y prioridades barriales.</li><li>Más presencia territorial y trabajo de campo.</li></ul></div><div class="card proposal"><h3>Fiscalización ciudadana</h3><ul class="clean"><li>Un buzón para reportar problemas del distrito.</li><li>Seguimiento ciudadano a las urgencias barriales.</li><li>Compromiso con la transparencia y la mejora local.</li></ul></div></div></div></section>
-<section class="section" id="ideario">
- <section class="section" id="ideario">
-<a href="ideario.html" class="btn gray">Leer más</a>
-  <div class="container">
-    <div class="sec-head">
-      <div class="tag">Principios y propuestas</div>
-      <h2>Nuestro ideario y plan de trabajo</h2>
-      <p class="muted">
-        Conoce los principios que guían nuestro trabajo y las propuestas que impulsamos para mejorar la calidad de vida en el distrito de Ate.
-      </p>
-    </div>
 
-    <div class="grid-3">
-
-      <div class="card">
-        <h3>Nuestro ideario</h3>
-        <p class="muted">
-          Conjunto de valores, principios y visión que orientan nuestra acción política y social en favor de los vecinos de Ate.
-        </p>
-       <a href="docs/ideario.pdf" class="btn" target="_blank">Ver ideario</a>
-        <div class="card idea-card" style="margin-top:20px; background: var(--verde2); color: white;">
-    <h4 style="margin:0;">💡 La propuesta es el camino</h4>
-    <p class="small" style="color: #d1ead9;">Más allá de los nombres, lo que transforma Ate es la ejecución técnica y la honestidad de las propuestas.</p>
-</div>
-      </div>
-
-      <div class="card">
-        <h3>Plan de trabajo</h3>
-        <p class="muted">
-          Propuestas concretas orientadas a mejorar la seguridad, infraestructura, servicios públicos y desarrollo social del distrito.
-        </p>
-        <a href="docs/plan_trabajo.pdf" class="btn" target="_blank">Ver plan de trabajo</a>
-      </div>
-
-      <div class="card">
-        <h3>Participación ciudadana</h3>
-        <p class="muted">
-          Promovemos la participación activa de los vecinos en la toma de decisiones y en la fiscalización de la gestión pública.
-        </p>
-        <a href="docs/estatuto.pdf" class="btn" target="_blank">Ver estatuto</a>
-      </div>
-
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span>📍 Ate, Lima · PPC Renace · Seguridad, orden y desarrollo</span>
+      <span><a href="#voluntarios">Únete</a> · <a href="#fiscalizacion">Fiscalización</a></span>
     </div>
   </div>
-   
-<section class="section" id="actividades">
-  <div class="container">
-    <div class="sec-head">
-      <div class="tag">Presencia en el distrito</div>
-      <h2>Trabajo territorial</h2>
-      
-      <p class="muted">
-        Compartimos nuestras visitas, reuniones vecinales, acciones sociales y actividades realizadas en distintos sectores de Ate.
-      </p>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navwrap">
+      <a class="brand" href="#inicio">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="title">PPC Ate</div>
+          <div class="sub">José Luis Hurtado Apaico</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#propuestas">Propuestas</a>
+        <a href="#problemas">Problemas</a>
+        <a href="actividades.html">Trabajo territorial</a>
+        <a href="ideario.html">Doctrina</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="#documentos">Documentos</a>
+        <a href="#voluntarios">Voluntarios</a>
+        <a href="fiscalizacion.html">Fiscalización</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="grid-3">
-      <div class="card">
-        <h3>Visitas vecinales</h3>
-        <p class="muted">
-          Recorridos por barrios y sectores del distrito para escuchar directamente las necesidades y preocupaciones de los vecinos.
-        </p>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Candidato PPC · Ate · Alcalde 2027–2030</span>
+        <div class="frase-fuerza">
+          "Sigan <span class="resaltado">ideas</span>, no personas"
+        </div>
+        <div class="social-grid">
+          <a href="https://www.tiktok.com/@joseluishurtado.oficial" target="_blank" rel="noopener" class="social-btn tiktok">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+            <span>TikTok</span>
+          </a>
+          <a href="https://www.facebook.com/Ateconjoseluishurtado" target="_blank" rel="noopener" class="social-btn facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/joseluishurtado.ate" target="_blank" rel="noopener" class="social-btn instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@JoseLuisHurtado.oficial" target="_blank" rel="noopener" class="social-btn youtube">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+            <span>YouTube</span>
+          </a>
+          <a href="https://x.com/ppc_peru" target="_blank" rel="noopener" class="social-btn x-twitter">
+            <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X / Twitter">
+            <span>X</span>
+          </a>
+        </div>
+        <h1><span id="typed-text"></span></h1>
+        <p>José Luis Hurtado Apaico — abogado, doctor en derecho y criminólogo — propone una gestión enfocada en seguridad ciudadana, desarrollo vecinal y participación activa para construir un distrito más seguro, limpio y organizado.</p>
+        <div class="cta-row">
+          <a class="btn gold" href="propuestas.html">Conoce las propuestas</a>
+          <a class="btn outline" href="#voluntarios">Únete al equipo</a>
+          <a class="btn outline" href="fiscalizacion.html">Reporta un problema</a>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Apoyo social</h3>
-        <p class="muted">
-          Actividades solidarias, acompañamiento comunitario y acciones orientadas a fortalecer a las familias y sectores más vulnerables.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Reuniones con dirigentes</h3>
-        <p class="muted">
-          Encuentros con líderes sociales, juntas vecinales y organizaciones del distrito para construir propuestas reales y sostenibles.
-        </p>
+      <div class="hero-card">
+        <img src="assets/jose-luis-hurtado.jpg" alt="Dr. José Luis Hurtado Apaico · Candidato a Alcalde de Ate">
+        <div class="name">Dr. José Luis Hurtado Apaico</div>
+        <div class="role">Partido Popular Cristiano · Ate · 2027–2030</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section class="section" id="problemas">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Diagnóstico ciudadano</div>
+        <h2>Los problemas de Ate que exigen respuesta</h2>
+        <p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben atenderse con seriedad, presencia territorial y soluciones concretas.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito que afectan la calidad de vida de las familias.</p></div>
+        <div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público en varios sectores de Ate.</p></div>
+        <div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes del distrito.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPUESTAS -->
+  <section class="section" id="propuestas" style="background:#fff;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Plan de gobierno</div>
+        <h2>Propuestas para Ate 2027–2030</h2>
+        <p class="muted">Un plan concreto, basado en la Doctrina Social Cristiana, con seguridad y desarrollo autogestionario como ejes principales.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card proposal"><div class="icon">🛡️</div><h3>Seguridad Ciudadana</h3><p class="muted">Modernización del serenazgo, cámaras de vigilancia, coordinación con la PNP y fortalecimiento de juntas vecinales. El Dr. Hurtado aplica su formación en criminología para diseñar políticas basadas en evidencia.</p></div>
+        <div class="card proposal"><div class="icon">🌱</div><h3>Proyectos Autogestionarios</h3><p class="muted">No solo dar el pescado, sino enseñar a pescar. Huertos urbanos, talleres productivos, centros de formación digital y escuelas de liderazgo vecinal para que cada familia genere su propio desarrollo.</p></div>
+        <div class="card proposal"><div class="icon">🏥</div><h3>Salud para todos</h3><p class="muted">Centros de salud equipados, campañas preventivas permanentes, red de promotores de salud comunitaria y atención prioritaria para niños, mujeres y adultos mayores.</p></div>
+        <div class="card proposal"><div class="icon">📚</div><h3>Educación de calidad</h3><p class="muted">Mejora de infraestructura escolar, becas para jóvenes con talento, formación técnica y digital, y acceso a internet en zonas vulnerables del distrito.</p></div>
+        <div class="card proposal"><div class="icon">💼</div><h3>Empleo y economía local</h3><p class="muted">Apoyo a microempresarios, ferias distritales formales, capacitación laboral para jóvenes y mujeres, y fomento de la inversión responsable en Ate.</p></div>
+        <div class="card proposal"><div class="icon">🏗️</div><h3>Infraestructura</h3><p class="muted">Pistas y veredas en buen estado, mejora del agua y desagüe, ordenamiento del tránsito y centros comunitarios modernos en todos los sectores de Ate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDEARIO / DOCTRINA -->
+  <section class="section" id="ideario">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Fundamento del partido</div>
+        <h2>Doctrina Social Cristiana</h2>
+        <p class="muted">El PPC funda su propuesta en los principios que los grandes pensadores de la Iglesia desarrollaron para orientar la vida política en justicia y dignidad humana.</p>
+      </div>
+      <div class="ideario-grid">
+        <div class="ideario-card">
+          <div class="pensador">Siglo XIII · Escolástica</div>
+          <h4>Santo Tomás de Aquino</h4>
+          <blockquote>"La ley injusta no es ley en absoluto. Toda autoridad está subordinada al bien común."</blockquote>
+          <p>Fundamento del bien común y la justicia distributiva. Su pensamiento inspira el compromiso del PPC con una gestión ética y al servicio de todos los vecinos de Ate.</p>
+        </div>
+        <div class="ideario-card">
+          <div class="pensador">1891 · León XIII</div>
+          <h4>Rerum Novarum</h4>
+          <blockquote>"Los ricos y los pobres son, por naturaleza, iguales; solo por injusticia los unos oprimen a los otros."</blockquote>
+          <p>Encíclica fundacional de la Doctrina Social Cristiana. Defiende el derecho de los trabajadores y la función social de la propiedad privada.</p>
+        </div>
+        <div class="ideario-card">
+          <div class="pensador">1931 · Pío XI</div>
+          <h4>Principio de Subsidiariedad</h4>
+          <blockquote>"Injusto es quitar a los individuos lo que pueden realizar con sus propias fuerzas."</blockquote>
+          <p>El Estado no debe hacer lo que la comunidad puede hacer por sí misma. Este principio es el alma de los proyectos autogestionarios del Dr. Hurtado Apaico.</p>
+        </div>
+        <div class="ideario-card">
+          <div class="pensador">1963 · Juan XXIII</div>
+          <h4>Pacem in Terris</h4>
+          <blockquote>"Todo ser humano tiene derecho a vivir y a los medios necesarios para un decoroso nivel de vida."</blockquote>
+          <p>Establece los derechos fundamentales —trabajo, salud, vivienda, educación— que toda autoridad legítima debe garantizar a los vecinos.</p>
+        </div>
+        <div class="ideario-card">
+          <div class="pensador">1981 · Juan Pablo II</div>
+          <h4>Laborem Exercens</h4>
+          <blockquote>"Mediante el trabajo el hombre no solo transforma la naturaleza sino que se realiza a sí mismo."</blockquote>
+          <p>La centralidad del trabajo y la persona humana en la economía. Base del modelo de desarrollo autogestionario que el PPC propone para Ate.</p>
+        </div>
+        <div class="ideario-card">
+          <div class="pensador">Fundado en 1966</div>
+          <h4>Partido Popular Cristiano</h4>
+          <blockquote>"Una política honesta, transformadora, concreta y auténticamente democrática."</blockquote>
+          <p>59 años de democracia cristiana en el Perú. El PPC llega a Ate renovado con el lema <strong style="color:var(--dorado)">"PPC Renace"</strong> para las elecciones de 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABAJO TERRITORIAL -->
+  <section class="section" id="actividades" style="background:#fff;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Presencia en campo</div>
+        <h2>Trabajo territorial en Ate</h2>
+        <p class="muted">Compartimos nuestras visitas, reuniones vecinales y acciones sociales en distintos sectores del distrito.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="icon">🚶</div><h3>Visitas vecinales</h3><p class="muted">Recorridos por barrios y sectores del distrito para escuchar directamente las necesidades de los vecinos.</p></div>
+        <div class="card"><div class="icon">🤝</div><h3>Apoyo social</h3><p class="muted">Actividades solidarias y acompañamiento comunitario orientadas a fortalecer a las familias más vulnerables.</p></div>
+        <div class="card"><div class="icon">🗣️</div><h3>Reuniones con dirigentes</h3><p class="muted">Encuentros con líderes sociales y juntas vecinales para construir propuestas reales y sostenibles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVIDADES RECIENTES -->
   <section class="section" id="noticias">
-  <div class="container">
-    <div class="sec-head">
-      <div class="tag">Actividad reciente</div>
-      <h2>Actividades y presencia en Ate</h2>
-      <p class="muted">
-        Compartimos algunas de nuestras visitas, reuniones y acciones desarrolladas junto a los vecinos en distintos sectores del distrito.
-      </p>
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Actividad reciente</div>
+        <h2>Actividades y presencia en Ate</h2>
+        <p class="muted">Algunas de nuestras visitas, reuniones y acciones desarrolladas junto a los vecinos en distintos sectores del distrito.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Recorrido vecinal en el distrito</h3><p class="muted">Visita a distintos sectores de Ate para recoger directamente las principales preocupaciones de los vecinos.</p></div>
+        <div class="card"><h3>Reunión con dirigentes y líderes sociales</h3><p class="muted">Espacio de diálogo con representantes vecinales para escuchar necesidades y fortalecer el trabajo conjunto.</p></div>
+        <div class="card"><h3>Acción social y acompañamiento comunitario</h3><p class="muted">Actividades orientadas a promover la solidaridad, la participación ciudadana y el compromiso con los más necesitados.</p></div>
+      </div>
     </div>
+  </section>
 
-    <div class="grid-3">
-
-      <div class="card">
-        <h3>Recorrido vecinal en el distrito</h3>
-        <p class="muted">
-          Visita a distintos sectores de Ate para recoger de manera directa las principales preocupaciones de los vecinos.
-        </p>
+  <!-- DOCUMENTOS -->
+  <section class="section" id="documentos" style="background:#fff;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Transparencia</div>
+        <h2>Documentos institucionales</h2>
+        <p class="muted">Accede a los documentos oficiales del partido y de la campaña.</p>
       </div>
-
-      <div class="card">
-        <h3>Reunión con dirigentes y líderes sociales</h3>
-        <p class="muted">
-          Espacio de diálogo con representantes vecinales para escuchar necesidades y fortalecer propuestas de trabajo conjunto.
-        </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">📜</div>
+          <h3>Ideario del PPC</h3>
+          <p class="muted">Los principios y valores que guían la acción política del Partido Popular Cristiano en el Perú.</p>
+          <a href="docs/ideario.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;">📄 Ver documento</a>
+        </div>
+        <div class="card">
+          <div class="icon">📋</div>
+          <h3>Estatutos del partido</h3>
+          <p class="muted">La estructura orgánica, derechos y deberes de los afiliados al PPC a nivel nacional y local.</p>
+          <a href="docs/estatuto.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;">📄 Ver documento</a>
+        </div>
+        <div class="card">
+          <div class="icon">🗺️</div>
+          <h3>Plan de trabajo</h3>
+          <p class="muted">Las propuestas concretas del Dr. Hurtado Apaico para la gestión municipal de Ate 2027–2030.</p>
+          <a href="docs/Plan de Trabajo.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;">📄 Ver documento</a>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Acción social y acompañamiento comunitario</h3>
-        <p class="muted">
-          Actividades orientadas a promover la solidaridad, la participación ciudadana y el compromiso con los sectores más necesitados.
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
-<section class="section" id="voluntarios"><div class="container"><div class="sec-head"><div class="tag">Súmate</div><h2>Registro de voluntarios y simpatizantes</h2><p class="muted">Si quieres apoyar esta propuesta para Ate, déjanos tus datos y nos pondremos en contacto contigo.</p></div><div class="card"><form id="volunteerForm"><div class="form-grid"><input name="nombre" placeholder="Nombre completo" required><input name="telefono" placeholder="Teléfono / WhatsApp" required><input name="zona" placeholder="Zona o sector de Ate"><select name="interes"><option value="Voluntariado territorial">Voluntariado territorial</option><option value="Difusión digital">Difusión digital</option><option value="Fiscalización ciudadana">Fiscalización ciudadana</option><option value="Juventudes">Juventudes</option></select></div><textarea name="mensaje" placeholder="Cuéntanos cómo te gustaría apoyar"></textarea><div class="form-actions"><button class="btn green" type="submit">Enviar</button><a class="btn gray" href="panel.html">Ver panel</a></div><div id="volunteerStatus" class="status"></div></form></div></div></section>
-<section class="section" id="fiscalizacion"><div class="container"><div class="sec-head"><div class="tag">Herramienta ciudadana</div><h2>Buzón de Fiscalización Ciudadana</h2><p class="muted">Un canal directo para que los vecinos de Ate reporten problemas en su barrio y ayuden a mejorar nuestro distrito.</p><p class="small">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p></div><div class="grid-2"><div class="card"><form id="reportForm"><div class="form-grid"><input name="nombre" placeholder="Tu nombre" required><input name="telefono" placeholder="Tu teléfono"><select name="categoria" required><option value="">Selecciona una categoría</option><option value="Delincuencia">Delincuencia</option><option value="Corrupción municipal">Corrupción municipal</option><option value="Basura">Basura</option><option value="Pistas y veredas">Pistas y veredas</option><option value="Parques / espacios públicos">Parques / espacios públicos</option><option value="Transporte y caos vial">Transporte y caos vial</option><option value="Otro">Otro</option></select><input name="zona" placeholder="Zona, calle o referencia" required></div><textarea name="detalle" placeholder="Describe el problema con el mayor detalle posible" required></textarea><div class="form-actions"><button class="btn green" type="submit">Enviar</button><a class="btn gray" href="panel.html">Ver panel</a></div><div id="reportStatus" class="status"></div></form></div><div class="notice"><h3>¿Para qué sirve este buzón?</h3><ul class="clean"><li>Reportar problemas de inseguridad en tu zona.</li><li>Informar sobre basura, desorden o abandono de espacios públicos.</li><li>Comunicar fallas en pistas, veredas o transporte.</li><li>Ayudar a priorizar las necesidades reales del distrito.</li></ul><p class="quote">Tu voz es importante. Fiscalizar también es participar.</p></div></div></div></section>
-<footer><div class="container footer-flex"><div>Partido Popular Cristiano · Ate · José Luis Hurtado Apaico</div><div>Compromiso con seguridad, orden y participación ciudadana</div></div></footer>
-<a class="whatsapp" id="waFloat" href="#" target="_blank" rel="noopener">WhatsApp</a>
-<script>
-const APP = window.APP_CONFIG || {};
-const API_URL = APP.apiUrl || "";
-const PHONE = APP.whatsapp || "51968481482";
-document.getElementById("waFloat").href = "https://wa.me/" + PHONE;
-</script>
+  </section>
 
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- VOLUNTARIOS -->
+  <section class="section" id="voluntarios">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Súmate</div>
+        <h2>Registro de voluntarios y simpatizantes</h2>
+        <p class="muted">Si quieres apoyar esta propuesta para Ate, déjanos tus datos y nos pondremos en contacto contigo.</p>
+      </div>
+      <div class="card" style="max-width:700px;margin:0 auto;">
+        <form id="volunteerForm">
+          <div class="form-grid">
+            <input name="nombre" placeholder="Nombre completo" required autocomplete="name">
+            <input name="telefono" placeholder="Teléfono / WhatsApp" required autocomplete="tel">
+            <input name="zona" placeholder="Zona o sector de Ate">
+            <select name="interes">
+              <option value="Voluntariado territorial">Voluntariado territorial</option>
+              <option value="Difusión digital">Difusión digital</option>
+              <option value="Fiscalización ciudadana">Fiscalización ciudadana</option>
+              <option value="Juventudes">Juventudes</option>
+            </select>
+          </div>
+          <textarea name="mensaje" placeholder="Cuéntanos cómo te gustaría apoyar"></textarea>
+          <div class="form-actions">
+            <button class="btn green" type="submit">Enviar registro</button>
+          </div>
+          <div id="volunteerStatus" class="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Aquí van tus animaciones de ScrollReveal y Typed que ya tienes
-  const sr = ScrollReveal({
-    distance: '40px',
-    duration: 1000,
-    delay: 200,
-    reset: false
-  });
-  sr.reveal('.card', { origin: 'bottom', interval: 150 });
-  sr.reveal('h2', { origin: 'left', distance: '30px' });
-  sr.reveal('.hero-card', { scale: 0.9, duration: 1200 });
+  <!-- FISCALIZACIÓN -->
+  <section class="section" id="fiscalizacion" style="background:#fff;">
+    <div class="container">
+      <div class="sec-head">
+        <div class="tag">Herramienta ciudadana</div>
+        <h2>Buzón de Fiscalización Ciudadana</h2>
+        <p class="muted">Un canal directo para que los vecinos de Ate reporten problemas en su barrio y ayuden a mejorar nuestro distrito.</p>
+        <p class="small" style="margin-top:6px;">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <form id="reportForm">
+            <div class="form-grid">
+              <input name="nombre" placeholder="Tu nombre" required autocomplete="name">
+              <input name="telefono" placeholder="Tu teléfono" autocomplete="tel">
+              <select name="categoria" required>
+                <option value="" disabled selected>Selecciona una categoría</option>
+                <option value="Delincuencia">Delincuencia</option>
+                <option value="Corrupción municipal">Corrupción municipal</option>
+                <option value="Basura">Basura</option>
+                <option value="Pistas y veredas">Pistas y veredas</option>
+                <option value="Parques y espacios públicos">Parques y espacios públicos</option>
+                <option value="Transporte y caos vial">Transporte y caos vial</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <input name="zona" placeholder="Zona, calle o referencia" required>
+            </div>
+            <textarea name="detalle" placeholder="Describe el problema con el mayor detalle posible" required></textarea>
+            <div class="form-actions">
+              <button class="btn green" type="submit">Enviar reporte</button>
+            </div>
+            <div id="reportStatus" class="status"></div>
+          </form>
+        </div>
+        <div class="notice">
+          <h3>¿Para qué sirve este buzón?</h3>
+          <ul class="clean">
+            <li>Reportar problemas de inseguridad en tu zona</li>
+            <li>Informar sobre basura, desorden o abandono de espacios públicos</li>
+            <li>Comunicar fallas en pistas, veredas o transporte</li>
+            <li>Denunciar posibles actos de corrupción municipal</li>
+            <li>Ayudar a priorizar las necesidades reales del distrito</li>
+          </ul>
+          <p class="quote">Tu voz es importante. Fiscalizar también es participar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // 2. Efecto de Escritura Typed.js (Frase de ideas)
-  var typed = new Typed('#typed-text', {
-    strings: [
-      'Sigan ideas, no personas', 
-      'Seguridad para tu familia', 
-      'Orden para nuestro distrito',
-      'Tu voz en la municipalidad'
-    ],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 2000,
-    loop: true
-  });
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-flex">
+      <div>Partido Popular Cristiano · Base Ate · Macro Zonal 4</div>
+      <div>Dr. José Luis Hurtado Apaico · Alcalde 2027–2030</div>
+      <div style="color:#4a6b50;">© 2025 · <a href="https://ppcate.org.pe" style="color:#6ab880;">ppcate.org.pe</a></div>
+    </div>
+  </footer>
 
-<script>
-// Lógica de formularios y API (Esto ya no se verá en la pantalla)
-async function postToApi(payload){
-  if (!API_URL) { throw new Error("Falta configurar la URL"); }
-  const formData = new FormData();
-  formData.append("data", JSON.stringify(payload));
-  const res = await fetch(API_URL, { method: "POST", body: formData });
-  const text = await res.text();
-  let data = JSON.parse(text);
-  if (data.ok === false) { throw new Error(data.error); }
-  return data;
-}
+  <!-- WHATSAPP FLOTANTE -->
+  <a class="whatsapp" id="waFloat" href="https://wa.me/51968481482" target="_blank" rel="noopener">💬 WhatsApp</a>
 
-function openWhatsApp(message){ window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(message), "_blank"); }
-function setStatus(id, ok, msg){ const el = document.getElementById(id); el.className = "status " + (ok ? "ok" : "err"); el.textContent = msg; }
+  <!-- SCRIPTS -->
+  <script>
+    /* ── Typed.js ── */
+    new Typed('#typed-text', {
+      strings: [
+        'Seguridad para tu familia',
+        'Orden para nuestro distrito',
+        'Tu voz en la municipalidad',
+        'Ate que crece y se desarrolla'
+      ],
+      typeSpeed: 48,
+      backSpeed: 28,
+      backDelay: 2200,
+      loop: true
+    });
 
-document.getElementById("volunteerForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(this).entries());
-  try{ await postToApi({type:"voluntario", ...data}); setStatus("volunteerStatus", true, "Enviado con éxito."); this.reset(); }
-  catch(err){ openWhatsApp("Registro: " + data.nombre); }
-});
+    /* ── ScrollReveal ── */
+    const sr = ScrollReveal({ distance: '36px', duration: 900, delay: 150, reset: false });
+    sr.reveal('.card',        { origin: 'bottom', interval: 120 });
+    sr.reveal('h2',           { origin: 'left',   distance: '28px' });
+    sr.reveal('.hero-card',   { origin: 'right',  scale: 0.92, duration: 1100 });
+    sr.reveal('.ideario-card',{ origin: 'bottom', interval: 100 });
 
-document.getElementById("reportForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(this).entries());
-  try{ await postToApi({type:"reporte", ...data}); setStatus("reportStatus", true, "Reporte enviado."); this.reset(); }
-  catch(err){ openWhatsApp("Reporte: " + data.detalle); }
-});
-</script>
+    /* ── Formularios — fallback a WhatsApp si no hay API ── */
+    const PHONE = "51968481482";
+
+    function abrirWhatsApp(msg) {
+      window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg), "_blank");
+    }
+    function setStatus(id, ok, msg) {
+      const el = document.getElementById(id);
+      el.className = "status " + (ok ? "ok" : "err");
+      el.textContent = msg;
+    }
+
+    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(this).entries());
+      abrirWhatsApp("✋ Nuevo voluntario\nNombre: " + d.nombre + "\nTel: " + d.telefono + "\nZona: " + d.zona + "\nInterés: " + d.interes + "\nMensaje: " + d.mensaje);
+      setStatus("volunteerStatus", true, "¡Gracias! Te contactaremos pronto.");
+      this.reset();
+    });
+
+    document.getElementById("reportForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(this).entries());
+      abrirWhatsApp("🚨 Reporte ciudadano\nNombre: " + d.nombre + "\nCategoría: " + d.categoria + "\nZona: " + d.zona + "\nDetalle: " + d.detalle);
+      setStatus("reportStatus", true, "Reporte enviado. ¡Gracias por fiscalizar!");
+      this.reset();
+    });
+  </script>
+
 </body>
 </html>
