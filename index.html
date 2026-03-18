@@ -87,7 +87,12 @@
     .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
     .brand img { width: 58px; height: 58px; object-fit: contain; background: #fff; border-radius: 50%; padding: 6px; transition: transform .3s; }
     .brand:hover img { transform: rotate(8deg) scale(1.05); }
-    .brand .title { font-weight: 800; font-size: 1.15rem; line-height: 1.2; }
+    .brand .title { 
+  font-weight: 800; 
+  font-size: 1rem; /* Reducimos un poco el tamaño para que quepa el nombre largo */
+  line-height: 1.1; 
+  text-transform: uppercase; /* Le da más presencia institucional */
+}
     .brand .sub { font-size: .75rem; color: #d1ead9; }
     nav { display: flex; gap: 4px; flex-wrap: wrap; }
     nav a { color: #eef7f1; font-size: .82rem; font-weight: 700; padding: 8px 11px; border-radius: 8px; transition: background .2s; min-height: 40px; display: flex; align-items: center; }
@@ -250,8 +255,8 @@
       <a class="brand" href="#inicio">
         <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
         <div>
-          <div class="title">PPC Ate</div>
-          <div class="sub">José Luis Hurtado Apaico</div>
+          <div class="title">PARTIDO POPULAR CRICTIANO - Ate</div>
+          <div class="sub"> PPC - ATE </div>
         </div>
       </a>
       <nav>
