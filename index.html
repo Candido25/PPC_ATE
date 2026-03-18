@@ -178,9 +178,31 @@
     footer { background: #0f1c13; color: #8ab89a; padding: 32px 0; font-size: .85rem; }
     .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 
-    /* ══ WHATSAPP FLOTANTE ══ */
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: #fff; padding: 13px 22px; border-radius: 50px; font-weight: 700; font-size: .9rem; z-index: 200; box-shadow: 0 4px 18px rgba(37,211,102,.4); transition: transform .2s; }
-    .whatsapp:hover { transform: translateY(-3px); }
+    /* ══ WHATSAPP FLOTANTE REOPTIMIZADO ══ */
+    .whatsapp { 
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      background: #25D366 url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center;
+      background-size: 150%; /* El icono cubre todo el fondo */
+      background-blend-mode: soft-light; /* Hace que el icono sea una marca de agua sutil */
+      color: #fff; 
+      padding: 14px 28px; 
+      border-radius: 50px; 
+      font-weight: 900; 
+      font-size: 1.1rem; /* Letra mucho más grande */
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+      z-index: 200; 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+      transition: all .3s ease; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .whatsapp:hover { transform: scale(1.05); background-color: #128C7E; }
 
     /* ══ RESPONSIVE TABLET ══ */
     @media (max-width: 1024px) {
@@ -561,7 +583,7 @@
 </a>
 
     <!-- WHATSAPP FLOTANTE -->
-  <a class="whatsapp" id="waFloat" href="https://bit.ly/JoseLuisHurtadoAte" target="_blank" rel="noopener">💬 Únete a mi Canal</a>
+ <a class="whatsapp" id="waFloat" href="https://bit.ly/JoseLuisHurtadoAte" target="_blank" rel="noopener">ÚNETE A MI CANAL</a>
 
   <!-- SCRIPTS -->
   <script>
