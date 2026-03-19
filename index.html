@@ -87,7 +87,12 @@
     .brand { display: flex; align-items: center; gap: 12px; color: #fff; }
     .brand img { width: 58px; height: 58px; object-fit: contain; background: #fff; border-radius: 50%; padding: 6px; transition: transform .3s; }
     .brand:hover img { transform: rotate(8deg) scale(1.05); }
-    .brand .title { font-weight: 800; font-size: 1rem; line-height: 1.1; text-transform: uppercase; }
+    .brand .title { 
+  font-weight: 800; 
+  font-size: 1rem; /* Reducimos un poco el tamaño para que quepa el nombre largo */
+  line-height: 1.1; 
+  text-transform: uppercase; /* Le da más presencia institucional */
+}
     .brand .sub { font-size: .75rem; color: #d1ead9; }
     nav { display: flex; gap: 4px; flex-wrap: wrap; }
     nav a { color: #eef7f1; font-size: .82rem; font-weight: 700; padding: 8px 11px; border-radius: 8px; transition: background .2s; min-height: 40px; display: flex; align-items: center; }
@@ -178,8 +183,30 @@
     footer { background: #0f1c13; color: #8ab89a; padding: 32px 0; font-size: .85rem; }
     .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
 
-    /* ══ WHATSAPP FLOTANTE ══ */
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: #fff; padding: 14px 28px; border-radius: 50px; font-weight: 900; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; z-index: 200; box-shadow: 0 8px 20px rgba(0,0,0,.3); transition: all .3s ease; display: flex; align-items: center; justify-content: center; border: 2px solid #fff; }
+    /* ══ WHATSAPP FLOTANTE REOPTIMIZADO ══ */
+    .whatsapp { 
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      background: #25D366 url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center;
+      background-size: 150%; /* El icono cubre todo el fondo */
+      background-blend-mode: soft-light; /* Hace que el icono sea una marca de agua sutil */
+      color: #fff; 
+      padding: 14px 28px; 
+      border-radius: 50px; 
+      font-weight: 900; 
+      font-size: 1.1rem; /* Letra mucho más grande */
+      text-transform: uppercase; 
+      letter-spacing: 1px;
+      z-index: 200; 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+      transition: all .3s ease; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
     .whatsapp:hover { transform: scale(1.05); background-color: #128C7E; }
 
     /* ══ RESPONSIVE TABLET ══ */
@@ -276,7 +303,7 @@
           </a>
         </div>
         <h1><span id="typed-text"></span></h1>
-        <p>José Luis Hurtado Apaico — Abogado Litigante | Especialista en Criminología | Líder Social — propone una gestión enfocada en seguridad ciudadana, desarrollo vecinal y participación activa para construir un distrito más seguro, limpio y organizado.</p>
+        <p>José Luis Hurtado Apaico — abogado, doctor en derecho y criminólogo — propone una gestión enfocada en seguridad ciudadana, desarrollo vecinal y participación activa para construir un distrito más seguro, limpio y organizado.</p>
         <div class="cta-row">
           <a class="btn gold" href="propuestas.html">Conoce las propuestas</a>
           <a class="btn outline" href="#voluntarios">Únete al equipo</a>
@@ -316,12 +343,12 @@
         <p class="muted">Un plan concreto, basado en la Doctrina Social Cristiana, con seguridad y desarrollo autogestionario como ejes principales.</p>
       </div>
       <div class="grid-3">
-        <div class="card proposal"><div class="icon">🛡️</div><h3>Seguridad Ciudadana</h3><p class="muted">Modernización del serenazgo, cámaras de vigilancia, coordinación con la PNP y fortalecimiento de juntas vecinales. El Dr. Hurtado aplica su formación en criminología para diseñar políticas basadas en evidencia.</p></div>
-        <div class="card proposal"><div class="icon">🌱</div><h3>Proyectos Autogestionarios</h3><p class="muted">No solo dar el pescado, sino enseñar a pescar. Huertos urbanos, talleres productivos, centros de formación digital y escuelas de liderazgo vecinal para que cada familia genere su propio desarrollo.</p></div>
-        <div class="card proposal"><div class="icon">🏥</div><h3>Salud para todos</h3><p class="muted">Centros de salud equipados, campañas preventivas permanentes, red de promotores de salud comunitaria y atención prioritaria para niños, mujeres y adultos mayores.</p></div>
-        <div class="card proposal"><div class="icon">📚</div><h3>Educación de calidad</h3><p class="muted">Mejora de infraestructura escolar, becas para jóvenes con talento, formación técnica y digital, y acceso a internet en zonas vulnerables del distrito.</p></div>
-        <div class="card proposal"><div class="icon">💼</div><h3>Empleo y economía local</h3><p class="muted">Apoyo a microempresarios, ferias distritales formales, capacitación laboral para jóvenes y mujeres, y fomento de la inversión responsable en Ate.</p></div>
-        <div class="card proposal"><div class="icon">🏗️</div><h3>Infraestructura</h3><p class="muted">Pistas y veredas en buen estado, mejora del agua y desagüe, ordenamiento del tránsito y centros comunitarios modernos en todos los sectores de Ate.</p></div>
+        <a href="seguridad.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🛡️</div><h3>Seguridad Ciudadana</h3><p class="muted">Modernización del serenazgo, cámaras de vigilancia, coordinación con la PNP y fortalecimiento de juntas vecinales. El Dr. Hurtado aplica su formación en criminología para diseñar políticas basadas en evidencia.</p></div></a>
+        <a href="autogestion.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🌱</div><h3>Proyectos Autogestionarios</h3><p class="muted">No solo dar el pescado, sino enseñar a pescar. Huertos urbanos, talleres productivos, centros de formación digital y escuelas de liderazgo vecinal para que cada familia genere su propio desarrollo.</p></div></a>
+        <a href="salud.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🏥</div><h3>Salud para todos</h3><p class="muted">Centros de salud equipados, campañas preventivas permanentes, red de promotores de salud comunitaria y atención prioritaria para niños, mujeres y adultos mayores.</p></div></a>
+        <a href="educacion.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">📚</div><h3>Educación de calidad</h3><p class="muted">Mejora de infraestructura escolar, becas para jóvenes con talento, formación técnica y digital, y acceso a internet en zonas vulnerables del distrito.</p></div></a>
+        <a href="empleo.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">💼</div><h3>Empleo y economía local</h3><p class="muted">Apoyo a microempresarios, ferias distritales formales, capacitación laboral para jóvenes y mujeres, y fomento de la inversión responsable en Ate.</p></div></a>
+        <a href="infraestructura.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🏗️</div><h3>Infraestructura</h3><p class="muted">Pistas y veredas en buen estado, mejora del agua y desagüe, ordenamiento del tránsito y centros comunitarios modernos en todos los sectores de Ate.</p></div></a>
       </div>
     </div>
   </section>
@@ -420,19 +447,19 @@
           <div class="icon">📜</div>
           <h3>Ideario del PPC</h3>
           <p class="muted">Los principios y valores que guían la acción política del Partido Popular Cristiano en el Perú.</p>
-          <a href="ideario.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/ideario.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">📋</div>
           <h3>Estatutos del partido</h3>
           <p class="muted">La estructura orgánica, derechos y deberes de los afiliados al PPC a nivel nacional y local.</p>
-          <a href="estatuto.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/estatuto.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">🗺️</div>
           <h3>Plan de trabajo</h3>
           <p class="muted">Las propuestas concretas del Dr. Hurtado Apaico para la gestión municipal de Ate 2027–2030.</p>
-          <a href="propuestas.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/Plan de Trabajo.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
       </div>
     </div>
