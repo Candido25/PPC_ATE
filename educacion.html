@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Educación de Calidad en Ate 2027–2030 | Ate Aprende | José Luis Hurtado Apaico | PPC Ate</title>
+  <meta name="description" content="Propuesta de educación para Ate 2027-2030. Infraestructura escolar, academias municipales, formación técnica y digital, becas y bibliotecas modernas. José Luis Hurtado Apaico, PPC Ate.">
+  <meta name="keywords" content="educacion Ate Lima, colegios Ate, academias municipales Ate, Ate Aprende, becas estudiantiles Ate, bibliotecas Ate, formacion tecnica Ate, internet colegios Ate, UGEL Ate, PPC Ate educacion, Jose Luis Hurtado Apaico, alcalde Ate 2027">
+  <link rel="canonical" href="https://www.ppcate.org.pe/educacion.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <meta property="og:title" content="Educación de Calidad en Ate 2027–2030 | PPC Ate">
+  <meta property="og:description" content="Más oportunidades, mejor infraestructura y formación moderna para los estudiantes de Ate. Programa Ate Aprende.">
+  <meta property="og:url" content="https://www.ppcate.org.pe/educacion.html">
+  <meta property="og:image" content="https://www.ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <style>
+    :root {
+      --verde:       #117a3b;
+      --verde-osc:   #0d5b2d;
+      --verde-cla:   #2aab57;
+      --verde-suave: #e8f5ee;
+      --dorado:      #c9a23a;
+      --dorado-cla:  #f5edd8;
+      --naranja:     #e67e22;
+      --naranja-osc: #c0580a;
+      --naranja-suave:#fef5ec;
+      --claro:       #f6f8f6;
+      --texto:       #1f2b22;
+      --gris:        #6b756e;
+      --borde:       #dce7df;
+      --shadow:      0 4px 16px rgba(0,0,0,.08);
+      --shadow-md:   0 8px 28px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.72; overflow-x: hidden; }
+    a { color: var(--naranja); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ══ HEADER ══ */
+    header { background: var(--verde-osc); padding: .85rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; }
+    .logo img { width: 44px; height: 44px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .t1 { font-weight: 800; font-size: .95rem; line-height: 1.2; }
+    .logo .t2 { font-size: .68rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-size: .8rem; font-weight: 700; padding: 8px 18px; border-radius: 20px; white-space: nowrap; transition: opacity .2s; }
+    .back-btn:hover { opacity: .85; text-decoration: none; }
+
+    /* ══ HERO ══ */
+    .hero { background: linear-gradient(135deg, var(--naranja-osc) 0%, var(--naranja) 60%, #f39c12 100%); color: #fff; padding: 4.5rem 0 3.5rem; position: relative; overflow: hidden; }
+    .hero::before { content: '📚'; position: absolute; right: 3%; top: 50%; transform: translateY(-50%); font-size: 14rem; opacity: .06; pointer-events: none; }
+    .hero-badge { display: inline-block; background: #fff; color: var(--naranja-osc); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: .8rem; }
+    .hero h1 span { display: block; font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 400; color: rgba(255,255,255,.8); margin-top: .3rem; }
+    .hero .subtitulo { font-size: 1rem; color: rgba(255,255,255,.85); line-height: 1.72; max-width: 700px; margin-bottom: 2rem; }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.2); }
+    .h-stat .num { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
+    .h-stat .lbl { font-size: .68rem; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .08em; margin-top: .2rem; }
+
+    /* ══ SECCIONES ══ */
+    .section { padding: 4rem 0; }
+    .section.alt { background: #fff; }
+    .section.naranja-bg { background: var(--naranja-suave); }
+    .section.verde-bg { background: var(--verde-suave); }
+    .sec-title { text-align: center; margin-bottom: 2.8rem; }
+    .sec-title .tag { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: .7rem; background: var(--naranja); color: #fff; }
+    .sec-title .tag.verde { background: var(--verde-osc); color: #fff; }
+    .sec-title .tag.dorado { background: var(--dorado); color: #111; }
+    .sec-title h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; }
+    .sec-title p { color: var(--gris); font-size: .95rem; margin-top: .5rem; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+
+    /* ══ INTRO ══ */
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .intro-text p { color: var(--gris); font-size: .95rem; line-height: 1.78; margin-bottom: 1rem; }
+    .intro-box { background: linear-gradient(135deg, var(--naranja-osc), var(--naranja)); border-radius: 14px; padding: 2rem; color: #fff; }
+    .intro-box h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .intro-box ul { list-style: none; padding: 0; }
+    .intro-box ul li { padding: .4rem 0 .4rem 1.3rem; position: relative; font-size: .88rem; color: rgba(255,255,255,.85); border-bottom: 1px solid rgba(255,255,255,.12); line-height: 1.5; }
+    .intro-box ul li::before { content: '✓'; position: absolute; left: 0; color: #fff; font-weight: 700; }
+    .intro-box ul li:last-child { border-bottom: none; }
+
+    /* ══ OBJETIVO ══ */
+    .objetivo { background: var(--naranja-suave); border-top: 4px solid var(--naranja); border-bottom: 4px solid var(--naranja); padding: 2.5rem 0; text-align: center; }
+    .objetivo .tag { display: inline-block; background: var(--naranja); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: .8rem; }
+    .objetivo blockquote { font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 700; color: var(--naranja-osc); max-width: 820px; margin: 0 auto; line-height: 1.5; font-style: italic; }
+
+    /* ══ PILARES ══ */
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+
+    .pilar-card { background: #fff; border: 1px solid var(--borde); border-top: 4px solid var(--naranja); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; text-align: center; }
+    .pilar-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .pilar-num { font-size: 2.5rem; font-weight: 800; color: #fdd9b5; line-height: 1; margin-bottom: .4rem; font-family: Georgia, serif; }
+    .pilar-card h3 { font-size: .95rem; font-weight: 700; color: var(--naranja-osc); margin-bottom: .6rem; line-height: 1.3; }
+    .pilar-card p { font-size: .83rem; color: var(--gris); line-height: 1.6; }
+
+    /* Card intervención */
+    .int-card { background: #fff; border: 1px solid var(--borde); border-left: 4px solid var(--naranja); border-radius: 0 12px 12px 0; padding: 1.3rem 1.5rem; box-shadow: var(--shadow); transition: transform .25s; display: flex; align-items: flex-start; gap: .9rem; }
+    .int-card:hover { transform: translateY(-3px); }
+    .int-card .ic-ico { font-size: 1.6rem; flex-shrink: 0; }
+    .int-card h3 { font-size: .93rem; font-weight: 700; color: var(--naranja-osc); margin-bottom: .3rem; }
+    .int-card p { font-size: .83rem; color: var(--gris); line-height: 1.6; }
+
+    /* Card programa */
+    .prog-card { background: var(--naranja-suave); border: 1.5px solid #f5c9a0; border-radius: 12px; padding: 1.4rem; transition: transform .25s, box-shadow .25s; }
+    .prog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .prog-card .pc-ico { font-size: 2rem; margin-bottom: .6rem; }
+    .prog-card h3 { font-size: .97rem; font-weight: 700; color: var(--naranja-osc); margin-bottom: .5rem; }
+    .prog-card p { font-size: .84rem; color: var(--gris); line-height: 1.65; }
+
+    /* ══ PROGRAMA BANDERA ══ */
+    .bandera { background: linear-gradient(135deg, var(--naranja-osc), var(--naranja)); border-radius: 16px; padding: 3rem; color: #fff; text-align: center; }
+    .bandera h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .5rem; }
+    .bandera .b-sub { font-size: 1rem; color: rgba(255,255,255,.8); margin-bottom: 2rem; }
+    .bandera-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.8rem; }
+    .bandera-item { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 1.2rem .9rem; }
+    .bandera-item .bi-ico { font-size: 1.8rem; margin-bottom: .4rem; }
+    .bandera-item p { font-size: .82rem; color: rgba(255,255,255,.9); font-weight: 600; line-height: 1.4; }
+
+    /* ══ 100 DÍAS ══ */
+    .cien-dias { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 14px; padding: 2.5rem; color: #fff; }
+    .cien-dias .cd-title { font-size: 1.2rem; font-weight: 800; color: var(--dorado); margin-bottom: 1.2rem; }
+    .cien-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; }
+    .cien-item { background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15); border-radius: 9px; padding: 1rem 1.1rem; display: flex; align-items: flex-start; gap: .7rem; }
+    .cien-item .ci-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .cien-item p { font-size: .85rem; color: #c0e4cf; line-height: 1.55; }
+
+    /* ══ DSC ══ */
+    .dsc-box { background: linear-gradient(135deg, #1a2f1a, var(--verde-osc)); border-radius: 14px; padding: 2.5rem; color: #fff; }
+    .dsc-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--dorado); margin-bottom: 1rem; }
+    .dsc-box p { color: #b8ddc5; font-size: .93rem; line-height: 1.72; margin-bottom: .8rem; }
+    .dsc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 1.2rem; }
+    .dsc-item { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: .9rem 1rem; }
+    .dsc-item .di-ico { font-size: 1.3rem; margin-bottom: .3rem; }
+    .dsc-item .di-nombre { font-size: .78rem; font-weight: 700; color: var(--dorado); margin-bottom: .2rem; }
+    .dsc-item p { font-size: .77rem; color: #a8dbbe; line-height: 1.45; margin: 0; }
+
+    /* ══ COMPROMISO ══ */
+    .compromiso-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 16px; padding: 3rem; color: #fff; text-align: center; }
+    .compromiso-box h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 1rem; }
+    .compromiso-box p { color: #c0e4cf; font-size: .97rem; line-height: 1.75; max-width: 700px; margin: 0 auto .8rem; }
+    .firma { margin-top: 1.8rem; display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 1rem 1.8rem; }
+    .firma img { width: 54px; height: 54px; border-radius: 50%; border: 2px solid var(--dorado); object-fit: cover; }
+    .firma .fn { font-weight: 700; font-size: .95rem; color: #fff; text-align: left; }
+    .firma .fc { font-size: .75rem; color: #a8dbbe; text-align: left; margin-top: .2rem; }
+
+    /* ══ FINAL CLAIM ══ */
+    .final-claim { background: var(--naranja-osc); color: #fff; padding: 3.5rem 0; text-align: center; }
+    .final-claim h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .8rem; }
+    .final-claim p { color: rgba(255,255,255,.8); font-size: 1rem; max-width: 640px; margin: 0 auto; line-height: 1.72; }
+
+    /* ══ FOOTER ══ */
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .bandera-grid { grid-template-columns: repeat(2, 1fr); }
+      .dsc-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+      .bandera-grid, .dsc-grid, .cien-grid { grid-template-columns: 1fr; }
+      .hero { padding: 2.5rem 0 2rem; }
+      .hero::before { font-size: 6rem; }
+      .section { padding: 2.8rem 0; }
+      .compromiso-box, .bandera { padding: 2rem 1.2rem; }
+      .firma { flex-direction: column; text-align: center; }
+      .firma .fn, .firma .fc { text-align: center; }
+    }
+
+    /* ══ ANIMACIONES ══ */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Propuesta Municipal · Ate 2027–2030</div>
+      <h1>Educación de calidad para Ate
+        <span>Más oportunidades, mejor infraestructura y formación moderna para nuestros estudiantes</span>
+      </h1>
+      <p class="subtitulo">En Ate, miles de estudiantes enfrentan aulas deterioradas, falta de recursos, acceso limitado a tecnología y pocas oportunidades de desarrollo. La municipalidad no administra los colegios, pero sí puede hacer mucho más. Nuestra propuesta no invade competencias — las complementa y las fortalece.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="num">5</div><div class="lbl">Pilares educativos</div></div>
+        <div class="h-stat"><div class="num">7</div><div class="lbl">Intervenciones concretas</div></div>
+        <div class="h-stat"><div class="num">6</div><div class="lbl">Programas específicos</div></div>
+        <div class="h-stat"><div class="num">4</div><div class="lbl">Acciones en 100 días</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section alt">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text fade-up">
+          <p>La educación es el motor del desarrollo de cualquier comunidad. En Ate, invertir en educación no es un gasto — es la mejor decisión para el futuro del distrito y de cada familia.</p>
+          <p>La Doctrina Social Cristiana que inspira al PPC reconoce la educación como un <strong>derecho fundamental</strong> de toda persona. El Estado tiene el deber de garantizar el acceso a una educación de calidad, y la municipalidad tiene un rol complementario clave que hoy no se está ejerciendo bien.</p>
+          <p>Nuestra propuesta respeta las competencias del MINEDU, la UGEL y el Gobierno Regional — y trabaja en coordinación con ellos para multiplicar el impacto en favor de los estudiantes de Ate.</p>
+        </div>
+        <div class="intro-box fade-up">
+          <h3>✅ ¿Qué sí puede hacer legalmente la municipalidad en educación?</h3>
+          <ul>
+            <li>Apoyar el mantenimiento y mejora de infraestructura escolar</li>
+            <li>Entregar equipamiento: mobiliario, computadoras e internet</li>
+            <li>Crear academias y centros de formación complementaria</li>
+            <li>Construir y administrar bibliotecas municipales</li>
+            <li>Otorgar becas y reconocimientos a estudiantes destacados</li>
+            <li>Firmar convenios con UGEL y Gobierno Regional</li>
+            <li>Implementar programas de formación técnica y digital</li>
+            <li>Promover la participación de padres en la comunidad educativa</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJETIVO -->
+  <div class="objetivo">
+    <div class="container">
+      <div class="tag">Nuestro objetivo</div>
+      <blockquote>"Mejorar las condiciones educativas en Ate mediante infraestructura digna, equipamiento moderno, formación complementaria y oportunidades reales para cada estudiante del distrito."</blockquote>
+    </div>
+  </div>
+
+  <!-- 5 PILARES -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Plan estructurado</div>
+        <h2>Los 5 pilares de la educación en Ate</h2>
+        <p>Cinco líneas de acción complementarias que juntas transforman el entorno educativo del distrito.</p>
+      </div>
+      <div class="grid-5">
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">01</div>
+          <h3>Infraestructura digna</h3>
+          <p>Mantenimiento, reparación y mejoramiento de colegios en coordinación con el sector educación y el Gobierno Regional.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">02</div>
+          <h3>Equipamiento moderno</h3>
+          <p>Entrega de mobiliario, computadoras, internet y recursos educativos para colegios con mayores carencias.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">03</div>
+          <h3>Formación complementaria</h3>
+          <p>Academias municipales, formación técnica, digital e idiomas para ampliar las oportunidades de los jóvenes de Ate.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">04</div>
+          <h3>Inclusión y acceso</h3>
+          <p>Programas educativos en zonas vulnerables, becas y apoyo especial a estudiantes con talento y con limitaciones económicas.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">05</div>
+          <h3>Comunidad educativa fuerte</h3>
+          <p>Trabajo activo con padres, estudiantes y docentes para mejorar el entorno educativo y la participación comunitaria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVENCIONES -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag verde">Acciones directas</div>
+        <h2>Intervenciones concretas para los colegios de Ate</h2>
+        <p>Siete acciones específicas que la municipalidad puede ejecutar directamente o en coordinación con el sector educación.</p>
+      </div>
+      <div class="grid-2">
+        <div class="int-card fade-up">
+          <div class="ic-ico">🏗️</div>
+          <div>
+            <h3>Mantenimiento y mejora de infraestructura escolar</h3>
+            <p>Reparación de techos, aulas, servicios higiénicos y áreas comunes en colegios priorizados por su estado de deterioro, en coordinación con la UGEL Ate.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">🪑</div>
+          <div>
+            <h3>Entrega de mobiliario y equipamiento educativo</h3>
+            <p>Carpetas, sillas, pizarras, equipos de cómputo y materiales educativos para colegios en situación crítica del distrito.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">📶</div>
+          <div>
+            <h3>Internet gratuito en colegios vulnerables</h3>
+            <p>Instalación de conectividad en colegios de zonas altas y asentamientos humanos donde hoy no llega el acceso digital.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">📖</div>
+          <div>
+            <h3>Creación de bibliotecas municipales modernas</h3>
+            <p>Espacios de estudio equipados con libros, internet, computadoras y ambientes adecuados para el aprendizaje en cada zona del distrito.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">🎓</div>
+          <div>
+            <h3>Academias preuniversitarias municipales</h3>
+            <p>Preparación gratuita o de bajo costo para los jóvenes de Ate que aspiran a la universidad. Acceso a la educación superior como derecho, no como privilegio.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">💻</div>
+          <div>
+            <h3>Programas de capacitación digital y técnica</h3>
+            <p>Cursos de programación, diseño, ofimática y habilidades digitales para jóvenes y adultos. Formación que abre puertas en el mercado laboral real.</p>
+          </div>
+        </div>
+        <div class="int-card fade-up">
+          <div class="ic-ico">🏆</div>
+          <div>
+            <h3>Becas y apoyo a estudiantes destacados</h3>
+            <p>Reconocimiento y apoyo económico a los mejores estudiantes del distrito. El talento en Ate merece ser reconocido y potenciado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMAS ESPECÍFICOS -->
+  <section class="section naranja-bg">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag dorado">Programas específicos</div>
+        <h2>Más allá del aula: formación integral</h2>
+        <p>Programas complementarios para ampliar las oportunidades de los jóvenes y familias de Ate.</p>
+      </div>
+      <div class="grid-3">
+        <div class="prog-card fade-up">
+          <div class="pc-ico">🖥️</div>
+          <h3>Ate Digital</h3>
+          <p>Centros de formación digital con acceso gratuito a computadoras e internet. Cursos de programación básica, diseño, marketing digital y herramientas de productividad.</p>
+        </div>
+        <div class="prog-card fade-up">
+          <div class="pc-ico">🔧</div>
+          <h3>Ate Técnica</h3>
+          <p>Talleres de formación técnica en electricidad, carpintería, costura, gastronomía y construcción. Oficios que generan empleo inmediato y autoempleo sostenible.</p>
+        </div>
+        <div class="prog-card fade-up">
+          <div class="pc-ico">🌐</div>
+          <h3>Ate Bilingüe</h3>
+          <p>Cursos de inglés municipal para estudiantes y adultos. El idioma como herramienta de oportunidad laboral y acceso a la información global.</p>
+        </div>
+        <div class="prog-card fade-up">
+          <div class="pc-ico">🎨</div>
+          <h3>Ate Creativa</h3>
+          <p>Talleres de arte, música, teatro y cultura. Formación integral que desarrolla habilidades blandas, autoestima y pertenencia comunitaria en los jóvenes.</p>
+        </div>
+        <div class="prog-card fade-up">
+          <div class="pc-ico">👨‍👩‍👧</div>
+          <h3>Escuela de Padres</h3>
+          <p>Programas de formación para padres sobre acompañamiento educativo, comunicación familiar y habilidades para apoyar el aprendizaje de sus hijos.</p>
+        </div>
+        <div class="prog-card fade-up">
+          <div class="pc-ico">🎓</div>
+          <h3>Ate Pre Universitaria</h3>
+          <p>Academia municipal gratuita con docentes capacitados, materiales de estudio y simulacros de examen para jóvenes que aspiran a ingresar a la universidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMA BANDERA -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag dorado">Programa estrella</div>
+        <h2>📚 "Ate Aprende"</h2>
+        <p>El programa bandera que integra todas nuestras acciones educativas en un solo sello municipal.</p>
+      </div>
+      <div class="bandera fade-up">
+        <h2>📚 Ate Aprende</h2>
+        <p class="b-sub">Un distrito que aprende es un distrito que progresa. Formación para todos, en todas las etapas de la vida.</p>
+        <div class="bandera-grid">
+          <div class="bandera-item"><div class="bi-ico">🏫</div><p>Academias municipales gratuitas o de bajo costo</p></div>
+          <div class="bandera-item"><div class="bi-ico">⚙️</div><p>Centros de formación técnica con certificación</p></div>
+          <div class="bandera-item"><div class="bi-ico">💻</div><p>Educación digital para jóvenes y adultos</p></div>
+          <div class="bandera-item"><div class="bi-ico">📚</div><p>Bibliotecas y espacios modernos de estudio</p></div>
+        </div>
+        <p style="color:rgba(255,255,255,.85);font-size:.92rem;font-style:italic;">"Invertir en educación no es un gasto. Es la mejor decisión para el futuro de Ate."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTRINA SOCIAL CRISTIANA -->
+  <section class="section verde-bg">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag verde">Fundamento doctrinal</div>
+        <h2>La educación según la Doctrina Social Cristiana</h2>
+        <p>Nuestra propuesta educativa no es solo política — tiene raíces en valores que el PPC ha defendido desde su fundación en 1966.</p>
+      </div>
+      <div class="dsc-box fade-up">
+        <h3>✝ La educación como derecho fundamental de la persona</h3>
+        <p>La Doctrina Social Cristiana afirma que toda persona tiene derecho a la educación — un derecho que nace de su dignidad como ser humano y que el Estado tiene la obligación de garantizar. En Ate, ese derecho todavía no llega por igual a todos.</p>
+        <p>Siguiendo el principio de subsidiariedad, la municipalidad debe hacer lo que el sistema central no puede hacer solo: acercar la educación a las zonas vulnerables, complementar la formación formal y abrir oportunidades donde no las hay.</p>
+        <div class="dsc-grid">
+          <div class="dsc-item">
+            <div class="di-ico">👤</div>
+            <div class="di-nombre">Dignidad de la Persona</div>
+            <p>Todo ser humano tiene derecho a la educación como parte de su desarrollo integral.</p>
+          </div>
+          <div class="dsc-item">
+            <div class="di-ico">🏘️</div>
+            <div class="di-nombre">Subsidiariedad</div>
+            <p>El municipio actúa donde el sistema central no llega, sin sustituirlo — complementándolo.</p>
+          </div>
+          <div class="dsc-item">
+            <div class="di-ico">⚖️</div>
+            <div class="di-nombre">Solidaridad</div>
+            <p>Los más favorecidos tienen deber de apoyar el acceso educativo de los más vulnerables.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 100 DÍAS -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Acción inmediata</div>
+        <h2>Lo que haremos en los primeros 100 días</h2>
+      </div>
+      <div class="cien-dias fade-up">
+        <div class="cd-title">⚡ Primeros 100 días de gestión en educación</div>
+        <div class="cien-grid">
+          <div class="cien-item"><div class="ci-ico">🔍</div><p>Diagnóstico completo de infraestructura educativa en todos los colegios del distrito.</p></div>
+          <div class="cien-item"><div class="ci-ico">🤝</div><p>Firma de convenios con la UGEL Ate y el Gobierno Regional de Lima.</p></div>
+          <div class="cien-item"><div class="ci-ico">🏗️</div><p>Inicio de mantenimiento en los 20 colegios más deteriorados del distrito.</p></div>
+          <div class="cien-item"><div class="ci-ico">🎓</div><p>Lanzamiento oficial del programa "Ate Aprende" con sus primeras academias municipales.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPROMISO -->
+  <section class="section">
+    <div class="container">
+      <div class="compromiso-box fade-up">
+        <h2>Nuestro compromiso</h2>
+        <p>No vamos a prometer lo que no corresponde a una municipalidad. Vamos a hacer lo que sí se puede hacer: mejorar las condiciones, ampliar oportunidades y apoyar a nuestros estudiantes.</p>
+        <p><strong style="color:#fff">La educación transforma vidas. Y nosotros vamos a transformar la educación en Ate.</strong></p>
+        <div class="firma">
+          <img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico">
+          <div>
+            <div class="fn">José Luis Hurtado Apaico</div>
+            <div class="fc">Abogado litigante · Especialista en Criminología<br>Candidato a Alcalde de Ate · PPC 2027–2030</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CLAIM -->
+  <div class="final-claim">
+    <div class="container">
+      <h2>📚 La educación transforma Ate</h2>
+      <p>Invertir en educación no es un gasto. Es la mejor decisión para el futuro del distrito y de cada familia de Ate.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a> · Partido con inscripción vigente ante el JNE</p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

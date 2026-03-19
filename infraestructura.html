@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Infraestructura para el Desarrollo de Ate 2027–2030 | Ate en Obra | PPC Ate</title>
+  <meta name="description" content="Propuesta de infraestructura para Ate 2027-2030. Pistas, veredas, agua, espacios públicos, iluminación y equipamiento urbano. Programa Ate en Obra. José Luis Hurtado Apaico, PPC Ate.">
+  <meta name="keywords" content="infraestructura Ate Lima, pistas veredas Ate, obras municipales Ate, espacios publicos Ate, agua saneamiento Ate, iluminacion publica Ate, Ate en obra, parques Ate, semaforos Ate, PPC Ate infraestructura, Jose Luis Hurtado Apaico, alcalde Ate 2027, obras Ate 2027">
+  <link rel="canonical" href="https://www.ppcate.org.pe/infraestructura.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <meta property="og:title" content="Infraestructura para el Desarrollo de Ate 2027–2030 | PPC Ate">
+  <meta property="og:description" content="Obras que sí se ejecutan, espacios que sí funcionan y un distrito que avanza con orden. Programa Ate en Obra 2027-2030.">
+  <meta property="og:url" content="https://www.ppcate.org.pe/infraestructura.html">
+  <meta property="og:image" content="https://www.ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <style>
+    :root {
+      --verde:        #117a3b;
+      --verde-osc:    #0d5b2d;
+      --verde-suave:  #e8f5ee;
+      --dorado:       #c9a23a;
+      --dorado-cla:   #f5edd8;
+      --gris-osc:     #2c3e50;
+      --gris-med:     #4a5568;
+      --gris-suave:   #f0f2f5;
+      --acero:        #34495e;
+      --acero-cla:    #eaecef;
+      --claro:        #f6f8f6;
+      --texto:        #1f2b22;
+      --gris:         #6b756e;
+      --borde:        #dce7df;
+      --shadow:       0 4px 16px rgba(0,0,0,.08);
+      --shadow-md:    0 8px 28px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.72; overflow-x: hidden; }
+    a { color: var(--verde); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ══ HEADER ══ */
+    header { background: var(--verde-osc); padding: .85rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; }
+    .logo img { width: 44px; height: 44px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .t1 { font-weight: 800; font-size: .95rem; line-height: 1.2; }
+    .logo .t2 { font-size: .68rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-size: .8rem; font-weight: 700; padding: 8px 18px; border-radius: 20px; white-space: nowrap; transition: opacity .2s; }
+    .back-btn:hover { opacity: .85; text-decoration: none; }
+
+    /* ══ HERO ══ */
+    .hero { background: linear-gradient(135deg, #1a1a2a 0%, var(--gris-osc) 55%, var(--acero) 100%); color: #fff; padding: 4.5rem 0 3.5rem; position: relative; overflow: hidden; }
+    .hero::before { content: '🏗️'; position: absolute; right: 3%; top: 50%; transform: translateY(-50%); font-size: 14rem; opacity: .06; pointer-events: none; }
+    .hero-badge { display: inline-block; background: var(--dorado); color: #111; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: .8rem; }
+    .hero h1 span { display: block; font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 400; color: rgba(255,255,255,.75); margin-top: .3rem; }
+    .hero .subtitulo { font-size: 1rem; color: rgba(255,255,255,.8); line-height: 1.72; max-width: 700px; margin-bottom: 2rem; }
+    .hero-lema { font-style: italic; font-size: 1.1rem; color: var(--dorado-cla); border-left: 4px solid var(--dorado); padding-left: 1rem; margin-bottom: 2rem; font-weight: 600; max-width: 580px; }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.15); }
+    .h-stat .num { font-size: 2.2rem; font-weight: 800; color: var(--dorado); line-height: 1; }
+    .h-stat .lbl { font-size: .68rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .08em; margin-top: .2rem; }
+
+    /* ══ SECCIONES ══ */
+    .section { padding: 4rem 0; }
+    .section.alt { background: #fff; }
+    .section.gris-bg { background: var(--gris-suave); }
+    .section.verde-bg { background: var(--verde-suave); }
+    .sec-title { text-align: center; margin-bottom: 2.8rem; }
+    .sec-title .tag { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: .7rem; background: var(--gris-osc); color: #fff; }
+    .sec-title .tag.verde { background: var(--verde-osc); }
+    .sec-title .tag.dorado { background: var(--dorado); color: #111; }
+    .sec-title h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; }
+    .sec-title p { color: var(--gris); font-size: .95rem; margin-top: .5rem; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+
+    /* ══ INTRO ══ */
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .intro-text p { color: var(--gris); font-size: .95rem; line-height: 1.78; margin-bottom: 1rem; }
+    .intro-box { background: linear-gradient(135deg, #1a1a2a, var(--gris-osc)); border-radius: 14px; padding: 2rem; color: #fff; }
+    .intro-box h3 { font-size: 1rem; font-weight: 700; color: var(--dorado); margin-bottom: 1rem; }
+    .intro-box ul { list-style: none; padding: 0; }
+    .intro-box ul li { padding: .4rem 0 .4rem 1.3rem; position: relative; font-size: .88rem; color: rgba(255,255,255,.8); border-bottom: 1px solid rgba(255,255,255,.08); line-height: 1.5; }
+    .intro-box ul li::before { content: '✓'; position: absolute; left: 0; color: var(--dorado); font-weight: 700; }
+    .intro-box ul li:last-child { border-bottom: none; }
+
+    /* ══ OBJETIVO ══ */
+    .objetivo { background: var(--acero-cla); border-top: 4px solid var(--gris-osc); border-bottom: 4px solid var(--gris-osc); padding: 2.5rem 0; text-align: center; }
+    .objetivo .tag { display: inline-block; background: var(--gris-osc); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: .8rem; }
+    .objetivo blockquote { font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 700; color: var(--gris-osc); max-width: 820px; margin: 0 auto; line-height: 1.5; font-style: italic; }
+
+    /* ══ GRIDS ══ */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.1rem; }
+
+    /* Card pilar */
+    .pilar-card { background: #fff; border: 1px solid var(--borde); border-top: 4px solid var(--gris-osc); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; text-align: center; }
+    .pilar-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .pilar-num { font-size: 2.5rem; font-weight: 800; color: #d5d8dc; line-height: 1; margin-bottom: .4rem; font-family: Georgia, serif; }
+    .pilar-card .pc-ico { font-size: 1.8rem; margin-bottom: .5rem; }
+    .pilar-card h3 { font-size: .95rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .5rem; line-height: 1.3; }
+    .pilar-card p { font-size: .83rem; color: var(--gris); line-height: 1.6; }
+
+    /* Card intervención */
+    .int-card { background: #fff; border: 1px solid var(--borde); border-left: 4px solid var(--gris-osc); border-radius: 0 12px 12px 0; padding: 1.1rem 1.3rem; box-shadow: var(--shadow); display: flex; align-items: flex-start; gap: .8rem; transition: transform .2s; }
+    .int-card:hover { transform: translateY(-2px); }
+    .int-card .ic-ico { font-size: 1.5rem; flex-shrink: 0; }
+    .int-card p { font-size: .88rem; color: var(--texto); line-height: 1.55; }
+
+    /* ══ PROGRAMA BANDERA ══ */
+    .bandera { background: linear-gradient(135deg, #1a1a2a, var(--gris-osc)); border-radius: 16px; padding: 3rem; color: #fff; text-align: center; }
+    .bandera h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .5rem; }
+    .bandera .b-sub { font-size: 1rem; color: rgba(255,255,255,.75); margin-bottom: 2rem; }
+    .bandera-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.8rem; }
+    .bandera-item { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 1.3rem 1rem; }
+    .bandera-item .bi-ico { font-size: 2rem; margin-bottom: .5rem; }
+    .bandera-item h4 { font-size: .88rem; font-weight: 700; color: var(--dorado); margin-bottom: .3rem; }
+    .bandera-item p { font-size: .78rem; color: rgba(255,255,255,.75); line-height: 1.4; }
+
+    /* ══ ZONAS CRITICAS ══ */
+    .zonas-box { background: linear-gradient(135deg, #1a1a2a, var(--acero)); border-radius: 14px; padding: 2.5rem; color: #fff; }
+    .zonas-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--dorado); margin-bottom: 1.2rem; }
+    .zonas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
+    .zona-item { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 9px; padding: 1rem; }
+    .zona-item .zi-ico { font-size: 1.5rem; margin-bottom: .4rem; }
+    .zona-item h4 { font-size: .88rem; font-weight: 700; color: var(--dorado); margin-bottom: .3rem; }
+    .zona-item p { font-size: .79rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+
+    /* ══ NO HAREMOS ══ */
+    .no-box { background: #fff; border: 2px solid var(--gris-osc); border-radius: 14px; padding: 2rem; }
+    .no-box h3 { font-size: 1.05rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .no-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-bottom: 1.2rem; }
+    .no-item { display: flex; align-items: flex-start; gap: .7rem; background: var(--gris-suave); border-radius: 8px; padding: .8rem 1rem; }
+    .no-item .ni-ico { font-size: 1.1rem; flex-shrink: 0; }
+    .no-item p { font-size: .83rem; color: var(--gris-osc); line-height: 1.5; }
+    .si-texto { background: var(--verde-suave); border: 1px solid #b8ddc5; border-radius: 8px; padding: 1rem 1.2rem; font-size: .9rem; color: var(--verde-osc); font-weight: 600; line-height: 1.6; }
+
+    /* ══ 100 DÍAS ══ */
+    .cien-dias { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 14px; padding: 2.5rem; color: #fff; }
+    .cien-dias .cd-title { font-size: 1.2rem; font-weight: 800; color: var(--dorado); margin-bottom: 1.2rem; }
+    .cien-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; }
+    .cien-item { background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15); border-radius: 9px; padding: 1rem 1.1rem; display: flex; align-items: flex-start; gap: .7rem; }
+    .cien-item .ci-ico { font-size: 1.3rem; flex-shrink: 0; }
+    .cien-item p { font-size: .85rem; color: #c0e4cf; line-height: 1.55; }
+
+    /* ══ VIABILIDAD ══ */
+    .viabilidad-box { background: var(--gris-suave); border: 1px solid #c8cdd5; border-radius: 14px; padding: 2rem; }
+    .viabilidad-box h3 { font-size: 1.05rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .viab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+    .viab-item { background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: 1rem 1.1rem; }
+    .viab-item .vi-ico { font-size: 1.4rem; margin-bottom: .4rem; }
+    .viab-item h4 { font-size: .85rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .viab-item p { font-size: .79rem; color: var(--gris); line-height: 1.5; }
+
+    /* ══ BASE LEGAL ══ */
+    .legal-box { background: var(--claro); border: 1px solid var(--borde); border-radius: 14px; padding: 2rem; }
+    .legal-intro { color: var(--gris); font-size: .93rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .legal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+    .legal-item { display: flex; align-items: flex-start; gap: .7rem; background: #fff; border: 1px solid var(--borde); border-radius: 8px; padding: .9rem 1rem; transition: border-color .2s; }
+    .legal-item:hover { border-color: var(--gris-osc); }
+    .legal-item .li-ico { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+    .legal-item a { font-size: .83rem; color: var(--verde); font-weight: 600; line-height: 1.4; }
+
+    /* ══ COMPROMISO ══ */
+    .compromiso-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 16px; padding: 3rem; color: #fff; text-align: center; }
+    .compromiso-box h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 1rem; }
+    .compromiso-box p { color: #c0e4cf; font-size: .97rem; line-height: 1.75; max-width: 700px; margin: 0 auto .8rem; }
+    .firma { margin-top: 1.8rem; display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 1rem 1.8rem; }
+    .firma img { width: 54px; height: 54px; border-radius: 50%; border: 2px solid var(--dorado); object-fit: cover; }
+    .firma .fn { font-weight: 700; font-size: .95rem; color: #fff; text-align: left; }
+    .firma .fc { font-size: .75rem; color: #a8dbbe; text-align: left; margin-top: .2rem; }
+
+    /* ══ FINAL CLAIM ══ */
+    .final-claim { background: var(--gris-osc); color: #fff; padding: 3.5rem 0; text-align: center; }
+    .final-claim h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .8rem; color: var(--dorado); }
+    .final-claim p { color: rgba(255,255,255,.8); font-size: 1rem; max-width: 640px; margin: 0 auto; line-height: 1.72; }
+
+    /* ══ FOOTER ══ */
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .zonas-grid, .viab-grid, .legal-grid { grid-template-columns: repeat(2, 1fr); }
+      .bandera-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .no-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
+      .bandera-grid, .cien-grid, .zonas-grid, .viab-grid, .legal-grid { grid-template-columns: 1fr; }
+      .hero { padding: 2.5rem 0 2rem; }
+      .hero::before { font-size: 6rem; }
+      .section { padding: 2.8rem 0; }
+      .compromiso-box, .bandera { padding: 2rem 1.2rem; }
+      .firma { flex-direction: column; text-align: center; }
+      .firma .fn, .firma .fc { text-align: center; }
+    }
+
+    /* ══ ANIMACIONES ══ */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Propuesta Municipal · Ate 2027–2030</div>
+      <h1>Infraestructura para el desarrollo de Ate
+        <span>Obras que sí se ejecutan, espacios que sí funcionan y un distrito que avanza con orden</span>
+      </h1>
+      <p class="hero-lema">"No se trata solo de hacer obras. Se trata de hacer obras que sirvan, que duren y que respondan a las necesidades reales de la población."</p>
+      <p class="subtitulo">En Ate, la infraestructura no solo está atrasada — en muchos casos está abandonada, mal mantenida o mal planificada. Pistas deterioradas, veredas rotas, espacios públicos descuidados y falta de equipamiento urbano afectan directamente la calidad de vida de cada vecino.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="num">5</div><div class="lbl">Pilares del plan</div></div>
+        <div class="h-stat"><div class="num">10</div><div class="lbl">Intervenciones concretas</div></div>
+        <div class="h-stat"><div class="num">4</div><div class="lbl">Ejes del programa bandera</div></div>
+        <div class="h-stat"><div class="num">5</div><div class="lbl">Acciones en 100 días</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section alt">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text fade-up">
+          <p>La municipalidad tiene <strong>competencia directa</strong> para planificar, ejecutar y mantener infraestructura urbana local. No hay excusa para el abandono. El problema en Ate no ha sido la falta de herramientas legales — ha sido la falta de gestión.</p>
+          <p>La Doctrina Social Cristiana que inspira al PPC afirma que el municipio es <em>"expresión de la solidaridad local"</em>. Y la solidaridad local se mide en obras concretas que mejoran la vida cotidiana: la vereda que no hace tropezar a la abuela, el parque donde los niños pueden jugar seguros, la pista que no destruye el carro del vecino.</p>
+          <p>Vamos a priorizar <strong>mantenimiento, orden urbano y ejecución eficiente</strong>. Menos inauguraciones de obra nueva sin terminar, más obras que sí se concluyen y que duran.</p>
+        </div>
+        <div class="intro-box fade-up">
+          <h3>✅ ¿Qué sí puede hacer la municipalidad?</h3>
+          <ul>
+            <li>Planificar, ejecutar y mantener vías y veredas locales</li>
+            <li>Recuperar y mantener parques y espacios públicos</li>
+            <li>Instalar y mantener iluminación pública</li>
+            <li>Construir y mejorar centros comunales</li>
+            <li>Coordinar con SEDAPAL para agua y saneamiento</li>
+            <li>Ejecutar señalización vial y semaforización</li>
+            <li>Implementar mobiliario urbano funcional</li>
+            <li>Ejecutar inversiones mediante el sistema Invierte.pe</li>
+            <li>Priorizar obras con participación vecinal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJETIVO -->
+  <div class="objetivo">
+    <div class="container">
+      <div class="tag">Nuestro enfoque</div>
+      <blockquote>"Ejecutar infraestructura útil, duradera y planificada que mejore directamente la calidad de vida de los vecinos de Ate — priorizando mantenimiento, orden urbano y ejecución eficiente del presupuesto."</blockquote>
+    </div>
+  </div>
+
+  <!-- 5 PILARES -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Plan estructurado</div>
+        <h2>Los 5 pilares de infraestructura en Ate</h2>
+        <p>Cinco áreas de acción directa donde la municipalidad tiene competencia plena y obligación de actuar.</p>
+      </div>
+      <div class="grid-5">
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">01</div>
+          <div class="pc-ico">🛣️</div>
+          <h3>Pistas y veredas en buen estado</h3>
+          <p>Recuperación, mantenimiento y mejoramiento de vías locales para transitabilidad segura de vehículos y peatones.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">02</div>
+          <div class="pc-ico">💧</div>
+          <h3>Agua y saneamiento</h3>
+          <p>Intervenciones coordinadas con SEDAPAL para mejorar acceso y calidad de servicios básicos en zonas que lo requieren.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">03</div>
+          <div class="pc-ico">🌳</div>
+          <h3>Espacios públicos dignos</h3>
+          <p>Parques, losas deportivas y espacios comunitarios modernos, seguros y mantenidos para el uso y disfrute vecinal.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">04</div>
+          <div class="pc-ico">🚦</div>
+          <h3>Ordenamiento del tránsito</h3>
+          <p>Señalización, semaforización, control de puntos críticos y mejora de la movilidad urbana en todo el distrito.</p>
+        </div>
+        <div class="pilar-card fade-up">
+          <div class="pilar-num">05</div>
+          <div class="pc-ico">🏛️</div>
+          <h3>Equipamiento urbano</h3>
+          <p>Centros comunales, iluminación pública, mobiliario urbano y espacios funcionales para el desarrollo del distrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVENCIONES -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag verde">Acciones directas</div>
+        <h2>10 intervenciones concretas para Ate</h2>
+        <p>Obras y acciones específicas que la municipalidad ejecutará directamente durante el período 2027–2030.</p>
+      </div>
+      <div class="grid-2">
+        <div class="int-card fade-up"><div class="ic-ico">🔧</div><p>Programa intensivo de mantenimiento de pistas y veredas en todo el distrito.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">🛣️</div><p>Recuperación de vías deterioradas en zonas críticas de Ate.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">♿</div><p>Construcción y mejoramiento de veredas accesibles para personas con discapacidad y adultos mayores.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">🚧</div><p>Instalación y mantenimiento de señalización vial en avenidas, cruce escolares y zonas de riesgo.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">🚦</div><p>Modernización de semáforos y mejora del control de tránsito en puntos de mayor congestión.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">🌳</div><p>Recuperación y mantenimiento de parques y áreas verdes en todos los sectores del distrito.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">⚽</div><p>Implementación de losas deportivas y espacios recreativos en barrios sin infraestructura deportiva.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">💡</div><p>Mejoramiento de iluminación pública LED en zonas oscuras e inseguras del distrito.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">🏠</div><p>Construcción y mejora de centros comunales para uso de juntas vecinales y organizaciones sociales.</p></div>
+        <div class="int-card fade-up"><div class="ic-ico">💧</div><p>Intervenciones coordinadas con SEDAPAL para agua y desagüe en zonas vulnerables sin servicio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONAS CRÍTICAS -->
+  <section class="section gris-bg">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Priorización territorial</div>
+        <h2>Zonas críticas de intervención en Ate</h2>
+        <p>La planificación empieza por reconocer dónde están los problemas más urgentes.</p>
+      </div>
+      <div class="zonas-box fade-up">
+        <h3>🗺️ Sectores prioritarios para intervención inmediata</h3>
+        <div class="zonas-grid">
+          <div class="zona-item">
+            <div class="zi-ico">🏔️</div>
+            <h4>Zonas de ladera y quebrada</h4>
+            <p>Escaleras, muros de contención, accesos y veredas en UCVs y asentamientos humanos de las partes altas.</p>
+          </div>
+          <div class="zona-item">
+            <div class="zi-ico">🏘️</div>
+            <h4>Huaycán y Santa Clara</h4>
+            <p>Vías de acceso, agua y saneamiento, espacios públicos y equipamiento comunitario en zonas de alta densidad.</p>
+          </div>
+          <div class="zona-item">
+            <div class="zi-ico">🛣️</div>
+            <h4>Vitarte y Carretera Central</h4>
+            <p>Señalización, semaforización, veredas y ordenamiento del tránsito en el corredor más transitado del distrito.</p>
+          </div>
+          <div class="zona-item">
+            <div class="zi-ico">💡</div>
+            <h4>Zonas sin iluminación</h4>
+            <p>Instalación de luminarias LED en parques, pasajes, escaleras y calles oscuras que hoy son puntos inseguros.</p>
+          </div>
+          <div class="zona-item">
+            <div class="zi-ico">🌳</div>
+            <h4>Parques abandonados</h4>
+            <p>Recuperación y mantenimiento de áreas verdes deterioradas, con participación vecinal en el diseño.</p>
+          </div>
+          <div class="zona-item">
+            <div class="zi-ico">🏛️</div>
+            <h4>Centros comunales</h4>
+            <p>Mejoramiento de locales comunales que hoy están en mal estado y no pueden usarse como deben.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMA BANDERA -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag dorado">Programa estrella</div>
+        <h2>🏗️ "Ate en Obra"</h2>
+        <p>Un programa distrital de ejecución rápida de obras de impacto directo en la vida diaria, priorizando mantenimiento, recuperación y mejoramiento urbano con transparencia total.</p>
+      </div>
+      <div class="bandera fade-up">
+        <h2>🏗️ Ate en Obra</h2>
+        <p class="b-sub">Ejecución rápida, transparente y con participación vecinal. Obras que se ven, que duran y que sirven.</p>
+        <div class="bandera-grid">
+          <div class="bandera-item">
+            <div class="bi-ico">🔨</div>
+            <h4>Mantenimiento masivo</h4>
+            <p>Intervenciones rápidas y continuas en todo el distrito, priorizando lo más deteriorado.</p>
+          </div>
+          <div class="bandera-item">
+            <div class="bi-ico">🎯</div>
+            <h4>Obras prioritarias</h4>
+            <p>Identificación de zonas críticas para intervención inmediata con criterio técnico y vecinal.</p>
+          </div>
+          <div class="bandera-item">
+            <div class="bi-ico">📊</div>
+            <h4>Transparencia total</h4>
+            <p>Seguimiento público de obras, plazos y ejecución presupuestal en tiempo real.</p>
+          </div>
+          <div class="bandera-item">
+            <div class="bi-ico">🤝</div>
+            <h4>Participación vecinal</h4>
+            <p>Priorización de proyectos con participación directa de la comunidad y juntas vecinales.</p>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,.8);font-size:.92rem;font-style:italic;">"Una buena gestión se mide en resultados. Y los resultados se construyen."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIABILIDAD -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">¿Por qué es viable?</div>
+        <h2>Esta propuesta sí se puede ejecutar</h2>
+        <p>La infraestructura urbana es una competencia directa de la municipalidad. Existen mecanismos claros. El problema no es la falta de herramientas — es la falta de gestión.</p>
+      </div>
+      <div class="viabilidad-box fade-up">
+        <h3>🔑 Tres razones por las que esta propuesta es ejecutable desde el día uno</h3>
+        <div class="viab-grid">
+          <div class="viab-item">
+            <div class="vi-ico">⚖️</div>
+            <h4>Competencia legal directa</h4>
+            <p>La Ley Orgánica de Municipalidades otorga competencia plena en infraestructura urbana local. No necesitamos permiso de nadie para actuar.</p>
+          </div>
+          <div class="viab-item">
+            <div class="vi-ico">🏛️</div>
+            <h4>Sistema Invierte.pe</h4>
+            <p>El sistema de inversión pública permite formular, aprobar y ejecutar proyectos con recursos del canon, FONCOMUN y presupuesto municipal.</p>
+          </div>
+          <div class="viab-item">
+            <div class="vi-ico">📋</div>
+            <h4>Ley de Contrataciones</h4>
+            <p>La Ley N.° 30225 regula la contratación de obras con transparencia, competencia y controles que garantizan el buen uso del presupuesto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LO QUE NO HAREMOS -->
+  <section class="section gris-bg">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Honestidad política</div>
+        <h2>Lo que no vamos a hacer</h2>
+        <p>La seriedad también se mide por lo que uno se niega a prometer.</p>
+      </div>
+      <div class="no-box fade-up">
+        <h3>❌ Compromisos que no haremos:</h3>
+        <div class="no-grid">
+          <div class="no-item"><div class="ni-ico">🚫</div><p>Prometer megaproyectos inviables para ganar votos y no ejecutarlos.</p></div>
+          <div class="no-item"><div class="ni-ico">🚫</div><p>Ejecutar obras sin planificación técnica ni priorización territorial.</p></div>
+          <div class="no-item"><div class="ni-ico">🚫</div><p>Abandonar el mantenimiento por priorizar solo obras nuevas de inauguración.</p></div>
+        </div>
+        <div class="si-texto">✅ Lo que sí haremos: <strong>planificar, priorizar, ejecutar bien y mantener lo que ya existe.</strong> Una obra que no se mantiene es una obra que se pierde. En Ate vamos a cambiar esa lógica.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 100 DÍAS -->
+  <section class="section alt">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag verde">Acción inmediata</div>
+        <h2>Lo que haremos en los primeros 100 días</h2>
+      </div>
+      <div class="cien-dias fade-up">
+        <div class="cd-title">⚡ Primeros 100 días de gestión en infraestructura</div>
+        <div class="cien-grid">
+          <div class="cien-item"><div class="ci-ico">🔍</div><p>Diagnóstico integral de infraestructura urbana: vías, veredas, espacios públicos y equipamiento.</p></div>
+          <div class="cien-item"><div class="ci-ico">🗺️</div><p>Identificación y mapa de zonas críticas para priorización técnica de obras.</p></div>
+          <div class="cien-item"><div class="ci-ico">🚀</div><p>Lanzamiento oficial del programa "Ate en Obra" con cronograma público.</p></div>
+          <div class="cien-item"><div class="ci-ico">🔨</div><p>Inicio del mantenimiento intensivo de vías y espacios públicos en sectores priorizados.</p></div>
+          <div class="cien-item"><div class="ci-ico">💡</div><p>Plan de intervención urgente en iluminación pública en zonas oscuras e inseguras.</p></div>
+          <div class="cien-item"><div class="ci-ico">📊</div><p>Lanzamiento del portal de transparencia de obras con seguimiento en tiempo real.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BASE LEGAL -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-title fade-up">
+        <div class="tag">Sustento jurídico</div>
+        <h2>Base legal de esta propuesta</h2>
+      </div>
+      <div class="legal-box fade-up">
+        <p class="legal-intro">Toda la propuesta de infraestructura se sustenta en normas vigentes que otorgan competencias directas a las municipalidades para planificar, ejecutar y mantener obras urbanas.</p>
+        <div class="legal-grid">
+          <div class="legal-item"><div class="li-ico">📄</div><a href="https://www.leyes.congreso.gob.pe/Documentos/Leyes/27972.pdf" target="_blank" rel="noopener">Ley N.° 27972 – Ley Orgánica de Municipalidades (Competencias en infraestructura urbana)</a></div>
+          <div class="legal-item"><div class="li-ico">📄</div><a href="https://www.gob.pe/ley-n-30225" target="_blank" rel="noopener">Ley N.° 30225 – Ley de Contrataciones del Estado</a></div>
+          <div class="legal-item"><div class="li-ico">📄</div><a href="https://www.gob.pe/inviertepe" target="_blank" rel="noopener">Sistema Invierte.pe – Inversión pública eficiente y transparente</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPROMISO -->
+  <section class="section alt">
+    <div class="container">
+      <div class="compromiso-box fade-up">
+        <h2>Nuestro compromiso</h2>
+        <p>La municipalidad sí tiene una responsabilidad directa en la infraestructura del distrito. Y también tiene la capacidad de solucionarlo.</p>
+        <p><strong style="color:#fff">En Ate, la obra sí se va a ver. Planificada, ejecutada a tiempo, mantenida y con el vecino como fiscal permanente.</strong></p>
+        <div class="firma">
+          <img src="assets/jose-luis-hurtado.jpg" alt="José Luis Hurtado Apaico">
+          <div>
+            <div class="fn">José Luis Hurtado Apaico</div>
+            <div class="fc">Abogado litigante · Especialista en Criminología<br>Candidato a Alcalde de Ate · PPC 2027–2030</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CLAIM -->
+  <div class="final-claim">
+    <div class="container">
+      <h2>🏗️ En Ate, la obra sí se ve</h2>
+      <p>Una buena gestión se mide en resultados. Y los resultados se construyen con planificación, ejecución eficiente y transparencia total hacia los vecinos.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a> · Partido con inscripción vigente ante el JNE</p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
