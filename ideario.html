@@ -1,119 +1,264 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Ideario del Partido Popular Cristiano PPC | PPC Ate</title>
+  <meta name="description" content="Ideario oficial del Partido Popular Cristiano PPC, presentado al JNE en 1967. Principios de bien común, democracia cristiana, economía social y doctrina humanista cristiana.">
+  <meta name="keywords" content="ideario PPC, Partido Popular Cristiano ideario, doctrina PPC, humanismo cristiano Peru, bien comun PPC, democracia cristiana Peru, principios PPC, PPC Ate">
+  <link rel="canonical" href="https://www.ppcate.org.pe/ideario.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <meta property="og:title" content="Ideario del Partido Popular Cristiano | PPC Ate">
+  <meta property="og:description" content="Principios fundamentales del PPC: bien común, humanismo cristiano, democracia y desarrollo integral del hombre peruano.">
+  <meta property="og:url" content="https://www.ppcate.org.pe/ideario.html">
+  <style>
+    :root {
+      --verde:     #117a3b;
+      --verde-osc: #0d5b2d;
+      --dorado:    #c9a23a;
+      --claro:     #f6f8f6;
+      --texto:     #1f2b22;
+      --gris:      #6b756e;
+      --borde:     #dce7df;
+      --shadow:    0 4px 16px rgba(0,0,0,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Georgia, 'Times New Roman', serif; background: var(--claro); color: var(--texto); line-height: 1.75; }
+    a { color: var(--verde); text-decoration: none; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* HEADER */
+    header { background: var(--verde-osc); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.2); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; font-family: Arial, sans-serif; }
+    .logo img { width: 42px; height: 42px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .brand-txt .t1 { font-weight: 800; font-size: .95rem; }
+    .logo .brand-txt .t2 { font-size: .7rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-family: Arial, sans-serif; font-size: .8rem; font-weight: 700; padding: 8px 16px; border-radius: 20px; transition: opacity .2s; }
+    .back-btn:hover { opacity: .85; }
 
-<title>Ideario PPC Ate | Principios y visión para el distrito de Ate</title>
+    /* HERO DOC */
+    .doc-hero { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); color: #fff; padding: 3.5rem 0 2.5rem; text-align: center; }
+    .doc-hero .doc-tag { display: inline-block; background: var(--dorado); color: #111; font-family: Arial, sans-serif; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; }
+    .doc-hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; margin-bottom: .6rem; }
+    .doc-hero .subtitulo { font-size: 1rem; color: #a8dbbe; font-family: Arial, sans-serif; margin-bottom: .5rem; }
+    .doc-hero .nota-hist { font-size: .85rem; color: #c0e4cf; font-style: italic; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
-<meta name="description" content="Conoce el ideario del PPC Ate y los principios que orientan nuestra propuesta política para mejorar la seguridad, el orden y el desarrollo del distrito.">
+    /* ÍNDICE */
+    .indice { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .indice h2 { font-family: Arial, sans-serif; font-size: 1rem; font-weight: 700; color: var(--verde); margin-bottom: 1rem; }
+    .indice ol { padding-left: 1.2rem; }
+    .indice ol li { margin-bottom: .4rem; }
+    .indice ol li a { font-family: Arial, sans-serif; font-size: .9rem; color: var(--verde); }
+    .indice ol li a:hover { text-decoration: underline; }
 
-<link rel="canonical" href="https://ppcate.org.pe/ideario.html">
+    /* CONTENIDO */
+    .doc-content { padding: 2rem 0 4rem; }
+    .doc-section { margin-bottom: 3rem; }
+    .doc-section h2 { font-size: 1.35rem; font-weight: 700; color: var(--verde-osc); border-left: 4px solid var(--dorado); padding-left: 1rem; margin-bottom: 1.2rem; scroll-margin-top: 80px; }
+    .doc-section p { margin-bottom: 1rem; font-size: 1rem; color: var(--texto); }
+    .doc-section blockquote { border-left: 4px solid var(--verde); padding: 1rem 1.5rem; background: #e8f4ec; border-radius: 0 8px 8px 0; margin: 1.2rem 0; font-style: italic; color: var(--verde-osc); }
+    .doc-section ol { padding-left: 1.5rem; margin: 1rem 0; }
+    .doc-section ol li { margin-bottom: .8rem; font-size: 1rem; }
+    .principio-card { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
+    .principio-card h3 { font-size: 1rem; font-weight: 700; color: var(--verde); margin-bottom: .5rem; font-family: Arial, sans-serif; }
+    .fundadores { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .5rem; margin-top: 1rem; }
+    .fundador { background: var(--claro); border: 1px solid var(--borde); border-radius: 6px; padding: .5rem .8rem; font-size: .88rem; display: flex; align-items: center; gap: .5rem; }
+    .fundador::before { content: '✦'; color: var(--dorado); font-size: .7rem; }
 
-<style>
+    /* DIVIDER */
+    .divider { border: none; border-top: 1px solid var(--borde); margin: 2rem 0; }
 
-body{
-font-family:Arial, Helvetica, sans-serif;
-background:#f6f8f6;
-margin:0;
-color:#1f2b22;
-}
+    /* FOOTER */
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-family: Arial, sans-serif; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
-
-h1{
-font-size:38px;
-margin-bottom:10px;
-}
-
-h2{
-margin-top:30px;
-color:#117a3b;
-}
-
-p{
-line-height:1.7;
-font-size:16px;
-}
-
-.btn{
-display:inline-block;
-padding:12px 22px;
-background:#117a3b;
-color:white;
-border-radius:40px;
-font-weight:bold;
-margin-top:20px;
-}
-
-.btn:hover{
-background:#0d5b2d;
-}
-
-.back{
-margin-top:30px;
-display:inline-block;
-color:#117a3b;
-font-weight:bold;
-}
-
-</style>
-
+    @media (max-width: 640px) {
+      .doc-hero { padding: 2.5rem 1rem 2rem; }
+      .container { padding: 0 16px; }
+      .indice { padding: 1.2rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC">
+        <div class="brand-txt">
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+  </header>
 
-<h1>Ideario del PPC Ate</h1>
+  <div class="doc-hero">
+    <div class="container">
+      <div class="doc-tag">Documento Oficial</div>
+      <h1>Ideario del Partido Popular Cristiano</h1>
+      <p class="subtitulo">Partido Popular Cristiano · PPC · Perú</p>
+      <p class="nota-hist">Presentado al Jurado Nacional de Elecciones para la inscripción del Partido Popular Cristiano, obtenida el 14 de julio de 1967, y ratificado por la primera Convención Nacional en octubre de 1967.</p>
+    </div>
+  </div>
 
-<p>
-El ideario representa el conjunto de principios, valores y visión que orientan
-la propuesta política del Partido Popular Cristiano en el distrito de Ate.
-Nuestra acción se fundamenta en la defensa de la dignidad de la persona,
-el fortalecimiento de la comunidad y la construcción de un distrito más
-seguro, ordenado y con oportunidades para todos.
-</p>
+  <div class="container">
+    <div class="indice">
+      <h2>📋 Contenido del Ideario</h2>
+      <ol>
+        <li><a href="#introduccion">Introducción</a></li>
+        <li><a href="#bien-comun">Partido y Bien Común</a></li>
+        <li><a href="#principios">Principios Fundamentales</a></li>
+        <li><a href="#economia">La Economía</a></li>
+        <li><a href="#propiedad">La Propiedad Privada</a></li>
+        <li><a href="#trabajo">El Trabajo</a></li>
+        <li><a href="#desarrollo">El Desarrollo</a></li>
+        <li><a href="#estado">El Estado</a></li>
+        <li><a href="#sociedad-internacional">La Sociedad Internacional</a></li>
+        <li><a href="#accion-politica">La Acción Política</a></li>
+        <li><a href="#fundadores">Fundadores del Partido</a></li>
+      </ol>
+    </div>
 
-<h2>Principios</h2>
+    <div class="doc-content">
 
-<p>
-Creemos en una política basada en valores, responsabilidad pública y
-compromiso con el bienestar de los vecinos. La gestión municipal debe
-estar al servicio del ciudadano, con transparencia y cercanía con la
-realidad de los barrios.
-</p>
+      <div class="doc-section" id="introduccion">
+        <h2>Introducción</h2>
+        <p>El Partido Popular Cristiano hunde sus raíces en la doctrina humanista social cristiana, que ha inspirado fecundas realidades sociales en muchos países; y se ha fundado en el Perú para buscar, como meta y con inquebrantable decisión, el Bien Común para la Patria. Basa su acción, por tanto, en la ética cristiana, sin ser por ello una organización confesional.</p>
+        <p>El PPC no nace solamente por aspiraciones políticas inmediatas, ni aspira únicamente a una acción de corto alcance. Aspira a promover, con gran aliento, un acelerado proceso de desarrollo económico y cambio social; pero basado en la realidad y ejecutado con sensatez. Su propósito es contribuir a instaurar, dentro de un régimen plural, una nueva sociedad en la cual la prosperidad general y la justicia distributiva sean el fruto de una fraternidad productiva y de ascenso de los valores humanos y morales.</p>
+        <p>El PPC no se limitará a corregir estructuras sociales defectuosas o a reemplazarlas por otras nuevas. Buscará también, por encima de cada elemento caduco que supere, la realización plena del hombre peruano; y cada meta parcial que se alcance, aunque alejada todavía de la imagen ideal de país que se persigue, impulsará su esfuerzo en la búsqueda permanente e indetenible hacia el Bien Común de todos los peruanos.</p>
+      </div>
 
-<h2>Visión para Ate</h2>
+      <hr class="divider">
 
-<p>
-Promovemos un distrito donde las familias puedan vivir con seguridad,
-donde los espacios públicos sean recuperados para la comunidad y donde
-las decisiones municipales se tomen escuchando a los vecinos.
-</p>
+      <div class="doc-section" id="bien-comun">
+        <h2>Partido y Bien Común</h2>
+        <p>El PPC está integrado por hombres y mujeres de todas las ocupaciones y clases sociales; y se ha fundado para encarar y resolver los agudos problemas del país y promover el desarrollo integral del hombre peruano, según el criterio y los principios de la doctrina social cristiana. Por lo tanto, se compromete a conducir una política honesta, transformadora, concreta, realista y eficaz, auténticamente democrática. El objeto del presente Ideario es formular los principios primordiales a los que el Partido sujetará su acción realizadora.</p>
+        <blockquote>El partido tiene una misión irrenunciable: hacer del Perú una sociedad comunitaria, proclamando el Bien Común como razón suprema del orden político.</blockquote>
+        <p>Esta afirmación del Bien Común no debe confundirse con ninguna concepción colectivista, pues su finalidad no es otra que la promoción humana, total y solidaria, la que no puede lograrse sin el respeto a la dignidad de la Persona Humana y la participación libre y responsable de ella en la conducción de la comunidad.</p>
+        <p>El Bien Común debe implantarse en un doble proceso simultáneo de <strong>personalización</strong> — el desarrollo de las virtualidades del hombre como ser espiritual, libre y protagonista de su destino — y de <strong>socialización</strong>, que significa el arraigo de la fraternidad por medio de soluciones y procedimientos de integración social, en un armónico pluralismo institucional que equilibre y promueva la labor concertada del Estado y de las comunidades intermedias: Familia, Escuela, Asociaciones Gremiales, Sindicatos, Municipios, Universidades, Colegios Profesionales, entre otros.</p>
+        <p>El PPC no comparte la tesis del viejo liberalismo, que representa una orientación egoísta que ignora el Bien Común. Del mismo modo, rechaza toda concepción totalitaria y colectivista — como la marxista leninista — que desconoce el valor de la libertad humana y aplasta la dignidad personal con el Estado todopoderoso.</p>
+      </div>
 
-<h2>Participación ciudadana</h2>
+      <hr class="divider">
 
-<p>
-La participación activa de los vecinos es fundamental para mejorar la
-gestión pública. Creemos en un municipio que dialogue con la comunidad
-y que incorpore las propuestas ciudadanas en la toma de decisiones.
-</p>
+      <div class="doc-section" id="principios">
+        <h2>Principios Fundamentales</h2>
+        <p>El hombre es un ser espiritual y libre. Por serlo, tiene derechos que nadie le puede quitar:</p>
+        <div class="principio-card"><h3>Derechos Fundamentales de la Persona</h3><p>La existencia · Un nivel de vida digno · El respeto a su persona · La manifestación y defensa de sus ideas · Una objetiva información · La participación · Los bienes de la cultura · Honrar a Dios según su conciencia · Fundar una familia · El trabajo y su justa retribución · La libre iniciativa económica · La propiedad privada · La asociación · La participación en la vida pública · La defensa jurídica de sus derechos.</p></div>
+        <p>El ejercicio de esa libertad conlleva al derecho a luchar por la eliminación de las restricciones injustas, pero debe ser maduramente responsable, porque el hombre libre tiene que cumplir deberes con la sociedad, respetando los derechos ajenos, procurando el bien de los demás y sintiendo como propias sus necesidades.</p>
+        <div class="principio-card"><h3>La Comunidad Humana</h3><p>El hombre no vive aislado. Integra comunidades: la familia — que tiene derecho a la estabilidad, al pan y al techo — la escuela, los gremios profesionales, el Municipio como expresión de la solidaridad local, y finalmente la Nación entera, en la gallarda afirmación de su personalidad mestiza y de su patrimonio moral y material.</p></div>
+      </div>
 
-<a class="btn" href="docs/ideario.pdf" target="_blank">Ver documento completo</a>
+      <hr class="divider">
 
-<br>
+      <div class="doc-section" id="economia">
+        <h2>La Economía</h2>
+        <p>La economía debe estar al servicio del hombre, de todo el hombre y de todos los hombres. Debe poner al lucro por debajo de la satisfacción de las necesidades y afirmar la prosperidad de los seres humanos en encuentro fraterno de todos los productores, en la exaltación del trabajo y en la comunicación y difusión de los medios de producción hasta la superación de la "condición proletaria".</p>
+        <p>Para ser viable todo ello, dentro del orden, se requiere una acertada política distributiva, un adecuado sistema crediticio y una defensa eficaz del valor de la moneda.</p>
+      </div>
 
-<a class="back" href="https://ppcate.org.pe">← Volver a la página principal</a>
+      <hr class="divider">
 
-</div>
+      <div class="doc-section" id="propiedad">
+        <h2>La Propiedad Privada</h2>
+        <p>La propiedad privada de los bienes de uso y consumo y de los bienes y medios de producción, es un derecho natural porque es expresión y defensa de la libertad personal. Puede ser individual o cooperativa.</p>
+        <blockquote>La propiedad privada, siendo un derecho natural, no es un derecho absoluto. Se justifica plenamente sólo cuando cumple una función social.</blockquote>
+        <p>El PPC busca el advenimiento de una "economía de propietarios". Los monopolios deben ser combatidos y la especulación y la usura reprimidas. El Estado debe organizar, planificadamente pero con flexibilidad, las iniciativas públicas y privadas, siendo el Gerente del Bien Común.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="trabajo">
+        <h2>El Trabajo</h2>
+        <p>Desde el punto de vista moral, tiene la primacía entre los factores de producción por ser el aporte humano por excelencia. La realización de su dignidad supone, en primer lugar, la reivindicación del obrero, del campesino, del artesano o del empleado y su liberación de toda alienación.</p>
+        <p>Es urgente la formación técnica del trabajador y su acceso a la propiedad. Es indispensable alentar a la asociación sindical libre y representativa. La instauración de satisfactorias relaciones industriales y la reforma de la empresa — abierta a la participación de los trabajadores en las utilidades, la gestión y la propiedad — son caminos de solución que deben emprenderse con generosidad y espíritu solidario.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="desarrollo">
+        <h2>El Desarrollo</h2>
+        <p>Debe ser el resultado de la participación consciente de todos en la tarea y sacrificio común, en la solidaridad patriótica de las clases sociales y el impulso equilibrado orientado a la expansión de los diversos sectores. El crecimiento colectivo debe ser básicamente realizado por la iniciativa privada dentro de una planificación nacional flexible y suplementado subsidiariamente por el Estado.</p>
+        <p>La eliminación progresiva de las grandes desigualdades económicas, sin distorsiones violentas que pueden destruir el aparato productivo, debe ser una de las metas fundamentales de un plan nacional que contemple avances sensibles en los programas de Salud, Educación y Vivienda.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="estado">
+        <h2>El Estado</h2>
+        <p>Es la organización jurídica de la Nación, su gobierno político. Su razón de ser es la realización del Bien Común. Para ello debe impulsar la iniciativa privada, corregirla y castigarla cuando abusa, suplirla cuando sea insuficiente o ponga en peligro su soberanía.</p>
+        <blockquote>Para que las autoridades sean efectivamente representativas, deben nacer del voto universal directo y secreto y renovarse periódicamente. La Ley no debe desconocer la realidad y su vigencia debe ser absoluta y sin privilegios.</blockquote>
+        <p>Los poderes del Estado no deben interferirse. La administración pública debe reformarse para ser eficaz. Debe castigarse severamente toda forma de inmoralidad en la función pública; y los partidos políticos deben actuar libre y responsablemente, con democracia interna y sentido nacional.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="sociedad-internacional">
+        <h2>La Sociedad Internacional</h2>
+        <p>Debe aspirar a una paz que sea fruto del respeto a los derechos de cada Nación y de cada hombre, y de colaboración estrecha de los pueblos, que permita a los más desarrollados ayudar a los menos desarrollados, sin colonialismo o tutelaje alguno.</p>
+        <p>La función social de la riqueza es también válida entre naciones. La posición del Perú debe ser abierta a los encuentros humanistas y altiva en la defensa celosa de las esencias nacionales.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="accion-politica">
+        <h2>La Acción Política</h2>
+        <p>El Partido Popular Cristiano aspira a normar su actuación política sobre las siguientes pautas generales:</p>
+        <ol>
+          <li><strong>Tenaz empeño por la Justicia</strong> en todas sus formas: conmutativa, distributiva y social. Con apremio por su realización diaria, pero con realismo y sensatez.</li>
+          <li><strong>Aceptación de la necesidad de cambios estructurales y sociales progresivos</strong>, aplicando todos los recursos disponibles para obtener las mayores transformaciones posibles en el menor plazo y con el menor costo humano. El PPC rechaza la violencia como instrumento de cambio.</li>
+          <li><strong>Apertura al conocimiento verdadero de la realidad</strong> concreta del país. Realismo sí. Demagogia no. La promoción humana solo es viable cuando las metas encajan dentro de lo posible.</li>
+          <li><strong>Permanente apertura al diálogo</strong> entre las entidades políticas o sociales. Con cordialidad en la relación humana, con rechazo de la intolerancia o el absolutismo.</li>
+          <li><strong>Forjar progresivamente una nueva mentalidad</strong> en la juventud, en los hombres y mujeres de la producción, en los maestros y en los profesionales. Debe pensarse con audacia y ejecutarse con prudencia.</li>
+        </ol>
+        <blockquote>El PPC cree que los peruanos de ahora están convocados a una esperanzada labor de creación, de construcción de un país nuevo, que será una meta alcanzable solo en la medida en que actúen positivamente, sin violencia, con sensatez y con un optimismo crítico y prudente.</blockquote>
+      </div>
+
+      <hr class="divider">
+
+      <div class="doc-section" id="fundadores">
+        <h2>Fundadores del Partido Popular Cristiano</h2>
+        <p>El Partido Popular Cristiano fue fundado el <strong>18 de diciembre de 1966</strong> en la ciudad de Lima. Sus fundadores fueron:</p>
+        <div class="fundadores">
+          <div class="fundador">Luis Bedoya Reyes</div>
+          <div class="fundador">Mario Polar Ugarteche</div>
+          <div class="fundador">Ernesto Alayza Grundy</div>
+          <div class="fundador">Julio Ernesto Portugal</div>
+          <div class="fundador">Roberto Ramírez del Villar</div>
+          <div class="fundador">Luis Giusti La Rosa</div>
+          <div class="fundador">Jaime Rey de Castro</div>
+          <div class="fundador">Antonino Espinosa Laña</div>
+          <div class="fundador">María Rosario Araoz</div>
+          <div class="fundador">Roberto Wakehan</div>
+          <div class="fundador">Emilio Castañon Pasquel</div>
+          <div class="fundador">Juan M. Podesta Ugaz</div>
+          <div class="fundador">Augusto Dammert León</div>
+          <div class="fundador">Catalina Cassinelli Bacigalupo</div>
+          <div class="fundador">Andres Carbone</div>
+          <div class="fundador">Carmen Ortiz de Zevallos</div>
+          <div class="fundador">Marcelo Llosa</div>
+          <div class="fundador">René Infante</div>
+          <div class="fundador">José Jimenez Mostajo</div>
+          <div class="fundador">Tula Portocarrero</div>
+          <div class="fundador">Isabel Alayza Escardo</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">Dr. José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a> · Partido con inscripción vigente ante el JNE</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
