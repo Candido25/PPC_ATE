@@ -262,7 +262,7 @@
       <nav>
         <a href="#propuestas">Propuestas</a>
         <a href="#problemas">Problemas</a>
-        <a href="#actividades.html">Trabajo territorial</a>
+        <a href="#actividades">Trabajo territorial</a>
         <a href="ideario.html">Doctrina</a>
         <a href="actividades.html">Actividades</a>
         <a href="#documentos">Documentos</a>
@@ -307,7 +307,7 @@
         <div class="cta-row">
           <a class="btn gold" href="propuestas.html">Conoce las propuestas</a>
           <a class="btn outline" href="#voluntarios">Únete al equipo</a>
-          <a class="btn outline" href="#fiscalizacion.html">Reporta un problema</a>
+          <a class="btn outline" href="#fiscalizacion">Reporta un problema</a>
         </div>
       </div>
       <div class="hero-card">
@@ -320,7 +320,6 @@
 
   <!-- PROBLEMAS -->
   <section class="section" id="problemas">
-    <a href="inseguridad-ate.html" class="btn green">Ver diagnóstico de inseguridad</a>
     <div class="container">
       <div class="sec-head">
         <div class="tag">Diagnóstico ciudadano</div>
@@ -448,19 +447,19 @@
           <div class="icon">📜</div>
           <h3>Ideario del PPC</h3>
           <p class="muted">Los principios y valores que guían la acción política del Partido Popular Cristiano en el Perú.</p>
-          <a href="docs/ideario.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/ideario.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">📋</div>
           <h3>Estatutos del partido</h3>
           <p class="muted">La estructura orgánica, derechos y deberes de los afiliados al PPC a nivel nacional y local.</p>
-          <a href="docs/estatuto.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/estatuto.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">🗺️</div>
           <h3>Plan de trabajo</h3>
           <p class="muted">Las propuestas concretas del Dr. Hurtado Apaico para la gestión municipal de Ate 2027–2030.</p>
-          <a href="docs/Plan de Trabajo.html" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/plan_trabajo.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
         </div>
       </div>
     </div>
@@ -612,32 +611,91 @@
     sr.reveal('.hero-card',   { origin: 'right',  scale: 0.92, duration: 1100 });
     sr.reveal('.ideario-card',{ origin: 'bottom', interval: 100 });
 
-    /* ── Formularios — fallback a WhatsApp si no hay API ── */
-    const PHONE = "51968481482";
+    /* ── Formularios — Google Sheets vía config.js + fallback a WhatsApp ── */
+    const APP = window.APP_CONFIG || {};
+    const API_URL = APP.apiUrl || "";
+    const PHONE = APP.whatsapp || "51968481482";
 
     function abrirWhatsApp(msg) {
       window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg), "_blank");
     }
+
     function setStatus(id, ok, msg) {
       const el = document.getElementById(id);
       el.className = "status " + (ok ? "ok" : "err");
       el.textContent = msg;
     }
 
-    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+    async function postToApi(payload) {
+      if (!API_URL) throw new Error("Falta configurar la URL del Apps Script en config.js");
+
+      const formData = new FormData();
+      formData.append("data", JSON.stringify(payload));
+
+      const res = await fetch(API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      const text = await res.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error("Respuesta inválida del servidor");
+      }
+
+      if (data.ok === false || data.status === "error") {
+        throw new Error(data.error || "No se pudo enviar");
+      }
+
+      return data;
+    }
+
+    document.getElementById("volunteerForm").addEventListener("submit", async function(e) {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(this).entries());
-      abrirWhatsApp("✋ Nuevo voluntario\nNombre: " + d.nombre + "\nTel: " + d.telefono + "\nZona: " + d.zona + "\nInterés: " + d.interes + "\nMensaje: " + d.mensaje);
-      setStatus("volunteerStatus", true, "¡Gracias! Te contactaremos pronto.");
-      this.reset();
+      const waMsg = "✋ Nuevo voluntario
+Nombre: " + (d.nombre || "") +
+                    "
+Tel: " + (d.telefono || "") +
+                    "
+Zona: " + (d.zona || "") +
+                    "
+Interés: " + (d.interes || "") +
+                    "
+Mensaje: " + (d.mensaje || "");
+      try {
+        await postToApi({ type: "voluntario", ...d });
+        setStatus("volunteerStatus", true, "¡Gracias! Tu registro fue enviado correctamente.");
+        this.reset();
+      } catch (err) {
+        setStatus("volunteerStatus", false, (err.message || "No se pudo enviar") + ". Se abrirá WhatsApp como respaldo.");
+        abrirWhatsApp(waMsg);
+      }
     });
 
-    document.getElementById("reportForm").addEventListener("submit", function(e) {
+    document.getElementById("reportForm").addEventListener("submit", async function(e) {
       e.preventDefault();
       const d = Object.fromEntries(new FormData(this).entries());
-      abrirWhatsApp("🚨 Reporte ciudadano\nNombre: " + d.nombre + "\nCategoría: " + d.categoria + "\nZona: " + d.zona + "\nDetalle: " + d.detalle);
-      setStatus("reportStatus", true, "Reporte enviado. ¡Gracias por fiscalizar!");
-      this.reset();
+      const waMsg = "🚨 Reporte ciudadano
+Nombre: " + (d.nombre || "") +
+                    "
+Tel: " + (d.telefono || "") +
+                    "
+Categoría: " + (d.categoria || "") +
+                    "
+Zona: " + (d.zona || "") +
+                    "
+Detalle: " + (d.detalle || "");
+      try {
+        await postToApi({ type: "reporte", ...d });
+        setStatus("reportStatus", true, "Reporte enviado correctamente. ¡Gracias por fiscalizar!");
+        this.reset();
+      } catch (err) {
+        setStatus("reportStatus", false, (err.message || "No se pudo enviar") + ". Se abrirá WhatsApp como respaldo.");
+        abrirWhatsApp(waMsg);
+      }
     });
   </script>
 
