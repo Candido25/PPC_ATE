@@ -45,6 +45,14 @@
   <!-- Typed.js & ScrollReveal — sin defer para garantizar carga -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  .card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
 
   <style>
     /* ══ VARIABLES ══ */
@@ -330,7 +338,11 @@ Ver diagnóstico de inseguridad en Ate
         <p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben atenderse con seriedad, presencia territorial y soluciones concretas.</p>
       </div>
       <div class="grid-3">
-        <div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito que afectan la calidad de vida de las familias.</p></div>
+        <a href="inseguridad-ate.html" class="card" style="text-decoration:none; color:inherit;">
+  <div class="icon">🚨</div>
+  <h3>Inseguridad</h3>
+  <p>Robos, extorsión y temor en distintos sectores del distrito que afectan la calidad de vida de las familias.</p>
+</a>
         <div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público en varios sectores de Ate.</p></div>
         <div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes del distrito.</p></div>
       </div>
