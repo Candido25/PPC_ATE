@@ -1,214 +1,589 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Diagnóstico de Inseguridad Ciudadana en Ate | PPC Ate</title>
+  <meta name="description" content="Diagnóstico técnico de la inseguridad ciudadana en el distrito de Ate 2017-2025. Datos del OBDISEC, CODISEC, INEI y Lima Cómo Vamos. Análisis delictivo, zonas críticas y recomendaciones.">
+  <meta name="keywords" content="inseguridad ciudadana Ate, delitos Ate Lima, estadisticas delitos Ate, OBDISEC Ate, CODISEC Ate, seguridad Ate 2024, denuncias PNP Ate, criminalidad Ate, diagnostico seguridad Ate, PPC Ate seguridad">
+  <link rel="canonical" href="https://www.ppcate.org.pe/diagnostico-seguridad.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <style>
+    :root {
+      --verde:      #117a3b;
+      --verde-osc:  #0d5b2d;
+      --dorado:     #c9a23a;
+      --rojo:       #E63C1E;
+      --rojo-osc:   #C42B0E;
+      --rojo-suave: #fff0ed;
+      --gris-osc:   #2c3e50;
+      --claro:      #f6f8f6;
+      --texto:      #1f2b22;
+      --gris:       #6b756e;
+      --borde:      #dce7df;
+      --shadow:     0 4px 16px rgba(0,0,0,.08);
+      --shadow-md:  0 8px 28px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.75; overflow-x: hidden; }
+    a { color: var(--verde); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* HEADER */
+    header { background: var(--verde-osc); padding: .85rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; }
+    .logo img { width: 44px; height: 44px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .t1 { font-weight: 800; font-size: .95rem; line-height: 1.2; }
+    .logo .t2 { font-size: .68rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-size: .8rem; font-weight: 700; padding: 8px 18px; border-radius: 20px; white-space: nowrap; }
+    .back-btn:hover { opacity: .85; text-decoration: none; }
 
-<title>Inseguridad en Ate Vitarte: diagnóstico, cifras y análisis 2024–2025</title>
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #1a1a2a, var(--gris-osc)); color: #fff; padding: 4rem 0 3rem; }
+    .hero-badge { display: inline-block; background: var(--rojo); color: #fff; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: .8rem; }
+    .hero p { color: rgba(255,255,255,.75); font-size: .97rem; max-width: 700px; line-height: 1.72; margin-bottom: 1.5rem; }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.15); }
+    .h-stat .num { font-size: 2rem; font-weight: 800; color: var(--dorado); line-height: 1; }
+    .h-stat .lbl { font-size: .68rem; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .08em; margin-top: .2rem; }
 
-<meta name="description" content="Diagnóstico técnico de la inseguridad en Ate Vitarte con cifras oficiales, tipos de delitos, causas y análisis del impacto en la población.">
+    /* ÍNDICE */
+    .indice { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .indice h2 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .indice ol { padding-left: 1.2rem; }
+    .indice ol li { margin-bottom: .4rem; }
+    .indice ol li a { font-size: .88rem; color: var(--verde); }
+    .indice ol li a:hover { text-decoration: underline; }
 
-<link rel="canonical" href="https://ppcate.org.pe/inseguridad-ate.html">
+    /* ALERTA */
+    .alerta { background: var(--rojo-suave); border-left: 4px solid var(--rojo); border-radius: 0 10px 10px 0; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+    .alerta strong { color: var(--rojo-osc); }
+    .alerta p { font-size: .9rem; color: var(--texto); margin: 0; }
 
-<style>
+    /* SECCIONES */
+    .doc-section { padding: 3rem 0; border-bottom: 1px solid var(--borde); }
+    .doc-section:last-child { border-bottom: none; }
+    .section-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; border-radius: 15px; margin-bottom: .7rem; background: var(--gris-osc); color: #fff; }
+    .section-tag.rojo { background: var(--rojo); }
+    .section-tag.verde { background: var(--verde-osc); }
+    .section-tag.dorado { background: var(--dorado); color: #111; }
+    .doc-section h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; color: var(--gris-osc); margin-bottom: 1rem; scroll-margin-top: 80px; }
+    .doc-section h3 { font-size: 1.05rem; font-weight: 700; color: var(--gris-osc); margin: 1.5rem 0 .7rem; border-left: 3px solid var(--dorado); padding-left: .7rem; }
+    .doc-section p { color: var(--gris); font-size: .95rem; line-height: 1.78; margin-bottom: .9rem; }
+    .doc-section p strong { color: var(--texto); }
 
-body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-background:#f6f8f6;
-color:#1f2b22;
-}
+    /* TABLAS */
+    .tabla-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 10px; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; background: #fff; }
+    thead tr { background: var(--gris-osc); color: #fff; }
+    thead th { padding: .75rem 1rem; text-align: left; font-weight: 700; font-size: .82rem; }
+    tbody tr:nth-child(even) { background: var(--claro); }
+    tbody tr:hover { background: #e8f5ee; }
+    tbody td { padding: .65rem 1rem; border-bottom: 1px solid var(--borde); color: var(--texto); font-size: .84rem; }
+    tbody td strong { color: var(--gris-osc); }
+    .td-pct { color: var(--rojo-osc); font-weight: 700; }
+    .td-total { background: #e8f5ee !important; font-weight: 700; }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
+    /* STATS CARDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .stat-card { background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--rojo); border-radius: 10px; padding: 1.2rem; text-align: center; box-shadow: var(--shadow); }
+    .stat-card .sn { font-size: 1.8rem; font-weight: 800; color: var(--rojo-osc); line-height: 1; }
+    .stat-card .sl { font-size: .75rem; color: var(--gris); margin-top: .3rem; line-height: 1.4; }
 
-h1{
-font-size:34px;
-margin-bottom:10px;
-}
+    /* ZONAS */
+    .zonas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .zona-card { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 1.2rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 1rem; }
+    .zona-pct { font-size: 1.8rem; font-weight: 800; color: var(--rojo-osc); min-width: 60px; }
+    .zona-info h4 { font-size: .92rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .2rem; }
+    .zona-info p { font-size: .8rem; color: var(--gris); margin: 0; line-height: 1.4; }
+    .zona-bar { height: 6px; background: var(--borde); border-radius: 3px; margin-top: .5rem; overflow: hidden; }
+    .zona-bar-fill { height: 100%; background: var(--rojo); border-radius: 3px; }
 
-h2{
-color:#117a3b;
-margin-top:35px;
-}
+    /* HORARIOS */
+    .horarios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .horario-card { background: linear-gradient(135deg, #1a1a2a, var(--gris-osc)); border-radius: 10px; padding: 1.2rem; color: #fff; text-align: center; }
+    .horario-card .hico { font-size: 1.8rem; margin-bottom: .4rem; }
+    .horario-card .hhora { font-size: 1.1rem; font-weight: 800; color: var(--dorado); }
+    .horario-card p { font-size: .78rem; color: rgba(255,255,255,.75); margin: .3rem 0 0; }
 
-p{
-line-height:1.7;
-font-size:16px;
-}
+    /* RECOMENDACIONES */
+    .recom-card { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: .9rem; box-shadow: var(--shadow); display: flex; gap: 1rem; align-items: flex-start; }
+    .recom-prior { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; margin-top: .2rem; }
+    .prior-muy-alta { background: var(--rojo); color: #fff; }
+    .prior-alta { background: #e67e22; color: #fff; }
+    .prior-media-alta { background: #f39c12; color: #111; }
+    .prior-media { background: #27ae60; color: #fff; }
+    .recom-body h4 { font-size: .95rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .recom-body p { font-size: .83rem; color: var(--gris); margin: 0; line-height: 1.6; }
+    .recom-costo { font-size: .75rem; font-weight: 700; color: var(--verde-osc); margin-top: .3rem; }
 
-ul{
-margin-left:20px;
-line-height:1.6;
-}
+    /* MONITOREO */
+    .monitor-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .monitor-card { background: var(--claro); border: 1px solid var(--borde); border-radius: 9px; padding: 1rem 1.2rem; }
+    .monitor-card h4 { font-size: .88rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .monitor-card .mc-meta { font-size: .75rem; color: var(--gris); display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .4rem; }
+    .monitor-card .mc-meta span { background: #fff; border: 1px solid var(--borde); border-radius: 4px; padding: 2px 7px; }
 
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
-}
+    /* FUENTES */
+    .fuentes { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin-top: 2rem; }
+    .fuentes h3 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .fuente-item { display: flex; align-items: flex-start; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--borde); font-size: .82rem; }
+    .fuente-item:last-child { border-bottom: none; }
+    .fuente-item a { color: var(--verde); line-height: 1.5; }
 
-table, th, td{
-border:1px solid #ccc;
-}
+    /* COMPROMISO */
+    .compromiso-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 14px; padding: 2.5rem; color: #fff; text-align: center; margin: 2rem 0; }
+    .compromiso-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: .8rem; }
+    .compromiso-box p { color: #c0e4cf; font-size: .95rem; line-height: 1.72; max-width: 600px; margin: 0 auto .8rem; }
+    .comp-btn { display: inline-block; background: var(--dorado); color: #111; font-weight: 700; font-size: .88rem; padding: 10px 24px; border-radius: 20px; margin-top: 1rem; }
 
-th, td{
-padding:10px;
-text-align:left;
-}
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
 
-th{
-background:#117a3b;
-color:white;
-}
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .zonas-grid { grid-template-columns: 1fr; }
+      .horarios { grid-template-columns: 1fr; }
+      .monitor-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 2.5rem 0 2rem; }
+      .hero-stats { gap: 1.2rem; }
+      .indice { padding: 1.2rem; }
+    }
 
-.btn{
-display:inline-block;
-background:#117a3b;
-color:white;
-padding:12px 20px;
-border-radius:30px;
-margin-top:20px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.btn:hover{
-background:#0d5b2d;
-}
-
-</style>
-
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="seguridad.html" class="back-btn">← Plan de Seguridad</a>
+    </div>
+  </header>
 
-<h1>Diagnóstico de la inseguridad ciudadana en el distrito de Ate</h1>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Diagnóstico Técnico · Datos Oficiales</div>
+      <h1>Diagnóstico de la inseguridad ciudadana en el distrito de Ate</h1>
+      <p>Análisis basado en boletines del OBDISEC, CODISEC, INEI-ENAPRES y Lima Cómo Vamos. Serie 2017–2025. Base técnica del Plan Ate Seguro 2027–2030.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="num">8,383</div><div class="lbl">Denuncias en Ate · 2024</div></div>
+        <div class="h-stat"><div class="num">70.75%</div><div class="lbl">Delitos patrimoniales</div></div>
+        <div class="h-stat"><div class="num">81.7%</div><div class="lbl">Se siente inseguro en Lima Este</div></div>
+        <div class="h-stat"><div class="num">536</div><div class="lbl">Serenos en el distrito</div></div>
+      </div>
+    </div>
+  </section>
 
-<p>
-La inseguridad ciudadana constituye uno de los principales problemas que afectan la calidad de vida en el distrito de Ate. Este fenómeno impacta en la seguridad personal, el desarrollo económico y la confianza en las instituciones públicas.
-</p>
+  <div class="container">
 
-<h2>Fuentes de información</h2>
+    <!-- ÍNDICE -->
+    <div class="indice fade-up">
+      <h2>📋 Contenido del diagnóstico</h2>
+      <ol>
+        <li><a href="#resumen">Resumen ejecutivo</a></li>
+        <li><a href="#metodologia">Metodología y fuentes</a></li>
+        <li><a href="#evolucion">Evolución delictiva 2017–2025</a></li>
+        <li><a href="#factores">Factores estructurales y socio-territoriales</a></li>
+        <li><a href="#geoespacial">Análisis geoespacial, horarios y modus operandi</a></li>
+        <li><a href="#respuesta">Respuesta institucional y capacidades</a></li>
+        <li><a href="#recomendaciones">Recomendaciones priorizadas</a></li>
+        <li><a href="#monitoreo">Plan de monitoreo y evaluación</a></li>
+        <li><a href="#fuentes">Fuentes y referencias</a></li>
+      </ol>
+    </div>
 
-<p>
-El presente diagnóstico se basa en información pública disponible proveniente del Observatorio Distrital de Seguridad Ciudadana de Ate (OBDISEC), registros de la Policía Nacional del Perú y reportes periodísticos recientes.
-</p>
+    <!-- RESUMEN EJECUTIVO -->
+    <div class="doc-section" id="resumen">
+      <div class="section-tag rojo">Resumen ejecutivo</div>
+      <h2>Panorama general de la inseguridad en Ate</h2>
 
-<h2>Evolución de la criminalidad</h2>
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">6,153</div><div class="sl">Denuncias en 2017 (línea base)</div></div>
+        <div class="stat-card"><div class="sn">4,672</div><div class="sl">Mínimo histórico en 2020 (pandemia)</div></div>
+        <div class="stat-card"><div class="sn">8,383</div><div class="sl">Denuncias en 2024 (+36% vs 2017)</div></div>
+        <div class="stat-card"><div class="sn">2,198</div><div class="sl">Denuncias solo en I trimestre 2025</div></div>
+      </div>
 
-<table>
-<tr>
-<th>Año</th>
-<th>Denuncias registradas</th>
-</tr>
-<tr>
-<td>2023</td>
-<td>7,810</td>
-</tr>
-<tr>
-<td>2024</td>
-<td>8,383</td>
-</tr>
-</table>
+      <p>El distrito de Ate muestra una tendencia de <strong>alta incidencia delictiva registrada</strong> en el ciclo 2017–2024, con un quiebre marcado en 2020 por el contexto pandémico y recuperación acelerada posterior. El total anual de denuncias pasó de <strong>6,153 (2017)</strong> a <strong>8,383 (2024)</strong>, con crecimiento sostenido desde 2021.</p>
 
-<p>
-Se observa un incremento de 573 denuncias, equivalente a un crecimiento del 7.34%, lo que evidencia un deterioro en la seguridad del distrito.
-</p>
+      <p>La estructura delictiva es consistentemente <strong>patrimonial</strong>: en 2024, los delitos contra el patrimonio representaron el <strong>70.75%</strong> del total (5,931 de 8,383). En el I trimestre de 2025, el patrón se mantiene con 68.79%.</p>
 
-<h2>Comportamiento reciente</h2>
+      <div class="alerta">
+        <p><strong>⚠️ Recomendación central:</strong> Migrar de un enfoque predominantemente reactivo (patrullaje genérico y cámaras) a un esquema <strong>data-driven</strong> focalizado por micro-lugares y franjas horarias, priorizando: reducción de oportunidades delictivas en corredores de alta exposición, persecución focal de extorsión, prevención social en territorios vulnerables y gobernanza local con metas trazables.</p>
+      </div>
+    </div>
 
-<ul>
-<li>Primer semestre 2024: 4,247 denuncias</li>
-<li>Primer trimestre 2025: 2,198 denuncias</li>
-</ul>
+    <!-- METODOLOGÍA -->
+    <div class="doc-section" id="metodologia">
+      <div class="section-tag">Metodología</div>
+      <h2>Metodología y fuentes</h2>
+      <p>Este informe integra y contrasta evidencia cuantitativa y cualitativa bajo un enfoque de <strong>triangulación</strong> de seis fuentes:</p>
 
-<p>
-A pesar de variaciones temporales, la tendencia general sigue siendo de alta incidencia delictiva.
-</p>
+      <div class="zonas-grid fade-up">
+        <div class="zona-card"><div class="zona-pct">①</div><div class="zona-info"><h4>Delitos denunciados (oficial-policial)</h4><p>Series y distribuciones de boletines estadísticos municipales 2017–2025, basados en registros de comisarías, DEPINCRI y SIDPOL.</p></div></div>
+        <div class="zona-card"><div class="zona-pct">②</div><div class="zona-info"><h4>Delitos por tipo y tasa</h4><p>Indicadores por mil habitantes incluidos en el Plan de Acción Distrital 2024–2027 del CODISEC.</p></div></div>
+        <div class="zona-card"><div class="zona-pct">③</div><div class="zona-info"><h4>Victimización y percepción</h4><p>ENAPRES (INEI) para victimización urbana y encuesta ciudadana de Lima Cómo Vamos con desagregación Lima Este.</p></div></div>
+        <div class="zona-card"><div class="zona-pct">④</div><div class="zona-info"><h4>Socioeconomía y demografía</h4><p>Diagnóstico municipal de brechas con insumos INEI/ENAHO y mapa de pobreza monetaria distrital 2018.</p></div></div>
+        <div class="zona-card"><div class="zona-pct">⑤</div><div class="zona-info"><h4>Geoespacial y patrones operativos</h4><p>Puntos críticos y rangos horarios (documento municipal 2020) y mapas del delito incorporados en el Plan 2024–2027.</p></div></div>
+        <div class="zona-card"><div class="zona-pct">⑥</div><div class="zona-info"><h4>Marco analítico académico</h4><p>Criterios de multicausalidad y necesidad de evaluación de intervenciones respaldados por CIES.</p></div></div>
+      </div>
 
-<h2>Tipos de delitos predominantes</h2>
+      <div class="alerta">
+        <p><strong>Limitaciones declaradas:</strong> Las denuncias no equivalen a incidencia real — existe subregistro por temor, desconfianza o costos. El plan distrital reconoce que en extorsión la principal dificultad está en la baja denuncia. Además, ENAPRES es insuficiente para inferencia distrital robusta, por lo que se usa Lima Este como aproximación contextual.</p>
+      </div>
+    </div>
 
-<table>
-<tr>
-<th>Tipo de delito</th>
-<th>Denuncias 2024</th>
-</tr>
-<tr>
-<td>Delitos contra el patrimonio</td>
-<td>5,931</td>
-</tr>
-</table>
+    <!-- EVOLUCIÓN DELICTIVA -->
+    <div class="doc-section" id="evolucion">
+      <div class="section-tag rojo">Datos 2017–2025</div>
+      <h2>Evolución delictiva, victimización y percepción</h2>
 
-<p>
-Los delitos contra el patrimonio representan aproximadamente el 70% de los casos registrados.
-</p>
+      <h3>Serie anual de denuncias (2017–2024)</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Año</th><th>Denuncias totales</th><th>Variación</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>2017</td><td>6,153</td><td>—</td><td>Línea base</td></tr>
+            <tr><td>2018</td><td>6,321</td><td>+168</td><td>Crecimiento moderado</td></tr>
+            <tr><td>2019</td><td>7,111</td><td>+790</td><td>Pico prepandemia</td></tr>
+            <tr><td>2020</td><td>4,672</td><td class="td-pct">−2,439 (−34.3%)</td><td>Caída pandémica</td></tr>
+            <tr><td>2021</td><td>5,945</td><td>+1,273</td><td>Inicio recuperación</td></tr>
+            <tr><td>2022</td><td>7,139*</td><td>+1,194</td><td>*Serie revisada</td></tr>
+            <tr><td>2023</td><td>7,810</td><td>+671</td><td>+9.40%</td></tr>
+            <tr class="td-total"><td><strong>2024</strong></td><td><strong>8,383</strong></td><td class="td-pct">+573 (+7.34%)</td><td>Máximo histórico</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<h2>Delitos más frecuentes</h2>
+      <h3>Composición por tipo de delito (2023–2024)</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Tipo de delito</th><th>2023</th><th>2024</th><th>% 2024</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Contra el patrimonio</strong></td><td>5,684</td><td>5,931</td><td class="td-pct">70.75%</td></tr>
+            <tr><td>Contra la seguridad pública</td><td>473</td><td>785</td><td class="td-pct">9.36%</td></tr>
+            <tr><td>Contra la libertad</td><td>736</td><td>751</td><td class="td-pct">8.96%</td></tr>
+            <tr><td>Contra la vida, el cuerpo y la salud</td><td>695</td><td>687</td><td class="td-pct">8.20%</td></tr>
+            <tr><td>Contra la familia</td><td>72</td><td>93</td><td>1.11%</td></tr>
+            <tr><td>Contra la administración pública</td><td>109</td><td>79</td><td>0.94%</td></tr>
+            <tr><td>Otros</td><td>41</td><td>57</td><td>0.68%</td></tr>
+            <tr class="td-total"><td><strong>Total</strong></td><td><strong>7,810</strong></td><td><strong>8,383</strong></td><td><strong>100%</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<ul>
-<li>Robo al paso</li>
-<li>Asalto a mano armada</li>
-<li>Robo de celulares</li>
-<li>Hurtos</li>
-<li>Delitos en transporte público</li>
-</ul>
+      <h3>Corte 2025 — I Trimestre</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Indicador</th><th>I Trim 2024</th><th>I Trim 2025</th></tr></thead>
+          <tbody>
+            <tr><td>Denuncias totales</td><td>2,168</td><td>2,198</td></tr>
+            <tr><td>Contra el patrimonio (%)</td><td>1,620 (74.7%)</td><td class="td-pct">1,512 (68.79%)</td></tr>
+            <tr><td>Contra la libertad</td><td>—</td><td>212</td></tr>
+            <tr><td>Contra seguridad pública</td><td>—</td><td>210</td></tr>
+            <tr><td>Contra vida/cuerpo/salud</td><td>—</td><td>189</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-<h2>Criminalidad emergente</h2>
+      <h3>Delitos emergentes con tendencia creciente (2017–2022)</h3>
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">0.42</div><div class="sl">Extorsión por mil hab. (2022) — tendencia creciente fuerte</div></div>
+        <div class="stat-card"><div class="sn">0.14</div><div class="sl">Microcomercialización de drogas por mil hab. (máximo 2022)</div></div>
+        <div class="stat-card"><div class="sn">0.43</div><div class="sl">Delitos informáticos por mil hab. (2022 vs 0.03 en 2018)</div></div>
+        <div class="stat-card"><div class="sn">81.7%</div><div class="sl">Residentes de Lima Este que se sienten inseguros (2024)</div></div>
+      </div>
+    </div>
 
-<p>
-Se ha identificado la presencia de delitos más violentos como extorsión y homicidios, lo que evidencia una evolución hacia formas más organizadas de criminalidad.
-</p>
+    <!-- FACTORES ESTRUCTURALES -->
+    <div class="doc-section" id="factores">
+      <div class="section-tag">Factores estructurales</div>
+      <h2>Factores estructurales y socio-territoriales</h2>
 
-<ul>
-<li>Extorsión a comerciantes</li>
-<li>Cobros a transportistas</li>
-<li>Ataques armados a negocios</li>
-<li>Homicidios con arma de fuego</li>
-</ul>
+      <h3>Demografía, crecimiento y densidad</h3>
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">702,815</div><div class="sl">Población proyectada 2023 (INEI)</div></div>
+        <div class="stat-card"><div class="sn">77.72 km²</div><div class="sl">Superficie del distrito</div></div>
+        <div class="stat-card"><div class="sn">6,154</div><div class="sl">Habitantes por km² (alta densidad)</div></div>
+        <div class="stat-card"><div class="sn">17.2%</div><div class="sl">Pobreza monetaria distrital (2018)</div></div>
+      </div>
 
-<h2>Subregistro del delito</h2>
+      <h3>Estructura económica e informalidad</h3>
+      <p>El diagnóstico municipal (Censo Económico 2022) muestra concentración de actividades de <strong>comercio</strong> con 20,443 establecimientos en Ate, un ecosistema de <strong>46 conglomerados comerciales</strong> (formales e informales) y <strong>35 mercados</strong>, además de 3,134 establecimientos de industria manufacturera.</p>
+      <p>La convergencia de alta densidad y crecimiento, actividad comercial formal e informal, y corredores de movilidad incrementa la probabilidad de delitos de oportunidad en micro-lugares específicos: paraderos, cruces, mercados y accesos. Esta es la hipótesis operativa central del diagnóstico.</p>
+    </div>
 
-<p>
-Las cifras oficiales corresponden únicamente a denuncias registradas. Sin embargo, existe un subregistro debido a que muchos ciudadanos no denuncian los hechos delictivos.
-</p>
+    <!-- GEOESPACIAL -->
+    <div class="doc-section" id="geoespacial">
+      <div class="section-tag rojo">Datos territoriales</div>
+      <h2>Análisis geoespacial, horarios y modus operandi</h2>
 
-<h2>Factores que explican la inseguridad</h2>
+      <h3>Zonas de mayor concentración delictiva (2024)</h3>
+      <div class="zonas-grid fade-up">
+        <div class="zona-card">
+          <div class="zona-pct">32.45%</div>
+          <div class="zona-info">
+            <h4>🔴 Vitarte</h4>
+            <p>Zona de mayor concentración. Corredor de alta afluencia y tránsito comercial.</p>
+            <div class="zona-bar"><div class="zona-bar-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+        <div class="zona-card">
+          <div class="zona-pct">26.41%</div>
+          <div class="zona-info">
+            <h4>🔴 Salamanca</h4>
+            <p>Segunda zona crítica. Nodos comerciales y paraderos de alta exposición.</p>
+            <div class="zona-bar"><div class="zona-bar-fill" style="width:81%"></div></div>
+          </div>
+        </div>
+        <div class="zona-card">
+          <div class="zona-pct">20.76%</div>
+          <div class="zona-info">
+            <h4>🟠 Huaycán</h4>
+            <p>Zona de alta vulnerabilidad socioeconómica. Laderas y asentamientos.</p>
+            <div class="zona-bar"><div class="zona-bar-fill" style="width:64%"></div></div>
+          </div>
+        </div>
+        <div class="zona-card">
+          <div class="zona-pct">11.71%</div>
+          <div class="zona-info">
+            <h4>🟡 Santa Clara</h4>
+            <p>Zona de acceso a la Carretera Central. Puntos de intermodal.</p>
+            <div class="zona-bar"><div class="zona-bar-fill" style="width:36%"></div></div>
+          </div>
+        </div>
+      </div>
 
-<ul>
-<li>Insuficiente patrullaje policial</li>
-<li>Limitaciones en serenazgo</li>
-<li>Deficiente iluminación pública</li>
-<li>Espacios urbanos abandonados</li>
-<li>Débil organización vecinal</li>
-</ul>
+      <h3>Ventanas horarias de mayor incidencia delictiva</h3>
+      <div class="horarios fade-up">
+        <div class="horario-card">
+          <div class="hico">🌙</div>
+          <div class="hhora">02:00 — 06:00</div>
+          <p>Madrugada. Menor vigilancia y espacios sin circulación.</p>
+        </div>
+        <div class="horario-card">
+          <div class="hico">☀️</div>
+          <div class="hhora">10:00 — 13:00</div>
+          <p>Media mañana. Alta actividad comercial y bancaria.</p>
+        </div>
+        <div class="horario-card">
+          <div class="hico">🌆</div>
+          <div class="hhora">18:00 — 23:00</div>
+          <p>Tarde-noche. Retorno del trabajo, alta exposición peatonal.</p>
+        </div>
+      </div>
 
-<h2>Impacto en la población</h2>
+      <h3>Modus operandi priorizados por la evidencia local</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Modalidad</th><th>Descripción</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Raqueteo</strong></td><td>Ataques oportunistas en esquinas e intersecciones, aprovechando semáforos en rojo. Se registra uso de arma blanca o de fuego.</td></tr>
+            <tr><td><strong>"Marcas"</strong></td><td>Vigilancia en bancos y colas para identificar víctimas, con transmisión de información a cómplices en moto o vehículo.</td></tr>
+            <tr><td><strong>Robo de vehículos</strong></td><td>Asociado a despiece y mercado ilegal, y uso en otros asaltos.</td></tr>
+            <tr><td><strong>Robo a vivienda</strong></td><td>Marcaje previo y aprovechamiento de viviendas sin vigilancia.</td></tr>
+            <tr><td><strong>Extorsión telefónica</strong></td><td>Incremento fuerte en 2022. Alta subdenuncia por temor a represalias.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-<p>
-La inseguridad afecta la tranquilidad de las familias, reduce el uso de espacios públicos y limita el desarrollo económico del distrito.
-</p>
+    <!-- RESPUESTA INSTITUCIONAL -->
+    <div class="doc-section" id="respuesta">
+      <div class="section-tag">Capacidad institucional</div>
+      <h2>Respuesta institucional y capacidades operativas</h2>
 
-<h2>Conclusiones</h2>
+      <h3>Recursos actuales del distrito (Plan 2024–2027)</h3>
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">5</div><div class="sl">Comisarías PNP en el distrito</div></div>
+        <div class="stat-card"><div class="sn">508</div><div class="sl">Efectivos PNP (≈72 por 100 mil hab.)</div></div>
+        <div class="stat-card"><div class="sn">536</div><div class="sl">Serenos municipales</div></div>
+        <div class="stat-card"><div class="sn">250</div><div class="sl">Cámaras de videovigilancia</div></div>
+      </div>
 
-<ul>
-<li>La criminalidad presenta una tendencia creciente</li>
-<li>Predominan los delitos contra el patrimonio</li>
-<li>Se observa mayor presencia de violencia organizada</li>
-<li>Existe subregistro de delitos</li>
-<li>La inseguridad impacta directamente en la vida cotidiana</li>
-</ul>
+      <h3>Razones indicativas de presión operativa (2024)</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Indicador</th><th>Valor (aprox.)</th></tr></thead>
+          <tbody>
+            <tr><td>Denuncias 2024 por efectivo PNP</td><td><strong>16.5</strong></td></tr>
+            <tr><td>Denuncias 2024 por sereno</td><td><strong>15.6</strong></td></tr>
+            <tr><td>Denuncias 2024 por cámara</td><td><strong>33.5</strong></td></tr>
+            <tr><td>Denuncias 2024 por vehículo PNP</td><td><strong>116.4</strong></td></tr>
+            <tr><td>Denuncias 2024 por vehículo serenazgo</td><td><strong>167.7</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.82rem;color:var(--gris);margin-top:.5rem;">⚠️ Estas razones no son métricas de productividad. Sirven para dimensionar presión operativa y priorizar focalización.</p>
+    </div>
 
-<a href="https://ppcate.org.pe" class="btn">Volver a la página principal</a>
+    <!-- RECOMENDACIONES -->
+    <div class="doc-section" id="recomendaciones">
+      <div class="section-tag dorado">Recomendaciones</div>
+      <h2>Recomendaciones priorizadas con costos estimados</h2>
 
-</div>
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-muy-alta">MUY ALTA</div>
+        <div class="recom-body">
+          <h4>Patrullaje integrado por microzonas y franjas horarias (02–06, 10–13, 18–23)</h4>
+          <p>Con metas de cobertura y reporte semanal. Atacan el robo y hurto en vía pública y vehículos en puntos críticos. El delito patrimonial domina con ~70%.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 150 mil–600 mil/año (horas, combustible, analítica básica)</div>
+        </div>
+      </div>
 
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-muy-alta">MUY ALTA</div>
+        <div class="recom-body">
+          <h4>Plan Antiextorsión Local: canal unificado, acompañamiento a víctimas y coordinación PNP-fiscalía</h4>
+          <p>La extorsión crece fuertemente desde 2022. El plan distrital identifica alta subdenuncia por temor como barrera principal.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 80 mil–300 mil/año</div>
+        </div>
+      </div>
+
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-alta">ALTA</div>
+        <div class="recom-body">
+          <h4>Intervenciones CPTED rápidas: iluminación táctica, poda, eliminación de "puntos ciegos" y ordenamiento de paraderos</h4>
+          <p>Hotspots concentrados en arterias y nodos. La ciudadanía demanda iluminación, patrullaje y cámaras como medidas prioritarias.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 300 mil–2.5 M (según alcance)</div>
+        </div>
+      </div>
+
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-alta">ALTA</div>
+        <div class="recom-body">
+          <h4>Reingeniería de la Central de Cámaras: protocolos de despacho, auditoría de "tiempo a intervención" y analítica básica</h4>
+          <p>El distrito reporta 250 cámaras y una central. El reto es el rendimiento operacional, no solo la cantidad de equipos.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 200 mil–1.2 M</div>
+        </div>
+      </div>
+
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-media-alta">MEDIA-ALTA</div>
+        <div class="recom-body">
+          <h4>Control focal al "mercado de robos" (receptación): operativos en ejes comerciales para cortar cadena de valor</h4>
+          <p>La estructura económica y comercial amplia requiere atacar los incentivos económicos del robo patrimonial.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 150 mil–600 mil/año</div>
+        </div>
+      </div>
+
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-media">MEDIA</div>
+        <div class="recom-body">
+          <h4>Fortalecer prevención social en territorios vulnerables: expansión de Barrio Seguro y programas juveniles</h4>
+          <p>Barrio Seguro opera en Huaycán desde 2018. La intervención requiere mínimo 2 años por etapas para ser efectiva.</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 500 mil–3 M/año (según cartera y cofinanciamiento)</div>
+        </div>
+      </div>
+
+      <div class="recom-card fade-up">
+        <div class="recom-prior prior-media">MEDIA</div>
+        <div class="recom-body">
+          <h4>Ciberseguridad comunitaria: campañas antiestafa y puntos de orientación ciudadana</h4>
+          <p>Los delitos informáticos muestran tendencia creciente sostenida 2018–2022 (de 0.03 a 0.43 por mil hab.).</p>
+          <div class="recom-costo">💰 Costo referencial: S/ 80 mil–400 mil/año</div>
+        </div>
+      </div>
+
+      <div class="alerta" style="margin-top:1.5rem;">
+        <p><strong>Nota clave:</strong> El distrito ya posee recursos (cámaras, personal, centrales). El mayor retorno de corto plazo suele venir de <strong>protocolos, focalización y medición de desempeño</strong>, antes que de compras masivas de equipos.</p>
+      </div>
+    </div>
+
+    <!-- MONITOREO -->
+    <div class="doc-section" id="monitoreo">
+      <div class="section-tag verde">Monitoreo y evaluación</div>
+      <h2>Plan de monitoreo y evaluación</h2>
+      <p>Objetivo: medir si las intervenciones reducen el delito patrimonial en hotspots, extorsión reportada, tiempos de respuesta y percepción de inseguridad.</p>
+
+      <div class="monitor-grid fade-up">
+        <div class="monitor-card">
+          <h4>📊 Denuncias totales y por tipo</h4>
+          <p>Línea base 2024: 8,383 (patrimonio 5,931)</p>
+          <div class="mc-meta"><span>Fuente: OBDISEC / SIDPOL</span><span>Frecuencia: Mensual</span><span>Resp: OBDISEC + PNP</span></div>
+        </div>
+        <div class="monitor-card">
+          <h4>📍 Denuncias por comisaría/sector</h4>
+          <p>Base: Vitarte 32.45%, Salamanca 26.41%, Huaycán 20.76%</p>
+          <div class="mc-meta"><span>Fuente: OBDISEC</span><span>Frecuencia: Mensual</span><span>Resp: OBDISEC</span></div>
+        </div>
+        <div class="monitor-card">
+          <h4>🗺️ Microhotspots activos con intervención</h4>
+          <p>Lista inicial: puntos críticos y ejes identificados</p>
+          <div class="mc-meta"><span>Fuente: Boletín + CODISEC</span><span>Frecuencia: Quincenal</span><span>Resp: Seg. municipal</span></div>
+        </div>
+        <div class="monitor-card">
+          <h4>⏱️ Tiempo de respuesta (serenazgo/cámaras)</h4>
+          <p>Definir percentiles p50 y p90 como meta de eficiencia</p>
+          <div class="mc-meta"><span>Fuente: Central de cámaras</span><span>Frecuencia: Semanal</span><span>Resp: Central monitoreo</span></div>
+        </div>
+        <div class="monitor-card">
+          <h4>😟 Victimización y percepción (proxy Lima Este)</h4>
+          <p>Base: Lima Este inseguridad 81.7% (2024)</p>
+          <div class="mc-meta"><span>Fuente: Lima Cómo Vamos</span><span>Frecuencia: Anual</span><span>Resp: CODISEC</span></div>
+        </div>
+        <div class="monitor-card">
+          <h4>📉 Percepción oficial (contexto)</h4>
+          <p>ENAPRES: percepción de inseguridad muy alta en Lima Metropolitana</p>
+          <div class="mc-meta"><span>Fuente: INEI ENAPRES</span><span>Frecuencia: Semestral</span><span>Resp: CODISEC</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="fuentes fade-up" id="fuentes">
+      <h3>📚 Fuentes y referencias oficiales</h3>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/Seguridad_Ciudadana/Obdisec/2024/BOLETIN_79-Delitos-Registrados-CIAS-ATE-2024.pdf" target="_blank" rel="noopener">OBDISEC Ate — Boletín N° 79: Delitos Registrados CIAS Ate 2024</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/Seguridad_Ciudadana/Obdisec/2025/BOLETIN_82-Delitos-1er-Trim-2025.pdf" target="_blank" rel="noopener">OBDISEC Ate — Boletín N° 82: Delitos 1er Trimestre 2025</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/areas/SGSC/files/codisec/Plan-Accion-Dist-Seg-Ciudadana-Ate_2024-2027.pdf" target="_blank" rel="noopener">CODISEC Ate — Plan de Acción Distrital de Seguridad Ciudadana 2024–2027</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/documentosPlaneamientoOrganizacion/DIAGNOSTICO-BRECHAS-2027-2029.pdf" target="_blank" rel="noopener">Municipalidad de Ate — Diagnóstico de Brechas 2027–2029</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/areas/SGSC/files/filesSC/BOLETIN%2019%20-%20PUNTOS%20CRiTICOS.pdf" target="_blank" rel="noopener">Municipalidad de Ate — Boletín N° 19: Puntos Críticos y Rangos Horarios</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.inei.gob.pe/media/MenuRecursivo/boletines/estadisticas-de-seguridad-ciudadana-enero-junio-2024.pdf" target="_blank" rel="noopener">INEI — Estadísticas de Seguridad Ciudadana Enero–Junio 2024 (ENAPRES)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.limacomovamos.org/wp-content/uploads/2025/01/EncuestaLCV2024.pdf" target="_blank" rel="noopener">Lima Cómo Vamos — Encuesta Ciudadana 2024</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://cies.org.pe/wp-content/uploads/2022/06/2.4_estado_y_gestion_seguridad_ciudadana_0.pdf" target="_blank" rel="noopener">CIES — Estado y gestión de la seguridad ciudadana en el Perú</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.gob.pe/institucion/mininter/noticias/15933-barrio-seguro-inicia-actividades-en-huaycan-para-luchar-contra-la-delincuencia-en-ate" target="_blank" rel="noopener">MININTER — Barrio Seguro: inicio de actividades en Huaycán</a></div>
+    </div>
+
+    <!-- COMPROMISO -->
+    <div class="compromiso-box fade-up">
+      <h2>Este diagnóstico respalda nuestro Plan Ate Seguro</h2>
+      <p>Las propuestas del Dr. José Luis Hurtado Apaico no nacen de ocurrencias — nacen de datos reales, fuentes oficiales y evidencia sobre lo que funciona. Conocer el problema es el primer paso para resolverlo.</p>
+      <a href="seguridad.html" class="comp-btn">Ver el Plan Ate Seguro 2027–2030 →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
 </body>
-
 </html>
