@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Diagnóstico de Basura y Desorden Urbano en Ate | PPC Ate</title>
+  <meta name="description" content="Diagnóstico técnico sobre residuos sólidos y desorden urbano en el distrito de Ate. Datos del INEI, SAT, OBDISEC y Municipalidad de Ate. 644 t/d de basura, 44 puntos críticos georreferenciados en Huaycán.">
+  <meta name="keywords" content="basura Ate Lima, residuos solidos Ate, puntos criticos basura Ate, limpieza publica Ate, microbasurales Ate, desmonte Ate, desorden urbano Ate, gestion residuos Ate, PPC Ate limpieza, diagnostico ambiental Ate, Jose Luis Hurtado Apaico">
+  <link rel="canonical" href="https://www.ppcate.org.pe/diagnostico-basura.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <style>
+    :root {
+      --verde:       #117a3b;
+      --verde-osc:   #0d5b2d;
+      --verde-suave: #e8f5ee;
+      --dorado:      #c9a23a;
+      --naranja:     #e67e22;
+      --naranja-osc: #c0580a;
+      --naranja-suave: #fef5ec;
+      --gris-osc:    #2c3e50;
+      --claro:       #f6f8f6;
+      --texto:       #1f2b22;
+      --gris:        #6b756e;
+      --borde:       #dce7df;
+      --shadow:      0 4px 16px rgba(0,0,0,.08);
+      --shadow-md:   0 8px 28px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.75; overflow-x: hidden; }
+    a { color: var(--verde); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    header { background: var(--verde-osc); padding: .85rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; }
+    .logo img { width: 44px; height: 44px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .t1 { font-weight: 800; font-size: .95rem; line-height: 1.2; }
+    .logo .t2 { font-size: .68rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-size: .8rem; font-weight: 700; padding: 8px 18px; border-radius: 20px; white-space: nowrap; }
+    .back-btn:hover { opacity: .85; text-decoration: none; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--naranja-osc), var(--naranja), #f39c12); color: #fff; padding: 4rem 0 3rem; position: relative; overflow: hidden; }
+    .hero::before { content: '🗑️'; position: absolute; right: 3%; top: 50%; transform: translateY(-50%); font-size: 14rem; opacity: .06; pointer-events: none; }
+    .hero-badge { display: inline-block; background: #fff; color: var(--naranja-osc); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: .8rem; }
+    .hero p { color: rgba(255,255,255,.85); font-size: .97rem; max-width: 700px; line-height: 1.72; margin-bottom: 1.5rem; }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.2); }
+    .h-stat .num { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
+    .h-stat .lbl { font-size: .68rem; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .08em; margin-top: .2rem; }
+
+    /* ÍNDICE */
+    .indice { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .indice h2 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .indice ol { padding-left: 1.2rem; }
+    .indice ol li { margin-bottom: .4rem; }
+    .indice ol li a { font-size: .88rem; color: var(--verde); }
+
+    /* ALERTA */
+    .alerta { background: var(--naranja-suave); border-left: 4px solid var(--naranja); border-radius: 0 10px 10px 0; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+    .alerta p { font-size: .9rem; color: var(--texto); margin: 0; line-height: 1.65; }
+
+    /* SECCIONES */
+    .doc-section { padding: 3rem 0; border-bottom: 1px solid var(--borde); }
+    .doc-section:last-child { border-bottom: none; }
+    .section-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; border-radius: 15px; margin-bottom: .7rem; background: var(--naranja); color: #fff; }
+    .section-tag.verde { background: var(--verde-osc); }
+    .section-tag.gris { background: var(--gris-osc); }
+    .section-tag.dorado { background: var(--dorado); color: #111; }
+    .doc-section h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; color: var(--gris-osc); margin-bottom: 1rem; scroll-margin-top: 80px; }
+    .doc-section h3 { font-size: 1.05rem; font-weight: 700; color: var(--naranja-osc); margin: 1.5rem 0 .7rem; border-left: 3px solid var(--naranja); padding-left: .7rem; }
+    .doc-section p { color: var(--gris); font-size: .95rem; line-height: 1.78; margin-bottom: .9rem; }
+    .doc-section p strong { color: var(--texto); }
+
+    /* TABLAS */
+    .tabla-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 10px; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; background: #fff; }
+    thead tr { background: var(--gris-osc); color: #fff; }
+    thead th { padding: .75rem 1rem; text-align: left; font-weight: 700; font-size: .82rem; }
+    tbody tr:nth-child(even) { background: var(--claro); }
+    tbody tr:hover { background: var(--naranja-suave); }
+    tbody td { padding: .65rem 1rem; border-bottom: 1px solid var(--borde); color: var(--texto); font-size: .84rem; }
+    .td-dest { color: var(--naranja-osc); font-weight: 700; }
+    .td-total { background: var(--verde-suave) !important; font-weight: 700; }
+
+    /* STAT CARDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .stat-card { background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--naranja); border-radius: 10px; padding: 1.2rem; text-align: center; box-shadow: var(--shadow); }
+    .stat-card .sn { font-size: 1.6rem; font-weight: 800; color: var(--naranja-osc); line-height: 1; }
+    .stat-card .sl { font-size: .75rem; color: var(--gris); margin-top: .3rem; line-height: 1.4; }
+
+    /* CAUSAS */
+    .causas-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+    .causa-card { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.3rem; box-shadow: var(--shadow); }
+    .causa-card .cc-ico { font-size: 1.8rem; margin-bottom: .5rem; }
+    .causa-card h4 { font-size: .97rem; font-weight: 700; color: var(--naranja-osc); margin-bottom: .5rem; }
+    .causa-card p { font-size: .84rem; color: var(--gris); line-height: 1.65; margin: 0; }
+
+    /* IMPACTOS */
+    .impacto-card { background: #fff; border: 1px solid var(--borde); border-left: 4px solid var(--naranja); border-radius: 0 10px 10px 0; padding: 1.1rem 1.3rem; margin-bottom: .8rem; box-shadow: var(--shadow); display: flex; gap: .8rem; align-items: flex-start; }
+    .impacto-card .ic-ico { font-size: 1.4rem; flex-shrink: 0; }
+    .impacto-card h4 { font-size: .93rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .impacto-card p { font-size: .83rem; color: var(--gris); margin: 0; line-height: 1.55; }
+
+    /* INTERVENCIONES */
+    .interv-card { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.3rem 1.5rem; margin-bottom: .9rem; box-shadow: var(--shadow); }
+    .interv-card .ic-header { display: flex; align-items: center; gap: .8rem; margin-bottom: .6rem; }
+    .interv-card .ic-tipo { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 10px; background: var(--naranja); color: #fff; white-space: nowrap; }
+    .interv-card h4 { font-size: .97rem; font-weight: 700; color: var(--gris-osc); }
+    .interv-card p { font-size: .84rem; color: var(--gris); line-height: 1.65; margin-bottom: .4rem; }
+    .interv-card .ic-costo { font-size: .78rem; font-weight: 700; color: var(--verde-osc); }
+
+    /* HOJA DE RUTA */
+    .ruta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+    .ruta-card { background: linear-gradient(135deg, var(--gris-osc), #4a5568); border-radius: 12px; padding: 1.5rem; color: #fff; }
+    .ruta-card .rc-plazo { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); margin-bottom: .5rem; }
+    .ruta-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: .8rem; }
+    .ruta-card ul { list-style: none; padding: 0; }
+    .ruta-card ul li { font-size: .82rem; color: rgba(255,255,255,.8); padding: .3rem 0 .3rem 1rem; border-bottom: 1px solid rgba(255,255,255,.08); position: relative; line-height: 1.5; }
+    .ruta-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--dorado); }
+    .ruta-card ul li:last-child { border-bottom: none; }
+
+    /* PUNTOS CRÍTICOS */
+    .puntos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .punto-card { background: #fff; border: 1px solid var(--borde); border-radius: 9px; padding: 1rem; box-shadow: var(--shadow); }
+    .punto-card h4 { font-size: .88rem; font-weight: 700; color: var(--naranja-osc); margin-bottom: .3rem; }
+    .punto-card .pc-coords { font-size: .75rem; color: var(--gris); font-family: monospace; background: var(--claro); border: 1px solid var(--borde); border-radius: 4px; padding: 3px 8px; margin-top: .4rem; display: inline-block; }
+
+    /* INDICADORES */
+    .ind-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .ind-card { background: var(--claro); border: 1px solid var(--borde); border-radius: 9px; padding: 1rem 1.2rem; }
+    .ind-card h4 { font-size: .88rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .ind-card p { font-size: .8rem; color: var(--gris); margin: 0; line-height: 1.5; }
+    .ind-card .ic-fuente { font-size: .72rem; color: var(--verde); margin-top: .3rem; display: block; }
+
+    /* FUENTES */
+    .fuentes { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin-top: 2rem; }
+    .fuentes h3 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .fuente-item { display: flex; align-items: flex-start; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--borde); font-size: .82rem; }
+    .fuente-item:last-child { border-bottom: none; }
+    .fuente-item a { color: var(--verde); line-height: 1.5; }
+
+    /* COMPROMISO */
+    .compromiso-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 14px; padding: 2.5rem; color: #fff; text-align: center; margin: 2rem 0; }
+    .compromiso-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: .8rem; }
+    .compromiso-box p { color: #c0e4cf; font-size: .95rem; line-height: 1.72; max-width: 600px; margin: 0 auto .8rem; }
+    .comp-btn { display: inline-block; background: var(--dorado); color: #111; font-weight: 700; font-size: .88rem; padding: 10px 24px; border-radius: 20px; margin-top: 1rem; }
+
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .causas-grid { grid-template-columns: 1fr; }
+      .ruta-grid { grid-template-columns: 1fr; }
+      .puntos-grid { grid-template-columns: 1fr; }
+      .ind-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 2.5rem 0 2rem; }
+      .hero-stats { gap: 1.2rem; }
+    }
+
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="index.html" class="back-btn">← Volver al inicio</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Diagnóstico Técnico · Datos Oficiales</div>
+      <h1>Diagnóstico sobre la basura y el desorden en el distrito de Ate</h1>
+      <p>Análisis basado en datos del INEI, SAT, Municipalidad de Ate y LACCEI. El problema no es la falta de disposición final — es una falla de gestión en la calle. Base técnica del plan ambiental 2027–2030.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="num">644</div><div class="lbl">Toneladas de basura por día (2022)</div></div>
+        <div class="h-stat"><div class="num">44</div><div class="lbl">Puntos críticos georreferenciados en Huaycán</div></div>
+        <div class="h-stat"><div class="num">S/ 49.5M</div><div class="lbl">Costo recolección proyectado 2026</div></div>
+        <div class="h-stat"><div class="num">30+</div><div class="lbl">Rutas de recolección en el distrito</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ÍNDICE -->
+    <div class="indice fade-up">
+      <h2>📋 Contenido del diagnóstico</h2>
+      <ol>
+        <li><a href="#resumen">Resumen ejecutivo</a></li>
+        <li><a href="#marco">Marco institucional y fuentes</a></li>
+        <li><a href="#generacion">Generación y tendencia de residuos</a></li>
+        <li><a href="#recoleccion">Recolección, cobertura y costos</a></li>
+        <li><a href="#puntos">Puntos críticos georreferenciados</a></li>
+        <li><a href="#causas">Causas raíz del problema</a></li>
+        <li><a href="#impactos">Impactos principales</a></li>
+        <li><a href="#soluciones">Intervenciones y soluciones con costos</a></li>
+        <li><a href="#hoja-ruta">Plan de acción a 6, 12 y 24 meses</a></li>
+        <li><a href="#indicadores">Indicadores de seguimiento</a></li>
+        <li><a href="#fuentes">Fuentes y referencias</a></li>
+      </ol>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="doc-section" id="resumen">
+      <div class="section-tag">Resumen ejecutivo</div>
+      <h2>El problema de basura en Ate: magnitud y diagnóstico central</h2>
+
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">644 t/d</div><div class="sl">Generación diaria de residuos 2022 (INEI)</div></div>
+        <div class="stat-card"><div class="sn">235,184 t</div><div class="sl">Residuos controlados en rellenos sanitarios 2022</div></div>
+        <div class="stat-card"><div class="sn">0.7 kg</div><div class="sl">Generación per cápita por habitante/día (2022)</div></div>
+        <div class="stat-card"><div class="sn">97.46%</div><div class="sl">Cobertura financiera del servicio de recolección</div></div>
+      </div>
+
+      <p>El distrito de Ate presenta un problema persistente de basura visible y desorden urbano: acumulación temporal en vía pública, microbasurales/botaderos informales y disposición irregular de residuos de construcción y demolición (RCD). La generación diaria varía entre <strong>550 y 706 toneladas/día</strong> en el período 2016–2022, con 2022 en <strong>644 t/d</strong>.</p>
+
+      <p>El dato clave del diagnóstico es que el "desorden" observado <strong>no se explica por falta de disposición final formal</strong>, sino por <strong>fallas de frontera</strong>: horarios y frecuencias inadecuadas, accesibilidad difícil en zonas de ladera, falta de disciplina ciudadana y control de arrojo, y flujos problemáticos de RCD y comercio informal.</p>
+
+      <div class="alerta">
+        <p><strong>📌 Conclusión central:</strong> El problema es de <strong>gestión local de calle</strong>, no de ausencia de sistema de disposición final. Pequeños porcentajes de falla en recolección (1–3%) se traducen rápidamente en acumulaciones visibles dada la magnitud del flujo diario.</p>
+      </div>
+    </div>
+
+    <!-- MARCO INSTITUCIONAL -->
+    <div class="doc-section" id="marco">
+      <div class="section-tag gris">Marco legal</div>
+      <h2>Marco institucional y fuentes priorizadas</h2>
+
+      <p>La gestión integral de residuos sólidos en el Perú se rige por la <strong>Ley de Gestión Integral de Residuos Sólidos (D. Leg. 1278)</strong>, cuyo marco establece competencias municipales sobre limpieza pública y manejo de residuos municipales. El Organismo de Evaluación y Fiscalización Ambiental (OEFA) mantiene el Inventario Nacional de Áreas Degradadas por Residuos Sólidos.</p>
+
+      <p>Para Ate, las fuentes públicas más relevantes usadas en este diagnóstico son:</p>
+
+      <div class="causas-grid fade-up">
+        <div class="causa-card"><div class="cc-ico">📊</div><h4>INEI — Anuario de Estadísticas Ambientales</h4><p>Serie 2016–2022 de generación y per cápita de residuos sólidos municipales en Ate.</p></div>
+        <div class="causa-card"><div class="cc-ico">🗺️</div><h4>Portal municipal de rutas y horarios</h4><p>Mínimo 30 rutas de recolección con turnos y días diferenciados por sector.</p></div>
+        <div class="causa-card"><div class="cc-ico">💰</div><h4>SAT — Estructura de costos 2026</h4><p>Costos proyectados de limpieza pública (arbitrios), útil para dimensionar recursos y restricciones operativas.</p></div>
+        <div class="causa-card"><div class="cc-ico">🔬</div><h4>LACCEI 2024 — Estudio Huaycán</h4><p>44 puntos críticos (botaderos) georreferenciados en coordenadas UTM para modelado de rutas con SIG.</p></div>
+      </div>
+    </div>
+
+    <!-- GENERACIÓN -->
+    <div class="doc-section" id="generacion">
+      <div class="section-tag">Datos 2016–2022</div>
+      <h2>Generación de residuos y tendencia reciente</h2>
+
+      <h3>Serie distrital de generación (INEI, 2016–2022)</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Año</th><th>Generación RS (t/d)</th><th>GPC (kg/hab/día)</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>2016</td><td>583.2</td><td>0.9</td><td>Línea base</td></tr>
+            <tr><td>2017</td><td>550.0</td><td>0.9</td><td>Mínimo del período</td></tr>
+            <tr><td>2018</td><td>569.3</td><td>0.9</td><td></td></tr>
+            <tr><td>2019</td><td>553.5</td><td>0.8</td><td></td></tr>
+            <tr><td>2020</td><td>568.7</td><td>0.9</td><td>Año pandemia</td></tr>
+            <tr><td>2021</td><td class="td-dest">706.4</td><td>0.9</td><td>Máximo histórico</td></tr>
+            <tr class="td-total"><td><strong>2022</strong></td><td><strong>644.0</strong></td><td><strong>0.7</strong></td><td>Último dato disponible</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Como control de consistencia, el anuario reporta para 2022 un volumen anual de <strong>235,184 toneladas</strong> controladas en rellenos sanitarios, coherente con ~644 t/d (≈235 mil t/año). Esto confirma que el sistema formal de disposición funciona — el problema está en la gestión de la última milla.</p>
+
+      <div class="alerta">
+        <p><strong>⚠️ Nota sobre dato inconsistente:</strong> El portal municipal afirma reaprovechamiento de "3,000 toneladas diarias" de inorgánicos — cifra incompatible con una generación total de 644 t/d. Se trata de un probable error de unidad (anual vs diario). Se recomienda corrección pública y publicación del indicador real.</p>
+      </div>
+    </div>
+
+    <!-- RECOLECCIÓN Y COSTOS -->
+    <div class="doc-section" id="recoleccion">
+      <div class="section-tag">Operaciones y costos</div>
+      <h2>Recolección, cobertura funcional y costos del servicio</h2>
+
+      <h3>Sistema de rutas actual</h3>
+      <p>El portal municipal detalla una programación con <strong>más de 30 rutas</strong> con múltiples turnos y días diferenciados:</p>
+      <div class="causas-grid fade-up">
+        <div class="causa-card"><div class="cc-ico">📅</div><h4>Rutas diarias (L–D)</h4><p>Sectores urbanos consolidados con servicio todos los días, generalmente en turno noche (07:00 pm–01:00 am).</p></div>
+        <div class="causa-card"><div class="cc-ico">📆</div><h4>Rutas 3 veces/semana</h4><p>LU–MI–VI o MA–JU–SA en lotizaciones industriales o zonas específicas de menor densidad.</p></div>
+      </div>
+
+      <div class="alerta">
+        <p><strong>Zona de riesgo:</strong> En zonas de alta pendiente, el servicio <strong>no llega en su totalidad</strong> y se recurre a <strong>puntos de acopio</strong>. Si estos puntos no están contenedorizados, señalizados y fiscalizados, se convierten en microbasurales. Esta es la causa operativa más crítica identificada.</p>
+      </div>
+
+      <h3>Costos del servicio 2026 (SAT)</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Servicio (2026)</th><th>Costo proyectado (S/)</th><th>Ingreso proyectado (S/)</th><th>Cobertura financiera</th></tr></thead>
+          <tbody>
+            <tr><td>Barrido de calles</td><td>9,604,028.87</td><td>8,912,030.49</td><td>92.79%</td></tr>
+            <tr class="td-total"><td><strong>Recolección de Residuos Sólidos</strong></td><td><strong>49,545,972.66</strong></td><td><strong>48,286,919.00</strong></td><td class="td-dest"><strong>97.46%</strong></td></tr>
+            <tr><td>Parques y Jardines</td><td>25,746,346.33</td><td>24,387,415.23</td><td>94.72%</td></tr>
+            <tr><td>Serenazgo</td><td>34,035,606.26</td><td>32,398,720.07</td><td>95.19%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Con el tonelaje distrital 2022 como proxy, el costo 2026 de recolección equivale a aproximadamente <strong>S/ 211 por tonelada</strong>. Si un punto crítico acumula 20 toneladas (caso documentado en San Gregorio), el costo social supera el costo directo de recolección.</p>
+    </div>
+
+    <!-- PUNTOS CRÍTICOS -->
+    <div class="doc-section" id="puntos">
+      <div class="section-tag">Georreferenciación</div>
+      <h2>Puntos críticos georreferenciados en Huaycán (Ate)</h2>
+
+      <p>Un estudio académico aplicado en Huaycán (LACCEI 2024) levantó <strong>44 puntos críticos (botaderos) con coordenadas UTM</strong> para modelado de rutas con SIG. La tabla siguiente incluye 8 puntos representativos del subset.</p>
+
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Punto</th><th>Este UTM (m)</th><th>Norte UTM (m)</th><th>Latitud (WGS84)</th><th>Longitud (WGS84)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PC01</strong></td><td>300,750.108</td><td>8,672,119.644</td><td>-12.006010</td><td>-76.830101</td></tr>
+            <tr><td><strong>PC06</strong></td><td>301,350.449</td><td>8,671,882.969</td><td>-12.007946</td><td>-76.825203</td></tr>
+            <tr><td><strong>PC11</strong></td><td>301,847.337</td><td>8,671,425.371</td><td>-12.012078</td><td>-76.820640</td></tr>
+            <tr><td><strong>PC16</strong></td><td>301,731.425</td><td>8,671,037.104</td><td>-12.015588</td><td>-76.821714</td></tr>
+            <tr><td><strong>PC20</strong></td><td>301,390.164</td><td>8,671,250.068</td><td>-12.013653</td><td>-76.824827</td></tr>
+            <tr><td><strong>PC26</strong></td><td>301,550.229</td><td>8,671,635.946</td><td>-12.010147</td><td>-76.823335</td></tr>
+            <tr><td><strong>PC33</strong></td><td>300,871.726</td><td>8,671,766.541</td><td>-12.009204</td><td>-76.828983</td></tr>
+            <tr><td><strong>PC44</strong></td><td>300,366.152</td><td>8,671,849.373</td><td>-12.008533</td><td>-76.833608</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Otros puntos críticos documentados</h3>
+      <div class="causas-grid fade-up">
+        <div class="causa-card"><div class="cc-ico">🚛</div><h4>Av. Progreso — San Gregorio</h4><p>Operativo municipal de retiro de más de 20 toneladas de desmonte y residuos usando volquetes y cargadores frontales. Caso típico de punto crítico con componente RCD.</p></div>
+        <div class="causa-card"><div class="cc-ico">🏛️</div><h4>Sitio arqueológico Monterrey sector 2</h4><p>Coordinación entre Ministerio de Cultura y Municipalidad de Ate para frenar el uso del sitio como botadero de basura y escombros. Indica presión de arrojo informal sobre espacios no vigilados.</p></div>
+      </div>
+    </div>
+
+    <!-- CAUSAS RAÍZ -->
+    <div class="doc-section" id="causas">
+      <div class="section-tag">Análisis causal</div>
+      <h2>Causas raíz del problema</h2>
+      <p>El patrón de basura y desorden en Ate no se explica por una sola causa, sino por un <strong>sistema de fallas</strong> con cuatro familias de causas:</p>
+
+      <div class="causas-grid fade-up">
+        <div class="causa-card">
+          <div class="cc-ico">🚧</div>
+          <h4>Causas logísticas (operativas)</h4>
+          <p>En zonas de alta pendiente, la recolección se apoya en puntos de acopio sin infraestructura adecuada. Cuando la frecuencia es menor que diaria, la acumulación en vía pública se vuelve un problema de comportamiento más que de falta de camión.</p>
+        </div>
+        <div class="causa-card">
+          <div class="cc-ico">🏛️</div>
+          <h4>Causas institucionales (gobernanza)</h4>
+          <p>El control de puntos críticos requiere sostenibilidad: limpieza + prevención + registro georreferenciado. Sin un sistema local de monitoreo, el municipio queda atrapado en un ciclo reactivo de "limpiar y volver a limpiar".</p>
+        </div>
+        <div class="causa-card">
+          <div class="cc-ico">🧑‍🤝‍🧑</div>
+          <h4>Causas culturales (normas sociales)</h4>
+          <p>Parte de la ciudadanía no respeta horarios de recojo. El costo privado de "sacar basura fuera de hora" es bajo, pero el costo social es alto. Este patrón requiere comunicación conductual específica, no solo fiscalización.</p>
+        </div>
+        <div class="causa-card">
+          <div class="cc-ico">🏗️</div>
+          <h4>Causas económicas (RCD)</h4>
+          <p>Los residuos de construcción y demolición son voluminosos, intermitentes y su disposición formal suele ser más costosa o menos accesible, generando incentivos al arrojo clandestino en espacios no vigilados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMPACTOS -->
+    <div class="doc-section" id="impactos">
+      <div class="section-tag">Consecuencias</div>
+      <h2>Impactos principales</h2>
+
+      <div class="impacto-card fade-up"><div class="ic-ico">🦟</div><div><h4>Salud pública</h4><p>La acumulación de residuos incrementa exposición a vectores (moscas, roedores), riesgos de infecciones y deterioro de condiciones sanitarias. El contacto con residuos implica problemas sanitarios reconocidos en política pública nacional.</p></div></div>
+      <div class="impacto-card fade-up"><div class="ic-ico">💧</div><div><h4>Saneamiento y riesgo de aniegos</h4><p>La basura en calles y quebradas entra al sistema de drenaje y alcantarillado. SEDAPAL ha reportado miles de aniegos y atoros asociados a acumulación de residuos, incluyendo objetos voluminosos como colchones, frazadas y llantas.</p></div></div>
+      <div class="impacto-card fade-up"><div class="ic-ico">🌊</div><div><h4>Ambiente — suelo y agua</h4><p>El vertimiento de residuos en proximidad a ríos y quebradas es reconocido en el plan de prevención de riesgos de Ate como factor de exposición y degradación ambiental. Las riberas acumulan grandes volúmenes cuando no hay control sostenido.</p></div></div>
+      <div class="impacto-card fade-up"><div class="ic-ico">🚗</div><div><h4>Movilidad e imagen urbana</h4><p>Los puntos críticos en avenidas y ejes comerciales generan microcongestión, invasión de calzada y conflictos con el tránsito peatonal y vehicular. El costo reputacional se materializa en quejas, presión mediática y ciclos de intervención reactiva.</p></div></div>
+    </div>
+
+    <!-- SOLUCIONES -->
+    <div class="doc-section" id="soluciones">
+      <div class="section-tag dorado">Intervenciones</div>
+      <h2>Buenas prácticas y soluciones con estimación de costos</h2>
+
+      <div class="interv-card fade-up">
+        <div class="ic-header"><div class="ic-tipo">Inmediata</div><h4>Cierre operativo de puntos críticos (top 20)</h4></div>
+        <p>Limpieza intensiva inicial + instalación de barreras (bolardos, cercos), contenedores o jaulas en acopios, señalización, iluminación puntual, vigilancia y sanción focalizada. El SAT reconoce que existen zonas donde el modelo de servicio obliga a acopio — estos puntos necesitan blindaje para evitar rebalse.</p>
+        <div class="ic-costo">💰 Costo referencial: S/ 0.5–1.5 millones (1–3% del costo anual de recolección)</div>
+      </div>
+
+      <div class="interv-card fade-up">
+        <div class="ic-header"><div class="ic-tipo">Operativa</div><h4>Trazabilidad y cumplimiento de rutas (GPS + control)</h4></div>
+        <p>GPS/telemetría en compactadoras y volquetes, tablero de cumplimiento por ruta/turno, alertas por desvío u omisión y publicación del "cumplimiento semanal". El distrito ya opera con más de 30 rutas — convertirlo en un SLA medible reduce la incertidumbre y permite focalizar recursos.</p>
+        <div class="ic-costo">💰 Costo referencial: S/ 0.25–0.75 millones/año (0.5–1.5% del costo anual)</div>
+      </div>
+
+      <div class="interv-card fade-up">
+        <div class="ic-header"><div class="ic-tipo">Estructural</div><h4>Programa específico RCD (desmonte) y voluminosos</h4></div>
+        <p>Ventanilla única para registro, rutas de recolección de voluminosos por calendario, puntos de entrega temporal con control y fiscalización a transportistas informales. El municipio reconoce la necesidad de señalización, fiscalización y campañas sobre puntos críticos de RCD.</p>
+        <div class="ic-costo">💰 Costo referencial: S/ 0.5–1.0 millones el primer año (recuperable vía multas)</div>
+      </div>
+
+      <div class="interv-card fade-up">
+        <div class="ic-header"><div class="ic-tipo">Social</div><h4>Cumplimiento de hora/día de disposición</h4></div>
+        <p>Comunicación conductual por microzonas, acuerdos con juntas vecinales y comercios, "alerta de recojo" por WhatsApp o altavoz, y sanción proporcional con gradualidad para reincidentes. El plan local atribuye parte del problema a déficit de convivencia — atacar esta causa reduce la recurrencia.</p>
+        <div class="ic-costo">💰 Costo referencial: S/ 0.1–0.25 millones/año (0.2–0.5% del costo anual)</div>
+      </div>
+    </div>
+
+    <!-- HOJA DE RUTA -->
+    <div class="doc-section" id="hoja-ruta">
+      <div class="section-tag verde">Plan de acción</div>
+      <h2>Plan de acción a 6, 12 y 24 meses</h2>
+
+      <div class="ruta-grid fade-up">
+        <div class="ruta-card">
+          <div class="rc-plazo">⚡ Horizonte 6 meses</div>
+          <h4>Control y evidencia</h4>
+          <ul>
+            <li>Inventario georreferenciado distrital de puntos críticos y acopios con evidencia fotográfica</li>
+            <li>Piloto de cierre operativo en top 20 puntos críticos</li>
+            <li>Ajuste de frecuencias en rutas no diarias con rebalse recurrente</li>
+            <li>Piloto de control GPS en flota crítica</li>
+            <li>Protocolo RCD y voluminosos con calendario y canal</li>
+          </ul>
+        </div>
+        <div class="ruta-card">
+          <div class="rc-plazo">📈 Horizonte 12 meses</div>
+          <h4>Optimización y escalamiento</h4>
+          <ul>
+            <li>GPS completo y tablero público mensual de cumplimiento por ruta</li>
+            <li>Ampliación de contenedorización y acopios cerrados</li>
+            <li>Formalización y control de RCD con registro y sanción</li>
+            <li>Fortalecimiento de segregación en la fuente con metas por zona</li>
+            <li>Reporte de toneladas recuperadas con unidad coherente</li>
+          </ul>
+        </div>
+        <div class="ruta-card">
+          <div class="rc-plazo">🏗️ Horizonte 24 meses</div>
+          <h4>Infraestructura y sostenibilidad</h4>
+          <ul>
+            <li>Red de puntos limpios y estaciones de transferencia para voluminosos y RCD</li>
+            <li>Contratos y SLAs revisados con base en datos reales</li>
+            <li>Evaluación de impacto en salud, quejas y tiempos de recojo</li>
+            <li>Ajuste presupuestal basado en resultados verificados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICADORES -->
+    <div class="doc-section" id="indicadores">
+      <div class="section-tag verde">Monitoreo</div>
+      <h2>Indicadores de seguimiento propuestos</h2>
+
+      <div class="ind-grid fade-up">
+        <div class="ind-card">
+          <h4>📊 Generación y recolección</h4>
+          <p>t/d recolectadas (balanza) y variación mensual; coherencia con disposición final anual (proxy INEI).</p>
+          <span class="ic-fuente">Fuente: INEI — Anuario de Estadísticas Ambientales</span>
+        </div>
+        <div class="ind-card">
+          <h4>✅ Cumplimiento operativo</h4>
+          <p>% de rutas ejecutadas conforme a horario (GPS/bitácora). Dato no público hoy — debe implementarse.</p>
+          <span class="ic-fuente">Fuente: Sistema GPS a instalar · Portal Municipio Ate</span>
+        </div>
+        <div class="ind-card">
+          <h4>📍 Puntos críticos</h4>
+          <p>Número de puntos activos vs erradicados. % de puntos erradicados que no reaparecen en 30/60/90 días (sostenibilidad).</p>
+          <span class="ic-fuente">Fuente: MEF — Fichas de erradicación de puntos críticos</span>
+        </div>
+        <div class="ind-card">
+          <h4>🏗️ RCD y voluminosos</h4>
+          <p>N° de intervenciones y m³ retirados. N° de sanciones efectivas y tasa de reincidencia.</p>
+          <span class="ic-fuente">Fuente: Plan de Gestión RCD — Municipalidad Ate</span>
+        </div>
+        <div class="ind-card">
+          <h4>💧 Salud y saneamiento</h4>
+          <p>N° de incidentes vinculados a residuos (atoros/aniegos reportados por SEDAPAL como presión sistémica).</p>
+          <span class="ic-fuente">Fuente: SEDAPAL · Agencia Andina</span>
+        </div>
+        <div class="ind-card">
+          <h4>📣 Quejas ciudadanas</h4>
+          <p>N° de reportes por zona, tiempo de respuesta a puntos críticos y % de atención dentro del SLA.</p>
+          <span class="ic-fuente">Fuente: Sistema de quejas municipal (a implementar)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="fuentes fade-up" id="fuentes">
+      <h3>📚 Fuentes y referencias oficiales</h3>
+      <div class="fuente-item"><span>📄</span><a href="https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1926/cap03.pdf" target="_blank" rel="noopener">INEI — Anuario de Estadísticas Ambientales: Generación de residuos sólidos 2016–2022</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.sat.gob.pe/websitev9/Portals/0/Docs/Tramites/Ordenanzas/RatificacionOrdenanzas/2026/ARBITRIOS/ATE/INFORME%20FAVORABLE%20N%C2%B0D000552-2025-SAT-OAJ.pdf" target="_blank" rel="noopener">SAT — Informe Favorable N° D000552-2025: Arbitrios Ate 2026 (costos de limpieza pública)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://laccei.org/LACCEI2024-CostaRica/papers/Contribution_583_final_a.pdf" target="_blank" rel="noopener">LACCEI 2024 — Propuesta de rutas de recolección con SIG: 44 puntos críticos en Huaycán, Ate</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/transparencia/GERENCIA%20DE%20GESTION%20AMBIENTAL/SUB%20GERENCIA%20DE%20GESTION%20Y%20MANEJO%20DE%20RESIDUOS%20SOLIDOS/PLAN%20DE%20GESTION%20DE%20RCD%20MDA.pdf" target="_blank" rel="noopener">Municipalidad de Ate — Plan de Gestión de Residuos de Construcción y Demolición (RCD)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/gestion_ambiental/" target="_blank" rel="noopener">Municipalidad de Ate — Portal de Gestión Ambiental: rutas y horarios de recolección</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.mef.gob.pe/contenidos/presu_publ/migl/municipalidades_pmm_pi/6_ACTIVIDAD4_Erradicacion_de_Puntos_Criticos.pdf" target="_blank" rel="noopener">MEF — Actividad 4: Erradicación de Puntos Críticos y prevención (Programa de Incentivos)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/municipalidad-de-ate-recoge-mas-de-20-toneladas-de-desmonte-y-residuos-solidos-en-san-gregorio/" target="_blank" rel="noopener">Municipalidad de Ate — Operativo: retiro de 20+ toneladas en Av. Progreso (San Gregorio)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/documentosPlaneamientoOrganizacion/GESTION_RIESGO/2025/Plan-Prevencion-Reduccion-RriesgoDesastres-MDA-2025-2030.pdf" target="_blank" rel="noopener">Municipalidad de Ate — Plan de Prevención y Reducción del Riesgo de Desastres 2025–2030</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://andina.pe/agencia/noticia-frazadas-colchones-y-hasta-llantas-originan-atoros-alcantarillado-lima-1004795.aspx" target="_blank" rel="noopener">Agencia Andina — Residuos voluminosos originan atoros en el alcantarillado de Lima</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://img.lpderecho.pe/wp-content/uploads/2022/01/Decreto-Supremo-001-2022-Minam-LPDerecho.pdf" target="_blank" rel="noopener">D.S. N.° 001-2022-MINAM — Reglamento de la Ley de Gestión Integral de Residuos Sólidos</a></div>
+    </div>
+
+    <!-- COMPROMISO -->
+    <div class="compromiso-box fade-up">
+      <h2>Este diagnóstico sustenta nuestro plan ambiental</h2>
+      <p>Las propuestas del Dr. José Luis Hurtado Apaico en materia de limpieza pública y ordenamiento urbano nacen de datos reales. Conocer el problema con precisión es la única manera de resolverlo de verdad.</p>
+      <a href="index.html#propuestas" class="comp-btn">Ver todas las propuestas →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
