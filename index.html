@@ -45,15 +45,6 @@
   <!-- Typed.js & ScrollReveal — sin defer para garantizar carga -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-  .card {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
   <style>
     /* ══ VARIABLES ══ */
     :root {
@@ -151,6 +142,8 @@
     /* ══ CARDS ══ */
     .card { background: #fff; border: 1px solid var(--borde); border-radius: 16px; padding: 26px; box-shadow: var(--shadow); transition: transform .25s, border-color .25s; height: 100%; }
     .card:hover { transform: translateY(-6px); border-color: var(--verde); }
+    .card-link { display: block; }
+    .card-link .card { cursor: pointer; }
     .card h3 { color: var(--verde); font-size: 1.08rem; font-weight: 700; margin: 8px 0 10px; }
     .problem { border-top: 4px solid var(--rojo); }
     .proposal { border-top: 4px solid var(--verde); }
@@ -328,9 +321,6 @@
 
   <!-- PROBLEMAS -->
   <section class="section" id="problemas">
-    <a href="inseguridad-ate.html" class="btn green">
-Ver diagnóstico de inseguridad en Ate
-</a>
     <div class="container">
       <div class="sec-head">
         <div class="tag">Diagnóstico ciudadano</div>
@@ -338,9 +328,9 @@ Ver diagnóstico de inseguridad en Ate
         <p class="muted">Nuestro distrito enfrenta desafíos urgentes que deben atenderse con seriedad, presencia territorial y soluciones concretas.</p>
       </div>
       <div class="grid-3">
-        <a href="inseguridad-ate.html" style="text-decoration:none;color:inherit;display:block;"><div class="card problem" style="cursor:pointer;"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito que afectan la calidad de vida de las familias.</p></div></a>
-        <a href="diagnostico-basura.html" style="text-decoration:none;color:inherit;display:block;"><div class="card problem" style="cursor:pointer;"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público en varios sectores de Ate.</p></div></a>
-        <a href="diagnostico-pistas.html" style="text-decoration:none;color:inherit;display:block;"><div class="card problem" style="cursor:pointer;"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes del distrito.</p></div></a>
+        <a href="inseguridad-ate.html" class="card-link"><div class="card problem"><div class="icon">🚨</div><h3>Inseguridad</h3><p class="muted">Robos, extorsión y temor en distintos sectores del distrito que afectan la calidad de vida de las familias.</p></div></a>
+        <a href="diagnostico-basura.html" class="card-link"><div class="card problem"><div class="icon">🗑️</div><h3>Basura y desorden</h3><p class="muted">Calles sucias, abandono y falta de mantenimiento del espacio público en varios sectores de Ate.</p></div></a>
+        <a href="diagnostico-pistas.html" class="card-link"><div class="card problem"><div class="icon">🛣️</div><h3>Pistas y veredas</h3><p class="muted">Baches, veredas dañadas y problemas de movilidad que afectan a vecinos y comerciantes del distrito.</p></div></a>
       </div>
     </div>
   </section>
@@ -354,12 +344,12 @@ Ver diagnóstico de inseguridad en Ate
         <p class="muted">Un plan concreto, basado en la Doctrina Social Cristiana, con seguridad y desarrollo autogestionario como ejes principales.</p>
       </div>
       <div class="grid-3">
-        <a href="seguridad.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🛡️</div><h3>Seguridad Ciudadana</h3><p class="muted">Modernización del serenazgo, cámaras de vigilancia, coordinación con la PNP y fortalecimiento de juntas vecinales. El Dr. Hurtado aplica su formación en criminología para diseñar políticas basadas en evidencia.</p></div></a>
-        <a href="autogestion.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🌱</div><h3>Proyectos Autogestionarios</h3><p class="muted">No solo dar el pescado, sino enseñar a pescar. Huertos urbanos, talleres productivos, centros de formación digital y escuelas de liderazgo vecinal para que cada familia genere su propio desarrollo.</p></div></a>
-        <a href="salud.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🏥</div><h3>Salud para todos</h3><p class="muted">Centros de salud equipados, campañas preventivas permanentes, red de promotores de salud comunitaria y atención prioritaria para niños, mujeres y adultos mayores.</p></div></a>
-        <a href="educacion.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">📚</div><h3>Educación de calidad</h3><p class="muted">Mejora de infraestructura escolar, becas para jóvenes con talento, formación técnica y digital, y acceso a internet en zonas vulnerables del distrito.</p></div></a>
-        <a href="empleo.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">💼</div><h3>Empleo y economía local</h3><p class="muted">Apoyo a microempresarios, ferias distritales formales, capacitación laboral para jóvenes y mujeres, y fomento de la inversión responsable en Ate.</p></div></a>
-        <a href="infraestructura.html" style="text-decoration:none;color:inherit;display:block;"><div class="card proposal" style="cursor:pointer;"><div class="icon">🏗️</div><h3>Infraestructura</h3><p class="muted">Pistas y veredas en buen estado, mejora del agua y desagüe, ordenamiento del tránsito y centros comunitarios modernos en todos los sectores de Ate.</p></div></a>
+        <a href="seguridad.html" class="card-link"><div class="card proposal"><div class="icon">🛡️</div><h3>Seguridad Ciudadana</h3><p class="muted">Modernización del serenazgo, cámaras de vigilancia, coordinación con la PNP y fortalecimiento de juntas vecinales. El Dr. Hurtado aplica su formación en criminología para diseñar políticas basadas en evidencia.</p></div></a>
+        <a href="autogestion.html" class="card-link"><div class="card proposal"><div class="icon">🌱</div><h3>Proyectos Autogestionarios</h3><p class="muted">No solo dar el pescado, sino enseñar a pescar. Huertos urbanos, talleres productivos, centros de formación digital y escuelas de liderazgo vecinal para que cada familia genere su propio desarrollo.</p></div></a>
+        <a href="salud.html" class="card-link"><div class="card proposal"><div class="icon">🏥</div><h3>Salud para todos</h3><p class="muted">Centros de salud equipados, campañas preventivas permanentes, red de promotores de salud comunitaria y atención prioritaria para niños, mujeres y adultos mayores.</p></div></a>
+        <a href="educacion.html" class="card-link"><div class="card proposal"><div class="icon">📚</div><h3>Educación de calidad</h3><p class="muted">Mejora de infraestructura escolar, becas para jóvenes con talento, formación técnica y digital, y acceso a internet en zonas vulnerables del distrito.</p></div></a>
+        <a href="empleo.html" class="card-link"><div class="card proposal"><div class="icon">💼</div><h3>Empleo y economía local</h3><p class="muted">Apoyo a microempresarios, ferias distritales formales, capacitación laboral para jóvenes y mujeres, y fomento de la inversión responsable en Ate.</p></div></a>
+        <a href="infraestructura.html" class="card-link"><div class="card proposal"><div class="icon">🏗️</div><h3>Infraestructura</h3><p class="muted">Pistas y veredas en buen estado, mejora del agua y desagüe, ordenamiento del tránsito y centros comunitarios modernos en todos los sectores de Ate.</p></div></a>
       </div>
     </div>
   </section>
@@ -712,3 +702,4 @@ Detalle: " + (d.detalle || "");
 
 </body>
 </html>
+
