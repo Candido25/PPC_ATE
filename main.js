@@ -99,9 +99,9 @@ function closeDoctrineWelcome() {
 function openDoctrineWelcome() {
   if (!doctrineModal || !doctrineTitle || !doctrineText || !doctrineMeta) return;
   const doctrine = doctrineMessages[getDoctrineIndexToday()];
-  doctrineTitle.textContent = doctrine.title;
-  doctrineText.textContent = doctrine.text;
-  doctrineMeta.textContent = doctrine.meta;
+  doctrineTitle.textContent = doctrine.title || "Dignidad de la persona humana";
+  doctrineText.textContent = doctrine.text || "La politica existe para servir a la persona, no para utilizarla.";
+  doctrineMeta.textContent = doctrine.meta || "El bien comun comienza respetando la dignidad de cada persona.";
   doctrineModal.classList.add("is-open");
   doctrineModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
@@ -131,7 +131,7 @@ if (doctrineModal) {
 
 const sr = ScrollReveal({ distance: "36px", duration: 900, delay: 150, reset: false });
 sr.reveal(".card", { origin: "bottom", interval: 120 });
-sr.reveal("h2", { origin: "left", distance: "28px" });
+sr.reveal(".sec-head h2, .section h2, .final-claim h2", { origin: "left", distance: "28px" });
 sr.reveal(".hero-card", { origin: "right", scale: 0.92, duration: 1100 });
 sr.reveal(".ideario-card", { origin: "bottom", interval: 100 });
 
