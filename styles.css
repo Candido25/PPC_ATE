@@ -321,13 +321,47 @@ h1 {
   text-align: center;
 }
 
+.hero-video-trigger {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
 .hero-card img {
-  width: 78%;
+  width: 94%;
   margin: 0 auto;
   border-radius: 20px;
   border: 6px solid var(--rojo);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-video-trigger:hover img,
+.hero-video-trigger:focus-visible img {
+  transform: scale(1.02);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4);
+}
+
+.hero-video-trigger:focus-visible {
+  outline: none;
+}
+
+.play-badge {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  background: rgba(176, 48, 32, 0.94);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
 }
 
 .hero-card .name {
@@ -697,6 +731,64 @@ footer {
   box-shadow: 0 2px 0 #7a1010, 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+}
+
+.video-modal.is-open {
+  display: flex;
+}
+
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 19, 12, 0.78);
+}
+
+.video-modal-dialog {
+  position: relative;
+  width: min(92vw, 760px);
+  max-height: 88vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 24px;
+  padding: 22px 22px 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.video-modal-dialog h2 {
+  font-size: 1.25rem;
+  color: var(--verde-osc);
+  margin-bottom: 14px;
+  padding-right: 44px;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0;
+  background: #eff4ef;
+  color: var(--texto);
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.video-modal-frame {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1.1fr 0.9fr;
@@ -736,6 +828,12 @@ footer {
 
   .hero-card img {
     width: 60%;
+  }
+
+  .play-badge {
+    bottom: 14px;
+    font-size: 0.82rem;
+    padding: 9px 16px;
   }
 
   .hero p {

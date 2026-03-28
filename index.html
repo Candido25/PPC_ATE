@@ -119,7 +119,10 @@
         </div>
       </div>
       <div class="hero-card">
-        <img src="assets/jose-luis-hurtado.jpg" alt="Dr. José Luis Hurtado Apaico · Candidato a Alcalde de Ate">
+        <button class="hero-video-trigger" type="button" id="heroVideoTrigger" aria-haspopup="dialog" aria-controls="heroVideoModal" aria-label="Ver video de presentación del candidato">
+          <img src="assets/jose-luis-hurtado.jpg" alt="Dr. José Luis Hurtado Apaico · Candidato a Alcalde de Ate">
+          <span class="play-badge">▶ Ver presentación</span>
+        </button>
         <div class="name">Dr. José Luis Hurtado Apaico</div>
         <div class="role">Partido Popular Cristiano · Ate · 2027–2030</div>
       </div>
@@ -372,6 +375,21 @@
 
     <!-- WHATSAPP FLOTANTE -->
  <a class="whatsapp" id="waFloat" href="https://whatsapp.com/channel/0029Vb6EZcAHgZWgJ67ol01D" target="_blank" rel="noopener">ÚNETE A MI CANAL</a>
+
+  <div class="video-modal" id="heroVideoModal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-close-video="true"></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="heroVideoTitle">
+      <button class="video-modal-close" type="button" id="closeHeroVideo" aria-label="Cerrar video">×</button>
+      <h2 id="heroVideoTitle">Presentación del candidato</h2>
+      <div class="video-modal-frame">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@conjoseluis/video/7605800704237669639" data-video-id="7605800704237669639" style="max-width: 605px; min-width: 325px;">
+          <section></section>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <script async src="https://www.tiktok.com/embed.js"></script>
   <script src="config.js"></script>
   <script src="main.js"></script>
 

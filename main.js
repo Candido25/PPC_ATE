@@ -97,3 +97,43 @@ document.getElementById("reportForm").addEventListener("submit", async function 
     abrirWhatsApp(waMsg);
   }
 });
+
+const heroVideoModal = document.getElementById("heroVideoModal");
+const heroVideoTrigger = document.getElementById("heroVideoTrigger");
+const closeHeroVideo = document.getElementById("closeHeroVideo");
+
+function openHeroVideo() {
+  if (!heroVideoModal) return;
+  heroVideoModal.classList.add("is-open");
+  heroVideoModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeVideoModal() {
+  if (!heroVideoModal) return;
+  heroVideoModal.classList.remove("is-open");
+  heroVideoModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+if (heroVideoTrigger) {
+  heroVideoTrigger.addEventListener("click", openHeroVideo);
+}
+
+if (closeHeroVideo) {
+  closeHeroVideo.addEventListener("click", closeVideoModal);
+}
+
+if (heroVideoModal) {
+  heroVideoModal.addEventListener("click", function (e) {
+    if (e.target instanceof HTMLElement && e.target.dataset.closeVideo === "true") {
+      closeVideoModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeVideoModal();
+  }
+});
