@@ -13,51 +13,86 @@ new Typed("#typed-text", {
 
 const doctrineMessages = [
   {
+    icon: "👤",
+    kicker: "La persona al centro",
+    accent: "#117a3b",
     title: "Dignidad de la persona humana",
     text: "La politica existe para servir a la persona, no para utilizarla. Cada vecino vale por si mismo y merece seguridad, respeto y oportunidades reales.",
-    meta: "La dignidad humana nos recuerda que ninguna gestion es buena si olvida a la persona concreta."
+    quote: "\"Todo hombre es verdaderamente persona.\"",
+    meta: "San Juan XXIII · Pacem in Terris, 9"
   },
   {
+    icon: "🏛",
+    kicker: "Gobernar para todos",
+    accent: "#1a5276",
     title: "Bien comun",
     text: "Gobernar no es repartir favores. Es ordenar la ciudad para que el progreso, la seguridad y los servicios lleguen a todos y no solo a unos cuantos.",
-    meta: "El bien comun busca que el desarrollo beneficie a la comunidad entera y no a intereses particulares."
+    quote: "\"La realizacion del bien comun es la unica razon de ser de las autoridades civiles.\"",
+    meta: "San Juan XXIII · Pacem in Terris, 54"
   },
   {
+    icon: "🤝",
+    kicker: "Comunidad fuerte, Estado que apoya",
+    accent: "#8a6a12",
     title: "Subsidiariedad",
     text: "Lo que la familia, el barrio o la comunidad pueden hacer bien, no debe ser absorbido por un Estado torpe. La municipalidad debe apoyar y fortalecer, no reemplazar.",
-    meta: "La subsidiariedad promueve ciudadanos y comunidades mas fuertes, no vecinos dependientes."
+    quote: "\"Es injusto y, al mismo tiempo, un grave mal quitar a las comunidades menores lo que ellas pueden realizar.\"",
+    meta: "Pio XI · Quadragesimo Anno, 79"
   },
   {
+    icon: "❤️",
+    kicker: "Nadie se salva solo",
+    accent: "#b03020",
     title: "Solidaridad",
     text: "Nadie se salva solo. Una ciudad justa es la que protege al mas vulnerable y convierte la fuerza colectiva en apoyo concreto para quien mas lo necesita.",
-    meta: "La solidaridad convierte la politica en deber moral con el otro y no solo en administracion fria."
+    quote: "\"La solidaridad es sin duda una virtud cristiana.\"",
+    meta: "San Juan Pablo II · Sollicitudo Rei Socialis, 40"
   },
   {
+    icon: "⚖️",
+    kicker: "Crecimiento con justicia",
+    accent: "#7d3c98",
     title: "Justicia social",
     text: "No basta con crecer. Hay que corregir desigualdades, cerrar brechas y asegurar que el desarrollo llegue tambien a los barrios olvidados de Ate.",
-    meta: "La justicia social exige que el progreso tenga rostro humano y llegue a quienes fueron postergados."
+    quote: "\"La autoridad civil no debe servir al interes de un individuo o de unos pocos.\"",
+    meta: "Leon XIII, citado por San Juan XXIII · Pacem in Terris, 56"
   },
   {
+    icon: "🗣️",
+    kicker: "Vecinos protagonistas",
+    accent: "#0f6f62",
     title: "Participacion",
     text: "El vecino no debe ser espectador de la gestion municipal. Debe ser protagonista, fiscalizador y constructor del desarrollo de su propia comunidad.",
-    meta: "La participacion fortalece la democracia local y mejora la calidad de las decisiones publicas."
+    quote: "\"El hombre tiene derecho a tomar parte activa en la vida publica.\"",
+    meta: "San Juan XXIII · Pacem in Terris, 26"
   },
   {
+    icon: "🌍",
+    kicker: "La economia tiene funcion social",
+    accent: "#6b4f1d",
     title: "Destino universal de los bienes",
     text: "La propiedad y la economia tienen una funcion social. La riqueza, los servicios y las oportunidades no pueden organizarse de espaldas a la comunidad.",
-    meta: "Este principio recuerda que la economia debe estar al servicio de la persona y del bien comun."
+    quote: "\"Dios ha destinado la tierra y cuanto ella contiene para uso de todos los hombres y pueblos.\"",
+    meta: "Concilio Vaticano II · Gaudium et Spes, 69"
   },
   {
+    icon: "🛠️",
+    kicker: "Trabajo que dignifica",
+    accent: "#0d5b2d",
     title: "Trabajo con dignidad",
     text: "El trabajo no es solo ingreso. Es dignidad, realizacion personal y camino de progreso para la familia y la comunidad.",
-    meta: "Por eso defendemos empleo local, emprendimiento y desarrollo productivo con rostro humano."
+    quote: "\"El trabajo es un bien del hombre... mediante el trabajo el hombre se hace mas hombre.\"",
+    meta: "San Juan Pablo II · Laborem Exercens, 9"
   }
 ];
 
 const doctrineModal = document.getElementById("doctrineModal");
 const doctrineTitle = document.getElementById("doctrineTitle");
 const doctrineText = document.getElementById("doctrineText");
+const doctrineQuote = document.getElementById("doctrineQuote");
 const doctrineMeta = document.getElementById("doctrineMeta");
+const doctrineIcon = document.getElementById("doctrineIcon");
+const doctrineKicker = document.getElementById("doctrineKicker");
 const closeDoctrineModal = document.getElementById("closeDoctrineModal");
 const dismissDoctrineModal = document.getElementById("dismissDoctrineModal");
 
@@ -99,9 +134,14 @@ function closeDoctrineWelcome() {
 function openDoctrineWelcome() {
   if (!doctrineModal || !doctrineTitle || !doctrineText || !doctrineMeta) return;
   const doctrine = doctrineMessages[getDoctrineIndexToday()];
+  const dialog = doctrineModal.querySelector(".doctrine-modal__dialog");
   doctrineTitle.textContent = doctrine.title || "Dignidad de la persona humana";
   doctrineText.textContent = doctrine.text || "La politica existe para servir a la persona, no para utilizarla.";
-  doctrineMeta.textContent = doctrine.meta || "El bien comun comienza respetando la dignidad de cada persona.";
+  if (doctrineQuote) doctrineQuote.textContent = doctrine.quote || "\"Cada ser humano es verdaderamente persona.\"";
+  doctrineMeta.textContent = doctrine.meta || "San Juan XXIII · Pacem in Terris, 9";
+  if (doctrineIcon) doctrineIcon.textContent = doctrine.icon || "✝";
+  if (doctrineKicker) doctrineKicker.textContent = doctrine.kicker || "Doctrina social cristiana";
+  if (dialog && doctrine.accent) dialog.style.setProperty("--doctrine-accent", doctrine.accent);
   doctrineModal.classList.add("is-open");
   doctrineModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";

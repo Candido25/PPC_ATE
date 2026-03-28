@@ -49,15 +49,24 @@
   <style>
     .doctrine-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1200}
     .doctrine-modal.is-open{display:flex}
-    .doctrine-modal__backdrop{position:absolute;inset:0;background:rgba(7,22,12,.68);backdrop-filter:blur(3px)}
-    .doctrine-modal__dialog{position:relative;width:min(92vw,620px);background:linear-gradient(145deg,#fff,#f4f8f4);border:1px solid rgba(17,122,59,.16);border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,.28);padding:30px 28px 24px;z-index:1}
-    .doctrine-modal__eyebrow{display:inline-block;background:#eef7f1;color:#0d5b2d;border-radius:999px;padding:6px 12px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-    .doctrine-modal__title{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;color:#0d5b2d;margin:0 0 12px;min-height:auto}
-    .doctrine-modal__text{font-size:1rem;line-height:1.75;color:#2d3b31;margin-bottom:12px}
-    .doctrine-modal__meta{font-size:.88rem;line-height:1.6;color:#6b756e;margin-bottom:22px}
+    .doctrine-modal__backdrop{position:absolute;inset:0;background:rgba(7,22,12,.68);backdrop-filter:blur(4px)}
+    .doctrine-modal__dialog{--doctrine-accent:#117a3b;position:relative;width:min(92vw,640px);background:linear-gradient(180deg,#fff 0%,#f8fbf8 100%);border:1px solid rgba(17,122,59,.12);border-radius:24px;box-shadow:0 24px 70px rgba(0,0,0,.28);padding:0 0 24px;z-index:1;overflow:hidden}
+    .doctrine-modal__hero{background:linear-gradient(135deg,var(--doctrine-accent) 0%,#0d5b2d 100%);padding:18px 22px 54px;position:relative}
+    .doctrine-modal__glow{position:absolute;right:-30px;top:-26px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.12)}
+    .doctrine-modal__close{position:absolute;top:14px;right:14px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
+    .doctrine-modal__eyebrow{display:inline-block;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+    .doctrine-modal__hero-row{display:flex;align-items:center;gap:14px}
+    .doctrine-modal__icon{width:54px;height:54px;border-radius:18px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:1.7rem;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+    .doctrine-modal__kicker{font-size:.78rem;color:#d9eee1;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
+    .doctrine-modal__title{font-size:clamp(1.45rem,3vw,2.1rem);line-height:1.08;color:#fff;margin:0;min-height:auto;max-width:480px}
+    .doctrine-modal__body{padding:0 22px}
+    .doctrine-modal__text{margin-top:-24px;background:#fff;border:1px solid rgba(17,122,59,.12);box-shadow:0 12px 30px rgba(0,0,0,.08);border-radius:18px;padding:18px 18px 16px;font-size:1rem;line-height:1.75;color:#2d3b31}
+    .doctrine-modal__quote{margin:14px 0 12px;padding:14px 16px;border-left:4px solid var(--doctrine-accent);background:#f4f8f4;border-radius:0 14px 14px 0;font-size:.92rem;line-height:1.65;color:#24432f;font-style:italic}
+    .doctrine-modal__meta{font-size:.84rem;line-height:1.65;color:#5e6d62;margin:8px 0 18px;padding:0 2px}
     .doctrine-modal__actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .doctrine-modal__close{position:absolute;top:14px;right:14px;width:38px;height:38px;border:0;border-radius:50%;background:#eef4ef;color:#0d5b2d;font-size:1.4rem;line-height:1;cursor:pointer}
-    @media (max-width:680px){.doctrine-modal__dialog{padding:24px 18px 20px;border-radius:18px}.doctrine-modal__actions{flex-direction:column;align-items:stretch}.doctrine-modal__actions .btn{width:100%;justify-content:center}}
+    .doctrine-modal__actions .btn{min-width:180px;justify-content:center}
+    .doctrine-modal__dismiss{border-color:#d9e5dd!important;color:#24432f!important;background:#fff!important}
+    @media (max-width:680px){.doctrine-modal__dialog{width:min(94vw,640px);border-radius:22px}.doctrine-modal__hero{padding:16px 16px 46px}.doctrine-modal__body{padding:0 16px}.doctrine-modal__text{margin-top:-18px;padding:16px 15px 14px;font-size:.95rem;line-height:1.68}.doctrine-modal__quote{font-size:.87rem;padding:12px 13px}.doctrine-modal__title{font-size:1.55rem;max-width:none}.doctrine-modal__icon{width:46px;height:46px;border-radius:14px;font-size:1.45rem}.doctrine-modal__actions{flex-direction:column;align-items:stretch}.doctrine-modal__actions .btn{width:100%;min-width:0;justify-content:center}}
   </style>
 </head>
 <body>
@@ -65,14 +74,26 @@
   <div class="doctrine-modal" id="doctrineModal" aria-hidden="true">
     <div class="doctrine-modal__backdrop" data-close-doctrine="true"></div>
     <div class="doctrine-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="doctrineTitle">
-      <button class="doctrine-modal__close" type="button" id="closeDoctrineModal" aria-label="Cerrar mensaje doctrinario">×</button>
-      <div class="doctrine-modal__eyebrow">Mensaje del ideario</div>
-      <h2 id="doctrineTitle" class="doctrine-modal__title">Dignidad de la persona humana</h2>
-      <p class="doctrine-modal__text" id="doctrineText">La politica existe para servir a la persona, no para utilizarla. Cada vecino vale por si mismo y merece seguridad, respeto y oportunidades reales.</p>
-      <p class="doctrine-modal__meta" id="doctrineMeta">La dignidad humana nos recuerda que ninguna gestion es buena si olvida a la persona concreta.</p>
-      <div class="doctrine-modal__actions">
-        <a class="btn gold doctrine-modal__link" href="ideario.html">Conocer más</a>
-        <button class="btn outline doctrine-modal__dismiss" type="button" id="dismissDoctrineModal">Continuar al sitio</button>
+      <div class="doctrine-modal__hero">
+        <div class="doctrine-modal__glow"></div>
+        <button class="doctrine-modal__close" type="button" id="closeDoctrineModal" aria-label="Cerrar mensaje doctrinario">×</button>
+        <div class="doctrine-modal__eyebrow">Mensaje doctrinario</div>
+        <div class="doctrine-modal__hero-row">
+          <div class="doctrine-modal__icon" id="doctrineIcon">✝</div>
+          <div>
+            <div class="doctrine-modal__kicker" id="doctrineKicker">Doctrina social cristiana</div>
+            <h2 id="doctrineTitle" class="doctrine-modal__title">Dignidad de la persona humana</h2>
+          </div>
+        </div>
+      </div>
+      <div class="doctrine-modal__body">
+        <p class="doctrine-modal__text" id="doctrineText">La politica existe para servir a la persona, no para utilizarla. Cada vecino vale por si mismo y merece seguridad, respeto y oportunidades reales.</p>
+        <p class="doctrine-modal__quote" id="doctrineQuote">"Cada ser humano es verdaderamente persona."</p>
+        <p class="doctrine-modal__meta" id="doctrineMeta">La dignidad humana nos recuerda que ninguna gestion es buena si olvida a la persona concreta.</p>
+        <div class="doctrine-modal__actions">
+          <a class="btn gold doctrine-modal__link" href="ideario.html">Conocer más</a>
+          <button class="btn outline doctrine-modal__dismiss" type="button" id="dismissDoctrineModal">Seguir navegando</button>
+        </div>
       </div>
     </div>
   </div>
