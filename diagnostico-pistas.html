@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Diagnóstico de Pistas y Veredas en Ate | PPC Ate</title>
+  <meta name="description" content="Diagnóstico técnico sobre el estado de pistas y veredas en el distrito de Ate. Baches, vías sin pavimentar, invasión de veredas y plan de acción 2027-2030. José Luis Hurtado Apaico, PPC Ate.">
+  <meta name="keywords" content="pistas veredas Ate Lima, baches Ate, pavimentacion Ate, Carretera Central Ate, Av Nicolas Ayllon baches, veredas Ate, accesibilidad Ate, mantenimiento vial Ate, PPC Ate infraestructura, diagnostico pistas Ate, Jose Luis Hurtado Apaico">
+  <link rel="canonical" href="https://www.ppcate.org.pe/diagnostico-pistas.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <style>
+    :root {
+      --verde:       #117a3b;
+      --verde-osc:   #0d5b2d;
+      --verde-suave: #e8f5ee;
+      --dorado:      #c9a23a;
+      --cafe:        #7d5a2f;
+      --cafe-suave:  #f5f0e8;
+      --gris-osc:    #2c3e50;
+      --azul:        #1a5276;
+      --claro:       #f6f8f6;
+      --texto:       #1f2b22;
+      --gris:        #6b756e;
+      --borde:       #dce7df;
+      --shadow:      0 4px 16px rgba(0,0,0,.08);
+      --shadow-md:   0 8px 28px rgba(0,0,0,.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.75; overflow-x: hidden; }
+    a { color: var(--verde); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    header { background: var(--verde-osc); padding: .85rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .8rem; color: #fff; }
+    .logo img { width: 44px; height: 44px; background: #fff; border-radius: 50%; padding: 5px; object-fit: contain; }
+    .logo .t1 { font-weight: 800; font-size: .95rem; line-height: 1.2; }
+    .logo .t2 { font-size: .68rem; color: #a8dbbe; }
+    .back-btn { background: var(--dorado); color: #111; font-size: .8rem; font-weight: 700; padding: 8px 18px; border-radius: 20px; white-space: nowrap; }
+    .back-btn:hover { opacity: .85; text-decoration: none; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #3d2b1f, var(--cafe), #a07840); color: #fff; padding: 4rem 0 3rem; position: relative; overflow: hidden; }
+    .hero::before { content: '🛣️'; position: absolute; right: 3%; top: 50%; transform: translateY(-50%); font-size: 14rem; opacity: .06; pointer-events: none; }
+    .hero-badge { display: inline-block; background: var(--dorado); color: #111; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: .8rem; }
+    .hero p { color: rgba(255,255,255,.85); font-size: .97rem; max-width: 700px; line-height: 1.72; margin-bottom: 1.5rem; }
+    .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.2); }
+    .h-stat .num { font-size: 2rem; font-weight: 800; color: var(--dorado); line-height: 1; }
+    .h-stat .lbl { font-size: .68rem; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .08em; margin-top: .2rem; }
+
+    /* ÍNDICE */
+    .indice { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: var(--shadow); }
+    .indice h2 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .indice ol { padding-left: 1.2rem; }
+    .indice ol li { margin-bottom: .4rem; }
+    .indice ol li a { font-size: .88rem; color: var(--verde); }
+
+    /* ALERTA */
+    .alerta { background: var(--cafe-suave); border-left: 4px solid var(--cafe); border-radius: 0 10px 10px 0; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+    .alerta p { font-size: .9rem; color: var(--texto); margin: 0; line-height: 1.65; }
+
+    /* SECCIONES */
+    .doc-section { padding: 3rem 0; border-bottom: 1px solid var(--borde); }
+    .doc-section:last-child { border-bottom: none; }
+    .section-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 12px; border-radius: 15px; margin-bottom: .7rem; background: var(--cafe); color: #fff; }
+    .section-tag.verde { background: var(--verde-osc); }
+    .section-tag.gris { background: var(--gris-osc); }
+    .section-tag.dorado { background: var(--dorado); color: #111; }
+    .section-tag.azul { background: var(--azul); }
+    .doc-section h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 800; color: var(--gris-osc); margin-bottom: 1rem; scroll-margin-top: 80px; }
+    .doc-section h3 { font-size: 1.05rem; font-weight: 700; color: var(--cafe); margin: 1.5rem 0 .7rem; border-left: 3px solid var(--cafe); padding-left: .7rem; }
+    .doc-section p { color: var(--gris); font-size: .95rem; line-height: 1.78; margin-bottom: .9rem; }
+    .doc-section p strong { color: var(--texto); }
+
+    /* TABLAS */
+    .tabla-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: 10px; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; background: #fff; }
+    thead tr { background: var(--gris-osc); color: #fff; }
+    thead th { padding: .75rem 1rem; text-align: left; font-weight: 700; font-size: .82rem; }
+    tbody tr:nth-child(even) { background: var(--claro); }
+    tbody tr:hover { background: var(--cafe-suave); }
+    tbody td { padding: .65rem 1rem; border-bottom: 1px solid var(--borde); color: var(--texto); font-size: .84rem; line-height: 1.5; }
+    .td-coord { font-family: monospace; font-size: .78rem; color: var(--azul); }
+    .td-dest { color: var(--cafe); font-weight: 700; }
+
+    /* STAT CARDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .stat-card { background: #fff; border: 1px solid var(--borde); border-top: 3px solid var(--cafe); border-radius: 10px; padding: 1.2rem; text-align: center; box-shadow: var(--shadow); }
+    .stat-card .sn { font-size: 1.6rem; font-weight: 800; color: var(--cafe); line-height: 1; }
+    .stat-card .sl { font-size: .75rem; color: var(--gris); margin-top: .3rem; line-height: 1.4; }
+
+    /* GRID CARDS */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+
+    .causa-card { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.3rem; box-shadow: var(--shadow); }
+    .causa-card .cc-ico { font-size: 1.8rem; margin-bottom: .5rem; }
+    .causa-card h4 { font-size: .97rem; font-weight: 700; color: var(--cafe); margin-bottom: .5rem; }
+    .causa-card p { font-size: .84rem; color: var(--gris); line-height: 1.65; margin: 0; }
+
+    /* IMPACTOS */
+    .impacto-card { background: #fff; border: 1px solid var(--borde); border-left: 4px solid var(--cafe); border-radius: 0 10px 10px 0; padding: 1.1rem 1.3rem; margin-bottom: .8rem; box-shadow: var(--shadow); display: flex; gap: .8rem; align-items: flex-start; }
+    .impacto-card .ic-ico { font-size: 1.4rem; flex-shrink: 0; }
+    .impacto-card h4 { font-size: .93rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .impacto-card p { font-size: .83rem; color: var(--gris); margin: 0; line-height: 1.55; }
+
+    /* TRAMOS */
+    .tramo-card { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 1.2rem; box-shadow: var(--shadow); }
+    .tramo-card h4 { font-size: .9rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .4rem; }
+    .tramo-card .tc-tipo { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 3px 9px; border-radius: 8px; background: var(--cafe-suave); color: var(--cafe); display: inline-block; margin-bottom: .5rem; }
+    .tramo-card .tc-coord { font-size: .74rem; font-family: monospace; color: var(--azul); background: #eaf0f8; border-radius: 4px; padding: 3px 8px; display: inline-block; margin-top: .4rem; }
+    .tramo-card p { font-size: .82rem; color: var(--gris); margin: .3rem 0 0; line-height: 1.5; }
+
+    /* SOLUCIONES */
+    .solucion-card { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.3rem 1.5rem; margin-bottom: .9rem; box-shadow: var(--shadow); }
+    .solucion-card .sc-header { display: flex; align-items: center; gap: .8rem; margin-bottom: .6rem; }
+    .solucion-card .sc-nivel { font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 10px; background: var(--cafe); color: #fff; white-space: nowrap; }
+    .solucion-card h4 { font-size: .97rem; font-weight: 700; color: var(--gris-osc); }
+    .solucion-card p { font-size: .84rem; color: var(--gris); line-height: 1.65; margin: 0; }
+
+    /* PLAN */
+    .ruta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .ruta-card { background: linear-gradient(135deg, #3d2b1f, var(--cafe)); border-radius: 12px; padding: 1.4rem; color: #fff; }
+    .ruta-card .rc-plazo { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dorado); margin-bottom: .5rem; }
+    .ruta-card h4 { font-size: .95rem; font-weight: 700; margin-bottom: .8rem; }
+    .ruta-card ul { list-style: none; padding: 0; }
+    .ruta-card ul li { font-size: .8rem; color: rgba(255,255,255,.8); padding: .3rem 0 .3rem 1rem; border-bottom: 1px solid rgba(255,255,255,.08); position: relative; line-height: 1.5; }
+    .ruta-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--dorado); }
+    .ruta-card ul li:last-child { border-bottom: none; }
+
+    /* INDICADORES */
+    .ind-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0; }
+    .ind-card { background: var(--claro); border: 1px solid var(--borde); border-radius: 9px; padding: 1rem 1.2rem; }
+    .ind-card h4 { font-size: .88rem; font-weight: 700; color: var(--gris-osc); margin-bottom: .3rem; }
+    .ind-card p { font-size: .8rem; color: var(--gris); margin: 0; line-height: 1.5; }
+    .ind-card .ic-meta { font-size: .75rem; color: var(--verde-osc); font-weight: 600; margin-top: .3rem; display: block; }
+
+    /* NORMAS */
+    .norma-card { background: #fff; border: 1px solid var(--borde); border-left: 3px solid var(--azul); border-radius: 0 8px 8px 0; padding: .8rem 1rem; margin-bottom: .6rem; display: flex; gap: .7rem; align-items: flex-start; }
+    .norma-card .ni-ico { font-size: 1rem; flex-shrink: 0; }
+    .norma-card a { font-size: .84rem; color: var(--azul); font-weight: 600; line-height: 1.4; }
+    .norma-card p { font-size: .78rem; color: var(--gris); margin: .2rem 0 0; }
+
+    /* FUENTES */
+    .fuentes { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 1.5rem 2rem; margin-top: 2rem; }
+    .fuentes h3 { font-size: 1rem; font-weight: 700; color: var(--gris-osc); margin-bottom: 1rem; }
+    .fuente-item { display: flex; align-items: flex-start; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--borde); font-size: .82rem; }
+    .fuente-item:last-child { border-bottom: none; }
+    .fuente-item a { color: var(--verde); line-height: 1.5; }
+
+    /* COMPROMISO */
+    .compromiso-box { background: linear-gradient(135deg, var(--verde-osc), var(--verde)); border-radius: 14px; padding: 2.5rem; color: #fff; text-align: center; margin: 2rem 0; }
+    .compromiso-box h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: .8rem; }
+    .compromiso-box p { color: #c0e4cf; font-size: .95rem; line-height: 1.72; max-width: 600px; margin: 0 auto .8rem; }
+    .comp-btn { display: inline-block; background: var(--dorado); color: #111; font-weight: 700; font-size: .88rem; padding: 10px 24px; border-radius: 20px; margin-top: 1rem; }
+
+    footer { background: #0f1c13; color: #8ab89a; padding: 2rem 0; font-size: .82rem; text-align: center; }
+    footer a { color: var(--dorado); }
+
+    @media (max-width: 768px) {
+      .stats-grid, .ruta-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .ind-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 2.5rem 0 2rem; }
+      .hero-stats { gap: 1.2rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .ruta-grid { grid-template-columns: 1fr; }
+    }
+
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="t1">PARTIDO POPULAR CRISTIANO ATE</div>
+          <div class="t2">ppcate.org.pe</div>
+        </div>
+      </a>
+      <a href="infraestructura.html" class="back-btn">← Plan de Infraestructura</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Diagnóstico Técnico · Datos Oficiales</div>
+      <h1>Diagnóstico sobre pistas y veredas en el distrito de Ate</h1>
+      <p>Análisis basado en fuentes de la Municipalidad de Ate, MTC, VIVIENDA y prensa especializada. El problema no es solo falta de obras — es falta de gestión de activos viales y control del espacio público.</p>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="num">505 m</div><div class="lbl">Vías sin afirmar en Santa Clara (documentado)</div></div>
+        <div class="h-stat"><div class="num">S/ 3.48M</div><div class="lbl">Costo proyecto vial Santa Clara</div></div>
+        <div class="h-stat"><div class="num">S/ 13.7M</div><div class="lbl">Inversión obras Av. Nicolás Ayllón</div></div>
+        <div class="h-stat"><div class="num">10</div><div class="lbl">Tramos críticos priorizados</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ÍNDICE -->
+    <div class="indice fade-up">
+      <h2>📋 Contenido del diagnóstico</h2>
+      <ol>
+        <li><a href="#resumen">Resumen ejecutivo</a></li>
+        <li><a href="#marco">Marco institucional y normativo</a></li>
+        <li><a href="#cuantitativo">Diagnóstico cuantitativo y cualitativo</a></li>
+        <li><a href="#tramos">Tramos críticos georreferenciados</a></li>
+        <li><a href="#causas">Causas raíz e impactos</a></li>
+        <li><a href="#soluciones">Soluciones técnicas y de gestión</a></li>
+        <li><a href="#plan">Plan de acción por horizontes</a></li>
+        <li><a href="#indicadores">Indicadores de seguimiento</a></li>
+        <li><a href="#fuentes">Fuentes y referencias</a></li>
+      </ol>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="doc-section" id="resumen">
+      <div class="section-tag">Resumen ejecutivo</div>
+      <h2>El estado de pistas y veredas en Ate</h2>
+
+      <div class="stats-grid fade-up">
+        <div class="stat-card"><div class="sn">S/ 6,877</div><div class="sl">Costo referencial por metro lineal de corredor vial intervenido</div></div>
+        <div class="stat-card"><div class="sn">20,000+</div><div class="lbl">Vecinos de Huaycán beneficiados con obras de pistas y veredas</div></div>
+        <div class="stat-card"><div class="sn">0.90 m</div><div class="sl">Ancho mínimo de ruta accesible exterior exigido por Norma A.120</div></div>
+        <div class="stat-card"><div class="sn">40–50%</div><div class="sl">Participación vecinal en materiales prevista en directiva municipal</div></div>
+      </div>
+
+      <p>Los problemas más críticos se concentran en corredores de alta demanda, principalmente la <strong>Carretera Central / Av. Nicolás Ayllón</strong>, donde se reportan baches y deterioro de la superficie de rodadura, además de ocupación de carriles y veredas por comercio informal.</p>
+
+      <p>En áreas de expansión urbana, el problema no es solo "mantenimiento" sino <strong>habilitación y reconstrucción</strong>. En Santa Clara se documenta una brecha de 505 m de vías sin afirmar con un costo de S/ 3.48 millones para su solución integral.</p>
+
+      <div class="alerta">
+        <p><strong>📌 Conclusión central:</strong> Ate requiere una <strong>estrategia dual</strong>: gestión de activos (mantenimiento preventivo planificado) en corredores pavimentados, y cierre de brechas de habilitación en tramos sin pavimentar o con veredas inexistentes. El modelo actual es predominantemente <strong>reactivo</strong> — hay que migrar a uno <strong>preventivo y planificado</strong>.</p>
+      </div>
+    </div>
+
+    <!-- MARCO INSTITUCIONAL -->
+    <div class="doc-section" id="marco">
+      <div class="section-tag gris">Marco legal y normativo</div>
+      <h2>Marco institucional y normativo</h2>
+
+      <p>La gestión de pistas y veredas se organiza entre: gobierno local (mantenimiento rutinario y control del espacio público), gobierno metropolitano y sector transporte (corredores estructurantes y obras de gran escala), y el sistema de contratación pública.</p>
+
+      <h3>Normativa técnica clave</h3>
+      <div class="norma-card fade-up"><div class="ni-ico">📐</div><div><a href="https://cdn.www.gob.pe/uploads/document/file/418352/Norma_A120_V5_web.pdf" target="_blank" rel="noopener">Norma Técnica A.120 — Accesibilidad Universal (RM 072-2019-VIVIENDA)</a><p>Ancho mínimo de 0.90 m para rutas accesibles exteriores, superficie antideslizante y rampas con pendientes máximas.</p></div></div>
+      <div class="norma-card fade-up"><div class="ni-ico">🚦</div><div><a href="https://www.gob.pe/es/l/4444240" target="_blank" rel="noopener">Manual de Dispositivos de Control del Tránsito Automotor (MTC)</a><p>Señalización, demarcación, dispositivos de control y seguridad vial. Cumplimiento obligatorio.</p></div></div>
+      <div class="norma-card fade-up"><div class="ni-ico">🏗️</div><div><a href="https://www.gob.pe/institucion/munisantamariadelmar/informes-publicaciones/2619679-ce-010-pavimentos-urbanos-ds-n-010-2010" target="_blank" rel="noopener">Norma Técnica CE.010 — Pavimentos Urbanos (RNE)</a><p>Para diseño y rehabilitación estructural de pavimentos urbanos.</p></div></div>
+      <div class="norma-card fade-up"><div class="ni-ico">📄</div><div><a href="https://www.muniate.gob.pe/ate/files/documentosPlaneamientoOrganizacion/DIRECTIVAS/2017/DIRECTIVA_004_2017_RGM_028_MANTENIMIENTO_URBANO.pdf" target="_blank" rel="noopener">Directiva N° 004-2017 — Mantenimiento Urbano (Municipalidad de Ate)</a><p>Responsabilidades, procedimientos preventivos, programación anual y mecanismo de cofinanciamiento vecinal (40–50%).</p></div></div>
+    </div>
+
+    <!-- DIAGNÓSTICO CUANTITATIVO -->
+    <div class="doc-section" id="cuantitativo">
+      <div class="section-tag">Hallazgos por sector</div>
+      <h2>Diagnóstico cuantitativo y cualitativo</h2>
+
+      <h3>Proyectos documentados con cifras concretas</h3>
+      <div class="tabla-wrap fade-up">
+        <table>
+          <thead><tr><th>Zona / Proyecto</th><th>Brecha / Magnitud</th><th>Costo reportado</th><th>Tipo de problema</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Santa Clara — Vía NN1</strong></td><td>505.47 m sin afirmar</td><td class="td-dest">S/ 3,476,096</td><td>Habilitación/reconstrucción</td></tr>
+            <tr><td><strong>Av. Nicolás Ayllón — Cerro Candela</strong></td><td>Cierre por 8 meses</td><td class="td-dest">S/ 13.7 millones</td><td>Obras de mejoramiento</td></tr>
+            <tr><td><strong>Huaycán — corredor de pistas/veredas</strong></td><td>>15,000 m² pistas · 7,692 m² veredas</td><td>No especificado</td><td>Nuevas pistas y veredas</td></tr>
+            <tr><td><strong>Referencial por metro lineal</strong></td><td>~S/ 6,877/ml</td><td>(estimación analítica)</td><td>Pista + vereda + complementarios</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Hallazgos cualitativos por tipología</h3>
+      <div class="grid-2 fade-up">
+        <div class="causa-card"><div class="cc-ico">🕳️</div><h4>Baches y deterioro de calzada</h4><p>Reportes mediáticos sobre "enormes huecos" en la Av. Nicolás Ayllón. La municipalidad opera con canal de reporte ciudadano y parchados reactivos, pero sin un modelo de gestión preventiva visible.</p></div>
+        <div class="causa-card"><div class="cc-ico">🏪</div><h4>Invasión de veredas y carriles</h4><p>Invasión de carriles por comercio en la Av. Nicolás Ayllón (sector Ceres) y Av. Separadora Industrial. La municipalidad ha realizado operativos, pero el problema es persistente y requiere control sostenido.</p></div>
+        <div class="causa-card"><div class="cc-ico">🚧</div><h4>Conflictos por obras y desvíos</h4><p>Cierres prolongados en Carretera Central por obras de transporte. Sin gestión adecuada de desvíos y señalización, estos cierres exacerban el deterioro de infraestructura adyacente.</p></div>
+        <div class="causa-card"><div class="cc-ico">♿</div><h4>Accesibilidad universal deficiente</h4><p>En zonas comerciales, la franja libre en veredas cae por debajo del mínimo legal (0.90 m) en múltiples puntos, exponiendo a personas con movilidad reducida a desplazarse por la calzada.</p></div>
+      </div>
+    </div>
+
+    <!-- TRAMOS CRÍTICOS -->
+    <div class="doc-section" id="tramos">
+      <div class="section-tag azul">Georreferenciación</div>
+      <h2>Tramos críticos priorizados</h2>
+      <p>Se identificaron 10 tramos críticos. Para 6 se cuenta con coordenadas de referencia; para 4 se propone levantamiento de campo.</p>
+
+      <div class="grid-2 fade-up">
+        <div class="tramo-card">
+          <div class="tc-tipo">Deterioro + obras</div>
+          <h4>Carretera Central / Estación Vista Alegre (L2)</h4>
+          <p>Interferencia por obras de Metro + deterioro del corredor vial.</p>
+          <div class="tc-coord">-12.037907, -76.931763</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Conflicto modal</div>
+          <h4>Carretera Central / Estación Prol. Javier Prado (L2)</h4>
+          <p>Conflicto entre vehículos y peatones + necesidad de señalización y continuidad peatonal.</p>
+          <div class="tc-coord">-12.032226, -76.926884</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Accesibilidad</div>
+          <h4>Carretera Central / Estación Municipalidad de Ate (L2)</h4>
+          <p>Cruces peatonales, accesibilidad y ordenamiento de paraderos en entorno Plaza de Armas.</p>
+          <div class="tc-coord">-12.025284, -76.918124</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Invasión comercial</div>
+          <h4>Av. Nicolás Ayllón — sector Ceres</h4>
+          <p>Ocupación de veredas y carriles por comercio informal. Riesgo peatonal alto.</p>
+          <div class="tc-coord">-12.035344, -76.922954 (ref.)</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Cierre por obra</div>
+          <h4>Av. Nicolás Ayllón — sector Grifo Tokio / Cerro Candela</h4>
+          <p>Cierre por 8 meses + deterioro por desvío de tránsito. Inversión S/ 13.7 M.</p>
+          <div class="tc-coord">-12.036748, -76.932624 (ref.)</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Espacio público</div>
+          <h4>Av. Separadora Industrial (borde Ate–La Molina)</h4>
+          <p>Obstáculos y ocupación irregular. Discontinuidad peatonal en corredor importante.</p>
+          <div class="tc-coord">-12.056622, -76.943429 (ref.)</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Sin coordenada exacta</div>
+          <h4>Av. Nicolás Ayllón — Calle Santa María a Calle El Progreso</h4>
+          <p>Cierre prolongado y reconfiguración del corredor. Requiere levantamiento en campo.</p>
+          <div class="tc-coord">Pendiente levantamiento GPS</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Sin pavimentar</div>
+          <h4>Vía NN1 Santa Clara — Av. Santa Rosa a Carretera Central</h4>
+          <p>Brecha de 505 m de vía sin afirmar. Proyecto aprobado: S/ 3.48 millones.</p>
+          <div class="tc-coord">Pendiente levantamiento GPS</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Habilitación</div>
+          <h4>Huaycán — corredor de intervención de pistas/veredas</h4>
+          <p>>15,000 m² de pistas y 7,692 m² de veredas y rampas. Beneficia a más de 20,000 vecinos.</p>
+          <div class="tc-coord">Pendiente levantamiento GPS</div>
+        </div>
+        <div class="tramo-card">
+          <div class="tc-tipo">Baches múltiples</div>
+          <h4>Carretera Central (Ate) — reportes de huecos en calzada</h4>
+          <p>Múltiples puntos con baches reportados mediáticamente. Sin coordenadas puntuales específicas.</p>
+          <div class="tc-coord">Múltiples puntos — requiere mapeo</div>
+        </div>
+      </div>
+
+      <div class="alerta">
+        <p><strong>Método recomendado para tramos sin coordenada:</strong> (1) delimitar el tramo entre dos intersecciones en GIS, (2) tomar coordenadas de inicio/fin con GPS y validar con ortofoto, (3) documentar con fotos georreferenciadas, (4) registrar: tipo de daño, severidad, longitud, ancho y riesgo, (5) priorizar por matriz riesgo × flujo.</p>
+      </div>
+    </div>
+
+    <!-- CAUSAS E IMPACTOS -->
+    <div class="doc-section" id="causas">
+      <div class="section-tag">Análisis causal</div>
+      <h2>Causas raíz e impactos principales</h2>
+
+      <div class="grid-2 fade-up">
+        <div class="causa-card"><div class="cc-ico">💧</div><h4>Diseño y drenaje insuficiente</h4><p>La falta de criterios de diseño hidráulico en puntos bajos y frentes de obra genera filtraciones que debilitan el terreno y aceleran las fallas del pavimento.</p></div>
+        <div class="causa-card"><div class="cc-ico">🔧</div><h4>Mantenimiento reactivo, no preventivo</h4><p>La directiva municipal contempla mantenimiento preventivo, pero la evidencia pública muestra activación por solicitudes vecinales o emergencias — sin plan sistemático visible.</p></div>
+        <div class="causa-card"><div class="cc-ico">🏪</div><h4>Captura del espacio público</h4><p>La invasión de carriles y veredas por comercio informal en ejes como Ceres y Separadora Industrial deteriora funcionalmente la infraestructura más allá del daño físico del pavimento.</p></div>
+        <div class="causa-card"><div class="cc-ico">💰</div><h4>Restricciones y fragmentación presupuestal</h4><p>El cofinanciamiento vecinal (40–50%) puede acelerar intervenciones puntuales, pero sesga la priorización hacia zonas con mayor capacidad de aporte si no se combina con criterios técnicos y de equidad territorial.</p></div>
+      </div>
+
+      <h3>Impactos principales</h3>
+      <div class="impacto-card fade-up"><div class="ic-ico">🚨</div><div><h4>Seguridad vial y siniestralidad</h4><p>Baches y ocupación de veredas fuerzan el desplazamiento peatonal a la calzada, aumentando el riesgo de atropello y conflictos con transporte público de alta frecuencia en la Carretera Central.</p></div></div>
+      <div class="impacto-card fade-up"><div class="ic-ico">♿</div><div><h4>Accesibilidad y exclusión</h4><p>Cuando la franja libre en vereda no cumple los mínimos legales o las rampas son inadecuadas, se afecta directamente a personas con movilidad reducida. La norma A.120 exige cumplimiento que hoy no se verifica sistemáticamente.</p></div></div>
+      <div class="impacto-card fade-up"><div class="ic-ico">😷</div><div><h4>Salud pública y ambiente urbano</h4><p>El aumento de congestión por cierres y desvíos, y el mal estado de calzada, incrementan la exposición a ruido y emisiones. Los ECA de ruido buscan proteger la salud y la calidad de vida de los vecinos.</p></div></div>
+    </div>
+
+    <!-- SOLUCIONES -->
+    <div class="doc-section" id="soluciones">
+      <div class="section-tag dorado">Soluciones técnicas</div>
+      <h2>Buenas prácticas y soluciones aplicables a Ate</h2>
+
+      <p>Ate requiere una <strong>estrategia dual</strong>: gestión de activos en corredores pavimentados y cierre de brechas de habilitación en tramos sin pavimentar.</p>
+
+      <div class="solucion-card fade-up">
+        <div class="sc-header"><div class="sc-nivel">Nivel 1</div><h4>Bacheo y conservación de pavimento</h4></div>
+        <p>Bacheo superficial y profundo según severidad, sellado de grietas y reposición puntual de base/subbase cuando hay fallas estructurales. Señalización temporal conforme al Manual MTC durante intervención y desvíos. Es la intervención más inmediata y de menor costo.</p>
+      </div>
+
+      <div class="solucion-card fade-up">
+        <div class="sc-header"><div class="sc-nivel">Nivel 2</div><h4>Rehabilitación y recapeo en corredores de alto tránsito</h4></div>
+        <p>Fresado y recapeo, refuerzo de base en zonas con tránsito pesado y diseño conforme a la Norma CE.010 para pavimentos urbanos. Aplica especialmente en la Carretera Central y avenidas colectoras.</p>
+      </div>
+
+      <div class="solucion-card fade-up">
+        <div class="sc-header"><div class="sc-nivel">Nivel 3</div><h4>Reconstrucción de veredas con accesibilidad universal</h4></div>
+        <p>Franja libre continua ≥0.90 m en rutas accesibles exteriores, rampas con pendientes y anchos consistentes con la Norma A.120, y eliminación de obstáculos recurrentes. Prioridad en corredores hacia servicios de salud, mercados y estaciones.</p>
+      </div>
+
+      <div class="solucion-card fade-up">
+        <div class="sc-header"><div class="sc-nivel">Habilitador</div><h4>Drenaje pluvial urbano y control de filtraciones</h4></div>
+        <p>Sumideros, rejillas adecuadas y mantenimiento en puntos críticos. Coordinación con interferencias durante obras para evitar debilitamiento del terreno. Elemento transversal que reduce la recurrencia de fallas en todas las demás intervenciones.</p>
+      </div>
+
+      <div class="solucion-card fade-up">
+        <div class="sc-header"><div class="sc-nivel">Gestión</div><h4>Control sostenido del espacio público</h4></div>
+        <p>Zonas de carga/descarga, reubicación ordenada del comercio y control permanente de veredas y derecho de vía. Los operativos esporádicos en Ceres y Separadora Industrial deben convertirse en presencia municipal continua.</p>
+      </div>
+    </div>
+
+    <!-- PLAN DE ACCIÓN -->
+    <div class="doc-section" id="plan">
+      <div class="section-tag verde">Plan de acción</div>
+      <h2>Plan de acción por horizontes (3, 6, 12 y 24 meses)</h2>
+
+      <div class="ruta-grid fade-up">
+        <div class="ruta-card">
+          <div class="rc-plazo">⚡ 3 meses</div>
+          <h4>Choque operativo y datos</h4>
+          <ul>
+            <li>Sala situacional de baches: canal único, tickets y tiempos de respuesta</li>
+            <li>Auditoría express de accesibilidad en corredores a servicios (salud, municipalidad, mercados)</li>
+            <li>Señalización temporal y desvíos en frentes de obra activos</li>
+          </ul>
+        </div>
+        <div class="ruta-card">
+          <div class="rc-plazo">📋 6 meses</div>
+          <h4>Preventivo y espacio público</h4>
+          <ul>
+            <li>Publicar programa anual de mantenimiento preventivo con cronograma por corredores</li>
+            <li>Intervención sostenida en Ceres y Separadora Industrial para asegurar franja peatonal</li>
+            <li>Primera cartera de IOARR/paquetes de bacheo por microzonas</li>
+          </ul>
+        </div>
+        <div class="ruta-card">
+          <div class="rc-plazo">🏗️ 12 meses</div>
+          <h4>Rehabilitación estructural</h4>
+          <ul>
+            <li>Ejecutar recapeos y reconstrucciones en tramos con fallas estructurales (CE.010)</li>
+            <li>Veredas accesibles conformes a Norma A.120 en corredores prioritarios</li>
+            <li>Drenaje pluvial en puntos críticos identificados</li>
+          </ul>
+        </div>
+        <div class="ruta-card">
+          <div class="rc-plazo">🗺️ 24 meses</div>
+          <h4>Sistema de gestión de activos</h4>
+          <ul>
+            <li>Inventario GIS distrital con condición y costos de pistas y veredas</li>
+            <li>Cierre de brechas en vías sin pavimentar (Santa Clara y equivalentes)</li>
+            <li>Contratos con SLAs basados en datos de desempeño real</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- INDICADORES -->
+    <div class="doc-section" id="indicadores">
+      <div class="section-tag verde">Monitoreo</div>
+      <h2>Indicadores de seguimiento propuestos</h2>
+
+      <div class="ind-grid fade-up">
+        <div class="ind-card">
+          <h4>⏱️ Tiempo de atención de baches</h4>
+          <p>Días promedio desde el reporte hasta el cierre del ticket de atención.</p>
+          <span class="ic-meta">Meta: reducción sostenida trimestral</span>
+        </div>
+        <div class="ind-card">
+          <h4>🚶 Tramos con franja libre continua</h4>
+          <p>% de tramos auditados con ≥0.90 m de franja libre conforme a Norma A.120.</p>
+          <span class="ic-meta">Meta: +X puntos porcentuales por semestre</span>
+        </div>
+        <div class="ind-card">
+          <h4>♿ Rampas conformes</h4>
+          <p>N° de rampas nuevas o rehabilitadas que cumplen pendiente y ancho mínimo.</p>
+          <span class="ic-meta">Meta anual por corredor priorizado</span>
+        </div>
+        <div class="ind-card">
+          <h4>🏪 Puntos de invasión intervenidos</h4>
+          <p>N° de puntos con ocupación recurrente intervenidos y sostenidos sin recidiva.</p>
+          <span class="ic-meta">Meta: reducción de recurrencia mensual</span>
+        </div>
+        <div class="ind-card">
+          <h4>🚧 Frentes con señalización conforme</h4>
+          <p>N° de frentes de obra activos con señalización y desvíos conforme al Manual MTC.</p>
+          <span class="ic-meta">Meta: 100% en obras activas</span>
+        </div>
+        <div class="ind-card">
+          <h4>📊 Ejecución del plan de mantenimiento</h4>
+          <p>% de intervenciones preventivas ejecutadas conforme al cronograma anual.</p>
+          <span class="ic-meta">Meta: ≥80% de cumplimiento del POI</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="fuentes fade-up" id="fuentes">
+      <h3>📚 Fuentes y referencias oficiales</h3>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/ate/files/documentosPlaneamientoOrganizacion/DIRECTIVAS/2017/DIRECTIVA_004_2017_RGM_028_MANTENIMIENTO_URBANO.pdf" target="_blank" rel="noopener">Municipalidad de Ate — Directiva N° 004-2017: Mantenimiento Urbano y Ornato</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://cdn.www.gob.pe/uploads/document/file/418352/Norma_A120_V5_web.pdf" target="_blank" rel="noopener">VIVIENDA — Norma Técnica A.120: Accesibilidad Universal (RM 072-2019)</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.gob.pe/es/l/4444240" target="_blank" rel="noopener">MTC — Manual de Dispositivos de Control del Tránsito Automotor para Calles y Carreteras</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.gob.pe/institucion/munisantamariadelmar/informes-publicaciones/2619679-ce-010-pavimentos-urbanos-ds-n-010-2010" target="_blank" rel="noopener">RNE — Norma Técnica CE.010: Pavimentos Urbanos</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://portal.mtc.gob.pe/transportes/caminos/normas_carreteras/documentos/manuales/Manual%20de%20Hidrolog%C3%ADa%2C%20Hidr%C3%A1ulica%20y%20Drenaje.pdf" target="_blank" rel="noopener">MTC — Manual de Hidrología, Hidráulica y Drenaje</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/municipio-de-ate-realiza-parchado-de-pistas-deterioradas-en-distintas-zonas/" target="_blank" rel="noopener">Municipalidad de Ate — Parchado de pistas deterioradas en distintas zonas</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/noticia/municipalidad-de-ate-retira-transporte-informal-y-comercio-ambulatorio-en-ceres-medio/" target="_blank" rel="noopener">Municipalidad de Ate — Operativo de retiro de comercio ambulatorio en Ceres Medio</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/con-mega-operativo-recuperan-espacios-publicos-en-av-separadora-industrial-ate/" target="_blank" rel="noopener">Municipalidad de Ate — Recuperación de espacios públicos en Av. Separadora Industrial</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.muniate.gob.pe/municipio-de-ate-y-atu-reaperturan-carretera-central-despues-de-10-anos/" target="_blank" rel="noopener">Municipalidad de Ate y ATU — Reapertura de la Carretera Central</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://gestion.pe/peru/cierran-por-8-meses-tramo-de-av-nicolas-ayllon-en-ate-por-obras-en-cerro-candela-noticia/" target="_blank" rel="noopener">Gestión — Cierre por 8 meses de tramo de Av. Nicolás Ayllón por obras en Cerro Candela</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://www.gob.pe/institucion/munilima/noticias/345459-mas-de-20-mil-vecinos-de-huaycan-se-beneficiaran-con-nuevas-pistas-y-veredas" target="_blank" rel="noopener">Municipalidad de Lima — Más de 20 mil vecinos de Huaycán se beneficiarán con nuevas pistas y veredas</a></div>
+      <div class="fuente-item"><span>📄</span><a href="https://rpp.pe/lima/actualidad/ate-comerciantes-invaden-media-pista-de-la-avenida-nicolas-ayllon-noticia-911326" target="_blank" rel="noopener">RPP — Comerciantes invaden media pista de la Avenida Nicolás Ayllón en Ate</a></div>
+    </div>
+
+    <!-- COMPROMISO -->
+    <div class="compromiso-box fade-up">
+      <h2>Este diagnóstico respalda nuestro Plan de Infraestructura</h2>
+      <p>Las propuestas del Dr. José Luis Hurtado Apaico en pistas y veredas se basan en datos reales y evidencia técnica. Saber exactamente dónde están los problemas es el primer paso para resolverlos.</p>
+      <a href="infraestructura.html" class="comp-btn">Ver el Plan de Infraestructura 2027–2030 →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>Partido Popular Cristiano · Base Ate · Macro Zonal 4</p>
+      <p style="margin-top:.4rem;">José Luis Hurtado Apaico · Candidato a Alcalde de Ate 2027–2030</p>
+      <p style="margin-top:.8rem;font-size:.75rem;color:#4a6b50;">© 2025 · <a href="https://www.ppcate.org.pe">ppcate.org.pe</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
