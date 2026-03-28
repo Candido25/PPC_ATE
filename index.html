@@ -148,6 +148,13 @@
     .problem { border-top: 4px solid var(--rojo); }
     .proposal { border-top: 4px solid var(--verde); }
     .icon { font-size: 2rem; margin-bottom: 8px; }
+    .section-white { background: #fff; }
+    .text-gold { color: var(--dorado); }
+    .doc-link { margin-top: 16px; border-radius: 10px; padding: 10px 20px; font-size: .88rem; }
+    .center-card { max-width: 700px; margin: 0 auto; }
+    .small-spaced { margin-top: 6px; }
+    .footer-meta { color: #4a6b50; }
+    .footer-link { color: #6ab880; }
 
     /* ══ IDEARIO ══ */
     #ideario { background: #0d2a16; color: #fff; }
@@ -210,6 +217,31 @@
     }
     .whatsapp:hover { transform: scale(1.05); background-color: #128C7E; }
 
+    .vote-float {
+      position: fixed;
+      bottom: 85px;
+      right: 20px;
+      padding: 12px 24px;
+      background: var(--dorado);
+      color: #111;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1rem;
+      z-index: 200;
+      border: 3px solid #b03020;
+      box-shadow: 0 8px 0 #7a1010, 0 10px 20px rgba(0,0,0,.4);
+      transition: all .2s ease;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .vote-float:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #7a1010, 0 4px 10px rgba(0,0,0,.3);
+    }
+
     /* ══ RESPONSIVE TABLET ══ */
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 3vw; }
@@ -237,6 +269,7 @@
       nav { display: none; }
       .footer-flex { flex-direction: column; text-align: center; gap: 6px; }
       .whatsapp { bottom: 14px; right: 14px; padding: 11px 18px; font-size: .85rem; }
+      .vote-float { right: 14px; bottom: 76px; padding: 11px 18px; font-size: .85rem; }
     }
   </style>
 </head>
@@ -336,7 +369,7 @@
   </section>
 
   <!-- PROPUESTAS -->
-  <section class="section" id="propuestas" style="background:#fff;">
+  <section class="section section-white" id="propuestas">
     <div class="container">
       <div class="sec-head">
         <div class="tag">Plan de gobierno</div>
@@ -397,14 +430,14 @@
           <div class="pensador">Fundado en 1966</div>
           <h4>Partido Popular Cristiano</h4>
           <blockquote>"Una política honesta, transformadora, concreta y auténticamente democrática."</blockquote>
-          <p>59 años de democracia cristiana en el Perú. El PPC llega a Ate renovado con el lema <strong style="color:var(--dorado)">"PPC Renace"</strong> para las elecciones de 2026.</p>
+          <p>59 años de democracia cristiana en el Perú. El PPC llega a Ate renovado con el lema <strong class="text-gold">"PPC Renace"</strong> para las elecciones de 2026.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- TRABAJO TERRITORIAL -->
-  <section class="section" id="actividades" style="background:#fff;">
+  <section class="section section-white" id="actividades">
     <div class="container">
       <div class="sec-head">
         <div class="tag">Presencia en campo</div>
@@ -436,7 +469,7 @@
   </section>
 
   <!-- DOCUMENTOS -->
-  <section class="section" id="documentos" style="background:#fff;">
+  <section class="section section-white" id="documentos">
     <div class="container">
       <div class="sec-head">
         <div class="tag">Transparencia</div>
@@ -448,19 +481,19 @@
           <div class="icon">📜</div>
           <h3>Ideario del PPC</h3>
           <p class="muted">Los principios y valores que guían la acción política del Partido Popular Cristiano en el Perú.</p>
-          <a href="docs/ideario.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/ideario.pdf" target="_blank" rel="noopener" class="btn green doc-link"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">📋</div>
           <h3>Estatutos del partido</h3>
           <p class="muted">La estructura orgánica, derechos y deberes de los afiliados al PPC a nivel nacional y local.</p>
-          <a href="docs/estatuto.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/estatuto.pdf" target="_blank" rel="noopener" class="btn green doc-link"> 🌐 Ver página</a>
         </div>
         <div class="card">
           <div class="icon">🗺️</div>
           <h3>Plan de trabajo</h3>
           <p class="muted">Las propuestas concretas del Dr. Hurtado Apaico para la gestión municipal de Ate 2027–2030.</p>
-          <a href="docs/plan_trabajo.pdf" target="_blank" rel="noopener" class="btn green" style="margin-top:16px;border-radius:10px;padding:10px 20px;font-size:.88rem;"> 🌐 Ver página</a>
+          <a href="docs/plan_trabajo.pdf" target="_blank" rel="noopener" class="btn green doc-link"> 🌐 Ver página</a>
         </div>
       </div>
     </div>
@@ -474,7 +507,7 @@
         <h2>Registro de voluntarios y simpatizantes</h2>
         <p class="muted">Si quieres apoyar esta propuesta para Ate, déjanos tus datos y nos pondremos en contacto contigo.</p>
       </div>
-      <div class="card" style="max-width:700px;margin:0 auto;">
+      <div class="card center-card">
         <form id="volunteerForm">
           <div class="form-grid">
             <input name="nombre" placeholder="Nombre completo" required autocomplete="name">
@@ -498,13 +531,13 @@
   </section>
 
   <!-- FISCALIZACIÓN -->
-  <section class="section" id="fiscalizacion" style="background:#fff;">
+  <section class="section section-white" id="fiscalizacion">
     <div class="container">
       <div class="sec-head">
         <div class="tag">Herramienta ciudadana</div>
         <h2>Buzón de Fiscalización Ciudadana</h2>
         <p class="muted">Un canal directo para que los vecinos de Ate reporten problemas en su barrio y ayuden a mejorar nuestro distrito.</p>
-        <p class="small" style="margin-top:6px;">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p>
+        <p class="small small-spaced">Tu identidad es confidencial. Tu reporte nos ayuda a fiscalizar y mejorar Ate.</p>
       </div>
       <div class="grid-2">
         <div class="card">
@@ -546,42 +579,19 @@
     </div>
   </section>
   
-  <section id="donde-votar" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;">
-  <div class="container" style="text-align:center;">
-    <div class="tag" style="background:var(--dorado);color:#111;">Elecciones 2026</div>
-    <h2 style="color:#fff;margin:12px 0;">¿Dónde me toca votar?</h2>
-    <p style="color:#a8dbbe;max-width:600px;margin:0 auto 24px;line-height:1.7;">
-      Consulta tu local de votación, número de mesa y dirección exacta 
-      ingresando tu DNI en el portal oficial de la ONPE. Gratis y en segundos.
-    </p>
-    <a href="https://consultaelectoral.onpe.gob.pe/inicio" target="_blank" rel="noopener"
-       style="background:var(--dorado);color:#111;font-weight:800;font-size:1.1rem;padding:16px 36px;border-radius:50px;display:inline-flex;align-items:center;gap:10px;border:4px solid #b03020;box-shadow:0 8px 0 #7a1010, 0 10px 20px rgba(0,0,0,.4);transition:all .15s ease;transform:translateY(0);" onmousedown="this.style.transform='translateY(6px)';this.style.boxShadow='0 2px 0 #7a1010, 0 4px 10px rgba(0,0,0,.3)'" onmouseup="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 0 #7a1010, 0 10px 20px rgba(0,0,0,.4)'" ontouchstart="this.style.transform='translateY(6px)';this.style.boxShadow='0 2px 0 #7a1010, 0 4px 10px rgba(0,0,0,.3)'" ontouchend="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 0 #7a1010, 0 10px 20px rgba(0,0,0,.4)'">
-      🗳️ Consultar dónde te toca votar
-    </a>
-    <p style="color:#8ab89a;font-size:.8rem;margin-top:12px;">
-      Serás redirigido al portal oficial de la ONPE · onpe.gob.pe
-    </p>
-  </div>
-</section>
-
   <!-- FOOTER -->
   <footer>
     <div class="container footer-flex">
       <div>Partido Popular Cristiano · Base Ate · Macro Zonal 4</div>
       <div>Dr. José Luis Hurtado Apaico · Alcalde 2027–2030</div>
-      <div style="color:#4a6b50;">© 2025 · <a href="https://ppcate.org.pe" style="color:#6ab880;">ppcate.org.pe</a></div>
+      <div class="footer-meta">© 2025 · <a href="https://ppcate.org.pe" class="footer-link">ppcate.org.pe</a></div>
     </div>
   </footer>
 
   <a href="https://consultaelectoral.onpe.gob.pe/inicio" 
    target="_blank" rel="noopener"
    title="¿Dónde me toca votar?"
-   style="position:fixed;bottom:85px;right:20px;padding:12px 24px;background:var(--dorado);color:#111;border-radius:50px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;z-index:200;border:3px solid #b03020;box-shadow:0 4px 15px rgba(0,0,0,.3);transition:all .2s ease;text-transform:uppercase;letter-spacing:0.5px;"
-   onmousedown="this.style.transform='translateY(6px)';this.style.boxShadow='0 2px 0 #7a1010,0 4px 10px rgba(0,0,0,.3)'"
-   onmouseup="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 0 #7a1010,0 10px 20px rgba(0,0,0,.4)'"
-   ontouchstart="this.style.transform='translateY(6px)';this.style.boxShadow='0 2px 0 #7a1010,0 4px 10px rgba(0,0,0,.3)'"
-   ontouchend="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 0 #7a1010,0 10px 20px rgba(0,0,0,.4)'"
- >
+   class="vote-float">
    <span> CONSULTA 
      DÓNDE VOTAR</span>
 </a>
