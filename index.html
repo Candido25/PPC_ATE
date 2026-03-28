@@ -49,6 +49,21 @@
 </head>
 <body>
 
+  <div class="doctrine-modal" id="doctrineModal" aria-hidden="true">
+    <div class="doctrine-modal__backdrop" data-close-doctrine="true"></div>
+    <div class="doctrine-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="doctrineTitle">
+      <button class="doctrine-modal__close" type="button" id="closeDoctrineModal" aria-label="Cerrar mensaje doctrinario">×</button>
+      <div class="doctrine-modal__eyebrow">Mensaje del ideario</div>
+      <h2 id="doctrineTitle" class="doctrine-modal__title"></h2>
+      <p class="doctrine-modal__text" id="doctrineText"></p>
+      <p class="doctrine-modal__meta" id="doctrineMeta"></p>
+      <div class="doctrine-modal__actions">
+        <a class="btn gold doctrine-modal__link" href="ideario.html">Conocer más</a>
+        <button class="btn outline doctrine-modal__dismiss" type="button" id="dismissDoctrineModal">Continuar al sitio</button>
+      </div>
+    </div>
+  </div>
+
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="container">

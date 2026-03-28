@@ -46,6 +46,99 @@ img {
   padding: 0 4vw;
 }
 
+.doctrine-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.doctrine-modal.is-open {
+  display: flex;
+}
+
+.doctrine-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 22, 12, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+.doctrine-modal__dialog {
+  position: relative;
+  width: min(92vw, 620px);
+  background: linear-gradient(145deg, #fff, #f4f8f4);
+  border: 1px solid rgba(17, 122, 59, 0.16);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  padding: 30px 28px 24px;
+  z-index: 1;
+}
+
+.doctrine-modal__eyebrow {
+  display: inline-block;
+  background: #eef7f1;
+  color: var(--verde-osc);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.doctrine-modal__title {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.15;
+  color: var(--verde-osc);
+  margin: 0 0 12px;
+}
+
+.doctrine-modal__text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2d3b31;
+  margin-bottom: 12px;
+}
+
+.doctrine-modal__meta {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--gris);
+  margin-bottom: 22px;
+}
+
+.doctrine-modal__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.doctrine-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #eef4ef;
+  color: var(--verde-osc);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.doctrine-modal__close:hover {
+  background: #e0ebe2;
+  transform: scale(1.05);
+}
+
 .section {
   padding: 56px 0;
 }
@@ -807,6 +900,21 @@ footer {
 @media (max-width: 680px) {
   .container {
     padding: 0 16px;
+  }
+
+  .doctrine-modal__dialog {
+    padding: 24px 18px 20px;
+    border-radius: 18px;
+  }
+
+  .doctrine-modal__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doctrine-modal__actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .section {
