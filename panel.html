@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Panel interno de visualizacion de reportes ciudadanos enviados desde la web del PPC Ate para seguimiento y fiscalizacion.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panel Online | PPC Ate</title>
+  <title>Panel de Reportes Ciudadanos | PPC Ate</title>
   <link rel="icon" href="assets/favicon-ppc.png">
   <script src="config.js"></script>
   <style>
@@ -31,8 +32,8 @@
       <div class="brand">
         <img src="assets/logo-ppc.png" alt="Logo PPC">
         <div>
-          <h1 style="margin:0;font-size:28px">Panel Online · PPC Ate</h1>
-          <div class="muted">Voluntarios y fiscalización ciudadana</div>
+          <h1 style="margin:0;font-size:28px">Panel Online Ã‚Â· PPC Ate</h1>
+          <div class="muted">Voluntarios y fiscalizaciÃƒÂ³n ciudadana</div>
         </div>
       </div>
       <div>
@@ -48,14 +49,14 @@
     </div>
 
     <div class="toolbar">
-      <h2 style="margin:0">Últimos reportes</h2>
+      <h2 style="margin:0">ÃƒÅ¡ltimos reportes</h2>
       <button class="btn" onclick="loadData()">Actualizar</button>
     </div>
 
     <div style="overflow:auto">
       <table>
         <thead>
-          <tr><th>Fecha</th><th>Nombre</th><th>Categoría</th><th>Zona</th><th>Detalle</th></tr>
+          <tr><th>Fecha</th><th>Nombre</th><th>CategorÃƒÂ­a</th><th>Zona</th><th>Detalle</th></tr>
         </thead>
         <tbody id="tbody">
           <tr><td colspan="5">Cargando datos...</td></tr>
@@ -86,7 +87,7 @@
         document.getElementById("cBasura").textContent = reportes.filter(r => r.categoria === "Basura").length;
         body.innerHTML = "";
         if(!reportes.length){
-          body.innerHTML = `<tr><td colspan="5">Aún no hay reportes registrados.</td></tr>`;
+          body.innerHTML = `<tr><td colspan="5">AÃƒÂºn no hay reportes registrados.</td></tr>`;
           return;
         }
         reportes.slice(0,50).forEach(r=>{
