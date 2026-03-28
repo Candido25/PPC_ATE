@@ -1,12 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://ppcate.org.pe/</loc>
-</url>
-
-<url>
-<loc>https://ppcate.org.pe/inseguridad-ate.html</loc>
-</url>
-
+  <url>
+    <loc>https://ppcate.org.pe/</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/propuestas.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/seguridad.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/diagnostico-seguridad.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/diagnostico-basura.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/diagnostico-pistas.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/infraestructura.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/autogestion.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/salud.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/educacion.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/empleo.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/fiscalizacion.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/actividades.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/ideario.html</loc>
+  </url>
+  <url>
+    <loc>https://ppcate.org.pe/estatuto.html</loc>
+  </url>
 </urlset>

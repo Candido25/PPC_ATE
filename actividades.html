@@ -1,1 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Actividades en Ate | Trabajo Territorial y Acción Vecinal | PPC Ate</title>
+  <meta name="description" content="Conoce las actividades del PPC Ate: visitas vecinales, reuniones con dirigentes, trabajo territorial y acciones comunitarias en distintos sectores del distrito.">
+  <meta name="keywords" content="actividades PPC Ate, trabajo territorial Ate, visitas vecinales Ate, reuniones con dirigentes Ate, accion comunitaria Ate, presencia vecinal Ate, PPC Ate actividades">
+  <link rel="canonical" href="https://www.ppcate.org.pe/actividades.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <meta property="og:title" content="Actividades en Ate | Trabajo Territorial y Acción Vecinal | PPC Ate">
+  <meta property="og:description" content="Conoce las actividades del PPC Ate: trabajo territorial, reuniones vecinales, visitas de campo y acción comunitaria en el distrito.">
+  <meta property="og:url" content="https://www.ppcate.org.pe/actividades.html">
+  <meta property="og:image" content="https://www.ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <style>
+    :root {
+      --verde: #117a3b;
+      --verde-osc: #0d5b2d;
+      --dorado: #c9a23a;
+      --claro: #f6f8f6;
+      --texto: #1f2b22;
+      --gris: #667067;
+      --borde: #dce7df;
+      --rojo: #b03020;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.72; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(17, 122, 59, 0.97);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .brand-title { font-size: 0.96rem; font-weight: 800; line-height: 1.1; }
+    .brand-sub { font-size: 0.74rem; color: #c4e2cf; }
+
+    .back-btn {
+      background: var(--dorado);
+      color: #111;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--verde-osc), var(--verde) 60%, #1e9f52);
+      color: #fff;
+      padding: 72px 0 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "ATE";
+      position: absolute;
+      right: 12px;
+      bottom: 6px;
+      font-size: clamp(3rem, 11vw, 7rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--dorado);
+      color: #111;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin-bottom: 14px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d1ead9;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--rojo); color: #fff; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.12); color: #fff; border: 2px solid rgba(255, 255, 255, 0.5); }
+
+    .section { padding: 58px 0; }
+    .section-white { background: #fff; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-head .tag {
+      display: inline-block;
+      background: var(--verde-osc);
+      color: #fff;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--gris);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card .icon {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: var(--verde-osc);
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li { color: var(--gris); font-size: 0.94rem; }
+
+    .highlight {
+      background: linear-gradient(135deg, #eef8f1, #fff);
+      border: 1px solid #cde5d4;
+      border-left: 5px solid var(--verde);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .highlight h3 {
+      color: var(--verde-osc);
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .highlight p {
+      color: #506357;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+    }
+
+    .checklist li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--verde);
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      padding-left: 72px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 26px;
+      top: 24px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--dorado);
+      box-shadow: 0 0 0 6px rgba(201, 162, 58, 0.18);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 8px;
+      color: var(--texto);
+      font-size: 1rem;
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 8px;
+      color: var(--verde-osc);
+      font-size: 1rem;
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, var(--rojo), #cf4937);
+      color: #fff;
+      border-radius: 22px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel p {
+      max-width: 700px;
+      margin: 12px auto 0;
+      color: #ffe5e0;
+    }
+
+    footer {
+      background: #102015;
+      color: #9dc7aa;
+      padding: 32px 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 50px 0 42px; }
+      .section { padding: 42px 0; }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .footer-flex { flex-direction: column; text-align: center; }
+      .timeline-item { padding-left: 22px; padding-top: 62px; }
+      .timeline-item::before { top: 20px; left: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="brand-title">PARTIDO POPULAR CRISTIANO - Ate</div>
+          <div class="brand-sub">Trabajo territorial y acción vecinal</div>
+        </div>
+      </a>
+      <a class="back-btn" href="index.html#actividades">Volver al inicio</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Presencia territorial en Ate</span>
+      <h1>Actividades vecinales, recorridos y trabajo de campo para entender los problemas reales del distrito</h1>
+      <p>
+        Una propuesta seria no se construye solo desde una oficina. Se construye escuchando a vecinos,
+        recorriendo zonas, conversando con dirigentes y observando directamente cómo afectan los problemas
+        de seguridad, desorden, infraestructura y servicios en Ate.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="index.html#voluntarios">Sumarme al equipo</a>
+        <a class="btn btn-secondary" href="propuestas.html">Ver propuestas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Qué hacemos</div>
+        <h2>Actividades que fortalecen el vínculo con los vecinos de Ate</h2>
+        <p>
+          El trabajo territorial sirve para escuchar, priorizar, contrastar la realidad del distrito y construir propuestas con base real.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🚶</div>
+          <h3>Visitas vecinales</h3>
+          <p>Recorridos por calles, parques, zonas comerciales y sectores residenciales para conocer problemas concretos y escuchar testimonios directos.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Reuniones con dirigentes</h3>
+          <p>Diálogo con líderes locales, juntas vecinales y referentes comunitarios para detectar prioridades y construir soluciones más realistas.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📢</div>
+          <h3>Acción comunitaria</h3>
+          <p>Actividades de presencia, apoyo y articulación ciudadana para fortalecer organización barrial, participación y compromiso cívico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <div class="section-head" style="text-align:left; margin-bottom:22px;">
+          <div class="tag">Para qué sirve</div>
+          <h2>Por qué el trabajo territorial importa para una propuesta municipal seria</h2>
+        </div>
+        <ul class="checklist">
+          <li>Permite escuchar problemas reales más allá de cifras o discursos generales.</li>
+          <li>Ayuda a ubicar zonas críticas y necesidades concretas por sector.</li>
+          <li>Evita improvisar propuestas desconectadas de la vida diaria del distrito.</li>
+          <li>Fortalece una relación de confianza entre vecinos y equipo político.</li>
+          <li>Convierte la participación en insumo real para diagnóstico y planificación.</li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <h3>No se trata solo de “hacer presencia”</h3>
+        <p>
+          Una actividad territorial útil no es la que más fotos produce, sino la que permite entender mejor
+          un problema, recoger evidencia, contrastar versiones y traducir eso en decisiones o propuestas concretas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Cómo trabajamos</div>
+        <h2>Etapas del trabajo territorial en Ate</h2>
+        <p>
+          El objetivo no es visitar por visitar, sino convertir el contacto vecinal en información útil y acción organizada.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Escucha y observación de campo</h3>
+          <p>Se recorren zonas y se conversa con vecinos para identificar problemas, urgencias y puntos de conflicto.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Registro de hallazgos</h3>
+          <p>Se anotan patrones repetidos, sectores críticos, preocupaciones comunes y posibles temas de fiscalización o propuesta.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Priorización de necesidades</h3>
+          <p>Se compara la información recogida para distinguir qué requiere atención inmediata y qué necesita solución estructural.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Transformación en propuesta o seguimiento</h3>
+          <p>La información del territorio alimenta diagnósticos, propuestas municipales, actividades comunitarias y reportes ciudadanos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Temas frecuentes</div>
+        <h2>Problemas que suelen aparecer en las actividades territoriales</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🚨</div>
+          <h3>Inseguridad y temor vecinal</h3>
+          <p>Reportes sobre robos, zonas oscuras, falta de patrullaje y ausencia de respuesta en puntos sensibles.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🗑️</div>
+          <h3>Basura y desorden urbano</h3>
+          <p>Acumulación de residuos, puntos críticos, abandono del espacio público y deterioro de la limpieza distrital.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛣️</div>
+          <h3>Pistas, veredas y movilidad</h3>
+          <p>Baches, veredas rotas, tránsito desordenado y problemas de accesibilidad en sectores clave del distrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Preguntas frecuentes</div>
+        <h2>Dudas comunes sobre las actividades territoriales</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>¿Estas actividades solo sirven para campaña?</h3>
+          <p>No deberían verse así. Bien hechas, sirven para conocer el distrito, ordenar prioridades y construir propuestas con base real.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué valor tienen las reuniones con dirigentes?</h3>
+          <p>Ayudan a entender problemas persistentes, conflictos entre zonas y necesidades que no siempre aparecen en información general.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Cómo puede participar un vecino?</h3>
+          <p>Puede sumarse como voluntario, compartir información de su zona, asistir a reuniones y reportar problemas concretos para seguimiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <h2>Si quieres apoyar el trabajo territorial en Ate, puedes sumarte desde hoy</h2>
+        <p>
+          La organización vecinal, la presencia en campo y el contacto directo con la comunidad son claves para construir una propuesta municipal seria.
+        </p>
+        <div class="cta-row" style="justify-content:center; margin-top:20px;">
+          <a class="btn btn-primary" href="index.html#voluntarios">Ir al registro de voluntarios</a>
+          <a class="btn btn-secondary" href="fiscalizacion.html">Ver fiscalización ciudadana</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>Partido Popular Cristiano · Base Ate · Macro Zonal 4</div>
+      <div>Dr. José Luis Hurtado Apaico · Alcalde 2027–2030</div>
+      <div>ppcate.org.pe</div>
+    </div>
+  </footer>
+</body>
+</html>

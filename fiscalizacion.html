@@ -1,1 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5b2d">
+  <title>Fiscalización Municipal en Ate | Denuncia y Control Ciudadano | PPC Ate</title>
+  <meta name="description" content="Espacio de fiscalización ciudadana en Ate para reportar problemas, vigilar la gestión municipal y fortalecer el control vecinal sobre obras y servicios.">
+  <meta name="keywords" content="fiscalizacion municipal Ate, denuncias ciudadanas Ate, control ciudadano Ate, vigilancia vecinal Ate, corrupcion municipal Ate, obras publicas Ate, servicios municipales Ate, PPC Ate fiscalizacion">
+  <link rel="canonical" href="https://www.ppcate.org.pe/fiscalizacion.html">
+  <link rel="icon" href="assets/favicon-ppc.png" type="image/png">
+  <meta property="og:title" content="Fiscalización Municipal en Ate | Denuncia y Control Ciudadano | PPC Ate">
+  <meta property="og:description" content="Conoce cómo fortalecer la fiscalización ciudadana en Ate y reportar problemas para vigilar obras, servicios y gestión municipal.">
+  <meta property="og:url" content="https://www.ppcate.org.pe/fiscalizacion.html">
+  <meta property="og:image" content="https://www.ppcate.org.pe/assets/jose-luis-hurtado.jpg">
+  <style>
+    :root {
+      --verde: #117a3b;
+      --verde-osc: #0d5b2d;
+      --dorado: #c9a23a;
+      --claro: #f6f8f6;
+      --texto: #1f2b22;
+      --gris: #667067;
+      --borde: #dce7df;
+      --rojo: #b03020;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--claro); color: var(--texto); line-height: 1.72; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(13, 91, 45, 0.97);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      background: #fff;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .brand-title { font-size: 0.96rem; font-weight: 800; line-height: 1.1; }
+    .brand-sub { font-size: 0.74rem; color: #c4e2cf; }
+
+    .back-btn {
+      background: var(--dorado);
+      color: #111;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #12361f, var(--verde-osc) 45%, var(--verde));
+      color: #fff;
+      padding: 72px 0 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "CONTROL";
+      position: absolute;
+      right: -18px;
+      bottom: 8px;
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--dorado);
+      color: #111;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin-bottom: 14px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #d1ead9;
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--rojo); color: #fff; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.12); color: #fff; border: 2px solid rgba(255, 255, 255, 0.5); }
+
+    .section { padding: 58px 0; }
+    .section-white { background: #fff; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-head .tag {
+      display: inline-block;
+      background: var(--verde-osc);
+      color: #fff;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--gris);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .card .icon {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: var(--verde-osc);
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li { color: var(--gris); font-size: 0.94rem; }
+
+    .highlight {
+      background: linear-gradient(135deg, #fff7e0, #fff);
+      border: 1px solid #ecd79b;
+      border-left: 5px solid var(--dorado);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .highlight h3 {
+      color: #6a5511;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .highlight p {
+      color: #655c45;
+    }
+
+    .checklist {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+    }
+
+    .checklist li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--verde);
+      font-weight: 800;
+    }
+
+    .steps {
+      counter-reset: pasos;
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      padding-left: 70px;
+    }
+
+    .step::before {
+      counter-increment: pasos;
+      content: counter(pasos);
+      position: absolute;
+      left: 22px;
+      top: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--rojo);
+      color: #fff;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: var(--texto);
+      font-size: 1rem;
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 8px;
+      color: var(--verde-osc);
+      font-size: 1rem;
+    }
+
+    .cta-panel {
+      background: linear-gradient(135deg, var(--rojo), #cf4937);
+      color: #fff;
+      border-radius: 22px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel p {
+      max-width: 700px;
+      margin: 12px auto 0;
+      color: #ffe5e0;
+    }
+
+    footer {
+      background: #102015;
+      color: #9dc7aa;
+      padding: 32px 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 50px 0 42px; }
+      .section { padding: 42px 0; }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .footer-flex { flex-direction: column; text-align: center; }
+      .step { padding-left: 22px; padding-top: 64px; }
+      .step::before { top: 18px; left: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-ppc.png" alt="Logo PPC Ate">
+        <div>
+          <div class="brand-title">PARTIDO POPULAR CRISTIANO - Ate</div>
+          <div class="brand-sub">Fiscalización y control ciudadano</div>
+        </div>
+      </a>
+      <a class="back-btn" href="index.html#fiscalizacion">Ir al buzón ciudadano</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Fiscalización municipal en Ate</span>
+      <h1>Control ciudadano para vigilar obras, servicios y decisiones municipales en Ate</h1>
+      <p>
+        Fiscalizar no es atacar por atacar. Es revisar, documentar, comparar y exigir resultados.
+        Una municipalidad mejora cuando los vecinos reportan problemas, hacen seguimiento y participan
+        con criterio en el control de la gestión pública.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="index.html#fiscalizacion">Enviar un reporte ciudadano</a>
+        <a class="btn btn-secondary" href="panel.html">Ver panel de reportes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Qué significa</div>
+        <h2>Qué es la fiscalización ciudadana y por qué importa en Ate</h2>
+        <p>
+          La fiscalización ciudadana es la participación organizada de los vecinos para observar,
+          reportar y exigir mejoras sobre los servicios públicos, las obras y el uso de los recursos municipales.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">🧭</div>
+          <h3>Ordena prioridades reales</h3>
+          <p>Ayuda a identificar dónde están los problemas que afectan más a los vecinos y qué zonas necesitan intervención urgente.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧾</div>
+          <h3>Reduce la improvisación</h3>
+          <p>Cuando hay reportes concretos y seguimiento vecinal, es más difícil ocultar deficiencias o dejar obras a medias.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <h3>Fortalece la participación</h3>
+          <p>Convierte al vecino en parte de la solución, no solo en alguien que se queja sin ser escuchado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <div class="section-head" style="text-align:left; margin-bottom:22px;">
+          <div class="tag">Qué fiscalizar</div>
+          <h2>Los temas más urgentes que un vecino puede vigilar</h2>
+        </div>
+        <ul class="checklist">
+          <li>Basura acumulada, puntos críticos y fallas de recolección.</li>
+          <li>Baches, veredas dañadas, obras inconclusas y señalización deficiente.</li>
+          <li>Parques abandonados, iluminación fallida y deterioro del espacio público.</li>
+          <li>Inseguridad, ausencia de patrullaje o falta de respuesta en zonas críticas.</li>
+          <li>Posibles irregularidades en servicios, contrataciones u obras municipales.</li>
+        </ul>
+      </div>
+      <div class="highlight">
+        <h3>La idea no es denunciar sin sustento</h3>
+        <p>
+          Una buena fiscalización se apoya en datos básicos: dirección, fecha, descripción clara del problema,
+          fotos cuando sea posible y seguimiento posterior. Eso vuelve el reporte más útil para exigir respuesta.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Cómo hacerlo</div>
+        <h2>Cómo reportar un problema con criterio y utilidad</h2>
+        <p>
+          Para que una denuncia ciudadana sirva, debe ser clara, verificable y orientada a resolver.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Identifica el problema con precisión</h3>
+          <p>Señala qué ocurre, en qué lugar exacto y desde cuándo afecta a la zona.</p>
+        </div>
+        <div class="step">
+          <h3>Agrega contexto útil</h3>
+          <p>Explica a quién perjudica, si se repite frecuentemente y si ya hubo reclamos previos.</p>
+        </div>
+        <div class="step">
+          <h3>Evita exageraciones y generalidades</h3>
+          <p>Mientras más específico sea el reporte, más fácil será priorizarlo y darle seguimiento.</p>
+        </div>
+        <div class="step">
+          <h3>Haz seguimiento</h3>
+          <p>La fiscalización no termina al reportar: también incluye verificar si hubo respuesta o solución real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Compromiso</div>
+        <h2>Qué buscamos con esta herramienta de fiscalización en Ate</h2>
+        <p>
+          Queremos construir una cultura de vigilancia vecinal seria, responsable y útil para mejorar el distrito.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Mapa de problemas por zonas</h3>
+          <p>Identificar qué sectores concentran más reportes y cuáles requieren presencia prioritaria.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Seguimiento de tendencias</h3>
+          <p>Detectar patrones repetidos para no tratar los problemas como hechos aislados.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏛️</div>
+          <h3>Exigencia con fundamento</h3>
+          <p>Contar con evidencia ciudadana para plantear observaciones, reclamos y propuestas de mejora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head">
+        <div class="tag">Preguntas frecuentes</div>
+        <h2>Dudas comunes sobre fiscalización ciudadana</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>¿Fiscalizar es solo denunciar corrupción?</h3>
+          <p>No. También es observar la calidad de los servicios, la ejecución de obras, la limpieza, la seguridad, el mantenimiento urbano y la respuesta municipal.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Puedo reportar un problema aunque no tenga todos los datos?</h3>
+          <p>Sí, pero mientras más precisa sea la información, más útil será el reporte para clasificarlo y darle seguimiento.</p>
+        </div>
+        <div class="faq-item">
+          <h3>¿Qué tipo de reportes son más útiles?</h3>
+          <p>Los que indican zona exacta, describen el problema claramente y explican cómo afecta a los vecinos o al funcionamiento del distrito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <h2>Tu reporte puede ayudar a corregir un problema real en Ate</h2>
+        <p>
+          Si has detectado abandono, desorden, inseguridad, fallas de servicios o posibles irregularidades,
+          usa el buzón ciudadano del sitio principal y deja un reporte claro. Fiscalizar también es participar.
+        </p>
+        <div class="cta-row" style="justify-content:center; margin-top:20px;">
+          <a class="btn btn-primary" href="index.html#fiscalizacion">Ir al buzón de fiscalización</a>
+          <a class="btn btn-secondary" href="panel.html">Consultar panel</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>Partido Popular Cristiano · Base Ate · Macro Zonal 4</div>
+      <div>Dr. José Luis Hurtado Apaico · Alcalde 2027–2030</div>
+      <div>ppcate.org.pe</div>
+    </div>
+  </footer>
+</body>
+</html>
