@@ -178,6 +178,11 @@ sr.reveal(".ideario-card", { origin: "bottom", interval: 100 });
 const APP = window.APP_CONFIG || {};
 const API_URL = APP.apiUrl || "";
 const PHONE = APP.whatsapp || "51968481482";
+const REPORT_UPLOAD_MAX_FILES = Number(APP.reportUploadMaxFiles || 3);
+const REPORT_UPLOAD_MAX_MB = Number(APP.reportUploadMaxMB || 5);
+const REPORT_UPLOAD_MAX_BYTES = REPORT_UPLOAD_MAX_MB * 1024 * 1024;
+const REPORT_UPLOAD_TOTAL_MAX_MB = Number(APP.reportUploadTotalMaxMB || 6);
+const REPORT_UPLOAD_TOTAL_MAX_BYTES = REPORT_UPLOAD_TOTAL_MAX_MB * 1024 * 1024;
 
 function abrirWhatsApp(msg) {
   window.open("https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg), "_blank");
@@ -216,6 +221,76 @@ async function postToApi(payload) {
   return data;
 }
 
+function getSelectedReportFiles() {
+  const input = document.getElementById("reportFiles");
+  if (!input || !input.files) return [];
+  return Array.from(input.files);
+}
+
+function validateReportFiles(files) {
+  if (files.length > REPORT_UPLOAD_MAX_FILES) {
+    throw new Error("Solo puedes adjuntar hasta " + REPORT_UPLOAD_MAX_FILES + " archivos");
+  }
+
+  for (const file of files) {
+    if (file.size > REPORT_UPLOAD_MAX_BYTES) {
+      throw new Error("El archivo \"" + file.name + "\" supera el límite de " + REPORT_UPLOAD_MAX_MB + " MB");
+    }
+  }
+
+  const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
+  if (totalBytes > REPORT_UPLOAD_TOTAL_MAX_BYTES) {
+    throw new Error("El total de adjuntos supera el máximo de " + REPORT_UPLOAD_TOTAL_MAX_MB + " MB por envío");
+  }
+}
+
+function updateReportFilesHelp() {
+  const files = getSelectedReportFiles();
+  const help = document.getElementById("reportFilesHelp");
+  if (!help) return;
+
+  if (!files.length) {
+    help.textContent = "Formatos permitidos: JPG, PNG, WEBP y PDF.";
+    return;
+  }
+
+  const totalMB = files.reduce((sum, file) => sum + file.size, 0) / (1024 * 1024);
+  help.textContent = files.length + " archivo(s) seleccionados · " + totalMB.toFixed(2) + " MB en total";
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = typeof reader.result === "string" ? reader.result : "";
+      const base64 = result.includes(",") ? result.split(",")[1] : result;
+      resolve({
+        name: file.name,
+        type: file.type || "application/octet-stream",
+        size: file.size,
+        base64
+      });
+    };
+    reader.onerror = () => reject(new Error("No se pudo leer el archivo \"" + file.name + "\""));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function buildAttachmentPayload(files) {
+  const allowedPrefixes = ["image/"];
+  const allowedTypes = ["application/pdf"];
+
+  files.forEach(file => {
+    const isAllowedPrefix = allowedPrefixes.some(prefix => (file.type || "").startsWith(prefix));
+    const isAllowedType = allowedTypes.includes(file.type || "");
+    if (!isAllowedPrefix && !isAllowedType) {
+      throw new Error("El archivo \"" + file.name + "\" no tiene un formato permitido");
+    }
+  });
+
+  return Promise.all(files.map(fileToBase64));
+}
+
 document.getElementById("volunteerForm").addEventListener("submit", async function (e) {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(this).entries());
@@ -239,22 +314,34 @@ document.getElementById("volunteerForm").addEventListener("submit", async functi
 document.getElementById("reportForm").addEventListener("submit", async function (e) {
   e.preventDefault();
   const d = Object.fromEntries(new FormData(this).entries());
+  const files = getSelectedReportFiles();
+  const attachmentNote = files.length ? "\nAdjuntos: " + files.map(file => file.name).join(", ") : "";
   const waMsg = "Reporte ciudadano\n" +
     "Nombre: " + (d.nombre || "") + "\n" +
     "Tel: " + (d.telefono || "") + "\n" +
     "Categoria: " + (d.categoria || "") + "\n" +
     "Zona: " + (d.zona || "") + "\n" +
-    "Detalle: " + (d.detalle || "");
+    "Detalle: " + (d.detalle || "") +
+    attachmentNote;
 
   try {
-    await postToApi({ type: "reporte", ...d });
-    setStatus("reportStatus", true, "Reporte enviado correctamente. Gracias por fiscalizar.");
+    validateReportFiles(files);
+    const attachments = await buildAttachmentPayload(files);
+    await postToApi({ type: "reporte", ...d, attachments });
+    setStatus("reportStatus", true, files.length ? "Reporte y adjuntos enviados correctamente. Gracias por fiscalizar." : "Reporte enviado correctamente. Gracias por fiscalizar.");
     this.reset();
+    updateReportFilesHelp();
   } catch (err) {
     setStatus("reportStatus", false, (err.message || "No se pudo enviar") + ". Se abrira WhatsApp como respaldo.");
     abrirWhatsApp(waMsg);
   }
 });
+
+const reportFilesInput = document.getElementById("reportFiles");
+if (reportFilesInput) {
+  reportFilesInput.addEventListener("change", updateReportFilesHelp);
+  updateReportFilesHelp();
+}
 
 const heroVideoModal = document.getElementById("heroVideoModal");
 const heroVideoTrigger = document.getElementById("heroVideoTrigger");

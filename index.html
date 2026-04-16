@@ -384,6 +384,12 @@
               <input name="zona" placeholder="Zona, calle o referencia" required>
             </div>
             <textarea name="detalle" placeholder="Describe el problema con el mayor detalle posible" required></textarea>
+            <div style="margin-top:14px;">
+              <label for="reportFiles" style="display:block;font-weight:700;margin-bottom:8px;color:#1f2b22;">Adjunta evidencias (opcional)</label>
+              <input id="reportFiles" name="archivos" type="file" multiple accept="image/*,.pdf" style="display:block;width:100%;padding:12px;border:1px solid #dce7df;border-radius:12px;background:#f6f8f6;">
+              <p class="small small-spaced">Puedes subir hasta 3 archivos de hasta 5 MB cada uno, con un total máximo de 6 MB por envío. Esta primera versión está optimizada para fotos y PDF.</p>
+              <div id="reportFilesHelp" class="small" style="margin-top:6px;color:#6b756e;"></div>
+            </div>
             <div class="form-actions">
               <button class="btn green" type="submit">Enviar reporte</button>
             </div>
