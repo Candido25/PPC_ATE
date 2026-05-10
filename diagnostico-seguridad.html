@@ -619,11 +619,8 @@
     }, { threshold: 0.06 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
   </script>
-  <style>
-    df-messenger{position:fixed;right:20px;bottom:146px;z-index:1300;--df-messenger-button-titlebar-color:#117a3b;--df-messenger-chat-background-color:#f6f8f6;--df-messenger-font-color:#1f2b22;--df-messenger-send-icon:#117a3b;--df-messenger-user-message:#117a3b;--df-messenger-bot-message:#ffffff;--df-messenger-input-box-color:#ffffff;--df-messenger-input-font-color:#1f2b22;--df-messenger-minimized-chat-close-icon-color:#ffffff;--df-messenger-chip-color:#0d5b2d;--df-messenger-chip-font-color:#ffffff;--df-messenger-minimized-chat-bubble-size:60px;--df-messenger-message-border-radius:16px;--df-messenger-input-padding:14px}
-    @media (max-width:680px){df-messenger{right:14px;bottom:108px;--df-messenger-minimized-chat-bubble-size:54px}}
-  </style>
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-  <df-messenger intent="WELCOME" chat-title="Asistente PPCate" agent-id="8ec917ff-fff9-42d6-a617-4ae4201ebd05" language-code="es"></df-messenger>
+  <script src="dialogflow-messenger.js" defer></script>
 </body>
 </html>
+
+
