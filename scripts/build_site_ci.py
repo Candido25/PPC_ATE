@@ -63,8 +63,43 @@ def link_infrastructure_pillars(text: str) -> str:
         content = match.group(1)
         return f'<a class="pilar-card fade-up" href="{href}" aria-label="Ver desarrollo completo del pilar" style="display:block;color:inherit;text-decoration:none">{content}<span style="display:inline-block;margin-top:12px;color:#0d5b2d;font-weight:700">Ver propuesta completa →</span></a>\n        '
 
-    updated = pattern.sub(replace, text, count=5)
-    return updated
+    return pattern.sub(replace, text, count=5)
+
+
+def link_concrete_interventions(text: str) -> str:
+    targets = [
+        "diagnostico-pistas.html",
+        "diagnostico-pistas.html",
+        "accesibilidad-peatonal-ate.html",
+        "transito-movilidad-ate.html",
+        "transito-movilidad-ate.html",
+        "espacios-publicos-ate.html",
+        "espacios-publicos-ate.html",
+        "equipamiento-urbano-ate.html",
+        "equipamiento-urbano-ate.html",
+        "agua-saneamiento-ate.html",
+    ]
+    index = 0
+    pattern = re.compile(
+        r'<div class="int-card fade-up">\s*(<div class="ic-ico">.*?</div>\s*<p>.*?</p>)\s*</div>',
+        re.S,
+    )
+
+    def replace(match):
+        nonlocal index
+        if index >= len(targets):
+            return match.group(0)
+        href = targets[index]
+        index += 1
+        content = match.group(1)
+        return (
+            f'<a class="int-card fade-up" href="{href}" '
+            'aria-label="Ver desarrollo completo de esta intervención" '
+            'style="color:inherit;text-decoration:none">'
+            f'{content}<span aria-hidden="true" style="margin-left:auto;color:#0d5b2d;font-weight:800">→</span></a>'
+        )
+
+    return pattern.sub(replace, text, count=10)
 
 
 def optimize_with_home_prototype(path):
@@ -83,6 +118,7 @@ def optimize_with_home_prototype(path):
             text = text.replace("</body>", '  <script src="home-redesign.js" defer></script>\n</body>', 1)
     elif path.name == "infraestructura.html":
         text = link_infrastructure_pillars(text)
+        text = link_concrete_interventions(text)
     path.write_text(text, encoding="utf-8")
 
 
