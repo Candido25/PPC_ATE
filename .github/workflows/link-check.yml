@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validar SEO, canonicals y enlaces
-        run: python scripts/build_site.py
+        run: python scripts/build_site_ci.py
