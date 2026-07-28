@@ -1,4 +1,7 @@
 (() => {
+  // Retira elementos editoriales descontinuados, aunque permanezcan en páginas antiguas.
+  document.querySelectorAll('.vote-float, df-messenger, #ppcate-assistant-guide').forEach(element => element.remove());
+
   const header = document.querySelector('header');
   const navwrap = document.querySelector('.navwrap');
   const nav = navwrap?.querySelector('nav');
@@ -65,11 +68,9 @@
   });
 
   if (header) {
-    let lastY = window.scrollY;
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       header.style.boxShadow = y > 15 ? '0 8px 22px rgba(0,0,0,.16)' : '';
-      lastY = y;
     }, { passive: true });
   }
 })();
