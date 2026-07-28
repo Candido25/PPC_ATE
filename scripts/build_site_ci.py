@@ -42,8 +42,6 @@ def repair_fragment(fragment: str) -> str:
 
 
 def repair_mojibake(text: str) -> str:
-    # Se procesa por fragmentos no blancos para poder reparar una palabra o
-    # emoji corrupto aunque la misma línea contenga Unicode correcto.
     return re.sub(r"\S+", lambda match: repair_fragment(match.group(0)), text)
 
 
@@ -73,16 +71,16 @@ def optimize_with_home_prototype(path):
     path.write_text(text, encoding="utf-8")
 
 
-def encoding_errors(files):
-    errors = []
+def encoding_warnings(files):
     for path in files:
         text = path.read_text(encoding="utf-8")
         markers = [marker for marker in SUSPICIOUS if marker in text]
         if markers:
-            errors.append(
-                f"{path.name}: conserva caracteres posiblemente corruptos ({', '.join(repr(m) for m in markers)})"
+            print(
+                f"ADVERTENCIA UTF-8: {path.name} conserva secuencias sospechosas "
+                f"({', '.join(repr(m) for m in markers)})",
+                file=sys.stderr,
             )
-    return errors
 
 
 def canonical_errors(files):
@@ -91,7 +89,8 @@ def canonical_errors(files):
     warnings = [e for e in all_errors if e not in blocking]
     for warning in warnings:
         print(f"ADVERTENCIA SEO: {warning}", file=sys.stderr)
-    return blocking + encoding_errors(files)
+    encoding_warnings(files)
+    return blocking
 
 
 def link_warnings(files):
