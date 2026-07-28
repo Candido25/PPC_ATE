@@ -102,6 +102,42 @@ def link_concrete_interventions(text: str) -> str:
     return pattern.sub(replace, text, count=10)
 
 
+def link_territorial_problems(text: str) -> str:
+    text = text.replace(
+        "Zonas críticas de intervención en Ate",
+        "Problemas territoriales prioritarios de Ate",
+        1,
+    )
+    text = text.replace(
+        "La planificación empieza por reconocer dónde la gestión actual ha dejado deterioro, abandono y riesgo sin resolver.",
+        "Identificamos los sectores y problemas urbanos que requieren atención inmediata, planificación técnica y seguimiento vecinal.",
+        1,
+    )
+    targets = {
+        "Zonas de ladera y quebrada": ("Laderas y quebradas sin infraestructura segura", "problemas-laderas-quebradas-ate.html"),
+        "Huaycán y Santa Clara": ("Brechas urbanas en Huaycán y Santa Clara", "problemas-huaycan-santa-clara.html"),
+        "Vitarte y Carretera Central": ("Caos vial en Vitarte y la Carretera Central", "problemas-carretera-central-ate.html"),
+        "Zonas sin iluminación": ("Calles, pasajes y escaleras sin iluminación", "problemas-iluminacion-publica-ate.html"),
+        "Parques abandonados": ("Parques y espacios públicos abandonados", "espacios-publicos-ate.html"),
+        "Centros comunales": ("Centros comunales deteriorados o insuficientes", "equipamiento-urbano-ate.html"),
+    }
+    pattern = re.compile(r'<div class="zona-item">\s*<a\b[^>]*>(.*?)</a>\s*</div>', re.S)
+
+    def replace(match):
+        content = match.group(1)
+        heading = re.search(r'<h4>(.*?)</h4>', content, re.S)
+        if not heading:
+            return match.group(0)
+        old_title = re.sub(r'<[^>]+>', '', heading.group(1)).strip()
+        if old_title not in targets:
+            return match.group(0)
+        new_title, href = targets[old_title]
+        content = re.sub(r'<h4>.*?</h4>', f'<h4>{new_title}</h4>', content, count=1, flags=re.S)
+        return f'<div class="zona-item"><a href="{href}">{content}<span style="display:inline-block;margin-top:8px;color:#f2c230;font-weight:700">Ver diagnóstico y propuesta →</span></a></div>'
+
+    return pattern.sub(replace, text, count=6)
+
+
 def optimize_with_home_prototype(path):
     text = path.read_text(encoding="utf-8-sig")
     fixed = repair_mojibake(text)
@@ -119,6 +155,7 @@ def optimize_with_home_prototype(path):
     elif path.name == "infraestructura.html":
         text = link_infrastructure_pillars(text)
         text = link_concrete_interventions(text)
+        text = link_territorial_problems(text)
     path.write_text(text, encoding="utf-8")
 
 
