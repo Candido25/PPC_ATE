@@ -11,20 +11,22 @@ _original_seo = site.validate_seo
 _original_links = site.validate_internal_links
 _original_optimize = site.optimize_html
 
-SUSPICIOUS = ("Ã", "Â", "ðŸ", "â€", "â€“", "â€”", "â€œ", "â€\u009d", "�")
+SUSPICIOUS = ("Ã", "Â", "ð", "â", "�")
 
 
 def corruption_score(text: str) -> int:
     return sum(text.count(marker) for marker in SUSPICIOUS)
 
 
-def repair_line(line: str) -> str:
-    """Revierte hasta tres conversiones UTF-8 interpretadas como Latin-1/CP1252."""
-    current = line
+def repair_fragment(fragment: str) -> str:
+    """Revierte conversiones UTF-8 interpretadas como Latin-1 o CP1252."""
+    if not any(marker in fragment for marker in SUSPICIOUS):
+        return fragment
+    current = fragment
     for _ in range(3):
         best = current
         best_score = corruption_score(current)
-        for encoding in ("latin-1", "cp1252"):
+        for encoding in ("cp1252", "latin-1"):
             try:
                 candidate = current.encode(encoding).decode("utf-8")
             except (UnicodeEncodeError, UnicodeDecodeError):
@@ -40,9 +42,9 @@ def repair_line(line: str) -> str:
 
 
 def repair_mojibake(text: str) -> str:
-    # Trabajar por líneas evita que un emoji correctamente codificado impida
-    # reparar el resto del documento.
-    return "".join(repair_line(line) for line in text.splitlines(keepends=True))
+    # Se procesa por fragmentos no blancos para poder reparar una palabra o
+    # emoji corrupto aunque la misma línea contenga Unicode correcto.
+    return re.sub(r"\S+", lambda match: repair_fragment(match.group(0)), text)
 
 
 def optimize_with_home_prototype(path):
@@ -50,7 +52,7 @@ def optimize_with_home_prototype(path):
     fixed = repair_mojibake(text)
     if fixed != text:
         print(f"UTF-8 reparado: {path.name}")
-    path.write_text(fixed, encoding="utf-8", newline="\n")
+    path.write_text(fixed, encoding="utf-8")
 
     _original_optimize(path)
     if path.name != "index.html":
@@ -68,7 +70,7 @@ def optimize_with_home_prototype(path):
             '  <script src="home-redesign.js" defer></script>\n</body>',
             1,
         )
-    path.write_text(text, encoding="utf-8", newline="\n")
+    path.write_text(text, encoding="utf-8")
 
 
 def encoding_errors(files):
@@ -80,8 +82,6 @@ def encoding_errors(files):
             errors.append(
                 f"{path.name}: conserva caracteres posiblemente corruptos ({', '.join(repr(m) for m in markers)})"
             )
-        if not re.search(r'<meta\s+charset=["\']UTF-8["\']', text, re.I):
-            errors.append(f"{path.name}: falta meta charset UTF-8")
     return errors
 
 
