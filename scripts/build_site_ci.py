@@ -138,6 +138,56 @@ def link_territorial_problems(text: str) -> str:
     return pattern.sub(replace, text, count=6)
 
 
+def link_legal_viability(text: str) -> str:
+    official = [
+        (
+            "https://www.gob.pe/institucion/jne/normas-legales/8133550-ley-organica-de-municipalidades-ley-n-27972",
+            "Abrir la Ley Orgánica de Municipalidades en una fuente oficial",
+        ),
+        (
+            "https://www.gob.pe/institucion/mef/normas-legales/200981-1252",
+            "Abrir el Decreto Legislativo 1252 de Invierte.pe en una fuente oficial",
+        ),
+        (
+            "https://www.gob.pe/institucion/mef/normas-legales/6994512-32069",
+            "Abrir la Ley General de Contrataciones Públicas en una fuente oficial",
+        ),
+    ]
+    index = 0
+    pattern = re.compile(r'<div class="viab-item">(.*?)</div>', re.S)
+
+    def replace(match):
+        nonlocal index
+        if index >= len(official):
+            return match.group(0)
+        href, label = official[index]
+        index += 1
+        content = match.group(1)
+        if index == 3:
+            content = content.replace("Ley de Contrataciones", "Ley General de Contrataciones Públicas")
+            content = re.sub(
+                r'La Ley N\.° 30225 regula la contratación de obras con transparencia, competencia y controles que garantizan el buen uso del presupuesto\.',
+                'La Ley N.° 32069 regula la contratación pública de bienes, servicios y obras, con reglas de transparencia, competencia, eficiencia y control.',
+                content,
+                count=1,
+            )
+        return (
+            f'<a class="viab-item" href="{href}" target="_blank" rel="noopener noreferrer" '
+            f'aria-label="{label}" style="display:block;color:inherit;text-decoration:none">'
+            f'{content}<span style="display:inline-block;margin-top:10px;color:#0d5b2d;font-weight:800">Ver norma oficial →</span></a>'
+        )
+
+    text = pattern.sub(replace, text, count=3)
+    text = text.replace(
+        'https://www.leyes.congreso.gob.pe/Documentos/Leyes/27972.pdf',
+        official[0][0],
+    )
+    text = text.replace('https://www.gob.pe/ley-n-30225', official[2][0])
+    text = text.replace('Ley N.° 30225 – Ley de Contrataciones del Estado', 'Ley N.° 32069 – Ley General de Contrataciones Públicas')
+    text = text.replace('https://www.gob.pe/inviertepe', official[1][0])
+    return text
+
+
 def optimize_with_home_prototype(path):
     text = path.read_text(encoding="utf-8-sig")
     fixed = repair_mojibake(text)
@@ -156,6 +206,7 @@ def optimize_with_home_prototype(path):
         text = link_infrastructure_pillars(text)
         text = link_concrete_interventions(text)
         text = link_territorial_problems(text)
+        text = link_legal_viability(text)
     path.write_text(text, encoding="utf-8")
 
 
