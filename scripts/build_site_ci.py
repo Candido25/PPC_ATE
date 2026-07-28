@@ -8,6 +8,27 @@ import build_site as site
 
 _original_seo = site.validate_seo
 _original_links = site.validate_internal_links
+_original_optimize = site.optimize_html
+
+
+def optimize_with_home_prototype(path):
+    _original_optimize(path)
+    if path.name != "index.html":
+        return
+    text = path.read_text(encoding="utf-8")
+    if "home-redesign.css" not in text:
+        text = text.replace(
+            "</head>",
+            '  <link rel="stylesheet" href="home-redesign.css">\n</head>',
+            1,
+        )
+    if "home-redesign.js" not in text:
+        text = text.replace(
+            "</body>",
+            '  <script src="home-redesign.js" defer></script>\n</body>',
+            1,
+        )
+    path.write_text(text, encoding="utf-8")
 
 
 def canonical_errors(files):
@@ -25,6 +46,7 @@ def link_warnings(files):
     return []
 
 
+site.optimize_html = optimize_with_home_prototype
 site.validate_seo = canonical_errors
 site.validate_internal_links = link_warnings
 raise SystemExit(site.main())
