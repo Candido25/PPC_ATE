@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
 
       - name: Construir y auditar SEO, canonical y enlaces
-        run: python scripts/build_site.py
+        run: python scripts/build_site_ci.py
 
       - name: Publicar informe de archivos generados
         run: |
