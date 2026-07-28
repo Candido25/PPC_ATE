@@ -19,7 +19,6 @@ def corruption_score(text: str) -> int:
 
 
 def repair_fragment(fragment: str) -> str:
-    """Revierte conversiones UTF-8 interpretadas como Latin-1 o CP1252."""
     if not any(marker in fragment for marker in SUSPICIOUS):
         return fragment
     current = fragment
@@ -33,8 +32,7 @@ def repair_fragment(fragment: str) -> str:
                 continue
             score = corruption_score(candidate)
             if score < best_score:
-                best = candidate
-                best_score = score
+                best, best_score = candidate, score
         if best == current:
             break
         current = best
@@ -45,6 +43,30 @@ def repair_mojibake(text: str) -> str:
     return re.sub(r"\S+", lambda match: repair_fragment(match.group(0)), text)
 
 
+def link_infrastructure_pillars(text: str) -> str:
+    targets = [
+        "diagnostico-pistas.html",
+        "agua-saneamiento-ate.html",
+        "espacios-publicos-ate.html",
+        "transito-movilidad-ate.html",
+        "equipamiento-urbano-ate.html",
+    ]
+    index = 0
+    pattern = re.compile(r'<div class="pilar-card fade-up">(.*?)</div>\s*(?=<div class="pilar-card fade-up">|</div>\s*</div>\s*</section>)', re.S)
+
+    def replace(match):
+        nonlocal index
+        if index >= len(targets):
+            return match.group(0)
+        href = targets[index]
+        index += 1
+        content = match.group(1)
+        return f'<a class="pilar-card fade-up" href="{href}" aria-label="Ver desarrollo completo del pilar" style="display:block;color:inherit;text-decoration:none">{content}<span style="display:inline-block;margin-top:12px;color:#0d5b2d;font-weight:700">Ver propuesta completa →</span></a>\n        '
+
+    updated = pattern.sub(replace, text, count=5)
+    return updated
+
+
 def optimize_with_home_prototype(path):
     text = path.read_text(encoding="utf-8-sig")
     fixed = repair_mojibake(text)
@@ -53,21 +75,14 @@ def optimize_with_home_prototype(path):
     path.write_text(fixed, encoding="utf-8")
 
     _original_optimize(path)
-    if path.name != "index.html":
-        return
     text = path.read_text(encoding="utf-8")
-    if "home-redesign.css" not in text:
-        text = text.replace(
-            "</head>",
-            '  <link rel="stylesheet" href="home-redesign.css">\n</head>',
-            1,
-        )
-    if "home-redesign.js" not in text:
-        text = text.replace(
-            "</body>",
-            '  <script src="home-redesign.js" defer></script>\n</body>',
-            1,
-        )
+    if path.name == "index.html":
+        if "home-redesign.css" not in text:
+            text = text.replace("</head>", '  <link rel="stylesheet" href="home-redesign.css">\n</head>', 1)
+        if "home-redesign.js" not in text:
+            text = text.replace("</body>", '  <script src="home-redesign.js" defer></script>\n</body>', 1)
+    elif path.name == "infraestructura.html":
+        text = link_infrastructure_pillars(text)
     path.write_text(text, encoding="utf-8")
 
 
@@ -76,18 +91,13 @@ def encoding_warnings(files):
         text = path.read_text(encoding="utf-8")
         markers = [marker for marker in SUSPICIOUS if marker in text]
         if markers:
-            print(
-                f"ADVERTENCIA UTF-8: {path.name} conserva secuencias sospechosas "
-                f"({', '.join(repr(m) for m in markers)})",
-                file=sys.stderr,
-            )
+            print(f"ADVERTENCIA UTF-8: {path.name} conserva secuencias sospechosas ({', '.join(repr(m) for m in markers)})", file=sys.stderr)
 
 
 def canonical_errors(files):
     all_errors = _original_seo(files)
     blocking = [e for e in all_errors if "canonical" in e.lower() or "www" in e.lower()]
-    warnings = [e for e in all_errors if e not in blocking]
-    for warning in warnings:
+    for warning in (e for e in all_errors if e not in blocking):
         print(f"ADVERTENCIA SEO: {warning}", file=sys.stderr)
     encoding_warnings(files)
     return blocking
